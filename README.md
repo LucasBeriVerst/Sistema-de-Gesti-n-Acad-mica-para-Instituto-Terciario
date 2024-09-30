@@ -1,0 +1,1 @@
+# Sistema-de-Gesti-n-Acad-mica-para-Instituto-Terciario
