@@ -51,22 +51,22 @@
             // 
             Form1_LogIn_TextBox_Titulo.BackColor = Color.FromArgb(36, 60, 100);
             Form1_LogIn_TextBox_Titulo.BorderStyle = BorderStyle.None;
-            Form1_LogIn_TextBox_Titulo.Font = new Font("Fira Sans Medium", 16F, FontStyle.Bold);
+            Form1_LogIn_TextBox_Titulo.Font = new Font("Fira Sans Medium", 19F, FontStyle.Bold);
             Form1_LogIn_TextBox_Titulo.ForeColor = Color.FromArgb(188, 196, 212);
-            Form1_LogIn_TextBox_Titulo.Location = new Point(34, 283);
+            Form1_LogIn_TextBox_Titulo.Location = new Point(34, 12);
             Form1_LogIn_TextBox_Titulo.Name = "Form1_LogIn_TextBox_Titulo";
             Form1_LogIn_TextBox_Titulo.ReadOnly = true;
-            Form1_LogIn_TextBox_Titulo.Size = new Size(198, 39);
+            Form1_LogIn_TextBox_Titulo.Size = new Size(198, 46);
             Form1_LogIn_TextBox_Titulo.TabIndex = 1;
             Form1_LogIn_TextBox_Titulo.TabStop = false;
-            Form1_LogIn_TextBox_Titulo.Text = "LOG-IN";
+            Form1_LogIn_TextBox_Titulo.Text = "LOG - IN";
             Form1_LogIn_TextBox_Titulo.TextAlign = HorizontalAlignment.Center;
             // 
             // Form1_LogIn_PictureBox_HiletLogo
             // 
             Form1_LogIn_PictureBox_HiletLogo.BackgroundImageLayout = ImageLayout.None;
             Form1_LogIn_PictureBox_HiletLogo.Image = Properties.Resources.Captura_de_pantalla_2024_10_13_2230491;
-            Form1_LogIn_PictureBox_HiletLogo.Location = new Point(34, 80);
+            Form1_LogIn_PictureBox_HiletLogo.Location = new Point(34, 155);
             Form1_LogIn_PictureBox_HiletLogo.Name = "Form1_LogIn_PictureBox_HiletLogo";
             Form1_LogIn_PictureBox_HiletLogo.Size = new Size(198, 95);
             Form1_LogIn_PictureBox_HiletLogo.TabIndex = 0;
