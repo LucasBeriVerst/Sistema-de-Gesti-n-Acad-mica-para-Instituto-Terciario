@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1_LogIn));
             Form1_LogIn_Panel_Izquierdo = new Panel();
             Form1_LogIn_PictureBox_HiletLogo = new PictureBox();
             Form1_LogIn_Panel_Derecho = new Panel();
+            Form1_LogIn_TextBox_Contraseña = new TextBox();
             Form1_LogIn_LinkLabell_CerrarApp = new LinkLabel();
             Form1_LogIn_LinkLabell_MinimizarApp = new LinkLabel();
             Form1_LogIn_LinkLabell_InformarContraseña = new LinkLabel();
@@ -45,8 +47,8 @@
             richTextBox2 = new RichTextBox();
             richTextBox1 = new RichTextBox();
             Form1_LogIn_RichTextBox_Usuario_Linea = new RichTextBox();
-            Form1_LogIn_TextBox_Contraseña = new TextBox();
             Form1_LogIn_TextBox_Usuario = new TextBox();
+            Form1_LogIn_ToolTip_Contexto = new ToolTip(components);
             Form1_LogIn_Panel_Izquierdo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Form1_LogIn_PictureBox_HiletLogo).BeginInit();
             Form1_LogIn_Panel_Derecho.SuspendLayout();
@@ -77,6 +79,7 @@
             // Form1_LogIn_Panel_Derecho
             // 
             Form1_LogIn_Panel_Derecho.BackColor = Color.FromArgb(177, 173, 189);
+            Form1_LogIn_Panel_Derecho.Controls.Add(Form1_LogIn_TextBox_Contraseña);
             Form1_LogIn_Panel_Derecho.Controls.Add(Form1_LogIn_LinkLabell_CerrarApp);
             Form1_LogIn_Panel_Derecho.Controls.Add(Form1_LogIn_LinkLabell_MinimizarApp);
             Form1_LogIn_Panel_Derecho.Controls.Add(Form1_LogIn_LinkLabell_InformarContraseña);
@@ -90,13 +93,26 @@
             Form1_LogIn_Panel_Derecho.Controls.Add(richTextBox2);
             Form1_LogIn_Panel_Derecho.Controls.Add(richTextBox1);
             Form1_LogIn_Panel_Derecho.Controls.Add(Form1_LogIn_RichTextBox_Usuario_Linea);
-            Form1_LogIn_Panel_Derecho.Controls.Add(Form1_LogIn_TextBox_Contraseña);
             Form1_LogIn_Panel_Derecho.Controls.Add(Form1_LogIn_TextBox_Usuario);
             Form1_LogIn_Panel_Derecho.Dock = DockStyle.Fill;
             Form1_LogIn_Panel_Derecho.Location = new Point(269, 0);
             Form1_LogIn_Panel_Derecho.Name = "Form1_LogIn_Panel_Derecho";
             Form1_LogIn_Panel_Derecho.Size = new Size(531, 400);
             Form1_LogIn_Panel_Derecho.TabIndex = 1;
+            // 
+            // Form1_LogIn_TextBox_Contraseña
+            // 
+            Form1_LogIn_TextBox_Contraseña.BackColor = Color.FromArgb(214, 208, 209);
+            Form1_LogIn_TextBox_Contraseña.BorderStyle = BorderStyle.None;
+            Form1_LogIn_TextBox_Contraseña.Font = new Font("Fira Sans UltraLight", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Form1_LogIn_TextBox_Contraseña.ForeColor = Color.DimGray;
+            Form1_LogIn_TextBox_Contraseña.Location = new Point(89, 225);
+            Form1_LogIn_TextBox_Contraseña.Name = "Form1_LogIn_TextBox_Contraseña";
+            Form1_LogIn_TextBox_Contraseña.Size = new Size(357, 24);
+            Form1_LogIn_TextBox_Contraseña.TabIndex = 5;
+            Form1_LogIn_TextBox_Contraseña.Text = "CONTRASEÑA";
+            Form1_LogIn_TextBox_Contraseña.Enter += Form1_LogIn_TextBox_Contraseña_Enter;
+            Form1_LogIn_TextBox_Contraseña.Leave += Form1_LogIn_TextBox_Contraseña_Leave;
             // 
             // Form1_LogIn_LinkLabell_CerrarApp
             // 
@@ -107,7 +123,7 @@
             Form1_LogIn_LinkLabell_CerrarApp.Location = new Point(495, 0);
             Form1_LogIn_LinkLabell_CerrarApp.Name = "Form1_LogIn_LinkLabell_CerrarApp";
             Form1_LogIn_LinkLabell_CerrarApp.Size = new Size(33, 38);
-            Form1_LogIn_LinkLabell_CerrarApp.TabIndex = 7;
+            Form1_LogIn_LinkLabell_CerrarApp.TabIndex = 1;
             Form1_LogIn_LinkLabell_CerrarApp.TabStop = true;
             Form1_LogIn_LinkLabell_CerrarApp.Text = "x";
             Form1_LogIn_LinkLabell_CerrarApp.LinkClicked += Form1_LogIn_LinkLabell_CerrarApp_LinkClicked;
@@ -121,7 +137,7 @@
             Form1_LogIn_LinkLabell_MinimizarApp.Location = new Point(446, 0);
             Form1_LogIn_LinkLabell_MinimizarApp.Name = "Form1_LogIn_LinkLabell_MinimizarApp";
             Form1_LogIn_LinkLabell_MinimizarApp.Size = new Size(34, 44);
-            Form1_LogIn_LinkLabell_MinimizarApp.TabIndex = 6;
+            Form1_LogIn_LinkLabell_MinimizarApp.TabIndex = 0;
             Form1_LogIn_LinkLabell_MinimizarApp.TabStop = true;
             Form1_LogIn_LinkLabell_MinimizarApp.Text = "-";
             Form1_LogIn_LinkLabell_MinimizarApp.LinkClicked += Form1_LogIn_LinkLabell_MinimizarApp_LinkClicked;
@@ -134,9 +150,10 @@
             Form1_LogIn_LinkLabell_InformarContraseña.Location = new Point(457, 225);
             Form1_LogIn_LinkLabell_InformarContraseña.Name = "Form1_LogIn_LinkLabell_InformarContraseña";
             Form1_LogIn_LinkLabell_InformarContraseña.Size = new Size(23, 27);
-            Form1_LogIn_LinkLabell_InformarContraseña.TabIndex = 4;
+            Form1_LogIn_LinkLabell_InformarContraseña.TabIndex = 6;
             Form1_LogIn_LinkLabell_InformarContraseña.TabStop = true;
             Form1_LogIn_LinkLabell_InformarContraseña.Text = "?";
+            Form1_LogIn_LinkLabell_InformarContraseña.LinkClicked += Form1_LogIn_LinkLabell_InformarContraseña_LinkClicked;
             // 
             // Form1_LogIn_LinkLabell_InformarUsuario
             // 
@@ -146,9 +163,11 @@
             Form1_LogIn_LinkLabell_InformarUsuario.Location = new Point(457, 122);
             Form1_LogIn_LinkLabell_InformarUsuario.Name = "Form1_LogIn_LinkLabell_InformarUsuario";
             Form1_LogIn_LinkLabell_InformarUsuario.Size = new Size(23, 27);
-            Form1_LogIn_LinkLabell_InformarUsuario.TabIndex = 2;
+            Form1_LogIn_LinkLabell_InformarUsuario.TabIndex = 4;
             Form1_LogIn_LinkLabell_InformarUsuario.TabStop = true;
             Form1_LogIn_LinkLabell_InformarUsuario.Text = "?";
+            Form1_LogIn_LinkLabell_InformarUsuario.LinkClicked += Form1_LogIn_LinkLabell_InformarUsuario_LinkClicked;
+            Form1_LogIn_LinkLabell_InformarUsuario.Enter += Form1_LogIn_LinkLabell_InformarUsuario_Enter;
             // 
             // label1
             // 
@@ -186,10 +205,11 @@
             Form1_LogIn_LinkLabell_BorrarCampos.Location = new Point(322, 319);
             Form1_LogIn_LinkLabell_BorrarCampos.Name = "Form1_LogIn_LinkLabell_BorrarCampos";
             Form1_LogIn_LinkLabell_BorrarCampos.Size = new Size(158, 19);
-            Form1_LogIn_LinkLabell_BorrarCampos.TabIndex = 5;
+            Form1_LogIn_LinkLabell_BorrarCampos.TabIndex = 7;
             Form1_LogIn_LinkLabell_BorrarCampos.TabStop = true;
             Form1_LogIn_LinkLabell_BorrarCampos.Text = "Borrar los campos.";
             Form1_LogIn_LinkLabell_BorrarCampos.LinkClicked += Form1_LogIn_LinkLabell_BorrarCampos_LinkClicked;
+            Form1_LogIn_LinkLabell_BorrarCampos.Enter += Form1_LogIn_LinkLabell_BorrarCampos_Enter;
             // 
             // Form1_LogIn_Label_Titulo
             // 
@@ -211,7 +231,7 @@
             Form1_LogIn_Button_Acceder.Location = new Point(48, 354);
             Form1_LogIn_Button_Acceder.Name = "Form1_LogIn_Button_Acceder";
             Form1_LogIn_Button_Acceder.Size = new Size(432, 34);
-            Form1_LogIn_Button_Acceder.TabIndex = 0;
+            Form1_LogIn_Button_Acceder.TabIndex = 8;
             Form1_LogIn_Button_Acceder.Text = "ACCEDER";
             Form1_LogIn_Button_Acceder.UseVisualStyleBackColor = false;
             Form1_LogIn_Button_Acceder.Click += button1_Click;
@@ -254,20 +274,6 @@
             Form1_LogIn_RichTextBox_Usuario_Linea.TabStop = false;
             Form1_LogIn_RichTextBox_Usuario_Linea.Text = "";
             // 
-            // Form1_LogIn_TextBox_Contraseña
-            // 
-            Form1_LogIn_TextBox_Contraseña.BackColor = Color.FromArgb(214, 208, 209);
-            Form1_LogIn_TextBox_Contraseña.BorderStyle = BorderStyle.None;
-            Form1_LogIn_TextBox_Contraseña.Font = new Font("Fira Sans UltraLight", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Form1_LogIn_TextBox_Contraseña.ForeColor = Color.DimGray;
-            Form1_LogIn_TextBox_Contraseña.Location = new Point(89, 225);
-            Form1_LogIn_TextBox_Contraseña.Name = "Form1_LogIn_TextBox_Contraseña";
-            Form1_LogIn_TextBox_Contraseña.Size = new Size(357, 24);
-            Form1_LogIn_TextBox_Contraseña.TabIndex = 3;
-            Form1_LogIn_TextBox_Contraseña.Text = "CONTRASEÑA";
-            Form1_LogIn_TextBox_Contraseña.Enter += Form1_LogIn_TextBox_Contraseña_Enter;
-            Form1_LogIn_TextBox_Contraseña.Leave += Form1_LogIn_TextBox_Contraseña_Leave;
-            // 
             // Form1_LogIn_TextBox_Usuario
             // 
             Form1_LogIn_TextBox_Usuario.BackColor = Color.FromArgb(214, 208, 209);
@@ -277,10 +283,14 @@
             Form1_LogIn_TextBox_Usuario.Location = new Point(89, 122);
             Form1_LogIn_TextBox_Usuario.Name = "Form1_LogIn_TextBox_Usuario";
             Form1_LogIn_TextBox_Usuario.Size = new Size(357, 24);
-            Form1_LogIn_TextBox_Usuario.TabIndex = 1;
+            Form1_LogIn_TextBox_Usuario.TabIndex = 3;
             Form1_LogIn_TextBox_Usuario.Text = "USUARIO";
             Form1_LogIn_TextBox_Usuario.Enter += Form1_LogIn_TextBox_Usuario_Enter;
             Form1_LogIn_TextBox_Usuario.Leave += Form1_LogIn_TextBox_Usuario_Leave;
+            // 
+            // Form1_LogIn_ToolTip_Contexto
+            // 
+            Form1_LogIn_ToolTip_Contexto.Popup += Form1_LogIn_ToolTip_ContextoUsuario_Popup;
             // 
             // Form1_LogIn
             // 
@@ -308,7 +318,6 @@
         private PictureBox Form1_LogIn_PictureBox_HiletLogo;
         private Panel Form1_LogIn_Panel_Derecho;
         private TextBox Form1_LogIn_TextBox_Usuario;
-        private TextBox Form1_LogIn_TextBox_Contraseña;
         private RichTextBox Form1_LogIn_RichTextBox_Usuario_Linea;
         private RichTextBox richTextBox1;
         private RichTextBox richTextBox2;
@@ -322,5 +331,7 @@
         private LinkLabel Form1_LogIn_LinkLabell_InformarContraseña;
         private LinkLabel Form1_LogIn_LinkLabell_MinimizarApp;
         private LinkLabel Form1_LogIn_LinkLabell_CerrarApp;
+        private TextBox Form1_LogIn_TextBox_Contraseña;
+        private ToolTip Form1_LogIn_ToolTip_Contexto;
     }
 }
