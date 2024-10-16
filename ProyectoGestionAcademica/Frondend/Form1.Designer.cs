@@ -38,7 +38,7 @@
             Form1_LogIn_LinkLabell_MinimizarApp = new LinkLabel();
             Form1_LogIn_LinkLabell_InformarContraseña = new LinkLabel();
             Form1_LogIn_LinkLabell_InformarUsuario = new LinkLabel();
-            label1 = new Label();
+            Form1_LogIn_Labell_Intentos = new Label();
             Form1_LogIn_PictureBox_ContraseñaLogo = new PictureBox();
             Form1_LogIn_PictureBox_UsuarioLogo = new PictureBox();
             Form1_LogIn_LinkLabell_BorrarCampos = new LinkLabel();
@@ -84,7 +84,7 @@
             Form1_LogIn_Panel_Derecho.Controls.Add(Form1_LogIn_LinkLabell_MinimizarApp);
             Form1_LogIn_Panel_Derecho.Controls.Add(Form1_LogIn_LinkLabell_InformarContraseña);
             Form1_LogIn_Panel_Derecho.Controls.Add(Form1_LogIn_LinkLabell_InformarUsuario);
-            Form1_LogIn_Panel_Derecho.Controls.Add(label1);
+            Form1_LogIn_Panel_Derecho.Controls.Add(Form1_LogIn_Labell_Intentos);
             Form1_LogIn_Panel_Derecho.Controls.Add(Form1_LogIn_PictureBox_ContraseñaLogo);
             Form1_LogIn_Panel_Derecho.Controls.Add(Form1_LogIn_PictureBox_UsuarioLogo);
             Form1_LogIn_Panel_Derecho.Controls.Add(Form1_LogIn_LinkLabell_BorrarCampos);
@@ -120,7 +120,7 @@
             Form1_LogIn_LinkLabell_CerrarApp.Font = new Font("Fira Sans", 16F, FontStyle.Bold);
             Form1_LogIn_LinkLabell_CerrarApp.LinkBehavior = LinkBehavior.NeverUnderline;
             Form1_LogIn_LinkLabell_CerrarApp.LinkColor = Color.FromArgb(214, 208, 209);
-            Form1_LogIn_LinkLabell_CerrarApp.Location = new Point(495, 0);
+            Form1_LogIn_LinkLabell_CerrarApp.Location = new Point(495, 9);
             Form1_LogIn_LinkLabell_CerrarApp.Name = "Form1_LogIn_LinkLabell_CerrarApp";
             Form1_LogIn_LinkLabell_CerrarApp.Size = new Size(33, 38);
             Form1_LogIn_LinkLabell_CerrarApp.TabIndex = 1;
@@ -134,7 +134,7 @@
             Form1_LogIn_LinkLabell_MinimizarApp.Font = new Font("Fira Sans", 18F, FontStyle.Bold);
             Form1_LogIn_LinkLabell_MinimizarApp.LinkBehavior = LinkBehavior.NeverUnderline;
             Form1_LogIn_LinkLabell_MinimizarApp.LinkColor = Color.FromArgb(214, 208, 209);
-            Form1_LogIn_LinkLabell_MinimizarApp.Location = new Point(446, 0);
+            Form1_LogIn_LinkLabell_MinimizarApp.Location = new Point(455, 9);
             Form1_LogIn_LinkLabell_MinimizarApp.Name = "Form1_LogIn_LinkLabell_MinimizarApp";
             Form1_LogIn_LinkLabell_MinimizarApp.Size = new Size(34, 44);
             Form1_LogIn_LinkLabell_MinimizarApp.TabIndex = 0;
@@ -168,16 +168,17 @@
             Form1_LogIn_LinkLabell_InformarUsuario.Text = "?";
             Form1_LogIn_LinkLabell_InformarUsuario.LinkClicked += Form1_LogIn_LinkLabell_InformarUsuario_LinkClicked;
             Form1_LogIn_LinkLabell_InformarUsuario.Enter += Form1_LogIn_LinkLabell_InformarUsuario_Enter;
+            Form1_LogIn_LinkLabell_InformarUsuario.Leave += Form1_LogIn_LinkLabell_InformarUsuario_Leave;
             // 
-            // label1
+            // Form1_LogIn_Labell_Intentos
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Fira Sans UltraLight", 8F);
-            label1.Location = new Point(48, 319);
-            label1.Name = "label1";
-            label1.Size = new Size(191, 19);
-            label1.TabIndex = 11;
-            label1.Text = "Intentos disponibles: ...";
+            Form1_LogIn_Labell_Intentos.AutoSize = true;
+            Form1_LogIn_Labell_Intentos.Font = new Font("Fira Sans UltraLight", 8F);
+            Form1_LogIn_Labell_Intentos.Location = new Point(48, 319);
+            Form1_LogIn_Labell_Intentos.Name = "Form1_LogIn_Labell_Intentos";
+            Form1_LogIn_Labell_Intentos.Size = new Size(191, 19);
+            Form1_LogIn_Labell_Intentos.TabIndex = 11;
+            Form1_LogIn_Labell_Intentos.Text = "Intentos disponibles: ...";
             // 
             // Form1_LogIn_PictureBox_ContraseñaLogo
             // 
@@ -252,7 +253,6 @@
             // 
             richTextBox1.BackColor = Color.FromArgb(214, 208, 209);
             richTextBox1.BorderStyle = BorderStyle.None;
-            richTextBox1.Enabled = false;
             richTextBox1.Location = new Point(89, 255);
             richTextBox1.Name = "richTextBox1";
             richTextBox1.ReadOnly = true;
@@ -265,7 +265,6 @@
             // 
             Form1_LogIn_RichTextBox_Usuario_Linea.BackColor = Color.FromArgb(214, 208, 209);
             Form1_LogIn_RichTextBox_Usuario_Linea.BorderStyle = BorderStyle.None;
-            Form1_LogIn_RichTextBox_Usuario_Linea.Enabled = false;
             Form1_LogIn_RichTextBox_Usuario_Linea.Location = new Point(89, 152);
             Form1_LogIn_RichTextBox_Usuario_Linea.Name = "Form1_LogIn_RichTextBox_Usuario_Linea";
             Form1_LogIn_RichTextBox_Usuario_Linea.ReadOnly = true;
@@ -327,7 +326,7 @@
         private PictureBox Form1_LogIn_PictureBox_ContraseñaLogo;
         private PictureBox Form1_LogIn_PictureBox_UsuarioLogo;
         private LinkLabel Form1_LogIn_LinkLabell_InformarUsuario;
-        private Label label1;
+        private Label Form1_LogIn_Labell_Intentos;
         private LinkLabel Form1_LogIn_LinkLabell_InformarContraseña;
         private LinkLabel Form1_LogIn_LinkLabell_MinimizarApp;
         private LinkLabel Form1_LogIn_LinkLabell_CerrarApp;
