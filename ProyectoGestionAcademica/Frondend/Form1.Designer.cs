@@ -109,7 +109,7 @@
             Form1_LogIn_TextBox_Contraseña.Location = new Point(89, 225);
             Form1_LogIn_TextBox_Contraseña.Name = "Form1_LogIn_TextBox_Contraseña";
             Form1_LogIn_TextBox_Contraseña.Size = new Size(357, 24);
-            Form1_LogIn_TextBox_Contraseña.TabIndex = 5;
+            Form1_LogIn_TextBox_Contraseña.TabIndex = 3;
             Form1_LogIn_TextBox_Contraseña.Text = "CONTRASEÑA";
             Form1_LogIn_TextBox_Contraseña.Enter += Form1_LogIn_TextBox_Contraseña_Enter;
             Form1_LogIn_TextBox_Contraseña.Leave += Form1_LogIn_TextBox_Contraseña_Leave;
@@ -137,7 +137,7 @@
             Form1_LogIn_LinkLabell_MinimizarApp.Location = new Point(455, 9);
             Form1_LogIn_LinkLabell_MinimizarApp.Name = "Form1_LogIn_LinkLabell_MinimizarApp";
             Form1_LogIn_LinkLabell_MinimizarApp.Size = new Size(34, 44);
-            Form1_LogIn_LinkLabell_MinimizarApp.TabIndex = 0;
+            Form1_LogIn_LinkLabell_MinimizarApp.TabIndex = 6;
             Form1_LogIn_LinkLabell_MinimizarApp.TabStop = true;
             Form1_LogIn_LinkLabell_MinimizarApp.Text = "-";
             Form1_LogIn_LinkLabell_MinimizarApp.LinkClicked += Form1_LogIn_LinkLabell_MinimizarApp_LinkClicked;
@@ -154,6 +154,7 @@
             Form1_LogIn_LinkLabell_InformarContraseña.TabStop = true;
             Form1_LogIn_LinkLabell_InformarContraseña.Text = "?";
             Form1_LogIn_LinkLabell_InformarContraseña.LinkClicked += Form1_LogIn_LinkLabell_InformarContraseña_LinkClicked;
+            Form1_LogIn_LinkLabell_InformarContraseña.Enter += Form1_LogIn_LinkLabell_InformarContraseña_Enter;
             // 
             // Form1_LogIn_LinkLabell_InformarUsuario
             // 
@@ -206,7 +207,7 @@
             Form1_LogIn_LinkLabell_BorrarCampos.Location = new Point(322, 319);
             Form1_LogIn_LinkLabell_BorrarCampos.Name = "Form1_LogIn_LinkLabell_BorrarCampos";
             Form1_LogIn_LinkLabell_BorrarCampos.Size = new Size(158, 19);
-            Form1_LogIn_LinkLabell_BorrarCampos.TabIndex = 7;
+            Form1_LogIn_LinkLabell_BorrarCampos.TabIndex = 4;
             Form1_LogIn_LinkLabell_BorrarCampos.TabStop = true;
             Form1_LogIn_LinkLabell_BorrarCampos.Text = "Borrar los campos.";
             Form1_LogIn_LinkLabell_BorrarCampos.LinkClicked += Form1_LogIn_LinkLabell_BorrarCampos_LinkClicked;
@@ -232,7 +233,7 @@
             Form1_LogIn_Button_Acceder.Location = new Point(48, 354);
             Form1_LogIn_Button_Acceder.Name = "Form1_LogIn_Button_Acceder";
             Form1_LogIn_Button_Acceder.Size = new Size(432, 34);
-            Form1_LogIn_Button_Acceder.TabIndex = 8;
+            Form1_LogIn_Button_Acceder.TabIndex = 5;
             Form1_LogIn_Button_Acceder.Text = "ACCEDER";
             Form1_LogIn_Button_Acceder.UseVisualStyleBackColor = false;
             Form1_LogIn_Button_Acceder.Click += button1_Click;
@@ -282,7 +283,7 @@
             Form1_LogIn_TextBox_Usuario.Location = new Point(89, 122);
             Form1_LogIn_TextBox_Usuario.Name = "Form1_LogIn_TextBox_Usuario";
             Form1_LogIn_TextBox_Usuario.Size = new Size(357, 24);
-            Form1_LogIn_TextBox_Usuario.TabIndex = 3;
+            Form1_LogIn_TextBox_Usuario.TabIndex = 2;
             Form1_LogIn_TextBox_Usuario.Text = "USUARIO";
             Form1_LogIn_TextBox_Usuario.Enter += Form1_LogIn_TextBox_Usuario_Enter;
             Form1_LogIn_TextBox_Usuario.Leave += Form1_LogIn_TextBox_Usuario_Leave;

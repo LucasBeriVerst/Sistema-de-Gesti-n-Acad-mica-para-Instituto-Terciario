@@ -7,14 +7,16 @@ namespace ProyectoGestionAcademica
         {
             InitializeComponent();
             Form1_LogIn_Labell_Intentos.Text = "Intentos disponibles : " + intentetos;
+            Form1_LogIn_LinkLabell_InformarUsuario.TabStop = false;
+            Form1_LogIn_LinkLabell_InformarContraseña.TabStop = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Form1_LogIn_TextBox_Usuario.Text == "admin" && Form1_LogIn_TextBox_Contraseña.Text == "admin") 
+            if (Form1_LogIn_TextBox_Usuario.Text == "admin" && Form1_LogIn_TextBox_Contraseña.Text == "admin")
             {
-                MessageBox.Show("Entraste como admin...","Exito",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            } 
+                MessageBox.Show("Entraste como admin...", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             else
             {
                 intentetos = intentetos - 1;
@@ -23,7 +25,7 @@ namespace ProyectoGestionAcademica
                     MessageBox.Show("El usuario o la contraseña son incorectos...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     Form1_LogIn_Labell_Intentos.Text = "Intentos disponibles : " + intentetos;
                 }
-                if (intentetos == 1) 
+                if (intentetos == 1)
                 {
                     MessageBox.Show("El usuario o la contraseña son incorectos. Un fallo mas y el sistema se bloqueara...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     Form1_LogIn_Labell_Intentos.Text = "Intentos disponibles : " + intentetos;
@@ -77,7 +79,7 @@ namespace ProyectoGestionAcademica
                 Form1_LogIn_TextBox_Contraseña.Text = "CONTRASEÑA";
                 Form1_LogIn_TextBox_Contraseña.ForeColor = Color.DimGray;
                 Form1_LogIn_TextBox_Contraseña.UseSystemPasswordChar = false;
-                Form1_LogIn_LinkLabell_InformarContraseña.Focus();
+                Form1_LogIn_LinkLabell_BorrarCampos.Focus();
             }
         }
 
@@ -132,6 +134,11 @@ namespace ProyectoGestionAcademica
         private void Form1_LogIn_LinkLabell_InformarUsuario_Leave(object sender, EventArgs e)
         {
             Form1_LogIn_ToolTip_Contexto.SetToolTip(Form1_LogIn_LinkLabell_InformarUsuario, "La contraseña suele ser el DNI del usuario");
+        }
+
+        private void Form1_LogIn_LinkLabell_InformarContraseña_Enter(object sender, EventArgs e)
+        {
+            Form1_LogIn_ToolTip_Contexto.SetToolTip(Form1_LogIn_LinkLabell_InformarContraseña, "- La contraseña tiene como maximo 12 caracteres.\n- Si no recuerda su contraseña, comuniquese con algun personal administrativo."); 
         }
     }
 }
