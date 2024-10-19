@@ -1,8 +1,11 @@
+using ProyectoGestionAcademica.Frondend;
+
 namespace ProyectoGestionAcademica
 {
     public partial class Form1_LogIn : Form
     {
         private int intentetos = 3;
+        Form2_DashboardAlumnos Form2 = new Form2_DashboardAlumnos();
         public Form1_LogIn()
         {
             InitializeComponent();
@@ -16,6 +19,7 @@ namespace ProyectoGestionAcademica
             if (Form1_LogIn_TextBox_Usuario.Text == "admin" && Form1_LogIn_TextBox_Contraseña.Text == "admin")
             {
                 MessageBox.Show("Entraste como admin...", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Form2.Show();
             }
             else
             {
