@@ -20,6 +20,7 @@ namespace ProyectoGestionAcademica
             {
                 MessageBox.Show("Entraste como admin...", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Form2.Show();
+                this.Hide();
             }
             else
             {

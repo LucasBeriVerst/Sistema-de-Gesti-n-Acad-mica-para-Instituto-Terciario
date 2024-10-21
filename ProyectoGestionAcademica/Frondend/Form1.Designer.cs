@@ -69,10 +69,12 @@
             // Form1_LogIn_PictureBox_HiletLogo
             // 
             Form1_LogIn_PictureBox_HiletLogo.BackgroundImageLayout = ImageLayout.None;
+            Form1_LogIn_PictureBox_HiletLogo.Dock = DockStyle.Fill;
             Form1_LogIn_PictureBox_HiletLogo.Image = Properties.Resources.Captura_de_pantalla_2024_10_13_2230491;
-            Form1_LogIn_PictureBox_HiletLogo.Location = new Point(35, 150);
+            Form1_LogIn_PictureBox_HiletLogo.Location = new Point(0, 0);
             Form1_LogIn_PictureBox_HiletLogo.Name = "Form1_LogIn_PictureBox_HiletLogo";
-            Form1_LogIn_PictureBox_HiletLogo.Size = new Size(198, 99);
+            Form1_LogIn_PictureBox_HiletLogo.Size = new Size(269, 400);
+            Form1_LogIn_PictureBox_HiletLogo.SizeMode = PictureBoxSizeMode.CenterImage;
             Form1_LogIn_PictureBox_HiletLogo.TabIndex = 0;
             Form1_LogIn_PictureBox_HiletLogo.TabStop = false;
             // 
