@@ -177,7 +177,7 @@
             // 
             Form1_LogIn_Labell_Intentos.AutoSize = true;
             Form1_LogIn_Labell_Intentos.Font = new Font("Fira Sans UltraLight", 8F);
-            Form1_LogIn_Labell_Intentos.Location = new Point(48, 319);
+            Form1_LogIn_Labell_Intentos.Location = new Point(48, 362);
             Form1_LogIn_Labell_Intentos.Name = "Form1_LogIn_Labell_Intentos";
             Form1_LogIn_Labell_Intentos.Size = new Size(191, 19);
             Form1_LogIn_Labell_Intentos.TabIndex = 11;
@@ -206,10 +206,10 @@
             Form1_LogIn_LinkLabell_BorrarCampos.AutoSize = true;
             Form1_LogIn_LinkLabell_BorrarCampos.Font = new Font("Fira Sans UltraLight", 8F);
             Form1_LogIn_LinkLabell_BorrarCampos.LinkColor = Color.FromArgb(36, 60, 100);
-            Form1_LogIn_LinkLabell_BorrarCampos.Location = new Point(322, 319);
+            Form1_LogIn_LinkLabell_BorrarCampos.Location = new Point(322, 362);
             Form1_LogIn_LinkLabell_BorrarCampos.Name = "Form1_LogIn_LinkLabell_BorrarCampos";
             Form1_LogIn_LinkLabell_BorrarCampos.Size = new Size(158, 19);
-            Form1_LogIn_LinkLabell_BorrarCampos.TabIndex = 4;
+            Form1_LogIn_LinkLabell_BorrarCampos.TabIndex = 5;
             Form1_LogIn_LinkLabell_BorrarCampos.TabStop = true;
             Form1_LogIn_LinkLabell_BorrarCampos.Text = "Borrar los campos.";
             Form1_LogIn_LinkLabell_BorrarCampos.LinkClicked += Form1_LogIn_LinkLabell_BorrarCampos_LinkClicked;
@@ -232,10 +232,10 @@
             Form1_LogIn_Button_Acceder.FlatAppearance.MouseDownBackColor = Color.FromArgb(224, 224, 224);
             Form1_LogIn_Button_Acceder.FlatStyle = FlatStyle.Flat;
             Form1_LogIn_Button_Acceder.Font = new Font("Fira Sans UltraLight", 10F);
-            Form1_LogIn_Button_Acceder.Location = new Point(48, 354);
+            Form1_LogIn_Button_Acceder.Location = new Point(48, 310);
             Form1_LogIn_Button_Acceder.Name = "Form1_LogIn_Button_Acceder";
             Form1_LogIn_Button_Acceder.Size = new Size(432, 34);
-            Form1_LogIn_Button_Acceder.TabIndex = 5;
+            Form1_LogIn_Button_Acceder.TabIndex = 4;
             Form1_LogIn_Button_Acceder.Text = "ACCEDER";
             Form1_LogIn_Button_Acceder.UseVisualStyleBackColor = false;
             Form1_LogIn_Button_Acceder.Click += button1_Click;

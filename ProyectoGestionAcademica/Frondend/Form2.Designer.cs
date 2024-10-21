@@ -29,16 +29,17 @@
         private void InitializeComponent()
         {
             Form2_DashboardGeneral_Panel_Isquierdo = new Panel();
-            Form2_DashboardGeneral_Panel_Derecho = new Panel();
             Form2_DashboardGeneral_Panel_Isquierdo_Imagen = new Panel();
-            Form2_DashboardGeneral_Panel_Derecho_Titulo = new Panel();
             Form2_DashboardGeneral_PictureBox_Hilet = new PictureBox();
+            Form2_DashboardGeneral_Panel_Derecho = new Panel();
+            Form2_DashboardGeneral_Panel_Derecho_Titulo = new Panel();
             Form2_DashboardGeneral_Labell_Titulo = new Label();
+            Form2_DashboardGeneral_RichTextBox_SubrayadoTitulo = new RichTextBox();
             Form2_DashboardGeneral_Panel_Isquierdo.SuspendLayout();
-            Form2_DashboardGeneral_Panel_Derecho.SuspendLayout();
             Form2_DashboardGeneral_Panel_Isquierdo_Imagen.SuspendLayout();
-            Form2_DashboardGeneral_Panel_Derecho_Titulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Form2_DashboardGeneral_PictureBox_Hilet).BeginInit();
+            Form2_DashboardGeneral_Panel_Derecho.SuspendLayout();
+            Form2_DashboardGeneral_Panel_Derecho_Titulo.SuspendLayout();
             SuspendLayout();
             // 
             // Form2_DashboardGeneral_Panel_Isquierdo
@@ -51,16 +52,6 @@
             Form2_DashboardGeneral_Panel_Isquierdo.Size = new Size(300, 900);
             Form2_DashboardGeneral_Panel_Isquierdo.TabIndex = 0;
             // 
-            // Form2_DashboardGeneral_Panel_Derecho
-            // 
-            Form2_DashboardGeneral_Panel_Derecho.BackColor = Color.FromArgb(177, 173, 189);
-            Form2_DashboardGeneral_Panel_Derecho.Controls.Add(Form2_DashboardGeneral_Panel_Derecho_Titulo);
-            Form2_DashboardGeneral_Panel_Derecho.Dock = DockStyle.Fill;
-            Form2_DashboardGeneral_Panel_Derecho.Location = new Point(300, 0);
-            Form2_DashboardGeneral_Panel_Derecho.Name = "Form2_DashboardGeneral_Panel_Derecho";
-            Form2_DashboardGeneral_Panel_Derecho.Size = new Size(1300, 900);
-            Form2_DashboardGeneral_Panel_Derecho.TabIndex = 1;
-            // 
             // Form2_DashboardGeneral_Panel_Isquierdo_Imagen
             // 
             Form2_DashboardGeneral_Panel_Isquierdo_Imagen.Controls.Add(Form2_DashboardGeneral_PictureBox_Hilet);
@@ -69,15 +60,6 @@
             Form2_DashboardGeneral_Panel_Isquierdo_Imagen.Name = "Form2_DashboardGeneral_Panel_Isquierdo_Imagen";
             Form2_DashboardGeneral_Panel_Isquierdo_Imagen.Size = new Size(300, 104);
             Form2_DashboardGeneral_Panel_Isquierdo_Imagen.TabIndex = 0;
-            // 
-            // Form2_DashboardGeneral_Panel_Derecho_Titulo
-            // 
-            Form2_DashboardGeneral_Panel_Derecho_Titulo.Controls.Add(Form2_DashboardGeneral_Labell_Titulo);
-            Form2_DashboardGeneral_Panel_Derecho_Titulo.Dock = DockStyle.Top;
-            Form2_DashboardGeneral_Panel_Derecho_Titulo.Location = new Point(0, 0);
-            Form2_DashboardGeneral_Panel_Derecho_Titulo.Name = "Form2_DashboardGeneral_Panel_Derecho_Titulo";
-            Form2_DashboardGeneral_Panel_Derecho_Titulo.Size = new Size(1300, 104);
-            Form2_DashboardGeneral_Panel_Derecho_Titulo.TabIndex = 0;
             // 
             // Form2_DashboardGeneral_PictureBox_Hilet
             // 
@@ -91,6 +73,26 @@
             Form2_DashboardGeneral_PictureBox_Hilet.TabIndex = 0;
             Form2_DashboardGeneral_PictureBox_Hilet.TabStop = false;
             // 
+            // Form2_DashboardGeneral_Panel_Derecho
+            // 
+            Form2_DashboardGeneral_Panel_Derecho.BackColor = Color.FromArgb(177, 173, 189);
+            Form2_DashboardGeneral_Panel_Derecho.Controls.Add(Form2_DashboardGeneral_Panel_Derecho_Titulo);
+            Form2_DashboardGeneral_Panel_Derecho.Dock = DockStyle.Fill;
+            Form2_DashboardGeneral_Panel_Derecho.Location = new Point(300, 0);
+            Form2_DashboardGeneral_Panel_Derecho.Name = "Form2_DashboardGeneral_Panel_Derecho";
+            Form2_DashboardGeneral_Panel_Derecho.Size = new Size(1300, 900);
+            Form2_DashboardGeneral_Panel_Derecho.TabIndex = 1;
+            // 
+            // Form2_DashboardGeneral_Panel_Derecho_Titulo
+            // 
+            Form2_DashboardGeneral_Panel_Derecho_Titulo.Controls.Add(Form2_DashboardGeneral_RichTextBox_SubrayadoTitulo);
+            Form2_DashboardGeneral_Panel_Derecho_Titulo.Controls.Add(Form2_DashboardGeneral_Labell_Titulo);
+            Form2_DashboardGeneral_Panel_Derecho_Titulo.Dock = DockStyle.Top;
+            Form2_DashboardGeneral_Panel_Derecho_Titulo.Location = new Point(0, 0);
+            Form2_DashboardGeneral_Panel_Derecho_Titulo.Name = "Form2_DashboardGeneral_Panel_Derecho_Titulo";
+            Form2_DashboardGeneral_Panel_Derecho_Titulo.Size = new Size(1300, 104);
+            Form2_DashboardGeneral_Panel_Derecho_Titulo.TabIndex = 0;
+            // 
             // Form2_DashboardGeneral_Labell_Titulo
             // 
             Form2_DashboardGeneral_Labell_Titulo.AutoSize = true;
@@ -100,6 +102,15 @@
             Form2_DashboardGeneral_Labell_Titulo.Size = new Size(324, 48);
             Form2_DashboardGeneral_Labell_Titulo.TabIndex = 0;
             Form2_DashboardGeneral_Labell_Titulo.Text = "MENU PRINCIPAL";
+            // 
+            // Form2_DashboardGeneral_RichTextBox_SubrayadoTitulo
+            // 
+            Form2_DashboardGeneral_RichTextBox_SubrayadoTitulo.BackColor = Color.Black;
+            Form2_DashboardGeneral_RichTextBox_SubrayadoTitulo.Location = new Point(100, 75);
+            Form2_DashboardGeneral_RichTextBox_SubrayadoTitulo.Name = "Form2_DashboardGeneral_RichTextBox_SubrayadoTitulo";
+            Form2_DashboardGeneral_RichTextBox_SubrayadoTitulo.Size = new Size(1100, 2);
+            Form2_DashboardGeneral_RichTextBox_SubrayadoTitulo.TabIndex = 1;
+            Form2_DashboardGeneral_RichTextBox_SubrayadoTitulo.Text = "";
             // 
             // Form2_DashboardAlumnos
             // 
@@ -114,11 +125,11 @@
             Text = "Form2";
             Load += Form2_DashboardAlumnos_Load;
             Form2_DashboardGeneral_Panel_Isquierdo.ResumeLayout(false);
-            Form2_DashboardGeneral_Panel_Derecho.ResumeLayout(false);
             Form2_DashboardGeneral_Panel_Isquierdo_Imagen.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)Form2_DashboardGeneral_PictureBox_Hilet).EndInit();
+            Form2_DashboardGeneral_Panel_Derecho.ResumeLayout(false);
             Form2_DashboardGeneral_Panel_Derecho_Titulo.ResumeLayout(false);
             Form2_DashboardGeneral_Panel_Derecho_Titulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)Form2_DashboardGeneral_PictureBox_Hilet).EndInit();
             ResumeLayout(false);
         }
 
@@ -130,5 +141,6 @@
         private PictureBox Form2_DashboardGeneral_PictureBox_Hilet;
         private Panel Form2_DashboardGeneral_Panel_Derecho_Titulo;
         private Label Form2_DashboardGeneral_Labell_Titulo;
+        private RichTextBox Form2_DashboardGeneral_RichTextBox_SubrayadoTitulo;
     }
 }
