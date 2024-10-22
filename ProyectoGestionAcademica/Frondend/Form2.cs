@@ -40,5 +40,71 @@ namespace ProyectoGestionAcademica.Frondend
         {
 
         }
+
+        private void Form2_DashboardGeneral_Button_Alumnos_Click(object sender, EventArgs e)
+        {
+            if (Form2_DashboardGeneral_Panel_Isquierdo_SubMenuAlumnos.Visible == true)
+            {
+                Form2_DashboardGeneral_Panel_Isquierdo_SubMenuAlumnos.Visible = false;
+            }
+            else
+            {
+                Form2_DashboardGeneral_Panel_Isquierdo_SubMenuAlumnos.Visible = true;
+                Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias.Visible = false;
+                Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Visible = false;
+                Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.Visible = false;
+            }
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Form2_DashboardGeneral_Button_Carreras_Click(object sender, EventArgs e)
+        {
+            if (Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Visible == true)
+            {
+                Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Visible = false;
+            }
+            else
+            {
+                Form2_DashboardGeneral_Panel_Isquierdo_SubMenuAlumnos.Visible = false;
+                Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias.Visible = false;
+                Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Visible = true;
+                Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.Visible = false;
+            }
+        }
+
+        private void Form2_DashboardGeneral_Button_Materias_Click(object sender, EventArgs e)
+        {
+            if (Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias.Visible == true)
+            {
+                Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias.Visible = false;
+            }
+            else
+            {
+                Form2_DashboardGeneral_Panel_Isquierdo_SubMenuAlumnos.Visible = false;
+                Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias.Visible = true;
+                Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Visible = false;
+                Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.Visible = false;
+            }
+        }
+
+        private void Form2_DashboardGeneral_Button_Examenes_Click(object sender, EventArgs e)
+        {
+            if (Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.Visible == true)
+            {
+                Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.Visible = false;
+            }
+            else
+            {
+                Form2_DashboardGeneral_Panel_Isquierdo_SubMenuAlumnos.Visible = false;
+                Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias.Visible = false;
+                Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Visible = false;
+                Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.Visible = true;
+            }
+        }
     }
 }
