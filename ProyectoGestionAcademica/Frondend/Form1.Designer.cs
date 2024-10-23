@@ -170,7 +170,7 @@
             Form1_LogIn_LinkLabell_InformarUsuario.TabStop = true;
             Form1_LogIn_LinkLabell_InformarUsuario.Text = "?";
             Form1_LogIn_LinkLabell_InformarUsuario.LinkClicked += Form1_LogIn_LinkLabell_InformarUsuario_LinkClicked;
-            Form1_LogIn_LinkLabell_InformarUsuario.Enter += Form1_LogIn_LinkLabell_InformarUsuario_Enter;
+
             Form1_LogIn_LinkLabell_InformarUsuario.Leave += Form1_LogIn_LinkLabell_InformarUsuario_Leave;
             // 
             // Form1_LogIn_Labell_Intentos

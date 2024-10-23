@@ -115,7 +115,7 @@ namespace ProyectoGestionAcademica
         {
 
         }
-
+    
         private void Form1_LogIn_LinkLabell_InformarUsuario_Enter(object sender, EventArgs e)
         {
             Form1_LogIn_ToolTip_Contexto.SetToolTip(Form1_LogIn_LinkLabell_InformarUsuario, "La contraseña suele ser el DNI del usuario");
