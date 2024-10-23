@@ -65,12 +65,12 @@
             Form2_DashboardGeneral_Panel_Isquierdo_Imagen = new Panel();
             Form2_DashboardGeneral_PictureBox_Hilet = new PictureBox();
             Form2_DashboardGeneral_Panel_Derecho = new Panel();
+            Form2_DashboardGeneral_Panel_Derecho_Principal = new Panel();
             Form2_DashboardGeneral_Panel_Derecho_Titulo = new Panel();
             Form2_DashboardGeneral_LinkLabell_CerrarApp = new LinkLabel();
             Form2_DashboardGeneral_LinkLabell_MinimizarApp = new LinkLabel();
             Form2_DashboardGeneral_RichTextBox_SubrayadoTitulo = new RichTextBox();
             Form2_DashboardGeneral_Labell_Titulo = new Label();
-            Form2_DashboardGeneral_Panel_Derecho_Principal = new Panel();
             Form2_DashboardGeneral_Panel_Isquierdo.SuspendLayout();
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.SuspendLayout();
             panel8.SuspendLayout();
@@ -128,9 +128,9 @@
             panel8.Controls.Add(button18);
             panel8.Controls.Add(button19);
             panel8.Dock = DockStyle.Right;
-            panel8.Location = new Point(20, 0);
+            panel8.Location = new Point(3, 0);
             panel8.Name = "panel8";
-            panel8.Size = new Size(280, 149);
+            panel8.Size = new Size(297, 149);
             panel8.TabIndex = 0;
             // 
             // button16
@@ -143,7 +143,7 @@
             button16.ForeColor = SystemColors.ScrollBar;
             button16.Location = new Point(0, 108);
             button16.Name = "button16";
-            button16.Size = new Size(280, 36);
+            button16.Size = new Size(297, 36);
             button16.TabIndex = 6;
             button16.Text = "ASIGNAR";
             button16.TextAlign = ContentAlignment.MiddleRight;
@@ -159,7 +159,7 @@
             button17.ForeColor = SystemColors.ScrollBar;
             button17.Location = new Point(0, 72);
             button17.Name = "button17";
-            button17.Size = new Size(280, 36);
+            button17.Size = new Size(297, 36);
             button17.TabIndex = 5;
             button17.Text = "BORRAR";
             button17.TextAlign = ContentAlignment.MiddleRight;
@@ -175,7 +175,7 @@
             button18.ForeColor = SystemColors.ScrollBar;
             button18.Location = new Point(0, 36);
             button18.Name = "button18";
-            button18.Size = new Size(280, 36);
+            button18.Size = new Size(297, 36);
             button18.TabIndex = 4;
             button18.Text = "EDITAR";
             button18.TextAlign = ContentAlignment.MiddleRight;
@@ -191,7 +191,7 @@
             button19.ForeColor = SystemColors.ScrollBar;
             button19.Location = new Point(0, 0);
             button19.Name = "button19";
-            button19.Size = new Size(280, 36);
+            button19.Size = new Size(297, 36);
             button19.TabIndex = 3;
             button19.Text = "AGREGAR";
             button19.TextAlign = ContentAlignment.MiddleRight;
@@ -268,9 +268,9 @@
             panel6.Controls.Add(button13);
             panel6.Controls.Add(button14);
             panel6.Dock = DockStyle.Right;
-            panel6.Location = new Point(20, 0);
+            panel6.Location = new Point(3, 0);
             panel6.Name = "panel6";
-            panel6.Size = new Size(280, 149);
+            panel6.Size = new Size(297, 149);
             panel6.TabIndex = 0;
             // 
             // button11
@@ -283,7 +283,7 @@
             button11.ForeColor = SystemColors.ScrollBar;
             button11.Location = new Point(0, 108);
             button11.Name = "button11";
-            button11.Size = new Size(280, 36);
+            button11.Size = new Size(297, 36);
             button11.TabIndex = 6;
             button11.Text = "ASIGNAR";
             button11.TextAlign = ContentAlignment.MiddleRight;
@@ -299,7 +299,7 @@
             button12.ForeColor = SystemColors.ScrollBar;
             button12.Location = new Point(0, 72);
             button12.Name = "button12";
-            button12.Size = new Size(280, 36);
+            button12.Size = new Size(297, 36);
             button12.TabIndex = 5;
             button12.Text = "BORRAR";
             button12.TextAlign = ContentAlignment.MiddleRight;
@@ -315,7 +315,7 @@
             button13.ForeColor = SystemColors.ScrollBar;
             button13.Location = new Point(0, 36);
             button13.Name = "button13";
-            button13.Size = new Size(280, 36);
+            button13.Size = new Size(297, 36);
             button13.TabIndex = 4;
             button13.Text = "EDITAR";
             button13.TextAlign = ContentAlignment.MiddleRight;
@@ -331,7 +331,7 @@
             button14.ForeColor = SystemColors.ScrollBar;
             button14.Location = new Point(0, 0);
             button14.Name = "button14";
-            button14.Size = new Size(280, 36);
+            button14.Size = new Size(297, 36);
             button14.TabIndex = 3;
             button14.Text = "AGREGAR";
             button14.TextAlign = ContentAlignment.MiddleRight;
@@ -372,9 +372,9 @@
             panel4.Controls.Add(button8);
             panel4.Controls.Add(button9);
             panel4.Dock = DockStyle.Right;
-            panel4.Location = new Point(20, 0);
+            panel4.Location = new Point(3, 0);
             panel4.Name = "panel4";
-            panel4.Size = new Size(280, 149);
+            panel4.Size = new Size(297, 149);
             panel4.TabIndex = 0;
             // 
             // button6
@@ -387,7 +387,7 @@
             button6.ForeColor = SystemColors.ScrollBar;
             button6.Location = new Point(0, 108);
             button6.Name = "button6";
-            button6.Size = new Size(280, 36);
+            button6.Size = new Size(297, 36);
             button6.TabIndex = 6;
             button6.Text = "DEFINIR CURSADA";
             button6.TextAlign = ContentAlignment.MiddleRight;
@@ -403,7 +403,7 @@
             button7.ForeColor = SystemColors.ScrollBar;
             button7.Location = new Point(0, 72);
             button7.Name = "button7";
-            button7.Size = new Size(280, 36);
+            button7.Size = new Size(297, 36);
             button7.TabIndex = 5;
             button7.Text = "BORRAR";
             button7.TextAlign = ContentAlignment.MiddleRight;
@@ -419,7 +419,7 @@
             button8.ForeColor = SystemColors.ScrollBar;
             button8.Location = new Point(0, 36);
             button8.Name = "button8";
-            button8.Size = new Size(280, 36);
+            button8.Size = new Size(297, 36);
             button8.TabIndex = 4;
             button8.Text = "EDITAR";
             button8.TextAlign = ContentAlignment.MiddleRight;
@@ -435,7 +435,7 @@
             button9.ForeColor = SystemColors.ScrollBar;
             button9.Location = new Point(0, 0);
             button9.Name = "button9";
-            button9.Size = new Size(280, 36);
+            button9.Size = new Size(297, 36);
             button9.TabIndex = 3;
             button9.Text = "AGREGAR";
             button9.TextAlign = ContentAlignment.MiddleRight;
@@ -476,9 +476,9 @@
             panel2.Controls.Add(button2);
             panel2.Controls.Add(button1);
             panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(20, 0);
+            panel2.Location = new Point(3, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(280, 149);
+            panel2.Size = new Size(297, 149);
             panel2.TabIndex = 0;
             // 
             // button4
@@ -491,7 +491,7 @@
             button4.ForeColor = SystemColors.ScrollBar;
             button4.Location = new Point(0, 108);
             button4.Name = "button4";
-            button4.Size = new Size(280, 36);
+            button4.Size = new Size(297, 36);
             button4.TabIndex = 6;
             button4.Text = "ASIGNAR";
             button4.TextAlign = ContentAlignment.MiddleRight;
@@ -507,7 +507,7 @@
             button3.ForeColor = SystemColors.ScrollBar;
             button3.Location = new Point(0, 72);
             button3.Name = "button3";
-            button3.Size = new Size(280, 36);
+            button3.Size = new Size(297, 36);
             button3.TabIndex = 5;
             button3.Text = "BORRAR";
             button3.TextAlign = ContentAlignment.MiddleRight;
@@ -523,7 +523,7 @@
             button2.ForeColor = SystemColors.ScrollBar;
             button2.Location = new Point(0, 36);
             button2.Name = "button2";
-            button2.Size = new Size(280, 36);
+            button2.Size = new Size(297, 36);
             button2.TabIndex = 4;
             button2.Text = "EDITAR";
             button2.TextAlign = ContentAlignment.MiddleRight;
@@ -539,7 +539,7 @@
             button1.ForeColor = SystemColors.ScrollBar;
             button1.Location = new Point(0, 0);
             button1.Name = "button1";
-            button1.Size = new Size(280, 36);
+            button1.Size = new Size(297, 36);
             button1.TabIndex = 3;
             button1.Text = "AGREGAR";
             button1.TextAlign = ContentAlignment.MiddleRight;
@@ -611,6 +611,14 @@
             Form2_DashboardGeneral_Panel_Derecho.Size = new Size(1300, 900);
             Form2_DashboardGeneral_Panel_Derecho.TabIndex = 1;
             // 
+            // Form2_DashboardGeneral_Panel_Derecho_Principal
+            // 
+            Form2_DashboardGeneral_Panel_Derecho_Principal.Dock = DockStyle.Fill;
+            Form2_DashboardGeneral_Panel_Derecho_Principal.Location = new Point(0, 104);
+            Form2_DashboardGeneral_Panel_Derecho_Principal.Name = "Form2_DashboardGeneral_Panel_Derecho_Principal";
+            Form2_DashboardGeneral_Panel_Derecho_Principal.Size = new Size(1300, 796);
+            Form2_DashboardGeneral_Panel_Derecho_Principal.TabIndex = 1;
+            // 
             // Form2_DashboardGeneral_Panel_Derecho_Titulo
             // 
             Form2_DashboardGeneral_Panel_Derecho_Titulo.Controls.Add(Form2_DashboardGeneral_LinkLabell_CerrarApp);
@@ -669,14 +677,6 @@
             Form2_DashboardGeneral_Labell_Titulo.Size = new Size(324, 48);
             Form2_DashboardGeneral_Labell_Titulo.TabIndex = 0;
             Form2_DashboardGeneral_Labell_Titulo.Text = "MENU PRINCIPAL";
-            // 
-            // Form2_DashboardGeneral_Panel_Derecho_Principal
-            // 
-            Form2_DashboardGeneral_Panel_Derecho_Principal.Dock = DockStyle.Fill;
-            Form2_DashboardGeneral_Panel_Derecho_Principal.Location = new Point(0, 104);
-            Form2_DashboardGeneral_Panel_Derecho_Principal.Name = "Form2_DashboardGeneral_Panel_Derecho_Principal";
-            Form2_DashboardGeneral_Panel_Derecho_Principal.Size = new Size(1300, 796);
-            Form2_DashboardGeneral_Panel_Derecho_Principal.TabIndex = 1;
             // 
             // Form2_DashboardAlumnos
             // 
