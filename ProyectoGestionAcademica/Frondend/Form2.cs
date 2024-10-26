@@ -54,6 +54,8 @@ namespace ProyectoGestionAcademica.Frondend
                 Form2_DashboardGeneral_Button_Materias.BackColor = Color.FromArgb(36, 60, 100);
                 Form2_DashboardGeneral_Button_Carreras.BackColor = Color.FromArgb(36, 60, 100);
                 Form2_DashboardGeneral_Button_Examenes.BackColor = Color.FromArgb(36, 60, 100);
+                Form2_DashboardGeneral_Button_Usuarios.BackColor = Color.FromArgb(36, 60, 100);
+                Form2_DashboardGeneral_Panel_Isquierdo_SubMenuUsuarios.Visible = false;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuAlumnos.Visible = true;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias.Visible = false;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Visible = false;
@@ -81,6 +83,8 @@ namespace ProyectoGestionAcademica.Frondend
                 Form2_DashboardGeneral_Button_Materias.BackColor = Color.FromArgb(36, 60, 100);
                 Form2_DashboardGeneral_Button_Alumnos.BackColor = Color.FromArgb(36, 60, 100);
                 Form2_DashboardGeneral_Button_Examenes.BackColor = Color.FromArgb(36, 60, 100);
+                Form2_DashboardGeneral_Button_Usuarios.BackColor = Color.FromArgb(36, 60, 100);
+                Form2_DashboardGeneral_Panel_Isquierdo_SubMenuUsuarios.Visible = false;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuAlumnos.Visible = false;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias.Visible = false;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Visible = true;
@@ -102,6 +106,8 @@ namespace ProyectoGestionAcademica.Frondend
                 Form2_DashboardGeneral_Button_Carreras.BackColor = Color.FromArgb(36, 60, 100);
                 Form2_DashboardGeneral_Button_Alumnos.BackColor = Color.FromArgb(36, 60, 100);
                 Form2_DashboardGeneral_Button_Examenes.BackColor = Color.FromArgb(36, 60, 100);
+                Form2_DashboardGeneral_Button_Usuarios.BackColor = Color.FromArgb(36, 60, 100);
+                Form2_DashboardGeneral_Panel_Isquierdo_SubMenuUsuarios.Visible = false;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuAlumnos.Visible = false;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias.Visible = true;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Visible = false;
@@ -123,10 +129,35 @@ namespace ProyectoGestionAcademica.Frondend
                 Form2_DashboardGeneral_Button_Carreras.BackColor = Color.FromArgb(36, 60, 100);
                 Form2_DashboardGeneral_Button_Alumnos.BackColor = Color.FromArgb(36, 60, 100);
                 Form2_DashboardGeneral_Button_Materias.BackColor = Color.FromArgb(36, 60, 100);
+                Form2_DashboardGeneral_Button_Usuarios.BackColor = Color.FromArgb(36, 60, 100);
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuAlumnos.Visible = false;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias.Visible = false;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Visible = false;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.Visible = true;
+                Form2_DashboardGeneral_Panel_Isquierdo_SubMenuUsuarios.Visible = false;
+            }
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            if (Form2_DashboardGeneral_Panel_Isquierdo_SubMenuUsuarios.Visible == true)
+            {
+                Form2_DashboardGeneral_Panel_Isquierdo_SubMenuUsuarios.Visible = false;
+                Form2_DashboardGeneral_Button_Usuarios.BackColor = Color.FromArgb(36, 60, 100);
+            }
+            else
+            {
+
+                Form2_DashboardGeneral_Button_Usuarios.BackColor = Color.FromArgb(3, 1, 254);
+                Form2_DashboardGeneral_Button_Carreras.BackColor = Color.FromArgb(36, 60, 100);
+                Form2_DashboardGeneral_Button_Alumnos.BackColor = Color.FromArgb(36, 60, 100);
+                Form2_DashboardGeneral_Button_Materias.BackColor = Color.FromArgb(36, 60, 100);
+                Form2_DashboardGeneral_Button_Examenes.BackColor = Color.FromArgb(36, 60, 100);
+                Form2_DashboardGeneral_Panel_Isquierdo_SubMenuAlumnos.Visible = false;
+                Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias.Visible = false;
+                Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Visible = false;
+                Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.Visible = false;
+                Form2_DashboardGeneral_Panel_Isquierdo_SubMenuUsuarios.Visible = true;
             }
         }
     }

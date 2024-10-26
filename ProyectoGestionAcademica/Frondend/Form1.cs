@@ -115,7 +115,7 @@ namespace ProyectoGestionAcademica
         {
 
         }
-    
+
         private void Form1_LogIn_LinkLabell_InformarUsuario_Enter(object sender, EventArgs e)
         {
             Form1_LogIn_ToolTip_Contexto.SetToolTip(Form1_LogIn_LinkLabell_InformarUsuario, "La contraseña suele ser el DNI del usuario");
@@ -143,7 +143,12 @@ namespace ProyectoGestionAcademica
 
         private void Form1_LogIn_LinkLabell_InformarContraseña_Enter(object sender, EventArgs e)
         {
-            Form1_LogIn_ToolTip_Contexto.SetToolTip(Form1_LogIn_LinkLabell_InformarContraseña, "- La contraseña tiene como maximo 12 caracteres.\n- Si no recuerda su contraseña, comuniquese con algun personal administrativo."); 
+            Form1_LogIn_ToolTip_Contexto.SetToolTip(Form1_LogIn_LinkLabell_InformarContraseña, "- La contraseña tiene como maximo 12 caracteres.\n- Si no recuerda su contraseña, comuniquese con algun personal administrativo.");
+        }
+
+        private void Form1_LogIn_PictureBox_HiletLogo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
