@@ -73,18 +73,17 @@ namespace ProyectoGestionAcademica
             {
                 Form1_LogIn_TextBox_Contraseña.Text = string.Empty;
                 Form1_LogIn_TextBox_Contraseña.ForeColor = Color.Black;
-                Form1_LogIn_TextBox_Contraseña.UseSystemPasswordChar = true;
             }
+            Form1_LogIn_TextBox_Contraseña.PasswordChar = '*';
         }
 
         private void Form1_LogIn_TextBox_Contraseña_Leave(object sender, EventArgs e)
         {
-            if (Form1_LogIn_TextBox_Contraseña.Text == string.Empty)
+            if (string.IsNullOrEmpty(Form1_LogIn_TextBox_Contraseña.Text))
             {
+                Form1_LogIn_TextBox_Contraseña.UseSystemPasswordChar = false;
                 Form1_LogIn_TextBox_Contraseña.Text = "CONTRASEÑA";
                 Form1_LogIn_TextBox_Contraseña.ForeColor = Color.DimGray;
-                Form1_LogIn_TextBox_Contraseña.UseSystemPasswordChar = false;
-                Form1_LogIn_LinkLabell_BorrarCampos.Focus();
             }
         }
 
@@ -108,6 +107,7 @@ namespace ProyectoGestionAcademica
             {
                 Form1_LogIn_TextBox_Usuario.Text = string.Empty;
                 Form1_LogIn_TextBox_Contraseña.Text = string.Empty;
+                Form1_LogIn_TextBox_Usuario.Focus();
             }
         }
 
