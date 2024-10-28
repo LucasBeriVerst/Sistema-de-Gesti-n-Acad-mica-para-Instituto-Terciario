@@ -48,8 +48,8 @@ namespace ProyectoGestionAcademica.Frondend
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias.Visible = false;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Visible = false;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.Visible = false;
+                AbrirFormulario<Form3>();
             }
-
         }
         private void Form2_DashboardGeneral_Button_Carreras_Click(object sender, EventArgs e)
         {
@@ -71,6 +71,7 @@ namespace ProyectoGestionAcademica.Frondend
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias.Visible = false;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Visible = true;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.Visible = false;
+                AbrirFormulario<Form4>();
             }
         }
 
@@ -94,6 +95,7 @@ namespace ProyectoGestionAcademica.Frondend
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias.Visible = true;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Visible = false;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.Visible = false;
+                AbrirFormulario<Form5>();
             }
         }
 
@@ -139,6 +141,29 @@ namespace ProyectoGestionAcademica.Frondend
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Visible = false;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.Visible = false;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuUsuarios.Visible = true;
+            }
+        }
+        //Metodo generico para regular que formulario se muestra y si debe crearse o no
+        //<MiForm>{Nombre del tipo generico} () where {Condicion} MiForm : Form {El tipo generico debe heredar de la class Form}, new () {Su contructor debe ser vacio}
+        private void AbrirFormulario<MiForm>() where MiForm : Form, new () 
+        {
+            //Variable de tipo Form
+            Form Formularios;
+            Formularios = Form2_DashboardGeneral_Panel_Derecho_Principal.Controls.OfType<MiForm>().FirstOrDefault();
+            if (Formularios == null) 
+            {
+                Formularios = new MiForm();
+                Formularios.TopLevel = false;//Determina que el nuevo formulario no se vuelva el formulario principal
+                Formularios.FormBorderStyle = FormBorderStyle.None;//!!!!!!!!!!!!Provisorio hasta el diseño en particular de cada formulario
+                Formularios.Dock = DockStyle.Fill;//!!!!!!!!!Provisorio hasta el diseño en particular de cada formulario
+                Form2_DashboardGeneral_Panel_Derecho_Principal.Controls.Add(Formularios); //Agrega a la coleccion del panel el formulario
+                Form2_DashboardGeneral_Panel_Derecho_Principal.Tag = Formularios;
+                Formularios.Show();
+                Formularios.BringToFront();
+            } 
+            else 
+            {
+                Formularios.BringToFront();//Si el formulatrio existe lo trae al frente
             }
         }
     }
