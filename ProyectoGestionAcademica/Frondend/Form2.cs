@@ -15,7 +15,6 @@ namespace ProyectoGestionAcademica.Frondend
         private int id_perfil;
 
         public int Id_perfil { get => id_perfil; set => id_perfil = value; }
-
         public Form2_DashboardGeneral(int id_perfil)
         {
             InitializeComponent();
@@ -169,6 +168,21 @@ namespace ProyectoGestionAcademica.Frondend
             else 
             {
                 Formularios.BringToFront();//Si el formulatrio existe lo trae al frente
+            }
+        }
+        private void Configuracion(int n_perfil) 
+        {
+            switch (n_perfil) 
+            {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+
+                    break;
             }
         }
     }
