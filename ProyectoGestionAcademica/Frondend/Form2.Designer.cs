@@ -767,7 +767,7 @@
             Form2_DashboardGeneral_Panel_Derecho.Location = new Point(224, 0);
             Form2_DashboardGeneral_Panel_Derecho.Margin = new Padding(2);
             Form2_DashboardGeneral_Panel_Derecho.Name = "Form2_DashboardGeneral_Panel_Derecho";
-            Form2_DashboardGeneral_Panel_Derecho.Size = new Size(1016, 720);
+            Form2_DashboardGeneral_Panel_Derecho.Size = new Size(1056, 720);
             Form2_DashboardGeneral_Panel_Derecho.TabIndex = 1;
             // 
             // Form2_DashboardGeneral_Panel_Derecho_Principal
@@ -776,7 +776,7 @@
             Form2_DashboardGeneral_Panel_Derecho_Principal.Location = new Point(0, 76);
             Form2_DashboardGeneral_Panel_Derecho_Principal.Margin = new Padding(2);
             Form2_DashboardGeneral_Panel_Derecho_Principal.Name = "Form2_DashboardGeneral_Panel_Derecho_Principal";
-            Form2_DashboardGeneral_Panel_Derecho_Principal.Size = new Size(1016, 644);
+            Form2_DashboardGeneral_Panel_Derecho_Principal.Size = new Size(1056, 644);
             Form2_DashboardGeneral_Panel_Derecho_Principal.TabIndex = 1;
             // 
             // Form2_DashboardGeneral_Panel_Derecho_Titulo
@@ -789,7 +789,7 @@
             Form2_DashboardGeneral_Panel_Derecho_Titulo.Location = new Point(0, 0);
             Form2_DashboardGeneral_Panel_Derecho_Titulo.Margin = new Padding(2);
             Form2_DashboardGeneral_Panel_Derecho_Titulo.Name = "Form2_DashboardGeneral_Panel_Derecho_Titulo";
-            Form2_DashboardGeneral_Panel_Derecho_Titulo.Size = new Size(1016, 76);
+            Form2_DashboardGeneral_Panel_Derecho_Titulo.Size = new Size(1056, 76);
             Form2_DashboardGeneral_Panel_Derecho_Titulo.TabIndex = 0;
             // 
             // Form2_DashboardGeneral_LinkLabell_CerrarApp
@@ -798,7 +798,7 @@
             Form2_DashboardGeneral_LinkLabell_CerrarApp.Font = new Font("Fira Sans", 22F, FontStyle.Bold);
             Form2_DashboardGeneral_LinkLabell_CerrarApp.LinkBehavior = LinkBehavior.NeverUnderline;
             Form2_DashboardGeneral_LinkLabell_CerrarApp.LinkColor = Color.FromArgb(36, 60, 100);
-            Form2_DashboardGeneral_LinkLabell_CerrarApp.Location = new Point(975, 9);
+            Form2_DashboardGeneral_LinkLabell_CerrarApp.Location = new Point(1010, 9);
             Form2_DashboardGeneral_LinkLabell_CerrarApp.Margin = new Padding(2, 0, 2, 0);
             Form2_DashboardGeneral_LinkLabell_CerrarApp.Name = "Form2_DashboardGeneral_LinkLabell_CerrarApp";
             Form2_DashboardGeneral_LinkLabell_CerrarApp.Size = new Size(30, 36);
@@ -813,7 +813,7 @@
             Form2_DashboardGeneral_LinkLabell_MinimizarApp.Font = new Font("Fira Sans", 24F, FontStyle.Bold);
             Form2_DashboardGeneral_LinkLabell_MinimizarApp.LinkBehavior = LinkBehavior.NeverUnderline;
             Form2_DashboardGeneral_LinkLabell_MinimizarApp.LinkColor = Color.FromArgb(36, 60, 100);
-            Form2_DashboardGeneral_LinkLabell_MinimizarApp.Location = new Point(941, 8);
+            Form2_DashboardGeneral_LinkLabell_MinimizarApp.Location = new Point(976, 8);
             Form2_DashboardGeneral_LinkLabell_MinimizarApp.Margin = new Padding(2, 0, 2, 0);
             Form2_DashboardGeneral_LinkLabell_MinimizarApp.Name = "Form2_DashboardGeneral_LinkLabell_MinimizarApp";
             Form2_DashboardGeneral_LinkLabell_MinimizarApp.Size = new Size(30, 38);
@@ -825,10 +825,10 @@
             // Form2_DashboardGeneral_RichTextBox_SubrayadoTitulo
             // 
             Form2_DashboardGeneral_RichTextBox_SubrayadoTitulo.BackColor = Color.Black;
-            Form2_DashboardGeneral_RichTextBox_SubrayadoTitulo.Location = new Point(90, 62);
+            Form2_DashboardGeneral_RichTextBox_SubrayadoTitulo.Location = new Point(73, 62);
             Form2_DashboardGeneral_RichTextBox_SubrayadoTitulo.Margin = new Padding(2);
             Form2_DashboardGeneral_RichTextBox_SubrayadoTitulo.Name = "Form2_DashboardGeneral_RichTextBox_SubrayadoTitulo";
-            Form2_DashboardGeneral_RichTextBox_SubrayadoTitulo.Size = new Size(850, 2);
+            Form2_DashboardGeneral_RichTextBox_SubrayadoTitulo.Size = new Size(910, 2);
             Form2_DashboardGeneral_RichTextBox_SubrayadoTitulo.TabIndex = 1;
             Form2_DashboardGeneral_RichTextBox_SubrayadoTitulo.Text = "";
             // 
@@ -836,7 +836,7 @@
             // 
             Form2_DashboardGeneral_Labell_Titulo.AutoSize = true;
             Form2_DashboardGeneral_Labell_Titulo.Font = new Font("Fira Sans", 25F, FontStyle.Bold);
-            Form2_DashboardGeneral_Labell_Titulo.Location = new Point(378, 9);
+            Form2_DashboardGeneral_Labell_Titulo.Location = new Point(391, 9);
             Form2_DashboardGeneral_Labell_Titulo.Margin = new Padding(2, 0, 2, 0);
             Form2_DashboardGeneral_Labell_Titulo.Name = "Form2_DashboardGeneral_Labell_Titulo";
             Form2_DashboardGeneral_Labell_Titulo.Size = new Size(275, 41);
@@ -847,7 +847,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1240, 720);
+            ClientSize = new Size(1280, 720);
             Controls.Add(Form2_DashboardGeneral_Panel_Derecho);
             Controls.Add(Form2_DashboardGeneral_Panel_Isquierdo);
             FormBorderStyle = FormBorderStyle.None;

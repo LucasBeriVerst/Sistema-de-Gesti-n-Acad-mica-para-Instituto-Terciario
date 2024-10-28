@@ -12,9 +12,14 @@ namespace ProyectoGestionAcademica.Frondend
 {
     public partial class Form2_DashboardGeneral : Form
     {
-        public Form2_DashboardGeneral()
+        private int id_perfil;
+
+        public int Id_perfil { get => id_perfil; set => id_perfil = value; }
+
+        public Form2_DashboardGeneral(int id_perfil)
         {
             InitializeComponent();
+            Id_perfil = id_perfil;
         }
 
         private void Form2_DashboardGeneral_LinkLabell_CerrarApp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

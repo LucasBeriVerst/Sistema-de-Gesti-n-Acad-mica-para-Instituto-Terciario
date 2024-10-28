@@ -6,7 +6,6 @@ namespace ProyectoGestionAcademica
     {
         //Intentos disponibles para el usuario
         private int intentetos = 3;
-        Form2_DashboardGeneral Form2 = new Form2_DashboardGeneral();
         public Form1_LogIn()
         {
             InitializeComponent();
@@ -18,6 +17,7 @@ namespace ProyectoGestionAcademica
         {
             if (Form1_LogIn_TextBox_Usuario.Text == "admin" && Form1_LogIn_TextBox_Contraseña.Text == "admin")
             {
+                Form2_DashboardGeneral Form2 = new Form2_DashboardGeneral(1);
                 MessageBox.Show("Entraste como admin...", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Form2.Show();
                 this.Hide();
