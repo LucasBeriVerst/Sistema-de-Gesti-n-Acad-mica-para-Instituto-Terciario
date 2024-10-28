@@ -80,7 +80,6 @@
             Form1_LogIn_PictureBox_HiletLogo.SizeMode = PictureBoxSizeMode.CenterImage;
             Form1_LogIn_PictureBox_HiletLogo.TabIndex = 0;
             Form1_LogIn_PictureBox_HiletLogo.TabStop = false;
-            Form1_LogIn_PictureBox_HiletLogo.Click += Form1_LogIn_PictureBox_HiletLogo_Click;
             // 
             // Form1_LogIn_Panel_Derecho
             // 
@@ -168,7 +167,6 @@
             Form1_LogIn_LinkLabell_InformarContraseña.TabStop = true;
             Form1_LogIn_LinkLabell_InformarContraseña.Text = "?";
             Form1_LogIn_LinkLabell_InformarContraseña.LinkClicked += Form1_LogIn_LinkLabell_InformarContraseña_LinkClicked;
-            Form1_LogIn_LinkLabell_InformarContraseña.Enter += Form1_LogIn_LinkLabell_InformarContraseña_Enter;
             // 
             // Form1_LogIn_LinkLabell_InformarUsuario
             // 
@@ -183,7 +181,6 @@
             Form1_LogIn_LinkLabell_InformarUsuario.TabStop = true;
             Form1_LogIn_LinkLabell_InformarUsuario.Text = "?";
             Form1_LogIn_LinkLabell_InformarUsuario.LinkClicked += Form1_LogIn_LinkLabell_InformarUsuario_LinkClicked;
-            Form1_LogIn_LinkLabell_InformarUsuario.Leave += Form1_LogIn_LinkLabell_InformarUsuario_Leave;
             // 
             // Form1_LogIn_Labell_Intentos
             // 
@@ -230,8 +227,6 @@
             Form1_LogIn_LinkLabell_BorrarCampos.TabIndex = 5;
             Form1_LogIn_LinkLabell_BorrarCampos.TabStop = true;
             Form1_LogIn_LinkLabell_BorrarCampos.Text = "Borrar los campos.";
-            Form1_LogIn_LinkLabell_BorrarCampos.LinkClicked += Form1_LogIn_LinkLabell_BorrarCampos_LinkClicked;
-            Form1_LogIn_LinkLabell_BorrarCampos.Enter += Form1_LogIn_LinkLabell_BorrarCampos_Enter;
             // 
             // Form1_LogIn_Label_Titulo
             // 
@@ -258,7 +253,7 @@
             Form1_LogIn_Button_Acceder.TabIndex = 4;
             Form1_LogIn_Button_Acceder.Text = "ACCEDER";
             Form1_LogIn_Button_Acceder.UseVisualStyleBackColor = false;
-            Form1_LogIn_Button_Acceder.Click += button1_Click;
+            Form1_LogIn_Button_Acceder.Click += Form1_LogIn_Button_Acceder_Click;
             // 
             // richTextBox2
             // 
@@ -314,10 +309,6 @@
             Form1_LogIn_TextBox_Usuario.Text = "USUARIO";
             Form1_LogIn_TextBox_Usuario.Enter += Form1_LogIn_TextBox_Usuario_Enter;
             Form1_LogIn_TextBox_Usuario.Leave += Form1_LogIn_TextBox_Usuario_Leave;
-            // 
-            // Form1_LogIn_ToolTip_Contexto
-            // 
-            Form1_LogIn_ToolTip_Contexto.Popup += Form1_LogIn_ToolTip_ContextoUsuario_Popup;
             // 
             // contextMenuStrip1
             // 

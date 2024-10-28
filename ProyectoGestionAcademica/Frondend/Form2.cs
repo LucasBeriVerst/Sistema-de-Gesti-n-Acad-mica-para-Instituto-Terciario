@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace ProyectoGestionAcademica.Frondend
 {
-    public partial class Form2_DashboardAlumnos : Form
+    public partial class Form2_DashboardGeneral : Form
     {
-        public Form2_DashboardAlumnos()
+        public Form2_DashboardGeneral()
         {
             InitializeComponent();
-        }
-
-        private void Form2_DashboardAlumnos_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void Form2_DashboardGeneral_LinkLabell_CerrarApp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -30,17 +25,10 @@ namespace ProyectoGestionAcademica.Frondend
                 Application.Exit();
             }
         }
-
         private void Form2_DashboardGeneral_LinkLabell_MinimizarApp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form2_DashboardGeneral_Button_Alumnos_Click(object sender, EventArgs e)
         {
             if (Form2_DashboardGeneral_Panel_Isquierdo_SubMenuAlumnos.Visible == true)
@@ -63,12 +51,6 @@ namespace ProyectoGestionAcademica.Frondend
             }
 
         }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void Form2_DashboardGeneral_Button_Carreras_Click(object sender, EventArgs e)
         {
             if (Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Visible == true)
@@ -137,8 +119,7 @@ namespace ProyectoGestionAcademica.Frondend
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuUsuarios.Visible = false;
             }
         }
-
-        private void button18_Click(object sender, EventArgs e)
+        private void Form2_DashboardGeneral_Button_Usuarios_Click(object sender, EventArgs e)
         {
             if (Form2_DashboardGeneral_Panel_Isquierdo_SubMenuUsuarios.Visible == true)
             {
