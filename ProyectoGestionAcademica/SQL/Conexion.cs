@@ -8,5 +8,6 @@ namespace ProyectoGestionAcademica.SQL
 {
     internal class Conexion
     {
+
     }
 }
