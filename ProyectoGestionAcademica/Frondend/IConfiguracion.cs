@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProyectoGestionAcademica.Frondend
 {
-    interface Interfase_Configuracion
+    interface IConfiguracion
     {
-        // Tamaño de la pantalla
-        public void Configuracion();
-
+        string Titulo { get; } //Todos los form deben tener un parametro titulo
     }
 }

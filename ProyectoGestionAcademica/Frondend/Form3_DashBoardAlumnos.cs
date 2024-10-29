@@ -10,11 +10,22 @@ using System.Windows.Forms;
 
 namespace ProyectoGestionAcademica.Frondend
 {
-    public partial class Form3 : Form
+    public partial class Form3 : Form, IConfiguracion
     {
+        private string titulo = "SUB-MENU: ALUMNOS";
         public Form3()
         {
+        }
+        public string Titulo { get => titulo; set => titulo = value; }
+        public Form3(string titulo)
+        {
             InitializeComponent();
+            Titulo = titulo;
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

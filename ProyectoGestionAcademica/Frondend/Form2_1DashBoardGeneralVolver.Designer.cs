@@ -1,6 +1,6 @@
 ﻿namespace ProyectoGestionAcademica.Frondend
 {
-    partial class Form4
+    partial class Form2_1DashBoardGeneralVolver
     {
         /// <summary>
         /// Required designer variable.
@@ -28,45 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            textBox1 = new TextBox();
             SuspendLayout();
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 25F);
-            label1.Location = new Point(238, 202);
-            label1.Name = "label1";
-            label1.Size = new Size(324, 46);
-            label1.TabIndex = 1;
-            label1.Text = "Formulario prueba 2";
-            // 
-            // textBox1
-            // 
-            textBox1.Font = new Font("Segoe UI", 20F);
-            textBox1.Location = new Point(229, 296);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(333, 90);
-            textBox1.TabIndex = 2;
-            // 
-            // Form4
+            // Form2_1DashBoardGeneralVolver
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(textBox1);
-            Controls.Add(label1);
-            Name = "Form4";
-            Text = "Form4";
+            Name = "Form2_1DashBoardGeneralVolver";
+            Text = "Form2_1DashBoardGeneralVolver";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label label1;
-        private TextBox textBox1;
     }
 }
