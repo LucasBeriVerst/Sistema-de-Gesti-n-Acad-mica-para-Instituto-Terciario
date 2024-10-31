@@ -17,7 +17,7 @@ namespace ProyectoGestionAcademica
         {
             if (Form1_LogIn_TextBox_Usuario.Text == "admin" && Form1_LogIn_TextBox_Contraseña.Text == "admin")
             {
-                Form2_DashboardGeneral Form2 = new Form2_DashboardGeneral(1);
+                Form2_DashboardGeneral Form2 = new Form2_DashboardGeneral();
                 MessageBox.Show("Entraste como admin...", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Form2.Show();
                 this.Hide();

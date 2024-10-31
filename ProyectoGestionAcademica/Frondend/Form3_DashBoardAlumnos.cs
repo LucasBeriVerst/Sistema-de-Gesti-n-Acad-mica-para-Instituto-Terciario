@@ -10,20 +10,19 @@ using System.Windows.Forms;
 
 namespace ProyectoGestionAcademica.Frondend
 {
-    public partial class Form3 : Form, IConfiguracion
+    public partial class Form3_DashBoardAlumnos : Form, IConfiguracion
     {
         private string titulo = "SUB-MENU: ALUMNOS";
-        public Form3()
-        {
-        }
-        public string Titulo { get => titulo; set => titulo = value; }
-        public Form3(string titulo)
+        public Form3_DashBoardAlumnos()
         {
             InitializeComponent();
             Titulo = titulo;
         }
-
+        public string Titulo { get => titulo; set => titulo = value; }
         private void Form3_Load(object sender, EventArgs e)
+        {
+        }
+        private void Form3_DashBoardAlumnos_DataGrigViewAlumnos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

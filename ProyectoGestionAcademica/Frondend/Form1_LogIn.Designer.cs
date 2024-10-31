@@ -227,6 +227,7 @@
             Form1_LogIn_LinkLabell_BorrarCampos.TabIndex = 5;
             Form1_LogIn_LinkLabell_BorrarCampos.TabStop = true;
             Form1_LogIn_LinkLabell_BorrarCampos.Text = "Borrar los campos.";
+            Form1_LogIn_LinkLabell_BorrarCampos.LinkClicked += Form1_LogIn_LinkLabell_BorrarCampos_LinkClicked;
             // 
             // Form1_LogIn_Label_Titulo
             // 

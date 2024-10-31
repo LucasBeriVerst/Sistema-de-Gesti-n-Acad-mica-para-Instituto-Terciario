@@ -852,7 +852,6 @@
             Form2_DashboardGeneral_PictureBox_Hilet.SizeMode = PictureBoxSizeMode.CenterImage;
             Form2_DashboardGeneral_PictureBox_Hilet.TabIndex = 0;
             Form2_DashboardGeneral_PictureBox_Hilet.TabStop = false;
-            Form2_DashboardGeneral_PictureBox_Hilet.Click += VolverAlMenu;
             // 
             // Form2_DashboardGeneral_Panel_Derecho
             // 

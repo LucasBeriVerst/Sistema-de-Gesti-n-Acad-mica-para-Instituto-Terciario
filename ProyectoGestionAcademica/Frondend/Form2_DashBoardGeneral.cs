@@ -14,17 +14,27 @@ namespace ProyectoGestionAcademica.Frondend
     {
         private int id_perfil;
         private string titulo = "MENU PRINCIPAL";
+        private string backUpTitulo = "MENU PRINCIPAL";
+        private string nombreUsuario;
 
         public int Id_perfil { get => id_perfil; set => id_perfil = value; }
         public string Titulo { get => titulo; set => titulo = value; }
+        public string BackUpTitulo { get => backUpTitulo; set => backUpTitulo = value; }
+        public string NombreUsuario { get => nombreUsuario; set => nombreUsuario = value; }
 
-        public Form2_DashboardGeneral(int id_perfil)
+        public Form2_DashboardGeneral()
         {
             InitializeComponent();
             Id_perfil = id_perfil;
             Form2_DashboardGeneral_Labell_Titulo.Text = Titulo;
+            NombreUsuario = nombreUsuario;
         }
-
+        private void EstablecerPerfil(int N_Perfil, string Nom_Usuario) 
+        {
+            Id_perfil = N_Perfil;
+            NombreUsuario = Nom_Usuario;
+            Form2_DashboardGeneral_Button_Perfil.Text = NombreUsuario;
+        }
         private void Form2_DashboardGeneral_LinkLabell_CerrarApp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             DialogResult = MessageBox.Show("¿ Seguro que queres salir ?", "Salir...", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
@@ -37,17 +47,13 @@ namespace ProyectoGestionAcademica.Frondend
         {
             this.WindowState = FormWindowState.Minimized;
         }
-        private void VolverAlMenu(object sender, EventArgs e) 
-        {
-            AbrirFormulario<Form2_1DashBoardGeneralVolver>();
-        }
         private void Form2_DashboardGeneral_Button_Alumnos_Click(object sender, EventArgs e)
         {
             if (Form2_DashboardGeneral_Panel_Isquierdo_SubMenuAlumnos.Visible == true)
             {
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuAlumnos.Visible = false;
                 Form2_DashboardGeneral_Button_Alumnos.BackColor = Color.FromArgb(36, 60, 100);
-
+                DevolverTituloOriginal();
             }
             else
             {
@@ -61,7 +67,7 @@ namespace ProyectoGestionAcademica.Frondend
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias.Visible = false;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Visible = false;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.Visible = false;
-                AbrirFormulario<Form3>();
+                AbrirFormulario<Form3_DashBoardAlumnos>();
             }
         }
         private void Form2_DashboardGeneral_Button_Carreras_Click(object sender, EventArgs e)
@@ -175,11 +181,19 @@ namespace ProyectoGestionAcademica.Frondend
                 Formularios.BackColor = Color.FromArgb(177, 173, 189);
                 Formularios.Show();
                 Formularios.BringToFront();
+                
             } 
             else 
             {
                 Formularios.BringToFront();//Si el formulatrio existe lo trae al frente
+                Form2_DashboardGeneral_Labell_Titulo.Text = ((IConfiguracion)Formularios).Titulo; //Toma el valor de titulo del formulario que utiliza la interface y lo ingresa en la propiedad del formulario general
+                Form2_DashboardGeneral_Labell_Titulo.Location = new Point((1056 - Form2_DashboardGeneral_Labell_Titulo.Size.Width) / 2, Form2_DashboardGeneral_Labell_Titulo.Location.Y);//Centra el componente basado en el nuevo tamaño de texto.
             }
+        }
+        private void DevolverTituloOriginal() 
+        {
+            Form2_DashboardGeneral_Labell_Titulo.Text = BackUpTitulo; //Toma el valor de titulo del formulario que utiliza la interface y lo ingresa en la propiedad del formulario general
+            Form2_DashboardGeneral_Labell_Titulo.Location = new Point((1056 - Form2_DashboardGeneral_Labell_Titulo.Size.Width) / 2, Form2_DashboardGeneral_Labell_Titulo.Location.Y);
         }
         private void Configuracion(int n_perfil) 
         {
@@ -192,7 +206,6 @@ namespace ProyectoGestionAcademica.Frondend
                 case 3:
                     break;
                 case 4:
-
                     break;
             }
         }
