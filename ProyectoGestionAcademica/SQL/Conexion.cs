@@ -10,7 +10,7 @@ namespace ProyectoGestionAcademica.SQL
 {
     internal class Conexion
     {
-        private string cadena = "Data Source=192.168.0.100;Database=u16;User Id=u16;Password=u16";
+        private string cadena = "Data Source=192.168.0.100;Database=u16;User Id=Estudio;Password=";
         private SqlConnection conexion; //el objeto para manejar la conexión a la base de datos
 
         //constructor

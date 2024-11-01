@@ -1,4 +1,6 @@
+using ProyectoGestionAcademica.Backend;
 using ProyectoGestionAcademica.Frondend;
+using System.Windows.Forms;
 
 namespace ProyectoGestionAcademica
 {
@@ -6,45 +8,72 @@ namespace ProyectoGestionAcademica
     {
         //Intentos disponibles para el usuario
         private int intentetos = 3;
+        private int respuestaDePerfil;
+        GestorDeDatos Instancia_GestorDeDatos = new GestorDeDatos();
+        Dictionary<int, string> Perfiles = new Dictionary<int, string>();
         public Form1_LogIn()
         {
             InitializeComponent();
             Form1_LogIn_Labell_Intentos.Text = "Intentos disponibles : " + intentetos;
             Form1_LogIn_LinkLabell_InformarUsuario.TabStop = false;
             Form1_LogIn_LinkLabell_InformarContraseña.TabStop = false;
+            Perfiles.Add(1,"Administrador");
+            Perfiles.Add(2, "Empleado Adminirativo");
+            Perfiles.Add(3, "Profesor");
+            Perfiles.Add(4, "Alumno");
         }
         private void Form1_LogIn_Button_Acceder_Click(object sender, EventArgs e)
         {
-            if (Form1_LogIn_TextBox_Usuario.Text == "admin" && Form1_LogIn_TextBox_Contraseña.Text == "admin")
+            respuestaDePerfil = Instancia_GestorDeDatos.Form_LogIn_BuscarUsuario(Form1_LogIn_TextBox_Usuario.Text, Form1_LogIn_TextBox_Contraseña.Text);
+            if (respuestaDePerfil > 0 && respuestaDePerfil <= 4)
             {
                 Form2_DashboardGeneral Form2 = new Form2_DashboardGeneral();
-                MessageBox.Show("Entraste como admin...", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Entraste como " + Perfiles[respuestaDePerfil], "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Form2.Show();
                 this.Hide();
             }
             else
             {
-                intentetos = intentetos - 1;
-                if (intentetos > 1)
+                if (respuestaDePerfil >= 5 && respuestaDePerfil <= 7 ) 
                 {
-                    MessageBox.Show("El usuario o la contraseña son incorectos...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    Form1_LogIn_Labell_Intentos.Text = "Intentos disponibles : " + intentetos;
-                }
-                if (intentetos == 1)
-                {
-                    MessageBox.Show("El usuario o la contraseña son incorectos. Un fallo mas y el sistema se bloqueara...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    Form1_LogIn_Labell_Intentos.Text = "Intentos disponibles : " + intentetos;
-                }
-                if (intentetos == 0)
-                {
-                    MessageBox.Show("El usuario o la contraseña son incorectos. Cierre la aplicacion para volver a intentarlo...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    Form1_LogIn_Button_Acceder.Enabled = false;
-                    Form1_LogIn_LinkLabell_BorrarCampos.Enabled = false;
-                    Form1_LogIn_LinkLabell_InformarContraseña.Enabled = false;
-                    Form1_LogIn_LinkLabell_InformarUsuario.Enabled = false;
-                    Form1_LogIn_TextBox_Contraseña.Enabled = false;
-                    Form1_LogIn_TextBox_Usuario.Enabled = false;
-                    Form1_LogIn_Labell_Intentos.Text = "Intentos disponibles : " + intentetos;
+                    if (respuestaDePerfil == 5)
+                    {
+                        errorProvider1.SetError(Form1_LogIn_TextBox_Usuario, "Procurar que el usuario no sea mas largo que 8 caracteres");
+                    }
+                    else if (respuestaDePerfil == 6)
+                    {
+                        errorProvider1.SetError(Form1_LogIn_TextBox_Contraseña, "Procurar que el contraseña no sea mas largo que 35 caracteres");
+                    }
+                    else 
+                    {
+                        errorProvider1.SetError(Form1_LogIn_TextBox_Usuario, "Procurar que el usuario no sea mas largo que 8 caracteres");
+                        errorProvider1.SetError(Form1_LogIn_TextBox_Contraseña, "Procurar que el contraseña no sea mas largo que 35 caracteres");
+                    }
+                } 
+                else 
+                {        
+                    intentetos = intentetos - 1;
+                    if (intentetos > 1)
+                    {
+                        MessageBox.Show("El usuario no existe en el programa...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        Form1_LogIn_Labell_Intentos.Text = "Intentos disponibles : " + intentetos;
+                    }
+                    if (intentetos == 1)
+                    {
+                        MessageBox.Show("El usuario no existe en el programa. Un fallo mas y el sistema se bloqueara...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        Form1_LogIn_Labell_Intentos.Text = "Intentos disponibles : " + intentetos;
+                    }
+                    if (intentetos == 0)
+                    {
+                        MessageBox.Show("El usuario o la contraseña son incorectos. Cierre la aplicacion para volver a intentarlo...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        Form1_LogIn_Button_Acceder.Enabled = false;
+                        Form1_LogIn_LinkLabell_BorrarCampos.Enabled = false;
+                        Form1_LogIn_LinkLabell_InformarContraseña.Enabled = false;
+                        Form1_LogIn_LinkLabell_InformarUsuario.Enabled = false;
+                        Form1_LogIn_TextBox_Contraseña.Enabled = false;
+                        Form1_LogIn_TextBox_Usuario.Enabled = false;
+                        Form1_LogIn_Labell_Intentos.Text = "Intentos disponibles : " + intentetos;
+                    }
                 }
             }
         }

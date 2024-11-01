@@ -50,11 +50,13 @@
             Form1_LogIn_TextBox_Usuario = new TextBox();
             Form1_LogIn_ToolTip_Contexto = new ToolTip(components);
             contextMenuStrip1 = new ContextMenuStrip(components);
+            errorProvider1 = new ErrorProvider(components);
             Form1_LogIn_Panel_Izquierdo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Form1_LogIn_PictureBox_HiletLogo).BeginInit();
             Form1_LogIn_Panel_Derecho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Form1_LogIn_PictureBox_ContraseñaLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Form1_LogIn_PictureBox_UsuarioLogo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // Form1_LogIn_Panel_Izquierdo
@@ -159,7 +161,7 @@
             Form1_LogIn_LinkLabell_InformarContraseña.AutoSize = true;
             Form1_LogIn_LinkLabell_InformarContraseña.Font = new Font("Fira Sans UltraLight", 20F);
             Form1_LogIn_LinkLabell_InformarContraseña.LinkColor = Color.FromArgb(36, 60, 100);
-            Form1_LogIn_LinkLabell_InformarContraseña.Location = new Point(476, 218);
+            Form1_LogIn_LinkLabell_InformarContraseña.Location = new Point(495, 218);
             Form1_LogIn_LinkLabell_InformarContraseña.Margin = new Padding(2, 0, 2, 0);
             Form1_LogIn_LinkLabell_InformarContraseña.Name = "Form1_LogIn_LinkLabell_InformarContraseña";
             Form1_LogIn_LinkLabell_InformarContraseña.Size = new Size(27, 32);
@@ -173,7 +175,7 @@
             Form1_LogIn_LinkLabell_InformarUsuario.AutoSize = true;
             Form1_LogIn_LinkLabell_InformarUsuario.Font = new Font("Fira Sans UltraLight", 20F);
             Form1_LogIn_LinkLabell_InformarUsuario.LinkColor = Color.FromArgb(36, 60, 100);
-            Form1_LogIn_LinkLabell_InformarUsuario.Location = new Point(476, 136);
+            Form1_LogIn_LinkLabell_InformarUsuario.Location = new Point(495, 136);
             Form1_LogIn_LinkLabell_InformarUsuario.Margin = new Padding(2, 0, 2, 0);
             Form1_LogIn_LinkLabell_InformarUsuario.Name = "Form1_LogIn_LinkLabell_InformarUsuario";
             Form1_LogIn_LinkLabell_InformarUsuario.Size = new Size(27, 32);
@@ -316,6 +318,10 @@
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
             // Form1_LogIn
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -334,6 +340,7 @@
             Form1_LogIn_Panel_Derecho.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)Form1_LogIn_PictureBox_ContraseñaLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)Form1_LogIn_PictureBox_UsuarioLogo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
         }
 
@@ -359,5 +366,6 @@
         private TextBox Form1_LogIn_TextBox_Contraseña;
         private ToolTip Form1_LogIn_ToolTip_Contexto;
         private ContextMenuStrip contextMenuStrip1;
+        private ErrorProvider errorProvider1;
     }
 }
