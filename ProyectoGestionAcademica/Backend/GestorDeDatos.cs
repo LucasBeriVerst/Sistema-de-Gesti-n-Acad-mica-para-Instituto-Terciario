@@ -32,7 +32,7 @@ namespace ProyectoGestionAcademica.Backend
                     { "@Usuario_Alumno", Usuario },
                     { "@Contraseña_Alumno", Contraseña }
                 };
-                perfil = Instancia_SQL.EjecutarProcedimiento("sp_StoreAlumnos",parametros);
+                perfil = Instancia_SQL.EjecutarProcedimiento("ObtenerIDPerfilPorCredencialesAlumno", parametros);
                 if (perfil == 4)
                 {
                     respuesta = perfil;
@@ -44,7 +44,7 @@ namespace ProyectoGestionAcademica.Backend
                         { "@Usuario_Empleado", Usuario },
                         { "@Contraseña_Empleado", Contraseña }
                     };
-                    perfil = Instancia_SQL.EjecutarProcedimiento("sp_StoreEmpleados", parametros);
+                    perfil = Instancia_SQL.EjecutarProcedimiento("ObtenerIDPerfilPorCredenciales", parametros);
                     if (perfil >= 1) 
                     {
                         respuesta = perfil;
