@@ -42,30 +42,7 @@ namespace ProyectoGestionAcademica.SQL
         {
             return conexion; //retorna el objeto SqlConnection
         }
-        // Método para ejecutar consultas SQL (SELECT, INSERT, UPDATE, DELETE)
-        public DataTable EjecutarConsulta(string query)
-        {
-            DataTable resultado = new DataTable();
-            try
-            {
-                Abrir();
-                using (SqlCommand comando = new SqlCommand(query, conexion))
-                {
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(comando))
-                    {
-                        adapter.Fill(resultado);
-                    }
-                }
-            }
-            finally
-            {
-                Cerrar();
-            }
-            return resultado;
-        }
-
-        // Método para ejecutar procedimientos almacenados con parámetros
-        public int EjecutarProcedimiento(string nombreProcedimiento, Dictionary<string, object> parametros = null)
+        public int EjecutarNonQuery(string nombreProcedimiento, Dictionary<string, object> parametros = null)
         {
             int filasAfectadas = 0;
             try
@@ -74,7 +51,6 @@ namespace ProyectoGestionAcademica.SQL
                 using (SqlCommand comando = new SqlCommand(nombreProcedimiento, conexion))
                 {
                     comando.CommandType = CommandType.StoredProcedure;
-
                     if (parametros != null)
                     {
                         foreach (var parametro in parametros)
@@ -82,7 +58,6 @@ namespace ProyectoGestionAcademica.SQL
                             comando.Parameters.AddWithValue(parametro.Key, parametro.Value);
                         }
                     }
-
                     filasAfectadas = comando.ExecuteNonQuery();
                 }
             }
@@ -92,6 +67,62 @@ namespace ProyectoGestionAcademica.SQL
             }
             return filasAfectadas;
         }
+
+
+        public object EjecutarEscalar(string nombreProcedimiento, Dictionary<string, object> parametros = null)
+        {
+            object resultado = null;
+            try
+            {
+                Abrir();
+                using (SqlCommand comando = new SqlCommand(nombreProcedimiento, conexion))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+                    if (parametros != null)
+                    {
+                        foreach (var parametro in parametros)
+                        {
+                            comando.Parameters.AddWithValue(parametro.Key, parametro.Value);
+                        }
+                    }
+                    resultado = comando.ExecuteScalar();
+                }
+            }
+            finally
+            {
+                Cerrar();
+            }
+            return resultado;
+        }
+        public DataTable EjecutarQuery(string nombreProcedimiento, Dictionary<string, object> parametros = null)
+        {
+            DataTable tabla = new DataTable();
+            try
+            {
+                Abrir();
+                using (SqlCommand comando = new SqlCommand(nombreProcedimiento, conexion))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+                    if (parametros != null)
+                    {
+                        foreach (var parametro in parametros)
+                        {
+                            comando.Parameters.AddWithValue(parametro.Key, parametro.Value);
+                        }
+                    }
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(comando))
+                    {
+                        adapter.Fill(tabla);
+                    }
+                }
+            }
+            finally
+            {
+                Cerrar();
+            }
+            return tabla;
+        }
+
     }
 
 }

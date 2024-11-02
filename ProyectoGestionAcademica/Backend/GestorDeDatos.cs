@@ -13,7 +13,7 @@ namespace ProyectoGestionAcademica.Backend
 
 
         //Log in
-        public int Form_LogIn_BuscarUsuario(string Usuario, string Contraseña) 
+        public int Form_LogIn_BuscarUsuario(string Usuario, string Contraseña)
         {
             int respuesta = 0;
             int perfil;
@@ -21,18 +21,21 @@ namespace ProyectoGestionAcademica.Backend
             {
                 respuesta = 5;
             }
-            else if (Contraseña.Length >= 35) 
+            else if (Contraseña.Length >= 35)
             {
                 respuesta = 6;
             }
             else
             {
                 var parametros = new Dictionary<string, object>
-                {
-                    { "@Usuario_Alumno", Usuario },
-                    { "@Contraseña_Alumno", Contraseña }
-                };
-                perfil = Instancia_SQL.EjecutarProcedimiento("ObtenerIDPerfilPorCredencialesAlumno", parametros);
+        {
+            { "@Usuario", Usuario },
+            { "@Contrasenia", Contraseña } // Cambiar a "@Contrasenia"
+        };
+
+                // Ejecutar el procedimiento para los alumnos
+                perfil = Convert.ToInt32(Instancia_SQL.EjecutarEscalar("ObtenerIDPerfilPorCredencialesAlumno", parametros));
+
                 if (perfil == 4)
                 {
                     respuesta = perfil;
@@ -40,23 +43,25 @@ namespace ProyectoGestionAcademica.Backend
                 else
                 {
                     var parametros2 = new Dictionary<string, object>
-                    {
-                        { "@Usuario_Empleado", Usuario },
-                        { "@Contraseña_Empleado", Contraseña }
-                    };
-                    perfil = Instancia_SQL.EjecutarProcedimiento("ObtenerIDPerfilPorCredenciales", parametros);
-                    if (perfil >= 1) 
+            {
+                { "@Usuario", Usuario },
+                { "@Contrasenia", Contraseña } // Cambiar a "@Contrasenia"
+            };
+
+                    // Ejecutar el procedimiento para los empleados
+                    perfil = Convert.ToInt32(Instancia_SQL.EjecutarEscalar("ObtenerIDPerfilPorCredenciales", parametros2));
+                    if (perfil >= 1)
                     {
                         respuesta = perfil;
-                    } 
-                    else 
+                    }
+                    else
                     {
                         respuesta = 8;
                     }
                 }
             }
             if (Usuario.Length >= 9 && Contraseña.Length >= 35) { respuesta = 7; }
-            return respuesta;           
+            return respuesta;
         }
     }
 }

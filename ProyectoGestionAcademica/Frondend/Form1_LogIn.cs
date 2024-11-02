@@ -55,17 +55,17 @@ namespace ProyectoGestionAcademica
                     intentetos = intentetos - 1;
                     if (intentetos > 1)
                     {
-                        MessageBox.Show("El usuario no existe en el programa...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("El usuario no esta registrado o hay una discrepancia entre USUARIO y CONTRASEÑA...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         Form1_LogIn_Labell_Intentos.Text = "Intentos disponibles : " + intentetos;
                     }
                     if (intentetos == 1)
                     {
-                        MessageBox.Show("El usuario no existe en el programa. Un fallo mas y el sistema se bloqueara...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("El usuario no esta registrado o hay una discrepancia entre USUARIO y CONTRASEÑA. Un fallo mas y el sistema se bloqueara...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         Form1_LogIn_Labell_Intentos.Text = "Intentos disponibles : " + intentetos;
                     }
                     if (intentetos == 0)
                     {
-                        MessageBox.Show("El usuario o la contraseña son incorectos. Cierre la aplicacion para volver a intentarlo...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("El usuario no esta registrado o hay una discrepancia entre USUARIO y CONTRASEÑA. Cierre la aplicacion para volver a intentarlo...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         Form1_LogIn_Button_Acceder.Enabled = false;
                         Form1_LogIn_LinkLabell_BorrarCampos.Enabled = false;
                         Form1_LogIn_LinkLabell_InformarContraseña.Enabled = false;
