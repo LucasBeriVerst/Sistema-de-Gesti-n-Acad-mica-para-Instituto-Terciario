@@ -9,11 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Backend\" />
-    <Folder Include="SQL\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
     <PackageReference Include="VisualBasic.PowerPacks.Vs" Version="1.0.0" />
   </ItemGroup>
 
