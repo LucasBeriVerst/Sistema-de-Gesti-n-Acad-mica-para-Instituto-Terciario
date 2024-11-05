@@ -27,7 +27,7 @@ namespace ProyectoGestionAcademica
             respuestaDePerfil = Instancia_GestorDeDatos.Form_LogIn_BuscarUsuario(Form1_LogIn_TextBox_Usuario.Text, Form1_LogIn_TextBox_Contraseña.Text);
             if (respuestaDePerfil > 0 && respuestaDePerfil <= 4)
             {
-                Form2_DashboardGeneral Form2 = new Form2_DashboardGeneral();
+                Form2_DashboardGeneral Form2 = new Form2_DashboardGeneral(respuestaDePerfil,Form1_LogIn_TextBox_Usuario.Text);
                 MessageBox.Show("Entraste como " + Perfiles[respuestaDePerfil], "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Form2.Show();
                 this.Hide();
@@ -55,17 +55,17 @@ namespace ProyectoGestionAcademica
                     intentetos = intentetos - 1;
                     if (intentetos > 1)
                     {
-                        MessageBox.Show("El usuario no esta registrado o hay una discrepancia entre USUARIO y CONTRASEÑA...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("El usuario no esta registrado o hay una discrepancia entre USUARIO y CONTRASEÑA...", "Error: " + respuestaDePerfil, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         Form1_LogIn_Labell_Intentos.Text = "Intentos disponibles : " + intentetos;
                     }
                     if (intentetos == 1)
                     {
-                        MessageBox.Show("El usuario no esta registrado o hay una discrepancia entre USUARIO y CONTRASEÑA. Un fallo mas y el sistema se bloqueara...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("El usuario no esta registrado o hay una discrepancia entre USUARIO y CONTRASEÑA. Un fallo mas y el sistema se bloqueara...", "Error: " + respuestaDePerfil, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         Form1_LogIn_Labell_Intentos.Text = "Intentos disponibles : " + intentetos;
                     }
                     if (intentetos == 0)
                     {
-                        MessageBox.Show("El usuario no esta registrado o hay una discrepancia entre USUARIO y CONTRASEÑA. Cierre la aplicacion para volver a intentarlo...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("El usuario no esta registrado o hay una discrepancia entre USUARIO y CONTRASEÑA. Cierre la aplicacion para volver a intentarlo...", "Error: " + respuestaDePerfil, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         Form1_LogIn_Button_Acceder.Enabled = false;
                         Form1_LogIn_LinkLabell_BorrarCampos.Enabled = false;
                         Form1_LogIn_LinkLabell_InformarContraseña.Enabled = false;

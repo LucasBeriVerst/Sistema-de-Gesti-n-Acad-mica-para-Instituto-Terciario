@@ -17,7 +17,7 @@ namespace ProyectoGestionAcademica.Backend
         {
             int respuesta = 0;
             int perfil;
-            if (Usuario.Length >= 9)
+            if (Usuario.Length >= 25)
             {
                 respuesta = 5;
             }
@@ -28,10 +28,10 @@ namespace ProyectoGestionAcademica.Backend
             else
             {
                 var parametros = new Dictionary<string, object>
-        {
-            { "@Usuario", Usuario },
-            { "@Contrasenia", Contraseña } // Cambiar a "@Contrasenia"
-        };
+                {
+                    { "@Usuario", Usuario },
+                    { "@Contrasenia", Contraseña } // Cambiar a "@Contrasenia"
+                };
 
                 // Ejecutar el procedimiento para los alumnos
                 perfil = Convert.ToInt32(Instancia_SQL.EjecutarEscalar("ObtenerIDPerfilPorCredencialesAlumno", parametros));
@@ -43,14 +43,14 @@ namespace ProyectoGestionAcademica.Backend
                 else
                 {
                     var parametros2 = new Dictionary<string, object>
-            {
-                { "@Usuario", Usuario },
-                { "@Contrasenia", Contraseña } // Cambiar a "@Contrasenia"
-            };
+                    {
+                        { "@Usuario", Usuario },
+                        { "@Contrasenia", Contraseña } // Cambiar a "@Contrasenia"
+                    };
 
                     // Ejecutar el procedimiento para los empleados
                     perfil = Convert.ToInt32(Instancia_SQL.EjecutarEscalar("ObtenerIDPerfilPorCredenciales", parametros2));
-                    if (perfil >= 1)
+                    if (perfil > 0)
                     {
                         respuesta = perfil;
                     }
@@ -60,7 +60,7 @@ namespace ProyectoGestionAcademica.Backend
                     }
                 }
             }
-            if (Usuario.Length >= 9 && Contraseña.Length >= 35) { respuesta = 7; }
+            if (Usuario.Length >= 25 && Contraseña.Length >= 35) { respuesta = 7; }
             return respuesta;
         }
     }
