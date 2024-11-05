@@ -749,6 +749,7 @@
             Form2_DashboardGeneral_Button_Alumnos_Informacion.TextAlign = ContentAlignment.MiddleRight;
             Form2_DashboardGeneral_Button_Alumnos_Informacion.UseVisualStyleBackColor = true;
             Form2_DashboardGeneral_Button_Alumnos_Informacion.Visible = false;
+            Form2_DashboardGeneral_Button_Alumnos_Informacion.Click += Form2_DashboardGeneral_Button_Alumnos_Informacion_Click;
             // 
             // Form2_DashboardGeneral_Button_Alumnos_Asignar
             // 
@@ -767,6 +768,7 @@
             Form2_DashboardGeneral_Button_Alumnos_Asignar.TextAlign = ContentAlignment.MiddleRight;
             Form2_DashboardGeneral_Button_Alumnos_Asignar.UseVisualStyleBackColor = true;
             Form2_DashboardGeneral_Button_Alumnos_Asignar.Visible = false;
+            Form2_DashboardGeneral_Button_Alumnos_Asignar.Click += Form2_DashboardGeneral_Button_Alumnos_Asignar_Click;
             // 
             // Form2_DashboardGeneral_Button_Alumnos_Eliminar
             // 
@@ -785,6 +787,7 @@
             Form2_DashboardGeneral_Button_Alumnos_Eliminar.TextAlign = ContentAlignment.MiddleRight;
             Form2_DashboardGeneral_Button_Alumnos_Eliminar.UseVisualStyleBackColor = true;
             Form2_DashboardGeneral_Button_Alumnos_Eliminar.Visible = false;
+            Form2_DashboardGeneral_Button_Alumnos_Eliminar.Click += Form2_DashboardGeneral_Button_Alumnos_Eliminar_Click;
             // 
             // Form2_DashboardGeneral_Button_Alumnos_Editar
             // 
@@ -803,6 +806,7 @@
             Form2_DashboardGeneral_Button_Alumnos_Editar.TextAlign = ContentAlignment.MiddleRight;
             Form2_DashboardGeneral_Button_Alumnos_Editar.UseVisualStyleBackColor = true;
             Form2_DashboardGeneral_Button_Alumnos_Editar.Visible = false;
+            Form2_DashboardGeneral_Button_Alumnos_Editar.Click += Form2_DashboardGeneral_Button_Alumnos_Editar_Click;
             // 
             // Form2_DashboardGeneral_Button_Alumnos_Agregar
             // 
@@ -821,6 +825,7 @@
             Form2_DashboardGeneral_Button_Alumnos_Agregar.TextAlign = ContentAlignment.MiddleRight;
             Form2_DashboardGeneral_Button_Alumnos_Agregar.UseVisualStyleBackColor = true;
             Form2_DashboardGeneral_Button_Alumnos_Agregar.Visible = false;
+            Form2_DashboardGeneral_Button_Alumnos_Agregar.Click += Form2_DashboardGeneral_Button_Alumnos_Agregar_Click;
             // 
             // Form2_DashboardGeneral_Panel_Isquierdo_PanelAlumnos
             // 

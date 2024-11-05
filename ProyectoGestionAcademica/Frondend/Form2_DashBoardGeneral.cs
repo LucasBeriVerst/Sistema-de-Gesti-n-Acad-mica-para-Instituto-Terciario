@@ -71,6 +71,26 @@ namespace ProyectoGestionAcademica.Frondend
                 AbrirFormulario<Form3_DashBoardAlumnos>();
             }
         }
+        private void Form2_DashboardGeneral_Button_Alumnos_Agregar_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form3_DashBoardAlumnos_1_Agregar>();
+        }
+        private void Form2_DashboardGeneral_Button_Alumnos_Editar_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form3_DashBoardAlumnos_2_Editar>();
+        }
+        private void Form2_DashboardGeneral_Button_Alumnos_Eliminar_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form3_DashBoardAlumnos_3_Eliminar>();
+        }
+        private void Form2_DashboardGeneral_Button_Alumnos_Asignar_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form3_DashBoardAlumnos_4_Asignar>();
+        }
+        private void Form2_DashboardGeneral_Button_Alumnos_Informacion_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form3_DashBoardAlumnos_5_Informacion>();
+        }
         private void Form2_DashboardGeneral_Button_Carreras_Click(object sender, EventArgs e)
         {
             if (Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Visible == true)
@@ -277,10 +297,11 @@ namespace ProyectoGestionAcademica.Frondend
                     Form2_DashboardGeneral_Button_Alumnos_Informacion.Visible = true;
                     break;
                 case 4:
-                        Form2_DashboardGeneral_Button_Examenes.Visible = true;
-                        Form2_DashboardGeneral_Button_Examenes_Informacion.Visible = true;
+                    Form2_DashboardGeneral_Button_Examenes.Visible = true;
+                    Form2_DashboardGeneral_Button_Examenes_Informacion.Visible = true;
                     break;
             }
         }
+
     }
 }

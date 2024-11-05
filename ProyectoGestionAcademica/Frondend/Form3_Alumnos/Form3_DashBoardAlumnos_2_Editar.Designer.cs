@@ -39,6 +39,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form3_DashBoardAlumnos_2_Editar";
             Text = "Form3_DashBoardAlumnos_2_Editar";
+            Load += Form3_DashBoardAlumnos_2_Editar_Load;
             ResumeLayout(false);
         }
 
