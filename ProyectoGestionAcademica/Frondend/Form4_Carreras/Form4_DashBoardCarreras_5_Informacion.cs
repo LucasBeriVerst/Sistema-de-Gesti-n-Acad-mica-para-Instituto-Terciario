@@ -12,7 +12,7 @@ namespace ProyectoGestionAcademica.Frondend.Form4_Carreras
 {
     public partial class Form4_DashBoardCarreras_5_Informacion : Form, IConfiguracion
     {
-        private string titulo = "CARRERAS: INFORMACION";
+        private string titulo = "CARRERAS: INFORMACIÓN";
         public Form4_DashBoardCarreras_5_Informacion()
         {
             InitializeComponent();

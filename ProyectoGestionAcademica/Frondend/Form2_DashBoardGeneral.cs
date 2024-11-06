@@ -1,4 +1,7 @@
 ﻿using ProyectoGestionAcademica.Frondend.Form4_Carreras;
+using ProyectoGestionAcademica.Frondend.Form5_Materias;
+using ProyectoGestionAcademica.Frondend.Form6_Examenes;
+using ProyectoGestionAcademica.Frondend.Form7_Usuarios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +16,7 @@ namespace ProyectoGestionAcademica.Frondend
 {
     public partial class Form2_DashboardGeneral : Form
     {
+        #region Atributos y Propiedades
         private int id_perfil;
         private string titulo = "MENU PRINCIPAL";
         private string backUpTitulo = "MENU PRINCIPAL";
@@ -22,7 +26,7 @@ namespace ProyectoGestionAcademica.Frondend
         public string Titulo { get => titulo; set => titulo = value; }
         public string BackUpTitulo { get => backUpTitulo; set => backUpTitulo = value; }
         public string NombreUsuario { get => nombreUsuario; set => nombreUsuario = value; }
-
+        #endregion
         public Form2_DashboardGeneral(int N_DePerfilElegido, string NomUsuarioAceptado)
         {
             InitializeComponent();
@@ -160,7 +164,28 @@ namespace ProyectoGestionAcademica.Frondend
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias.Visible = true;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Visible = false;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.Visible = false;
+                AbrirFormulario<Form5_DashBoardMaterias>();
             }
+        }
+        private void Form2_DashboardGeneral_Button_Materias_Agregar_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form5_DashBoardMaterias_1_Agregar>();
+        }
+        private void Form2_DashboardGeneral_Button_Materias_Editar_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form5_DashBoardMaterias_2_Editar>();
+        }
+        private void Form2_DashboardGeneral_Button_Materias_Eliminar_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form5_DashBoardMaterias_3_Eliminar>();
+        }
+        private void Form2_DashboardGeneral_Button_Materias_Asignar_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form5_DashBoardMaterias_4_Asignar>();
+        }
+        private void Form2_DashboardGeneral_Button_Materias_Informacion_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form5_DashBoardMaterias_5_Informacion>();
         }
         #endregion
         #region Examenes
@@ -184,7 +209,28 @@ namespace ProyectoGestionAcademica.Frondend
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Visible = false;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.Visible = true;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuUsuarios.Visible = false;
+                AbrirFormulario<Form6_DashBoardExamenes>();
             }
+        }
+        private void Form2_DashboardGeneral_Button_Examenes_Agregar_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form6_DashBoardExamenes_1_Agregar>();
+        }
+        private void Form2_DashboardGeneral_Button_Examenes_Editar_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form6_DashBoardExamenes_2_Editar>();
+        }
+        private void Form2_DashboardGeneral_Button_Examenes_Eliminar_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form6_DashBoardExamenes_3_Eliminar>();
+        }
+        private void Form2_DashboardGeneral_Button_Examenes_Asignar_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form6_DashBoardExamenes_4_Asignar>();
+        }
+        private void Form2_DashboardGeneral_Button_Examenes_Informacion_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form6_DashBoardExamenes_5_Informacion>();
         }
         #endregion
         #region Usuarios
@@ -208,7 +254,34 @@ namespace ProyectoGestionAcademica.Frondend
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Visible = false;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.Visible = false;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuUsuarios.Visible = true;
+                AbrirFormulario<Form7_DashBoardUsuarios>();
             }
+        }
+        private void Form2_DashboardGeneral_Button_Usuarios_Agregar_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form7_DashBoardUsuarios_1_Agregar>();
+        }
+        private void Form2_DashboardGeneral_Button_Usuarios_Editar_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form7_DashBoardUsuarios_2_Editar>();
+        }
+        private void Form2_DashboardGeneral_Button_Usuarios_Eliminar_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form7_DashBoardUsuarios_3_Eliminar>();
+        }
+        private void Form2_DashboardGeneral_Button_Usuarios_Asignar_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form7_DashBoardUsuarios_4_Asignar>();
+        }
+        private void Form2_DashboardGeneral_Button_Usuarios_Informacion_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form7_DashBoardUsuarios_5_Informacion>();
+        }
+        #endregion
+        #region Perfil
+        private void Form2_DashboardGeneral_Button_Perfil_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form8_DashBoardPerfilUsuaerio>();
         }
         #endregion
         //Metodo generico para regular que formulario se muestra y si debe crearse o no
@@ -248,6 +321,7 @@ namespace ProyectoGestionAcademica.Frondend
         }
         private void Configuracion()
         {
+            #region Configuracion por perfil
             switch (Id_perfil)
             {
                 case 1:
@@ -331,7 +405,7 @@ namespace ProyectoGestionAcademica.Frondend
                     Form2_DashboardGeneral_Button_Examenes_Informacion.Visible = true;
                     break;
             }
+            #endregion
         }
-
     }
 }

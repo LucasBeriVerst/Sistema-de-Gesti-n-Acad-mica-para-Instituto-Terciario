@@ -46,7 +46,6 @@
             Form2_DashboardGeneral_Button_Examenes_Agregar = new Button();
             Form2_DashboardGeneral_Panel_Isquierdo_Usuario = new Panel();
             Form2_DashboardGeneral_Button_Perfil = new Button();
-            Form2_DashboardGeneral_PctureBox_Usuario = new PictureBox();
             Form2_DashboardGeneral_Button_Examenes = new Button();
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias = new Panel();
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMateriasDerecho = new Panel();
@@ -89,7 +88,6 @@
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.SuspendLayout();
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenesDerecho.SuspendLayout();
             Form2_DashboardGeneral_Panel_Isquierdo_Usuario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)Form2_DashboardGeneral_PctureBox_Usuario).BeginInit();
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias.SuspendLayout();
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMateriasDerecho.SuspendLayout();
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.SuspendLayout();
@@ -131,7 +129,7 @@
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuUsuarios.BackColor = Color.FromArgb(3, 1, 254);
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuUsuarios.Controls.Add(Form2_DashboardGeneral_Panel_Isquierdo_SubMenuUsuariosDerecho);
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuUsuarios.Dock = DockStyle.Top;
-            Form2_DashboardGeneral_Panel_Isquierdo_SubMenuUsuarios.Location = new Point(0, 693);
+            Form2_DashboardGeneral_Panel_Isquierdo_SubMenuUsuarios.Location = new Point(0, 689);
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuUsuarios.Margin = new Padding(2);
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuUsuarios.Name = "Form2_DashboardGeneral_Panel_Isquierdo_SubMenuUsuarios";
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuUsuarios.Size = new Size(224, 116);
@@ -166,10 +164,11 @@
             Form2_DashboardGeneral_Button_Usuarios_Informacion.Name = "Form2_DashboardGeneral_Button_Usuarios_Informacion";
             Form2_DashboardGeneral_Button_Usuarios_Informacion.Size = new Size(222, 22);
             Form2_DashboardGeneral_Button_Usuarios_Informacion.TabIndex = 7;
-            Form2_DashboardGeneral_Button_Usuarios_Informacion.Text = "INFORMACION";
+            Form2_DashboardGeneral_Button_Usuarios_Informacion.Text = "INFORMACIÓN";
             Form2_DashboardGeneral_Button_Usuarios_Informacion.TextAlign = ContentAlignment.MiddleRight;
             Form2_DashboardGeneral_Button_Usuarios_Informacion.UseVisualStyleBackColor = true;
             Form2_DashboardGeneral_Button_Usuarios_Informacion.Visible = false;
+            Form2_DashboardGeneral_Button_Usuarios_Informacion.Click += Form2_DashboardGeneral_Button_Usuarios_Informacion_Click;
             // 
             // Form2_DashboardGeneral_Button_Usuarios_Asignar
             // 
@@ -188,6 +187,7 @@
             Form2_DashboardGeneral_Button_Usuarios_Asignar.TextAlign = ContentAlignment.MiddleRight;
             Form2_DashboardGeneral_Button_Usuarios_Asignar.UseVisualStyleBackColor = true;
             Form2_DashboardGeneral_Button_Usuarios_Asignar.Visible = false;
+            Form2_DashboardGeneral_Button_Usuarios_Asignar.Click += Form2_DashboardGeneral_Button_Usuarios_Asignar_Click;
             // 
             // Form2_DashboardGeneral_Button_Usuarios_Eliminar
             // 
@@ -206,6 +206,7 @@
             Form2_DashboardGeneral_Button_Usuarios_Eliminar.TextAlign = ContentAlignment.MiddleRight;
             Form2_DashboardGeneral_Button_Usuarios_Eliminar.UseVisualStyleBackColor = true;
             Form2_DashboardGeneral_Button_Usuarios_Eliminar.Visible = false;
+            Form2_DashboardGeneral_Button_Usuarios_Eliminar.Click += Form2_DashboardGeneral_Button_Usuarios_Eliminar_Click;
             // 
             // Form2_DashboardGeneral_Button_Usuarios_Editar
             // 
@@ -224,6 +225,7 @@
             Form2_DashboardGeneral_Button_Usuarios_Editar.TextAlign = ContentAlignment.MiddleRight;
             Form2_DashboardGeneral_Button_Usuarios_Editar.UseVisualStyleBackColor = true;
             Form2_DashboardGeneral_Button_Usuarios_Editar.Visible = false;
+            Form2_DashboardGeneral_Button_Usuarios_Editar.Click += Form2_DashboardGeneral_Button_Usuarios_Editar_Click;
             // 
             // Form2_DashboardGeneral_Button_Usuarios_Agregar
             // 
@@ -242,6 +244,7 @@
             Form2_DashboardGeneral_Button_Usuarios_Agregar.TextAlign = ContentAlignment.MiddleRight;
             Form2_DashboardGeneral_Button_Usuarios_Agregar.UseVisualStyleBackColor = true;
             Form2_DashboardGeneral_Button_Usuarios_Agregar.Visible = false;
+            Form2_DashboardGeneral_Button_Usuarios_Agregar.Click += Form2_DashboardGeneral_Button_Usuarios_Agregar_Click;
             // 
             // Form2_DashboardGeneral_Button_Usuarios
             // 
@@ -251,7 +254,7 @@
             Form2_DashboardGeneral_Button_Usuarios.FlatStyle = FlatStyle.Flat;
             Form2_DashboardGeneral_Button_Usuarios.Font = new Font("Fira Sans", 13F, FontStyle.Bold);
             Form2_DashboardGeneral_Button_Usuarios.ForeColor = SystemColors.ScrollBar;
-            Form2_DashboardGeneral_Button_Usuarios.Location = new Point(0, 659);
+            Form2_DashboardGeneral_Button_Usuarios.Location = new Point(0, 655);
             Form2_DashboardGeneral_Button_Usuarios.Margin = new Padding(2);
             Form2_DashboardGeneral_Button_Usuarios.Name = "Form2_DashboardGeneral_Button_Usuarios";
             Form2_DashboardGeneral_Button_Usuarios.Size = new Size(224, 34);
@@ -266,7 +269,7 @@
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.BackColor = Color.FromArgb(3, 1, 254);
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.Controls.Add(Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenesDerecho);
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.Dock = DockStyle.Top;
-            Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.Location = new Point(0, 543);
+            Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.Location = new Point(0, 539);
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.Margin = new Padding(2);
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.Name = "Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes";
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.Size = new Size(224, 116);
@@ -301,10 +304,11 @@
             Form2_DashboardGeneral_Button_Examenes_Informacion.Name = "Form2_DashboardGeneral_Button_Examenes_Informacion";
             Form2_DashboardGeneral_Button_Examenes_Informacion.Size = new Size(222, 22);
             Form2_DashboardGeneral_Button_Examenes_Informacion.TabIndex = 11;
-            Form2_DashboardGeneral_Button_Examenes_Informacion.Text = "INFORMACION";
+            Form2_DashboardGeneral_Button_Examenes_Informacion.Text = "INFORMACIÓN";
             Form2_DashboardGeneral_Button_Examenes_Informacion.TextAlign = ContentAlignment.MiddleRight;
             Form2_DashboardGeneral_Button_Examenes_Informacion.UseVisualStyleBackColor = true;
             Form2_DashboardGeneral_Button_Examenes_Informacion.Visible = false;
+            Form2_DashboardGeneral_Button_Examenes_Informacion.Click += Form2_DashboardGeneral_Button_Examenes_Informacion_Click;
             // 
             // Form2_DashboardGeneral_Button_Examenes_Asignar
             // 
@@ -323,6 +327,7 @@
             Form2_DashboardGeneral_Button_Examenes_Asignar.TextAlign = ContentAlignment.MiddleRight;
             Form2_DashboardGeneral_Button_Examenes_Asignar.UseVisualStyleBackColor = true;
             Form2_DashboardGeneral_Button_Examenes_Asignar.Visible = false;
+            Form2_DashboardGeneral_Button_Examenes_Asignar.Click += Form2_DashboardGeneral_Button_Examenes_Asignar_Click;
             // 
             // Form2_DashboardGeneral_Button_Examenes_Eliminar
             // 
@@ -341,6 +346,7 @@
             Form2_DashboardGeneral_Button_Examenes_Eliminar.TextAlign = ContentAlignment.MiddleRight;
             Form2_DashboardGeneral_Button_Examenes_Eliminar.UseVisualStyleBackColor = true;
             Form2_DashboardGeneral_Button_Examenes_Eliminar.Visible = false;
+            Form2_DashboardGeneral_Button_Examenes_Eliminar.Click += Form2_DashboardGeneral_Button_Examenes_Eliminar_Click;
             // 
             // Form2_DashboardGeneral_Button_Examenes_Editar
             // 
@@ -359,6 +365,7 @@
             Form2_DashboardGeneral_Button_Examenes_Editar.TextAlign = ContentAlignment.MiddleRight;
             Form2_DashboardGeneral_Button_Examenes_Editar.UseVisualStyleBackColor = true;
             Form2_DashboardGeneral_Button_Examenes_Editar.Visible = false;
+            Form2_DashboardGeneral_Button_Examenes_Editar.Click += Form2_DashboardGeneral_Button_Examenes_Editar_Click;
             // 
             // Form2_DashboardGeneral_Button_Examenes_Agregar
             // 
@@ -377,12 +384,12 @@
             Form2_DashboardGeneral_Button_Examenes_Agregar.TextAlign = ContentAlignment.MiddleRight;
             Form2_DashboardGeneral_Button_Examenes_Agregar.UseVisualStyleBackColor = true;
             Form2_DashboardGeneral_Button_Examenes_Agregar.Visible = false;
+            Form2_DashboardGeneral_Button_Examenes_Agregar.Click += Form2_DashboardGeneral_Button_Examenes_Agregar_Click;
             // 
             // Form2_DashboardGeneral_Panel_Isquierdo_Usuario
             // 
             Form2_DashboardGeneral_Panel_Isquierdo_Usuario.BackColor = Color.FromArgb(36, 60, 100);
             Form2_DashboardGeneral_Panel_Isquierdo_Usuario.Controls.Add(Form2_DashboardGeneral_Button_Perfil);
-            Form2_DashboardGeneral_Panel_Isquierdo_Usuario.Controls.Add(Form2_DashboardGeneral_PctureBox_Usuario);
             Form2_DashboardGeneral_Panel_Isquierdo_Usuario.Dock = DockStyle.Bottom;
             Form2_DashboardGeneral_Panel_Isquierdo_Usuario.Location = new Point(0, 681);
             Form2_DashboardGeneral_Panel_Isquierdo_Usuario.Margin = new Padding(2);
@@ -400,22 +407,11 @@
             Form2_DashboardGeneral_Button_Perfil.Location = new Point(0, 0);
             Form2_DashboardGeneral_Button_Perfil.Margin = new Padding(2);
             Form2_DashboardGeneral_Button_Perfil.Name = "Form2_DashboardGeneral_Button_Perfil";
-            Form2_DashboardGeneral_Button_Perfil.Size = new Size(192, 39);
+            Form2_DashboardGeneral_Button_Perfil.Size = new Size(224, 39);
             Form2_DashboardGeneral_Button_Perfil.TabIndex = 1;
             Form2_DashboardGeneral_Button_Perfil.Text = "Cambiar x N_usuario";
             Form2_DashboardGeneral_Button_Perfil.UseVisualStyleBackColor = true;
-            // 
-            // Form2_DashboardGeneral_PctureBox_Usuario
-            // 
-            Form2_DashboardGeneral_PctureBox_Usuario.Dock = DockStyle.Right;
-            Form2_DashboardGeneral_PctureBox_Usuario.Image = Properties.Resources.user_icon_150670;
-            Form2_DashboardGeneral_PctureBox_Usuario.Location = new Point(192, 0);
-            Form2_DashboardGeneral_PctureBox_Usuario.Margin = new Padding(2);
-            Form2_DashboardGeneral_PctureBox_Usuario.Name = "Form2_DashboardGeneral_PctureBox_Usuario";
-            Form2_DashboardGeneral_PctureBox_Usuario.Size = new Size(32, 39);
-            Form2_DashboardGeneral_PctureBox_Usuario.SizeMode = PictureBoxSizeMode.AutoSize;
-            Form2_DashboardGeneral_PctureBox_Usuario.TabIndex = 0;
-            Form2_DashboardGeneral_PctureBox_Usuario.TabStop = false;
+            Form2_DashboardGeneral_Button_Perfil.Click += Form2_DashboardGeneral_Button_Perfil_Click;
             // 
             // Form2_DashboardGeneral_Button_Examenes
             // 
@@ -425,7 +421,7 @@
             Form2_DashboardGeneral_Button_Examenes.FlatStyle = FlatStyle.Flat;
             Form2_DashboardGeneral_Button_Examenes.Font = new Font("Fira Sans", 13F, FontStyle.Bold);
             Form2_DashboardGeneral_Button_Examenes.ForeColor = SystemColors.ScrollBar;
-            Form2_DashboardGeneral_Button_Examenes.Location = new Point(0, 509);
+            Form2_DashboardGeneral_Button_Examenes.Location = new Point(0, 505);
             Form2_DashboardGeneral_Button_Examenes.Margin = new Padding(2);
             Form2_DashboardGeneral_Button_Examenes.Name = "Form2_DashboardGeneral_Button_Examenes";
             Form2_DashboardGeneral_Button_Examenes.Size = new Size(224, 34);
@@ -440,7 +436,7 @@
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias.BackColor = Color.FromArgb(3, 1, 254);
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias.Controls.Add(Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMateriasDerecho);
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias.Dock = DockStyle.Top;
-            Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias.Location = new Point(0, 393);
+            Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias.Location = new Point(0, 389);
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias.Margin = new Padding(2);
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias.Name = "Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias";
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias.Size = new Size(224, 116);
@@ -475,10 +471,11 @@
             Form2_DashboardGeneral_Button_Materias_Informacion.Name = "Form2_DashboardGeneral_Button_Materias_Informacion";
             Form2_DashboardGeneral_Button_Materias_Informacion.Size = new Size(222, 22);
             Form2_DashboardGeneral_Button_Materias_Informacion.TabIndex = 7;
-            Form2_DashboardGeneral_Button_Materias_Informacion.Text = "INFORMACION";
+            Form2_DashboardGeneral_Button_Materias_Informacion.Text = "INFORMACIÓN";
             Form2_DashboardGeneral_Button_Materias_Informacion.TextAlign = ContentAlignment.MiddleRight;
             Form2_DashboardGeneral_Button_Materias_Informacion.UseVisualStyleBackColor = true;
             Form2_DashboardGeneral_Button_Materias_Informacion.Visible = false;
+            Form2_DashboardGeneral_Button_Materias_Informacion.Click += Form2_DashboardGeneral_Button_Materias_Informacion_Click;
             // 
             // Form2_DashboardGeneral_Button_Materias_Asignar
             // 
@@ -497,6 +494,7 @@
             Form2_DashboardGeneral_Button_Materias_Asignar.TextAlign = ContentAlignment.MiddleRight;
             Form2_DashboardGeneral_Button_Materias_Asignar.UseVisualStyleBackColor = true;
             Form2_DashboardGeneral_Button_Materias_Asignar.Visible = false;
+            Form2_DashboardGeneral_Button_Materias_Asignar.Click += Form2_DashboardGeneral_Button_Materias_Asignar_Click;
             // 
             // Form2_DashboardGeneral_Button_Materias_Eliminar
             // 
@@ -515,6 +513,7 @@
             Form2_DashboardGeneral_Button_Materias_Eliminar.TextAlign = ContentAlignment.MiddleRight;
             Form2_DashboardGeneral_Button_Materias_Eliminar.UseVisualStyleBackColor = true;
             Form2_DashboardGeneral_Button_Materias_Eliminar.Visible = false;
+            Form2_DashboardGeneral_Button_Materias_Eliminar.Click += Form2_DashboardGeneral_Button_Materias_Eliminar_Click;
             // 
             // Form2_DashboardGeneral_Button_Materias_Editar
             // 
@@ -533,6 +532,7 @@
             Form2_DashboardGeneral_Button_Materias_Editar.TextAlign = ContentAlignment.MiddleRight;
             Form2_DashboardGeneral_Button_Materias_Editar.UseVisualStyleBackColor = true;
             Form2_DashboardGeneral_Button_Materias_Editar.Visible = false;
+            Form2_DashboardGeneral_Button_Materias_Editar.Click += Form2_DashboardGeneral_Button_Materias_Editar_Click;
             // 
             // Form2_DashboardGeneral_Button_Materias_Agregar
             // 
@@ -551,6 +551,7 @@
             Form2_DashboardGeneral_Button_Materias_Agregar.TextAlign = ContentAlignment.MiddleRight;
             Form2_DashboardGeneral_Button_Materias_Agregar.UseVisualStyleBackColor = true;
             Form2_DashboardGeneral_Button_Materias_Agregar.Visible = false;
+            Form2_DashboardGeneral_Button_Materias_Agregar.Click += Form2_DashboardGeneral_Button_Materias_Agregar_Click;
             // 
             // Form2_DashboardGeneral_Button_Materias
             // 
@@ -560,7 +561,7 @@
             Form2_DashboardGeneral_Button_Materias.FlatStyle = FlatStyle.Flat;
             Form2_DashboardGeneral_Button_Materias.Font = new Font("Fira Sans", 13F, FontStyle.Bold);
             Form2_DashboardGeneral_Button_Materias.ForeColor = SystemColors.ScrollBar;
-            Form2_DashboardGeneral_Button_Materias.Location = new Point(0, 359);
+            Form2_DashboardGeneral_Button_Materias.Location = new Point(0, 355);
             Form2_DashboardGeneral_Button_Materias.Margin = new Padding(2);
             Form2_DashboardGeneral_Button_Materias.Name = "Form2_DashboardGeneral_Button_Materias";
             Form2_DashboardGeneral_Button_Materias.Size = new Size(224, 34);
@@ -575,7 +576,7 @@
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.BackColor = Color.FromArgb(3, 1, 254);
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Controls.Add(Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarrerasDerecho);
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Dock = DockStyle.Top;
-            Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Location = new Point(0, 243);
+            Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Location = new Point(0, 239);
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Margin = new Padding(2);
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Name = "Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras";
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Size = new Size(224, 116);
@@ -610,7 +611,7 @@
             Form2_DashboardGeneral_Button_Carreras_Informacion.Name = "Form2_DashboardGeneral_Button_Carreras_Informacion";
             Form2_DashboardGeneral_Button_Carreras_Informacion.Size = new Size(222, 22);
             Form2_DashboardGeneral_Button_Carreras_Informacion.TabIndex = 7;
-            Form2_DashboardGeneral_Button_Carreras_Informacion.Text = "INFORMACION";
+            Form2_DashboardGeneral_Button_Carreras_Informacion.Text = "INFORMACIÓN";
             Form2_DashboardGeneral_Button_Carreras_Informacion.TextAlign = ContentAlignment.MiddleRight;
             Form2_DashboardGeneral_Button_Carreras_Informacion.UseVisualStyleBackColor = true;
             Form2_DashboardGeneral_Button_Carreras_Informacion.Visible = false;
@@ -700,7 +701,7 @@
             Form2_DashboardGeneral_Button_Carreras.FlatStyle = FlatStyle.Flat;
             Form2_DashboardGeneral_Button_Carreras.Font = new Font("Fira Sans", 13F, FontStyle.Bold);
             Form2_DashboardGeneral_Button_Carreras.ForeColor = SystemColors.ScrollBar;
-            Form2_DashboardGeneral_Button_Carreras.Location = new Point(0, 209);
+            Form2_DashboardGeneral_Button_Carreras.Location = new Point(0, 205);
             Form2_DashboardGeneral_Button_Carreras.Margin = new Padding(2);
             Form2_DashboardGeneral_Button_Carreras.Name = "Form2_DashboardGeneral_Button_Carreras";
             Form2_DashboardGeneral_Button_Carreras.Size = new Size(224, 34);
@@ -715,7 +716,7 @@
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuAlumnos.BackColor = Color.FromArgb(3, 1, 254);
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuAlumnos.Controls.Add(Form2_DashboardGeneral_Panel_Isquierdo_SubMenuAlumnosDerecho);
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuAlumnos.Dock = DockStyle.Top;
-            Form2_DashboardGeneral_Panel_Isquierdo_SubMenuAlumnos.Location = new Point(0, 96);
+            Form2_DashboardGeneral_Panel_Isquierdo_SubMenuAlumnos.Location = new Point(0, 92);
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuAlumnos.Margin = new Padding(2);
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuAlumnos.Name = "Form2_DashboardGeneral_Panel_Isquierdo_SubMenuAlumnos";
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuAlumnos.Size = new Size(224, 113);
@@ -750,7 +751,7 @@
             Form2_DashboardGeneral_Button_Alumnos_Informacion.Name = "Form2_DashboardGeneral_Button_Alumnos_Informacion";
             Form2_DashboardGeneral_Button_Alumnos_Informacion.Size = new Size(222, 22);
             Form2_DashboardGeneral_Button_Alumnos_Informacion.TabIndex = 7;
-            Form2_DashboardGeneral_Button_Alumnos_Informacion.Text = "INFORMACION";
+            Form2_DashboardGeneral_Button_Alumnos_Informacion.Text = "INFORMACIÓN";
             Form2_DashboardGeneral_Button_Alumnos_Informacion.TextAlign = ContentAlignment.MiddleRight;
             Form2_DashboardGeneral_Button_Alumnos_Informacion.UseVisualStyleBackColor = true;
             Form2_DashboardGeneral_Button_Alumnos_Informacion.Visible = false;
@@ -836,7 +837,7 @@
             // 
             Form2_DashboardGeneral_Panel_Isquierdo_PanelAlumnos.Controls.Add(Form2_DashboardGeneral_Panel_Isquierdo_GestionAlumnos);
             Form2_DashboardGeneral_Panel_Isquierdo_PanelAlumnos.Dock = DockStyle.Top;
-            Form2_DashboardGeneral_Panel_Isquierdo_PanelAlumnos.Location = new Point(0, 62);
+            Form2_DashboardGeneral_Panel_Isquierdo_PanelAlumnos.Location = new Point(0, 58);
             Form2_DashboardGeneral_Panel_Isquierdo_PanelAlumnos.Margin = new Padding(2);
             Form2_DashboardGeneral_Panel_Isquierdo_PanelAlumnos.Name = "Form2_DashboardGeneral_Panel_Isquierdo_PanelAlumnos";
             Form2_DashboardGeneral_Panel_Isquierdo_PanelAlumnos.Size = new Size(224, 34);
@@ -877,7 +878,7 @@
             Form2_DashboardGeneral_Panel_Isquierdo_Imagen.Location = new Point(0, 0);
             Form2_DashboardGeneral_Panel_Isquierdo_Imagen.Margin = new Padding(2);
             Form2_DashboardGeneral_Panel_Isquierdo_Imagen.Name = "Form2_DashboardGeneral_Panel_Isquierdo_Imagen";
-            Form2_DashboardGeneral_Panel_Isquierdo_Imagen.Size = new Size(224, 62);
+            Form2_DashboardGeneral_Panel_Isquierdo_Imagen.Size = new Size(224, 58);
             Form2_DashboardGeneral_Panel_Isquierdo_Imagen.TabIndex = 0;
             // 
             // Form2_DashboardGeneral_PictureBox_Hilet
@@ -888,7 +889,7 @@
             Form2_DashboardGeneral_PictureBox_Hilet.Location = new Point(0, 0);
             Form2_DashboardGeneral_PictureBox_Hilet.Margin = new Padding(2);
             Form2_DashboardGeneral_PictureBox_Hilet.Name = "Form2_DashboardGeneral_PictureBox_Hilet";
-            Form2_DashboardGeneral_PictureBox_Hilet.Size = new Size(224, 62);
+            Form2_DashboardGeneral_PictureBox_Hilet.Size = new Size(224, 58);
             Form2_DashboardGeneral_PictureBox_Hilet.SizeMode = PictureBoxSizeMode.CenterImage;
             Form2_DashboardGeneral_PictureBox_Hilet.TabIndex = 0;
             Form2_DashboardGeneral_PictureBox_Hilet.TabStop = false;
@@ -996,8 +997,6 @@
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.ResumeLayout(false);
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenesDerecho.ResumeLayout(false);
             Form2_DashboardGeneral_Panel_Isquierdo_Usuario.ResumeLayout(false);
-            Form2_DashboardGeneral_Panel_Isquierdo_Usuario.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)Form2_DashboardGeneral_PctureBox_Usuario).EndInit();
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias.ResumeLayout(false);
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMateriasDerecho.ResumeLayout(false);
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.ResumeLayout(false);
@@ -1028,7 +1027,6 @@
         private Panel Form2_DashboardGeneral_Panel_Isquierdo_Usuario;
         private Panel Form2_DashboardGeneral_Panel_Isquierdo_PanelAlumnos;
         private Panel Form2_DashboardGeneral_Panel_Isquierdo_GestionAlumnos;
-        private PictureBox Form2_DashboardGeneral_PctureBox_Usuario;
         private Button Form2_DashboardGeneral_Button_Alumnos;
         private Panel Form2_DashboardGeneral_Panel_Isquierdo_SubMenuAlumnos;
         private Panel Form2_DashboardGeneral_Panel_Isquierdo_SubMenuAlumnosDerecho;
