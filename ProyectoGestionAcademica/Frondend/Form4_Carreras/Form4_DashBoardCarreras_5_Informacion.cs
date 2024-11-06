@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace ProyectoGestionAcademica.Frondend.Form4_Carreras
 {
-    public partial class Form4_DashBoardCarreras_5_Informacion : Form
+    public partial class Form4_DashBoardCarreras_5_Informacion : Form, IConfiguracion
     {
+        private string titulo = "CARRERAS: INFORMACION";
         public Form4_DashBoardCarreras_5_Informacion()
         {
             InitializeComponent();
+            Titulo = titulo;
+        }
+        public string Titulo { get => titulo; set => titulo = value; }
+        private void Form4_DashBoardCarreras_5_Informacion_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

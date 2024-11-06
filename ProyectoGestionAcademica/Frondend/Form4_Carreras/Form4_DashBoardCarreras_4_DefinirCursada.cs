@@ -8,20 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProyectoGestionAcademica.Frondend
+namespace ProyectoGestionAcademica.Frondend.Form4_Carreras
 {
-    public partial class Form4_DashBoardCarreras : Form, IConfiguracion
+    public partial class Form4_DashBoardCarreras_4_DefinirCursada : Form, IConfiguracion
     {
-        private string titulo = "SUB-MENU: CARRERAS";
-        public Form4_DashBoardCarreras()
+        private string titulo = "CARRERAS: DEFINIR CURSADA";
+        public Form4_DashBoardCarreras_4_DefinirCursada()
         {
             InitializeComponent();
             Titulo = titulo;
         }
-
         public string Titulo { get => titulo; set => titulo = value; }
-
-        private void Form4_DashBoardCarreras_Load(object sender, EventArgs e)
+        private void Form4_DashBoardCarreras_4_DefinirCursada_Load(object sender, EventArgs e)
         {
 
         }

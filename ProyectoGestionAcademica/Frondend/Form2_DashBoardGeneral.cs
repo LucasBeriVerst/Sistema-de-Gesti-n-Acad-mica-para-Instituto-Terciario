@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoGestionAcademica.Frondend.Form4_Carreras;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -48,6 +49,7 @@ namespace ProyectoGestionAcademica.Frondend
         {
             this.WindowState = FormWindowState.Minimized;
         }
+        #region Alumnos
         private void Form2_DashboardGeneral_Button_Alumnos_Click(object sender, EventArgs e)
         {
             if (Form2_DashboardGeneral_Panel_Isquierdo_SubMenuAlumnos.Visible == true)
@@ -91,6 +93,8 @@ namespace ProyectoGestionAcademica.Frondend
         {
             AbrirFormulario<Form3_DashBoardAlumnos_5_Informacion>();
         }
+        #endregion
+        #region Carreras
         private void Form2_DashboardGeneral_Button_Carreras_Click(object sender, EventArgs e)
         {
             if (Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Visible == true)
@@ -111,9 +115,31 @@ namespace ProyectoGestionAcademica.Frondend
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias.Visible = false;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Visible = true;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.Visible = false;
+                AbrirFormulario<Form4_DashBoardCarreras>();
             }
         }
-
+        private void Form2_DashboardGeneral_Button_Carreras_Agregar_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form4_DashBoardCarreras_1_Agregar>();
+        }
+        private void Form2_DashboardGeneral_Button_Carreras_Editar_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form4_DashBoardCarreras_2_Editar>();
+        }
+        private void Form2_DashboardGeneral_Button_Carreras_Eliminar_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form4_DashBoardCarreras_3_Eliminar>();
+        }
+        private void Form2_DashboardGeneral_Button_Carreras_DefinirCursada_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form4_DashBoardCarreras_4_DefinirCursada>();
+        }
+        private void Form2_DashboardGeneral_Button_Carreras_Informacion_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form4_DashBoardCarreras_5_Informacion>();
+        }
+        #endregion
+        #region Materias
         private void Form2_DashboardGeneral_Button_Materias_Click(object sender, EventArgs e)
         {
             if (Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias.Visible == true)
@@ -136,7 +162,8 @@ namespace ProyectoGestionAcademica.Frondend
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.Visible = false;
             }
         }
-
+        #endregion
+        #region Examenes
         private void Form2_DashboardGeneral_Button_Examenes_Click(object sender, EventArgs e)
         {
             if (Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.Visible == true)
@@ -159,6 +186,8 @@ namespace ProyectoGestionAcademica.Frondend
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuUsuarios.Visible = false;
             }
         }
+        #endregion
+        #region Usuarios
         private void Form2_DashboardGeneral_Button_Usuarios_Click(object sender, EventArgs e)
         {
             if (Form2_DashboardGeneral_Panel_Isquierdo_SubMenuUsuarios.Visible == true)
@@ -181,6 +210,7 @@ namespace ProyectoGestionAcademica.Frondend
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuUsuarios.Visible = true;
             }
         }
+        #endregion
         //Metodo generico para regular que formulario se muestra y si debe crearse o no
         //<MiForm>{Nombre del tipo generico} () where {Condicion} MiForm : Form {El tipo generico debe heredar de la class Form}, new () {Su contructor debe ser vacio}
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()

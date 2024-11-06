@@ -614,6 +614,7 @@
             Form2_DashboardGeneral_Button_Carreras_Informacion.TextAlign = ContentAlignment.MiddleRight;
             Form2_DashboardGeneral_Button_Carreras_Informacion.UseVisualStyleBackColor = true;
             Form2_DashboardGeneral_Button_Carreras_Informacion.Visible = false;
+            Form2_DashboardGeneral_Button_Carreras_Informacion.Click += Form2_DashboardGeneral_Button_Carreras_Informacion_Click;
             // 
             // Form2_DashboardGeneral_Button_Carreras_DefinirCursada
             // 
@@ -632,6 +633,7 @@
             Form2_DashboardGeneral_Button_Carreras_DefinirCursada.TextAlign = ContentAlignment.MiddleRight;
             Form2_DashboardGeneral_Button_Carreras_DefinirCursada.UseVisualStyleBackColor = true;
             Form2_DashboardGeneral_Button_Carreras_DefinirCursada.Visible = false;
+            Form2_DashboardGeneral_Button_Carreras_DefinirCursada.Click += Form2_DashboardGeneral_Button_Carreras_DefinirCursada_Click;
             // 
             // Form2_DashboardGeneral_Button_Carreras_Eliminar
             // 
@@ -650,6 +652,7 @@
             Form2_DashboardGeneral_Button_Carreras_Eliminar.TextAlign = ContentAlignment.MiddleRight;
             Form2_DashboardGeneral_Button_Carreras_Eliminar.UseVisualStyleBackColor = true;
             Form2_DashboardGeneral_Button_Carreras_Eliminar.Visible = false;
+            Form2_DashboardGeneral_Button_Carreras_Eliminar.Click += Form2_DashboardGeneral_Button_Carreras_Eliminar_Click;
             // 
             // Form2_DashboardGeneral_Button_Carreras_Editar
             // 
@@ -668,6 +671,7 @@
             Form2_DashboardGeneral_Button_Carreras_Editar.TextAlign = ContentAlignment.MiddleRight;
             Form2_DashboardGeneral_Button_Carreras_Editar.UseVisualStyleBackColor = true;
             Form2_DashboardGeneral_Button_Carreras_Editar.Visible = false;
+            Form2_DashboardGeneral_Button_Carreras_Editar.Click += Form2_DashboardGeneral_Button_Carreras_Editar_Click;
             // 
             // Form2_DashboardGeneral_Button_Carreras_Agregar
             // 
@@ -686,6 +690,7 @@
             Form2_DashboardGeneral_Button_Carreras_Agregar.TextAlign = ContentAlignment.MiddleRight;
             Form2_DashboardGeneral_Button_Carreras_Agregar.UseVisualStyleBackColor = true;
             Form2_DashboardGeneral_Button_Carreras_Agregar.Visible = false;
+            Form2_DashboardGeneral_Button_Carreras_Agregar.Click += Form2_DashboardGeneral_Button_Carreras_Agregar_Click;
             // 
             // Form2_DashboardGeneral_Button_Carreras
             // 
