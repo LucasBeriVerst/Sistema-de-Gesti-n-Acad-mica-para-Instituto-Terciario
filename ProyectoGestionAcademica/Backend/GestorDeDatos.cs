@@ -10,9 +10,7 @@ namespace ProyectoGestionAcademica.Backend
     internal class GestorDeDatos
     {
         Conexion Instancia_SQL = new Conexion();
-
-
-        //Log in
+        #region LogIn: Buscar usuario
         public int Form_LogIn_BuscarUsuario(string Usuario, string Contraseña)
         {
             int respuesta = 0;
@@ -63,5 +61,6 @@ namespace ProyectoGestionAcademica.Backend
             if (Usuario.Length >= 25 && Contraseña.Length >= 35) { respuesta = 7; }
             return respuesta;
         }
+        #endregion
     }
 }
