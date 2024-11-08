@@ -10,18 +10,16 @@ namespace ProyectoGestionAcademica.Backend
     internal class GestorDeDatos
     {
         Conexion Instancia_SQL = new Conexion();
-
-
-        //Log in
-        public int Form_LogIn_BuscarUsuario(string Usuario, string Contraseña) 
+        #region LogIn: Buscar usuario
+        public int Form_LogIn_BuscarUsuario(string Usuario, string Contraseña)
         {
             int respuesta = 0;
             int perfil;
-            if (Usuario.Length >= 9)
+            if (Usuario.Length >= 25)
             {
                 respuesta = 5;
             }
-            else if (Contraseña.Length >= 35) 
+            else if (Contraseña.Length >= 35)
             {
                 respuesta = 6;
             }
@@ -29,10 +27,13 @@ namespace ProyectoGestionAcademica.Backend
             {
                 var parametros = new Dictionary<string, object>
                 {
-                    { "@Usuario_Alumno", Usuario },
-                    { "@Contraseña_Alumno", Contraseña }
+                    { "@Usuario", Usuario },
+                    { "@Contrasenia", Contraseña } // Cambiar a "@Contrasenia"
                 };
-                perfil = Instancia_SQL.EjecutarProcedimiento("sp_StoreAlumnos",parametros);
+
+                // Ejecutar el procedimiento para los alumnos
+                perfil = Convert.ToInt32(Instancia_SQL.EjecutarEscalar("ObtenerIDPerfilPorCredencialesAlumno", parametros));
+
                 if (perfil == 4)
                 {
                     respuesta = perfil;
@@ -41,22 +42,25 @@ namespace ProyectoGestionAcademica.Backend
                 {
                     var parametros2 = new Dictionary<string, object>
                     {
-                        { "@Usuario_Empleado", Usuario },
-                        { "@Contraseña_Empleado", Contraseña }
+                        { "@Usuario", Usuario },
+                        { "@Contrasenia", Contraseña } // Cambiar a "@Contrasenia"
                     };
-                    perfil = Instancia_SQL.EjecutarProcedimiento("sp_StoreEmpleados", parametros);
-                    if (perfil >= 1) 
+
+                    // Ejecutar el procedimiento para los empleados
+                    perfil = Convert.ToInt32(Instancia_SQL.EjecutarEscalar("ObtenerIDPerfilPorCredenciales", parametros2));
+                    if (perfil > 0)
                     {
                         respuesta = perfil;
-                    } 
-                    else 
+                    }
+                    else
                     {
                         respuesta = 8;
                     }
                 }
             }
-            if (Usuario.Length >= 9 && Contraseña.Length >= 35) { respuesta = 7; }
-            return respuesta;           
+            if (Usuario.Length >= 25 && Contraseña.Length >= 35) { respuesta = 7; }
+            return respuesta;
         }
+        #endregion
     }
 }

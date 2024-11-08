@@ -39,6 +39,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form4_DashBoardCarreras";
             Text = "Form4_DashBoardCarreras";
+            Load += Form4_DashBoardCarreras_Load;
             ResumeLayout(false);
         }
 

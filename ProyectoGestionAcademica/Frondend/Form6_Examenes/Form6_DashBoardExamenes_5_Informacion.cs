@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace ProyectoGestionAcademica.Frondend.Form6_Examenes
 {
-    public partial class Form6_DashBoardExamenes_5_Informacion : Form
+    public partial class Form6_DashBoardExamenes_5_Informacion : Form, IConfiguracion
     {
+        private string titulo = "MATERIAS: INFORMACIÓN";
         public Form6_DashBoardExamenes_5_Informacion()
         {
             InitializeComponent();
+            Titulo = titulo;
+        }
+        public string Titulo { get => titulo; set => titulo = value; }
+        private void Form6_DashBoardExamenes_5_Informacion_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

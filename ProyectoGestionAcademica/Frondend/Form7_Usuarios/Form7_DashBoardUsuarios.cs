@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace ProyectoGestionAcademica.Frondend
 {
-    public partial class Form7_DashBoardUsuarios : Form
+    public partial class Form7_DashBoardUsuarios : Form, IConfiguracion
     {
+        private string titulo = "SUB-MENU: USUARIO";
         public Form7_DashBoardUsuarios()
         {
             InitializeComponent();
+            Titulo = titulo;
+        }
+        public string Titulo { get => titulo; set => titulo = value; }
+        private void Form7_DashBoardUsuarios_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

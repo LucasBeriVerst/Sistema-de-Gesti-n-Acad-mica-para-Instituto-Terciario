@@ -39,6 +39,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form4_DashBoardCarreras_1_Agregar";
             Text = "Form3_DashBoardCarreras_1_Agregar";
+            Load += Form4_DashBoardCarreras_1_Agregar_Load;
             ResumeLayout(false);
         }
 

@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace ProyectoGestionAcademica.Frondend
 {
-    public partial class Form6_DashBoardExamenes : Form
+    public partial class Form6_DashBoardExamenes : Form, IConfiguracion
     {
+        private string titulo = "SUB-MENU: EXAMENES";
         public Form6_DashBoardExamenes()
         {
             InitializeComponent();
+        }
+        public string Titulo { get => titulo; set => titulo = value; }
+        private void Form6_DashBoardExamenes_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
