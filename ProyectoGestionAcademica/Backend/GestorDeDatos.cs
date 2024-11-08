@@ -28,7 +28,7 @@ namespace ProyectoGestionAcademica.Backend
                 var parametros = new Dictionary<string, object>
                 {
                     { "@Usuario_Alumno", Usuario },
-                    { "@Contrasenia_Alumno", Contraseña } // Cambiar a "@Contrasenia"
+                    { "@Contrasenia_Alumno", Contraseña } 
                 };
 
                 // Ejecutar el procedimiento para los alumnos
@@ -43,7 +43,7 @@ namespace ProyectoGestionAcademica.Backend
                     var parametros2 = new Dictionary<string, object>
                     {
                         { "@Usuario_Empleado", Usuario },
-                        { "@Contrasenia_Empleado", Contraseña } // Cambiar a "@Contrasenia"
+                        { "@Contrasenia_Empleado", Contraseña }
                     };
 
                     // Ejecutar el procedimiento para los empleados
