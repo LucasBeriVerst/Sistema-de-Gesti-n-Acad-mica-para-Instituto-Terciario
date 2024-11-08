@@ -68,7 +68,6 @@ namespace ProyectoGestionAcademica.SQL
             return filasAfectadas;
         }
 
-
         public object EjecutarEscalar(string nombreProcedimiento, Dictionary<string, object> parametros = null)
         {
             object resultado = null;
