@@ -27,12 +27,12 @@ namespace ProyectoGestionAcademica.Backend
             {
                 var parametros = new Dictionary<string, object>
                 {
-                    { "@Usuario", Usuario },
-                    { "@Contrasenia", Contraseña } // Cambiar a "@Contrasenia"
+                    { "@Usuario_Alumno", Usuario },
+                    { "@Contrasenia_Alumno", Contraseña } // Cambiar a "@Contrasenia"
                 };
 
                 // Ejecutar el procedimiento para los alumnos
-                perfil = Convert.ToInt32(Instancia_SQL.EjecutarEscalar("ObtenerIDPerfilPorCredencialesAlumno", parametros));
+                perfil = Convert.ToInt32(Instancia_SQL.EjecutarEscalar("sp_BuscarUsuarioYContraseñaAlumno", parametros));
 
                 if (perfil == 4)
                 {
@@ -42,12 +42,12 @@ namespace ProyectoGestionAcademica.Backend
                 {
                     var parametros2 = new Dictionary<string, object>
                     {
-                        { "@Usuario", Usuario },
-                        { "@Contrasenia", Contraseña } // Cambiar a "@Contrasenia"
+                        { "@Usuario_Empleado", Usuario },
+                        { "@Contrasenia_Empleado", Contraseña } // Cambiar a "@Contrasenia"
                     };
 
                     // Ejecutar el procedimiento para los empleados
-                    perfil = Convert.ToInt32(Instancia_SQL.EjecutarEscalar("ObtenerIDPerfilPorCredenciales", parametros2));
+                    perfil = Convert.ToInt32(Instancia_SQL.EjecutarEscalar("sp_BuscarUsuarioYContraseñaEmpleado", parametros2));
                     if (perfil > 0)
                     {
                         respuesta = perfil;
