@@ -1,6 +1,6 @@
 ﻿namespace ProyectoGestionAcademica.Frondend.Form6_Examenes
 {
-    partial class Form1
+    partial class Form6_DashBoardExamenes_2_Editar
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            SuspendLayout();
+            // 
+            // Form6_DashBoardExamenes_2_Editar
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(177, 173, 189);
+            ClientSize = new Size(1040, 605);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "Form6_DashBoardExamenes_2_Editar";
+            Text = "Form6_DashBoardExamenes_2_Editar";
+            Load += Form6_DashBoardExamenes_2_Editar_Load;
+            ResumeLayout(false);
         }
 
         #endregion

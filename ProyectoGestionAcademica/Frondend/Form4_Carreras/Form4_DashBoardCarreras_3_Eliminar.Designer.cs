@@ -39,6 +39,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form4_DashBoardCarreras_3_Eliminar";
             Text = "Form4_DashBoardCarreras_3_Eliminar";
+            Load += Form4_DashBoardCarreras_3_Eliminar_Load;
             ResumeLayout(false);
         }
 

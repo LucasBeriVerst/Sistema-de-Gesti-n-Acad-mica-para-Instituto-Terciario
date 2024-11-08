@@ -22,9 +22,5 @@ namespace ProyectoGestionAcademica.Frondend
         private void Form3_Load(object sender, EventArgs e)
         {
         }
-        private void Form3_DashBoardAlumnos_DataGrigViewAlumnos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

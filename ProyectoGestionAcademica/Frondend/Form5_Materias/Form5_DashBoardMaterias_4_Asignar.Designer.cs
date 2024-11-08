@@ -28,10 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form5_DashBoardMaterias_4_Asignar";
+            SuspendLayout();
+            // 
+            // Form5_DashBoardMaterias_4_Asignar
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(177, 173, 189);
+            ClientSize = new Size(1040, 605);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "Form5_DashBoardMaterias_4_Asignar";
+            Text = "Form5_DashBoardMaterias_4_Asignar";
+            Load += Form5_DashBoardMaterias_4_Asignar_Load;
+            ResumeLayout(false);
         }
 
         #endregion
