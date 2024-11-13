@@ -65,6 +65,7 @@
             Form3_DashBoardAlumnos_5_Informacion_PanelInferior_Button_Cancelar.TabIndex = 4;
             Form3_DashBoardAlumnos_5_Informacion_PanelInferior_Button_Cancelar.Text = "CANCELAR";
             Form3_DashBoardAlumnos_5_Informacion_PanelInferior_Button_Cancelar.UseVisualStyleBackColor = true;
+            Form3_DashBoardAlumnos_5_Informacion_PanelInferior_Button_Cancelar.Click += Form3_DashBoardAlumnos_5_Informacion_PanelInferior_Button_Cancelar_Click;
             // 
             // Form3_DashBoardAlumnos_5_Informacion_PanelInferior_Button_Asignar
             // 
@@ -115,7 +116,7 @@
             Form3_DashBoardAlumnos_5_Informacion_PanelDerecho_ComboBox_Carreras.Font = new Font("Fira Sans UltraLight", 16F);
             Form3_DashBoardAlumnos_5_Informacion_PanelDerecho_ComboBox_Carreras.ForeColor = Color.DimGray;
             Form3_DashBoardAlumnos_5_Informacion_PanelDerecho_ComboBox_Carreras.FormattingEnabled = true;
-            Form3_DashBoardAlumnos_5_Informacion_PanelDerecho_ComboBox_Carreras.Location = new Point(414, 521);
+            Form3_DashBoardAlumnos_5_Informacion_PanelDerecho_ComboBox_Carreras.Location = new Point(379, 521);
             Form3_DashBoardAlumnos_5_Informacion_PanelDerecho_ComboBox_Carreras.Name = "Form3_DashBoardAlumnos_5_Informacion_PanelDerecho_ComboBox_Carreras";
             Form3_DashBoardAlumnos_5_Informacion_PanelDerecho_ComboBox_Carreras.Size = new Size(222, 34);
             Form3_DashBoardAlumnos_5_Informacion_PanelDerecho_ComboBox_Carreras.TabIndex = 46;
@@ -127,11 +128,11 @@
             Form3_DashBoardAlumnos_5_Informacion_PanelDerecho_TextBox_Nombre.BorderStyle = BorderStyle.None;
             Form3_DashBoardAlumnos_5_Informacion_PanelDerecho_TextBox_Nombre.Font = new Font("Fira Sans UltraLight", 22F);
             Form3_DashBoardAlumnos_5_Informacion_PanelDerecho_TextBox_Nombre.ForeColor = Color.DimGray;
-            Form3_DashBoardAlumnos_5_Informacion_PanelDerecho_TextBox_Nombre.Location = new Point(702, 521);
+            Form3_DashBoardAlumnos_5_Informacion_PanelDerecho_TextBox_Nombre.Location = new Point(641, 521);
             Form3_DashBoardAlumnos_5_Informacion_PanelDerecho_TextBox_Nombre.Margin = new Padding(2);
             Form3_DashBoardAlumnos_5_Informacion_PanelDerecho_TextBox_Nombre.Multiline = true;
             Form3_DashBoardAlumnos_5_Informacion_PanelDerecho_TextBox_Nombre.Name = "Form3_DashBoardAlumnos_5_Informacion_PanelDerecho_TextBox_Nombre";
-            Form3_DashBoardAlumnos_5_Informacion_PanelDerecho_TextBox_Nombre.Size = new Size(295, 34);
+            Form3_DashBoardAlumnos_5_Informacion_PanelDerecho_TextBox_Nombre.Size = new Size(387, 34);
             Form3_DashBoardAlumnos_5_Informacion_PanelDerecho_TextBox_Nombre.TabIndex = 47;
             Form3_DashBoardAlumnos_5_Informacion_PanelDerecho_TextBox_Nombre.Text = "VALOR DE BUSQUEDA";
             // 

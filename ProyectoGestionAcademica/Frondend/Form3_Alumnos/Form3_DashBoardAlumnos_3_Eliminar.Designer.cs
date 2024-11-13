@@ -98,6 +98,7 @@
             Form3_DashBoardAlumnos_3_Eliminar_PanelInferior_Button_Cancelar.TabIndex = 4;
             Form3_DashBoardAlumnos_3_Eliminar_PanelInferior_Button_Cancelar.Text = "CANCELAR";
             Form3_DashBoardAlumnos_3_Eliminar_PanelInferior_Button_Cancelar.UseVisualStyleBackColor = true;
+            Form3_DashBoardAlumnos_3_Eliminar_PanelInferior_Button_Cancelar.Click += Form3_DashBoardAlumnos_3_Eliminar_PanelInferior_Button_Cancelar_Click;
             // 
             // Form3_DashBoardAlumnos_3_Eliminar_PanelInferior_Button_Eliminar
             // 

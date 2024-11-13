@@ -10,6 +10,21 @@ namespace ProyectoGestionAcademica.Backend
     internal class GestorDeDatos
     {
         Conexion Instancia_SQL = new Conexion();
+        #region Generales
+        public bool ValidarCamposDeTexto(params string[] parametros)
+        {
+            List<string> listaParametros = new List<string>(parametros);
+
+            foreach (string parametro in listaParametros)
+            {
+                if (string.IsNullOrEmpty(parametro))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        #endregion
         #region LogIn: Buscar usuario
         public int Form_LogIn_BuscarUsuario(string Usuario, string Contraseña)
         {
