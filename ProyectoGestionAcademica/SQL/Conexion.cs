@@ -121,8 +121,6 @@ namespace ProyectoGestionAcademica.SQL
             }
             return tabla;
         }
-
     }
-
 }
 

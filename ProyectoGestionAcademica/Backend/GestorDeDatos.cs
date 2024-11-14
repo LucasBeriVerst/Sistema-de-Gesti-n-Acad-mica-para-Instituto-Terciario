@@ -103,24 +103,33 @@ namespace ProyectoGestionAcademica.Backend
             return resultado;
         }
         #endregion
-        public List<string> SeleccionarAlumnoPorDniOMatricula(int? dniAlumno, int? matricula)
+        public DataTable BuscarAlumnosPorCategoria(string valorComboBox, string valorTextBox)
         {
-            var listaAlumnos = new List<string>();
-
-            // Crear los parámetros a enviar al procedimiento almacenado
+            string parametroNombre;
+            switch (valorComboBox)
+            {
+                case "MATRICULA":
+                    parametroNombre = "@Matricula";
+                    break;
+                case "NOMBRE":
+                    parametroNombre = "@Nombre_Alumno";
+                    break;
+                case "APELLIDO":
+                    parametroNombre = "@Apellido_Alumno";
+                    break;
+                case "DNI":
+                    parametroNombre = "@DNI_Alumno";
+                    break;
+                default:
+                    throw new ArgumentException("El valor del ComboBox no es válido.");
+            }
             var parametros = new Dictionary<string, object>
             {
-                { "@DNI_Alumno", dniAlumno ?? (object)DBNull.Value },
-                { "@Matricula", matricula ?? (object)DBNull.Value }
+                { parametroNombre, valorTextBox }
             };
-            DataTable resultados = Instancia_SQL.EjecutarQuery("sp_SeleccionarAlumnoAvanzado", parametros);
-
-            foreach (DataRow row in resultados.Rows)
-            {
-                listaAlumnos.Add(row["Alumno"].ToString());  
-            }
-            return listaAlumnos;
+            return Instancia_SQL.EjecutarQuery("sp_SeleccionarAlumnoAvanzado", parametros);
         }
+
         #endregion
     }
 }
