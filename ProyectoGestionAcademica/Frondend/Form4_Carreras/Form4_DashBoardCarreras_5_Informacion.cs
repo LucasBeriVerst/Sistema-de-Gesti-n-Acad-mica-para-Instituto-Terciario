@@ -19,9 +19,5 @@ namespace ProyectoGestionAcademica.Frondend.Form4_Carreras
             Titulo = titulo;
         }
         public string Titulo { get => titulo; set => titulo = value; }
-        private void Form4_DashBoardCarreras_5_Informacion_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

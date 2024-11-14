@@ -19,9 +19,5 @@ namespace ProyectoGestionAcademica.Frondend.Form7_Usuarios
             Titulo = titulo;
         }
         public string Titulo { get => titulo; set => titulo = value; }
-        private void Form7_DashBoardUsuarios_2_Editar_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -10,7 +10,8 @@ namespace ProyectoGestionAcademica.SQL
 {
     internal class Conexion
     {
-        private string cadena = "Data Source=DESKTOP-GO1RSK2\\SQLEXPRESS;Initial Catalog=Proyecto_Algoritmos_BDD;Integrated Security=True;TrustServerCertificate=True;";
+        /* CONEXION LUCAS */ //private string cadena = "Data Source=DESKTOP-GO1RSK2\\SQLEXPRESS;Initial Catalog=Proyecto_Algoritmos_BDD;Integrated Security=True;TrustServerCertificate=True;";
+        /* CONEXION LAUTA */ private string cadena = "Data Source=LAUTA-PC\\SQLEXPRESS;Initial Catalog=Proyecto_Algoritmos_BDD;Integrated Security=True;TrustServerCertificate=True;";    
 
         private SqlConnection conexion; //el objeto para manejar la conexión a la base de datos
 

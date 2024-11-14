@@ -32,14 +32,14 @@
             // 
             // Form5_DashBoardMaterias_4_Asignar
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(177, 173, 189);
-            ClientSize = new Size(1040, 605);
+            ClientSize = new Size(1189, 807);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form5_DashBoardMaterias_4_Asignar";
             Text = "Form5_DashBoardMaterias_4_Asignar";
-            Load += Form5_DashBoardMaterias_4_Asignar_Load;
             ResumeLayout(false);
         }
 
