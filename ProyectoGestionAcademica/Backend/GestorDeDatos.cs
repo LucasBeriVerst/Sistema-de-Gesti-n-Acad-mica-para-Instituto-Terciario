@@ -1,9 +1,11 @@
 ﻿using ProyectoGestionAcademica.SQL;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace ProyectoGestionAcademica.Backend
 {
@@ -75,6 +77,49 @@ namespace ProyectoGestionAcademica.Backend
             }
             if (Usuario.Length >= 25 && Contraseña.Length >= 35) { respuesta = 7; }
             return respuesta;
+        }
+        #endregion
+        #region Alumnos
+        #region Agregar
+        public int Form_Alumnos_AgregarAlumno(string nombre, string apellido, string dni, string calle, string numero, string telefono, string email, string matricula) 
+        {
+            int resultado;
+            var parametros = new Dictionary<string, object>
+            {   { "@ID_Perfil", 4 },
+                { "@Matricula", int.Parse(matricula) },
+                { "@Nombre_Alumno", nombre },
+                { "@Apellido_Alumno", apellido },
+                { "@DNI_Alumno", int.Parse(dni) },
+                { "@Domicilio_Calle", calle ?? (object)DBNull.Value },
+                { "@Domicilio_Numero", string.IsNullOrEmpty(numero) ? (object)DBNull.Value : int.Parse(numero) },
+                { "@Telefono", telefono ?? (object)DBNull.Value },
+                { "@Email", email },
+                { "@Usuario_Alumno", dni },  // Usuario es igual a DNI
+                { "@Contrasenia_Alumno", dni },  // Contraseña es igual a DNI
+                { "@Fecha_Baja", DBNull.Value },
+                { "@Fecha_Alta", DBNull.Value }
+            };
+            resultado = Instancia_SQL.EjecutarNonQuery("sp_AgregarAlumno", parametros);
+            return resultado;
+        }
+        #endregion
+        public List<string> SeleccionarAlumnoPorDniOMatricula(int? dniAlumno, int? matricula)
+        {
+            var listaAlumnos = new List<string>();
+
+            // Crear los parámetros a enviar al procedimiento almacenado
+            var parametros = new Dictionary<string, object>
+            {
+                { "@DNI_Alumno", dniAlumno ?? (object)DBNull.Value },
+                { "@Matricula", matricula ?? (object)DBNull.Value }
+            };
+            DataTable resultados = Instancia_SQL.EjecutarQuery("sp_SeleccionarAlumnoAvanzado", parametros);
+
+            foreach (DataRow row in resultados.Rows)
+            {
+                listaAlumnos.Add(row["Alumno"].ToString());  
+            }
+            return listaAlumnos;
         }
         #endregion
     }

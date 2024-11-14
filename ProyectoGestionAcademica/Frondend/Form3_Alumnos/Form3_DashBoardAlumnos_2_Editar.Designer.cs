@@ -96,6 +96,7 @@
             Form3_DashBoardAlumnos_2_Editar_PanelInferior_Button_Buscar.TabIndex = 5;
             Form3_DashBoardAlumnos_2_Editar_PanelInferior_Button_Buscar.Text = "BUSCAR";
             Form3_DashBoardAlumnos_2_Editar_PanelInferior_Button_Buscar.UseVisualStyleBackColor = true;
+            Form3_DashBoardAlumnos_2_Editar_PanelInferior_Button_Buscar.Click += Form3_DashBoardAlumnos_2_Editar_PanelInferior_Button_Buscar_Click;
             // 
             // Form3_DashBoardAlumnos_2_Editar_PanelInferior_Button_Cancelar
             // 
