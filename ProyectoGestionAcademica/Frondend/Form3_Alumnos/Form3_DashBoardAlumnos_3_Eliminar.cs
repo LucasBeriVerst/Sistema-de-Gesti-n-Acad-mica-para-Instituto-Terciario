@@ -23,5 +23,10 @@ namespace ProyectoGestionAcademica.Frondend
         {
 
         }
+
+        private void Form3_DashBoardAlumnos_3_Eliminar_PanelInferior_Button_Cancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

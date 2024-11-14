@@ -401,7 +401,7 @@
             // 
             Form2_DashboardGeneral_Button_Perfil.Dock = DockStyle.Fill;
             Form2_DashboardGeneral_Button_Perfil.FlatAppearance.BorderSize = 0;
-            Form2_DashboardGeneral_Button_Perfil.FlatStyle = FlatStyle.Flat;
+            Form2_DashboardGeneral_Button_Perfil.FlatStyle = FlatStyle.Popup;
             Form2_DashboardGeneral_Button_Perfil.Font = new Font("Fira Sans", 13F, FontStyle.Bold);
             Form2_DashboardGeneral_Button_Perfil.ForeColor = SystemColors.ScrollBar;
             Form2_DashboardGeneral_Button_Perfil.Location = new Point(0, 0);

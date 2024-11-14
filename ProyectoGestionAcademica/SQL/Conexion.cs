@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using System.Diagnostics;
 
 namespace ProyectoGestionAcademica.SQL
 {
@@ -56,9 +57,18 @@ namespace ProyectoGestionAcademica.SQL
                         foreach (var parametro in parametros)
                         {
                             comando.Parameters.AddWithValue(parametro.Key, parametro.Value);
+                            Debug.WriteLine("Respuesta ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡"+parametro.Key + parametro.Value);
                         }
                     }
                     filasAfectadas = comando.ExecuteNonQuery();
+                    if (filasAfectadas == 0)
+                    {
+                        Console.WriteLine("No se realizaron cambios. Parámetros:");
+                        foreach (var parametro in parametros)
+                        {
+                            Console.WriteLine($"{parametro.Key}: {parametro.Value}");
+                        }
+                    }
                 }
             }
             finally
@@ -67,7 +77,6 @@ namespace ProyectoGestionAcademica.SQL
             }
             return filasAfectadas;
         }
-
 
         public object EjecutarEscalar(string nombreProcedimiento, Dictionary<string, object> parametros = null)
         {
@@ -122,8 +131,6 @@ namespace ProyectoGestionAcademica.SQL
             }
             return tabla;
         }
-
     }
-
 }
 

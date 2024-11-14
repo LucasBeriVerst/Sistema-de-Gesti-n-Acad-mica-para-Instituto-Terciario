@@ -74,7 +74,6 @@ namespace ProyectoGestionAcademica.Frondend
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias.Visible = false;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Visible = false;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.Visible = false;
-                AbrirFormulario<Form3_DashBoardAlumnos>();
             }
         }
         private void Form2_DashboardGeneral_Button_Alumnos_Agregar_Click(object sender, EventArgs e)
@@ -119,7 +118,6 @@ namespace ProyectoGestionAcademica.Frondend
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias.Visible = false;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Visible = true;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.Visible = false;
-                AbrirFormulario<Form4_DashBoardCarreras>();
             }
         }
         private void Form2_DashboardGeneral_Button_Carreras_Agregar_Click(object sender, EventArgs e)
@@ -164,7 +162,6 @@ namespace ProyectoGestionAcademica.Frondend
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuMaterias.Visible = true;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Visible = false;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.Visible = false;
-                AbrirFormulario<Form5_DashBoardMaterias>();
             }
         }
         private void Form2_DashboardGeneral_Button_Materias_Agregar_Click(object sender, EventArgs e)
@@ -209,7 +206,6 @@ namespace ProyectoGestionAcademica.Frondend
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Visible = false;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.Visible = true;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuUsuarios.Visible = false;
-                AbrirFormulario<Form6_DashBoardExamenes>();
             }
         }
         private void Form2_DashboardGeneral_Button_Examenes_Agregar_Click(object sender, EventArgs e)
@@ -254,7 +250,6 @@ namespace ProyectoGestionAcademica.Frondend
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuCarreras.Visible = false;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuExamenes.Visible = false;
                 Form2_DashboardGeneral_Panel_Isquierdo_SubMenuUsuarios.Visible = true;
-                AbrirFormulario<Form7_DashBoardUsuarios>();
             }
         }
         private void Form2_DashboardGeneral_Button_Usuarios_Agregar_Click(object sender, EventArgs e)
@@ -299,8 +294,8 @@ namespace ProyectoGestionAcademica.Frondend
                 Formularios.FormBorderStyle = FormBorderStyle.None;
                 Form2_DashboardGeneral_Panel_Derecho_Principal.Controls.Add(Formularios); //Agrega a la coleccion del panel el formulario
                 Form2_DashboardGeneral_Panel_Derecho_Principal.Tag = Formularios;
-                Form2_DashboardGeneral_Labell_Titulo.Text = ((IConfiguracion)Formularios).Titulo; //Toma el valor de titulo del formulario que utiliza la interface y
-                                                                                                  //lo ingresa en la propiedad del formulario general
+                Form2_DashboardGeneral_Labell_Titulo.Text = ((IConfiguracion)Formularios).Titulo; //Toma el valor de titulo del formulario que utiliza la interface y lo ingresa en la propiedad del formulario general
+                Formularios.FormClosed += (s, e) => CierreDeFormulario(); //Establece el likn entre el evento CLose y el metodo Cierre
                 Form2_DashboardGeneral_Labell_Titulo.Location = new Point((1056 - Form2_DashboardGeneral_Labell_Titulo.Size.Width) / 2, Form2_DashboardGeneral_Labell_Titulo.Location.Y);
                 Formularios.BackColor = Color.FromArgb(177, 173, 189);
                 Formularios.Show();
@@ -314,6 +309,11 @@ namespace ProyectoGestionAcademica.Frondend
                 Form2_DashboardGeneral_Labell_Titulo.Location = new Point((1056 - Form2_DashboardGeneral_Labell_Titulo.Size.Width) / 2, Form2_DashboardGeneral_Labell_Titulo.Location.Y);//Centra el componente basado en el nuevo tamaño de texto.
             }
         }
+        private void CierreDeFormulario()
+        {
+            DevolverTituloOriginal();
+        }
+
         private void DevolverTituloOriginal()
         {
             Form2_DashboardGeneral_Labell_Titulo.Text = BackUpTitulo; //Toma el valor de titulo del formulario que utiliza la interface y lo ingresa en la propiedad del formulario general
