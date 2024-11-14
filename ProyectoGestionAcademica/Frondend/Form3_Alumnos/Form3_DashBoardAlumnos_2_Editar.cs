@@ -56,7 +56,7 @@ namespace ProyectoGestionAcademica.Frondend
                 {
                     MessageBox.Show("No se encontró ningún alumno con los criterios de búsqueda.", "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else 
+                else
                 {
                     editable = true;
                     HabilitarCampos();
@@ -89,10 +89,6 @@ namespace ProyectoGestionAcademica.Frondend
                     Form3_DashBoardAlumnos_2_Editar_PanelIsquierdo_Textbox_ValorDeBusqueda.Text = "VALOR DE BUSQUEDA";
                     Form3_DashBoardAlumnos_2_Editar_PanelIsquierdo_Textbox_ValorDeBusqueda.ForeColor = Color.DimGray;
                 }
-            }
-            else
-            {
-
             }
         }
         private void ActualizarTextBoxPorDataGridView()
@@ -161,7 +157,30 @@ namespace ProyectoGestionAcademica.Frondend
 
             }
         }
+        private void Form3_DashBoardAlumnos_2_Editar_PanelInferior_Button_Aceptar_Click(object sender, EventArgs e)
+        {
+            DateTime? fechaBaja = Form3_DashBoardAlumnos_2_Editar_PanelDerecho_DateTimePicker_Baja.Checked
+                ? (DateTime?)Form3_DashBoardAlumnos_2_Editar_PanelDerecho_DateTimePicker_Baja.Value
+                : null;
 
+            DateTime? fechaAlta = Form3_DashBoardAlumnos_2_Editar_PanelDerecho_DateTimePicker_Alta.Checked
+                ? (DateTime?)Form3_DashBoardAlumnos_2_Editar_PanelDerecho_DateTimePicker_Alta.Value
+                : null;
+
+            gestorDeDatos.EditarAlumno(int.Parse(Form3_DashBoardAlumnos_2_Editar_PanelIsquierdo_DataGridView.SelectedRows[0].Cells[0].Value.ToString()),
+                int.Parse(Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Matricula.Text),
+                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Nombre.Text,
+                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Apellidos.Text,
+                int.Parse(Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Dni.Text),
+                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Calle.Text,
+                int.Parse(Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Numero.Text),
+                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Telefono.Text,
+                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Email.Text,
+                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Usuario.Text,
+                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Contraseña.Text, 
+                fechaBaja,
+                fechaAlta);
+        }
         private void ConfiguracionDeDateTimePicker()
         {
             Form3_DashBoardAlumnos_2_Editar_PanelDerecho_DateTimePicker_Alta.CalendarMonthBackground = Color.FromArgb(214, 208, 209);

@@ -132,6 +132,7 @@
             Form3_DashBoardAlumnos_2_Editar_PanelInferior_Button_Aceptar.TabIndex = 3;
             Form3_DashBoardAlumnos_2_Editar_PanelInferior_Button_Aceptar.Text = "EDITAR";
             Form3_DashBoardAlumnos_2_Editar_PanelInferior_Button_Aceptar.UseVisualStyleBackColor = true;
+            Form3_DashBoardAlumnos_2_Editar_PanelInferior_Button_Aceptar.Click += Form3_DashBoardAlumnos_2_Editar_PanelInferior_Button_Aceptar_Click;
             // 
             // Form3_DashBoardAlumnos_2_Editar_PanelDerecho
             // 

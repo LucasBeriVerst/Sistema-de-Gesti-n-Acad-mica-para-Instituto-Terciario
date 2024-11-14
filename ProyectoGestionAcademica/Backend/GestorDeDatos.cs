@@ -103,6 +103,7 @@ namespace ProyectoGestionAcademica.Backend
             return resultado;
         }
         #endregion
+        #region Editar
         public DataTable BuscarAlumnosPorCategoria(string valorComboBox, string valorTextBox)
         {
             string parametroNombre;
@@ -129,7 +130,45 @@ namespace ProyectoGestionAcademica.Backend
             };
             return Instancia_SQL.EjecutarQuery("sp_SeleccionarAlumnoAvanzado", parametros);
         }
-
+        public bool EditarAlumno(int idAlumno, int matricula, string nombre, string apellido, int dni, string domicilioCalle, int domicilioNumero, string telefono, string email, string usuario, string contrasenia, DateTime? fechaBaja, DateTime? fechaAlta)
+        {
+            try
+            {
+                var parametros = new Dictionary<string, object>
+                {
+                    { "@ID_Alumno", idAlumno },
+                    { "@Matricula", matricula },
+                    { "@Nombre_Alumno", nombre },
+                    { "@Apellido_Alumno", apellido },
+                    { "@DNI_Alumno", dni },
+                    { "@Domicilio_Calle", domicilioCalle },
+                    { "@Domicilio_Numero", domicilioNumero },
+                    { "@Telefono", telefono },
+                    { "@Email", email },
+                    { "@Usuario_Alumno", usuario },
+                    { "@Contrasenia_Alumno", contrasenia },
+                    { "@Fecha_Baja", fechaBaja ?? (object)DBNull.Value },
+                    { "@Fecha_Alta", fechaAlta ?? (object)DBNull.Value }
+                };
+                var resultado = Instancia_SQL.EjecutarNonQuery("sp_EditarAlumno", parametros);
+                if (resultado > 0)
+                {
+                    MessageBox.Show("Alumno actualizado exitosamente.", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró el alumno o no se realizaron cambios." + resultado, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar el alumno: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+        #endregion
         #endregion
     }
 }
