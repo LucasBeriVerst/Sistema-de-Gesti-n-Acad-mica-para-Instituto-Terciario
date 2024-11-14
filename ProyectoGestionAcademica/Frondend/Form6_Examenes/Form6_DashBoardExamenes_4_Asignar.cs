@@ -19,9 +19,5 @@ namespace ProyectoGestionAcademica.Frondend.Form6_Examenes
             Titulo = titulo;
         }
         public string Titulo { get => titulo; set => titulo = value; }
-        private void Form6_DashBoardExamenes_4_Asignar_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -42,8 +42,6 @@
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Email = new TextBox();
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Usuario = new TextBox();
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Contraseña = new TextBox();
-            Form7_DashBoardUsuarios_1_Agregar_TextBox_FechaAlta = new TextBox();
-            Form7_DashBoardUsuarios_1_Agregar_TextBox_FechaBaja = new TextBox();
             Form7_DashBoardUsuarios_1_Agregar_ComboBox_Perfil = new ComboBox();
             Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorIzquierdo = new TableLayoutPanel();
             Form7_DashBoardUsuarios_1_Agregar_Label_Perfil = new Label();
@@ -58,6 +56,8 @@
             Form7_DashBoardUsuarios_1_Agregar_Label_Contraseña = new Label();
             Form7_DashBoardUsuarios_1_Agregar_Label_FechaAlta = new Label();
             Form7_DashBoardUsuarios_1_Agregar_Label_FechaBaja = new Label();
+            Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaAlta = new DateTimePicker();
+            Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaBaja = new DateTimePicker();
             Form7_DashBoardUsuarios_1_Agregar_PanelInferior.SuspendLayout();
             Form7_DashBoardUsuarios_1_Agregar_PanelSuperior.SuspendLayout();
             Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho.SuspendLayout();
@@ -119,6 +119,8 @@
             // 
             Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho.ColumnCount = 1;
             Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho.Controls.Add(Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaBaja, 0, 11);
+            Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho.Controls.Add(Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaAlta, 0, 10);
             Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho.Controls.Add(Form7_DashBoardUsuarios_1_Agregar_TextBox_Nombre, 0, 1);
             Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho.Controls.Add(Form7_DashBoardUsuarios_1_Agregar_TextBox_Apellido, 0, 2);
             Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho.Controls.Add(Form7_DashBoardUsuarios_1_Agregar_TextBox_Dni, 0, 3);
@@ -128,8 +130,6 @@
             Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho.Controls.Add(Form7_DashBoardUsuarios_1_Agregar_TextBox_Email, 0, 7);
             Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho.Controls.Add(Form7_DashBoardUsuarios_1_Agregar_TextBox_Usuario, 0, 8);
             Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho.Controls.Add(Form7_DashBoardUsuarios_1_Agregar_TextBox_Contraseña, 0, 9);
-            Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho.Controls.Add(Form7_DashBoardUsuarios_1_Agregar_TextBox_FechaAlta, 0, 10);
-            Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho.Controls.Add(Form7_DashBoardUsuarios_1_Agregar_TextBox_FechaBaja, 0, 11);
             Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho.Controls.Add(Form7_DashBoardUsuarios_1_Agregar_ComboBox_Perfil, 0, 0);
             Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho.Dock = DockStyle.Fill;
             Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho.Location = new Point(504, 0);
@@ -267,32 +267,6 @@
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Contraseña.Size = new Size(473, 49);
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Contraseña.TabIndex = 9;
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Contraseña.Text = "CONTRASEÑA";
-            // 
-            // Form7_DashBoardUsuarios_1_Agregar_TextBox_FechaAlta
-            // 
-            Form7_DashBoardUsuarios_1_Agregar_TextBox_FechaAlta.Anchor = AnchorStyles.None;
-            Form7_DashBoardUsuarios_1_Agregar_TextBox_FechaAlta.BackColor = Color.FromArgb(214, 208, 209);
-            Form7_DashBoardUsuarios_1_Agregar_TextBox_FechaAlta.Font = new Font("Microsoft Sans Serif", 22.2F);
-            Form7_DashBoardUsuarios_1_Agregar_TextBox_FechaAlta.ForeColor = Color.DimGray;
-            Form7_DashBoardUsuarios_1_Agregar_TextBox_FechaAlta.Location = new Point(106, 626);
-            Form7_DashBoardUsuarios_1_Agregar_TextBox_FechaAlta.Multiline = true;
-            Form7_DashBoardUsuarios_1_Agregar_TextBox_FechaAlta.Name = "Form7_DashBoardUsuarios_1_Agregar_TextBox_FechaAlta";
-            Form7_DashBoardUsuarios_1_Agregar_TextBox_FechaAlta.Size = new Size(473, 49);
-            Form7_DashBoardUsuarios_1_Agregar_TextBox_FechaAlta.TabIndex = 10;
-            Form7_DashBoardUsuarios_1_Agregar_TextBox_FechaAlta.Text = "FECHA DE ALTA";
-            // 
-            // Form7_DashBoardUsuarios_1_Agregar_TextBox_FechaBaja
-            // 
-            Form7_DashBoardUsuarios_1_Agregar_TextBox_FechaBaja.Anchor = AnchorStyles.None;
-            Form7_DashBoardUsuarios_1_Agregar_TextBox_FechaBaja.BackColor = Color.FromArgb(214, 208, 209);
-            Form7_DashBoardUsuarios_1_Agregar_TextBox_FechaBaja.Font = new Font("Microsoft Sans Serif", 22.2F);
-            Form7_DashBoardUsuarios_1_Agregar_TextBox_FechaBaja.ForeColor = Color.DimGray;
-            Form7_DashBoardUsuarios_1_Agregar_TextBox_FechaBaja.Location = new Point(106, 694);
-            Form7_DashBoardUsuarios_1_Agregar_TextBox_FechaBaja.Multiline = true;
-            Form7_DashBoardUsuarios_1_Agregar_TextBox_FechaBaja.Name = "Form7_DashBoardUsuarios_1_Agregar_TextBox_FechaBaja";
-            Form7_DashBoardUsuarios_1_Agregar_TextBox_FechaBaja.Size = new Size(473, 49);
-            Form7_DashBoardUsuarios_1_Agregar_TextBox_FechaBaja.TabIndex = 11;
-            Form7_DashBoardUsuarios_1_Agregar_TextBox_FechaBaja.Text = "FECHA DE BAJA";
             // 
             // Form7_DashBoardUsuarios_1_Agregar_ComboBox_Perfil
             // 
@@ -500,6 +474,30 @@
             Form7_DashBoardUsuarios_1_Agregar_Label_FechaBaja.Text = ". FECHA DE BAJA :";
             Form7_DashBoardUsuarios_1_Agregar_Label_FechaBaja.TextAlign = ContentAlignment.MiddleLeft;
             // 
+            // Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaAlta
+            // 
+            Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaAlta.Anchor = AnchorStyles.None;
+            Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaAlta.CalendarMonthBackground = Color.FromArgb(214, 208, 209);
+            Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaAlta.Font = new Font("Microsoft Sans Serif", 22F);
+            Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaAlta.Format = DateTimePickerFormat.Short;
+            Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaAlta.Location = new Point(106, 626);
+            Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaAlta.Name = "Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaAlta";
+            Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaAlta.ShowCheckBox = true;
+            Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaAlta.Size = new Size(473, 49);
+            Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaAlta.TabIndex = 21;
+            // 
+            // Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaBaja
+            // 
+            Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaBaja.Anchor = AnchorStyles.None;
+            Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaBaja.CalendarMonthBackground = Color.FromArgb(214, 208, 209);
+            Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaBaja.Font = new Font("Microsoft Sans Serif", 22F);
+            Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaBaja.Format = DateTimePickerFormat.Short;
+            Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaBaja.Location = new Point(106, 694);
+            Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaBaja.Name = "Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaBaja";
+            Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaBaja.ShowCheckBox = true;
+            Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaBaja.Size = new Size(473, 49);
+            Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaBaja.TabIndex = 22;
+            // 
             // Form7_DashBoardUsuarios_1_Agregar
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -550,8 +548,8 @@
         private TextBox Form7_DashBoardUsuarios_1_Agregar_TextBox_Email;
         private TextBox Form7_DashBoardUsuarios_1_Agregar_TextBox_Usuario;
         private TextBox Form7_DashBoardUsuarios_1_Agregar_TextBox_Contraseña;
-        private TextBox Form7_DashBoardUsuarios_1_Agregar_TextBox_FechaAlta;
-        private TextBox Form7_DashBoardUsuarios_1_Agregar_TextBox_FechaBaja;
         private ComboBox Form7_DashBoardUsuarios_1_Agregar_ComboBox_Perfil;
+        private DateTimePicker Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaBaja;
+        private DateTimePicker Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaAlta;
     }
 }

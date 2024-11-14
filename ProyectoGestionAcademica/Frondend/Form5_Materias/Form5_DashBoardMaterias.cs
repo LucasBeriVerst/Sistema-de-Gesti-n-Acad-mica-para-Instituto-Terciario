@@ -19,9 +19,5 @@ namespace ProyectoGestionAcademica.Frondend
             Titulo = titulo;
         }
         public string Titulo { get => titulo; set => titulo = value; }
-        private void Form5_DashBoardMaterias_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

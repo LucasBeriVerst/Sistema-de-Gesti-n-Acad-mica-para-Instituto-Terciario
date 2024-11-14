@@ -28,18 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form7_DashBoardUsuarios_5_Informacion));
             SuspendLayout();
             // 
             // Form7_DashBoardUsuarios_5_Informacion
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(177, 173, 189);
-            ClientSize = new Size(1040, 605);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form7_DashBoardUsuarios_5_Informacion";
-            Text = "Form7_DashBoardUsuarios_5_Informacion";
-            Load += Form7_DashBoardUsuarios_5_Informacion_Load;
             ResumeLayout(false);
         }
 

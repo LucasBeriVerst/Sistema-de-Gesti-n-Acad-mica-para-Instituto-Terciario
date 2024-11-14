@@ -18,9 +18,5 @@ namespace ProyectoGestionAcademica.Frondend
             InitializeComponent();
         }
         public string Titulo { get => titulo; set => titulo = value; }
-        private void Form6_DashBoardExamenes_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

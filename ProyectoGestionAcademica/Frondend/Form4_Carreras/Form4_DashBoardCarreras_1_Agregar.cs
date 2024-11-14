@@ -20,10 +20,5 @@ namespace ProyectoGestionAcademica.Frondend.Form4_Carreras
         }
 
         public string Titulo { get => titulo; set => titulo = value; }
-
-        private void Form4_DashBoardCarreras_1_Agregar_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
