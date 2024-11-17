@@ -307,12 +307,12 @@
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Matricula.AutoSize = true;
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Matricula.Font = new Font("Fira Sans", 22F, FontStyle.Bold);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Matricula.ForeColor = Color.FromArgb(70, 70, 70);
-            Form3_DashBoardAlumnos_1_Agregar_Labbel_Matricula.Location = new Point(241, 510);
+            Form3_DashBoardAlumnos_1_Agregar_Labbel_Matricula.Location = new Point(235, 510);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Matricula.Margin = new Padding(2, 0, 2, 0);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Matricula.Name = "Form3_DashBoardAlumnos_1_Agregar_Labbel_Matricula";
-            Form3_DashBoardAlumnos_1_Agregar_Labbel_Matricula.Size = new Size(198, 36);
+            Form3_DashBoardAlumnos_1_Agregar_Labbel_Matricula.Size = new Size(204, 36);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Matricula.TabIndex = 8;
-            Form3_DashBoardAlumnos_1_Agregar_Labbel_Matricula.Text = ". MATRICULA :";
+            Form3_DashBoardAlumnos_1_Agregar_Labbel_Matricula.Text = ". MATRICULA *";
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Matricula.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // Form3_DashBoardAlumnos_1_Agregar_Labbel_Email
@@ -321,12 +321,12 @@
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Email.AutoSize = true;
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Email.Font = new Font("Fira Sans", 22F, FontStyle.Bold);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Email.ForeColor = Color.FromArgb(70, 70, 70);
-            Form3_DashBoardAlumnos_1_Agregar_Labbel_Email.Location = new Point(314, 437);
+            Form3_DashBoardAlumnos_1_Agregar_Labbel_Email.Location = new Point(308, 437);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Email.Margin = new Padding(2, 0, 2, 0);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Email.Name = "Form3_DashBoardAlumnos_1_Agregar_Labbel_Email";
-            Form3_DashBoardAlumnos_1_Agregar_Labbel_Email.Size = new Size(125, 36);
+            Form3_DashBoardAlumnos_1_Agregar_Labbel_Email.Size = new Size(131, 36);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Email.TabIndex = 7;
-            Form3_DashBoardAlumnos_1_Agregar_Labbel_Email.Text = ". EMAIL :";
+            Form3_DashBoardAlumnos_1_Agregar_Labbel_Email.Text = ". EMAIL *";
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Email.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // Form3_DashBoardAlumnos_1_Agregar_Labbel_Telefono
@@ -335,12 +335,12 @@
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Telefono.AutoSize = true;
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Telefono.Font = new Font("Fira Sans", 22F, FontStyle.Bold);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Telefono.ForeColor = Color.FromArgb(70, 70, 70);
-            Form3_DashBoardAlumnos_1_Agregar_Labbel_Telefono.Location = new Point(256, 367);
+            Form3_DashBoardAlumnos_1_Agregar_Labbel_Telefono.Location = new Point(270, 367);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Telefono.Margin = new Padding(2, 0, 2, 0);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Telefono.Name = "Form3_DashBoardAlumnos_1_Agregar_Labbel_Telefono";
-            Form3_DashBoardAlumnos_1_Agregar_Labbel_Telefono.Size = new Size(183, 36);
+            Form3_DashBoardAlumnos_1_Agregar_Labbel_Telefono.Size = new Size(169, 36);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Telefono.TabIndex = 6;
-            Form3_DashBoardAlumnos_1_Agregar_Labbel_Telefono.Text = ". TELEFONO :";
+            Form3_DashBoardAlumnos_1_Agregar_Labbel_Telefono.Text = ". TELEFONO";
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Telefono.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // Form3_DashBoardAlumnos_1_Agregar_Labbel_Numero
@@ -349,12 +349,12 @@
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Numero.AutoSize = true;
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Numero.Font = new Font("Fira Sans", 22F, FontStyle.Bold);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Numero.ForeColor = Color.FromArgb(70, 70, 70);
-            Form3_DashBoardAlumnos_1_Agregar_Labbel_Numero.Location = new Point(104, 297);
+            Form3_DashBoardAlumnos_1_Agregar_Labbel_Numero.Location = new Point(118, 297);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Numero.Margin = new Padding(2, 0, 2, 0);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Numero.Name = "Form3_DashBoardAlumnos_1_Agregar_Labbel_Numero";
-            Form3_DashBoardAlumnos_1_Agregar_Labbel_Numero.Size = new Size(335, 36);
+            Form3_DashBoardAlumnos_1_Agregar_Labbel_Numero.Size = new Size(321, 36);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Numero.TabIndex = 5;
-            Form3_DashBoardAlumnos_1_Agregar_Labbel_Numero.Text = ". DOMICILIO (NUMERO) :";
+            Form3_DashBoardAlumnos_1_Agregar_Labbel_Numero.Text = ". DOMICILIO (NUMERO)";
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Numero.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // Form3_DashBoardAlumnos_1_Agregar_Labbel_Calle
@@ -363,12 +363,12 @@
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Calle.AutoSize = true;
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Calle.Font = new Font("Fira Sans", 22F, FontStyle.Bold);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Calle.ForeColor = Color.FromArgb(70, 70, 70);
-            Form3_DashBoardAlumnos_1_Agregar_Labbel_Calle.Location = new Point(142, 227);
+            Form3_DashBoardAlumnos_1_Agregar_Labbel_Calle.Location = new Point(156, 227);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Calle.Margin = new Padding(2, 0, 2, 0);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Calle.Name = "Form3_DashBoardAlumnos_1_Agregar_Labbel_Calle";
-            Form3_DashBoardAlumnos_1_Agregar_Labbel_Calle.Size = new Size(297, 36);
+            Form3_DashBoardAlumnos_1_Agregar_Labbel_Calle.Size = new Size(283, 36);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Calle.TabIndex = 4;
-            Form3_DashBoardAlumnos_1_Agregar_Labbel_Calle.Text = ". DOMICILIO (CALLE) :";
+            Form3_DashBoardAlumnos_1_Agregar_Labbel_Calle.Text = ". DOMICILIO (CALLE)";
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Calle.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // Form3_DashBoardAlumnos_1_Agregar_Labbel_Dni
@@ -377,12 +377,12 @@
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Dni.AutoSize = true;
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Dni.Font = new Font("Fira Sans", 22F, FontStyle.Bold);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Dni.ForeColor = Color.FromArgb(70, 70, 70);
-            Form3_DashBoardAlumnos_1_Agregar_Labbel_Dni.Location = new Point(347, 157);
+            Form3_DashBoardAlumnos_1_Agregar_Labbel_Dni.Location = new Point(341, 157);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Dni.Margin = new Padding(2, 0, 2, 0);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Dni.Name = "Form3_DashBoardAlumnos_1_Agregar_Labbel_Dni";
-            Form3_DashBoardAlumnos_1_Agregar_Labbel_Dni.Size = new Size(92, 36);
+            Form3_DashBoardAlumnos_1_Agregar_Labbel_Dni.Size = new Size(98, 36);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Dni.TabIndex = 3;
-            Form3_DashBoardAlumnos_1_Agregar_Labbel_Dni.Text = ". DNI :";
+            Form3_DashBoardAlumnos_1_Agregar_Labbel_Dni.Text = ". DNI *";
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Dni.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // Form3_DashBoardAlumnos_1_Agregar_Labbel_Apellido
@@ -391,12 +391,12 @@
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Apellido.AutoSize = true;
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Apellido.Font = new Font("Fira Sans", 22F, FontStyle.Bold);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Apellido.ForeColor = Color.FromArgb(70, 70, 70);
-            Form3_DashBoardAlumnos_1_Agregar_Labbel_Apellido.Location = new Point(264, 87);
+            Form3_DashBoardAlumnos_1_Agregar_Labbel_Apellido.Location = new Point(258, 87);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Apellido.Margin = new Padding(2, 0, 2, 0);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Apellido.Name = "Form3_DashBoardAlumnos_1_Agregar_Labbel_Apellido";
-            Form3_DashBoardAlumnos_1_Agregar_Labbel_Apellido.Size = new Size(175, 36);
+            Form3_DashBoardAlumnos_1_Agregar_Labbel_Apellido.Size = new Size(181, 36);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Apellido.TabIndex = 2;
-            Form3_DashBoardAlumnos_1_Agregar_Labbel_Apellido.Text = ". APELLIDO :";
+            Form3_DashBoardAlumnos_1_Agregar_Labbel_Apellido.Text = ". APELLIDO *";
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Apellido.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // Form3_DashBoardAlumnos_1_Agregar_Labbel_Nombre
@@ -405,12 +405,12 @@
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Nombre.AutoSize = true;
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Nombre.Font = new Font("Fira Sans", 22F, FontStyle.Bold);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Nombre.ForeColor = Color.FromArgb(70, 70, 70);
-            Form3_DashBoardAlumnos_1_Agregar_Labbel_Nombre.Location = new Point(277, 17);
+            Form3_DashBoardAlumnos_1_Agregar_Labbel_Nombre.Location = new Point(271, 17);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Nombre.Margin = new Padding(2, 0, 2, 0);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Nombre.Name = "Form3_DashBoardAlumnos_1_Agregar_Labbel_Nombre";
-            Form3_DashBoardAlumnos_1_Agregar_Labbel_Nombre.Size = new Size(162, 36);
+            Form3_DashBoardAlumnos_1_Agregar_Labbel_Nombre.Size = new Size(168, 36);
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Nombre.TabIndex = 1;
-            Form3_DashBoardAlumnos_1_Agregar_Labbel_Nombre.Text = ". NOMBRE :";
+            Form3_DashBoardAlumnos_1_Agregar_Labbel_Nombre.Text = ". NOMBRE *";
             Form3_DashBoardAlumnos_1_Agregar_Labbel_Nombre.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // Form3_DashBoardAlumnos_1_Agregar

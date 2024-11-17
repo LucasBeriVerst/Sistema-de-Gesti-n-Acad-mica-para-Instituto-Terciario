@@ -38,16 +38,17 @@ namespace ProyectoGestionAcademica.Frondend
         private void Form3_DashBoardAlumnos_1_Agregar_PanelInferior_Button_Agregar_Click(object sender, EventArgs e)
         {
             #region Logica de verificacion y agregado de alumnos
+            
             ProbarYRestablecerCampos();
-            if (GestorDeDatos.ValidarCamposDeTexto(Form3_DashBoardAlumnos_1_Agregar_TextBox_Apellido.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Calle.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Dni.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Email.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Nombre.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Numero.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Telefono.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Matricula.Text))
+            if (GestorDeDatos.ValidarCamposDeTexto(Form3_DashBoardAlumnos_1_Agregar_TextBox_Apellido.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Dni.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Email.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Nombre.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Matricula.Text))
             {
-                if (GestorDeDatos.Form_Alumnos_AgregarAlumno(Form3_DashBoardAlumnos_1_Agregar_TextBox_Nombre.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Apellido.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Dni.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Calle.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Numero.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Telefono.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Email.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Matricula.Text) == 1)
+                /*if (GestorDeDatos.Form_Alumnos_AgregarAlumno(Form3_DashBoardAlumnos_1_Agregar_TextBox_Nombre.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Apellido.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Dni.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Calle.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Numero.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Telefono.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Email.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Matricula.Text) == 1)
                 {
                     MessageBox.Show("El nuevo alumno ha sido ingresado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    MessageBox.Show("Campos de texto importantes no se han proporcionado para para agreagar un nuevo alumno...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show("Campos de texto importantes no se han proporcionado para para agreagar un nuevo alumno...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else 
-                {
+                {*/
                     int error = GestorDeDatos.Form_Alumnos_AgregarAlumno(Form3_DashBoardAlumnos_1_Agregar_TextBox_Nombre.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Apellido.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Dni.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Calle.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Numero.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Telefono.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Email.Text, Form3_DashBoardAlumnos_1_Agregar_TextBox_Matricula.Text);
                     switch (error)
                     {
@@ -75,20 +76,30 @@ namespace ProyectoGestionAcademica.Frondend
                         case -8:
                             MessageBox.Show("El alumno ya existe (DNI o matrícula duplicados).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             break;
-                        case 1:
+                        case -9:
+                            MessageBox.Show("El campo 'DNI' solo puede tener numeros.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                        case -10:
+                            MessageBox.Show("El campo 'Email' no tiene el formato correcto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                        case -11:
+                            MessageBox.Show("El campo 'Matricula' solo puede tener numeros.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                    case 1:
                             MessageBox.Show("El alumno se ha agregado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             break;
                         default:
                             MessageBox.Show("Ocurrió un error desconocido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             break;
                     };
-                }
+                //}
             }
             else
             {
                 MessageBox.Show("Faltan Completar campos de texto para agreagar un nuevo alumno...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             ProbarYRestablecerCampos();
+
             #endregion
         }
         private void ProbarYRestablecerCampos()

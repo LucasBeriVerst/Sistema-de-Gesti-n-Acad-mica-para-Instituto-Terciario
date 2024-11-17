@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
@@ -83,23 +84,42 @@ namespace ProyectoGestionAcademica.Backend
         #region Agregar
         public int Form_Alumnos_AgregarAlumno(string nombre, string apellido, string dni, string calle, string numero, string telefono, string email, string matricula) 
         {
-            int resultado;
-            var parametros = new Dictionary<string, object>
-            {   { "@ID_Perfil", 4 },
-                { "@Matricula", int.Parse(matricula) },
-                { "@Nombre_Alumno", nombre },
-                { "@Apellido_Alumno", apellido },
-                { "@DNI_Alumno", int.Parse(dni) },
-                { "@Domicilio_Calle", calle ?? (object)DBNull.Value },
-                { "@Domicilio_Numero", string.IsNullOrEmpty(numero) ? (object)DBNull.Value : int.Parse(numero) },
-                { "@Telefono", telefono ?? (object)DBNull.Value },
-                { "@Email", email },
-                { "@Usuario_Alumno", dni },  // Usuario es igual a DNI
-                { "@Contrasenia_Alumno", dni },  // Contraseña es igual a DNI
-                { "@Fecha_Baja", DBNull.Value },
-                { "@Fecha_Alta", DBNull.Value }
-            };
-            resultado = Instancia_SQL.EjecutarNonQuery("sp_AgregarAlumno", parametros);
+            int resultado = 0;
+            if (!dni.All(char.IsDigit))
+            {
+                resultado = -9;
+            }
+            try 
+            {
+                new MailAddress(email);
+            }
+            catch (Exception ex) 
+            {
+                resultado = -10;
+            }
+            if (!matricula.All(char.IsDigit))
+            {
+                resultado = -11;
+            }
+            if (resultado == 0) 
+            {
+                var parametros = new Dictionary<string, object>
+                {   { "@ID_Perfil", 4 },
+                    { "@Matricula", int.Parse(matricula) },
+                    { "@Nombre_Alumno", nombre },
+                    { "@Apellido_Alumno", apellido },
+                    { "@DNI_Alumno", int.Parse(dni) },
+                    { "@Domicilio_Calle", calle ?? (object)DBNull.Value },
+                    { "@Domicilio_Numero", string.IsNullOrEmpty(numero) ? (object)DBNull.Value : int.Parse(numero) },
+                    { "@Telefono", telefono ?? (object)DBNull.Value },
+                    { "@Email", email },
+                    { "@Usuario_Alumno", dni },  // Usuario es igual a DNI
+                    { "@Contrasenia_Alumno", dni },  // Contraseña es igual a DNI
+                    { "@Fecha_Baja", DBNull.Value },
+                    { "@Fecha_Alta", DBNull.Value }
+                };
+                resultado = Instancia_SQL.EjecutarNonQuery("sp_AgregarAlumno", parametros);      
+            }
             return resultado;
         }
         #endregion
