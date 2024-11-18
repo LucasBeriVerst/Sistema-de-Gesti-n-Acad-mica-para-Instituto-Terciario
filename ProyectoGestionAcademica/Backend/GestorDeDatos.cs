@@ -151,11 +151,11 @@ namespace ProyectoGestionAcademica.Backend
             };
             return Instancia_SQL.EjecutarQuery("sp_SeleccionarAlumnoAvanzado", parametros);
         }
-        public bool EditarAlumno(int idAlumno, int matricula, string nombre, string apellido, int dni, string domicilioCalle, int? domicilioNumero, string telefono, string email, string usuario, string contrasenia, DateTime? fechaBaja, DateTime? fechaAlta)
+        public int EditarAlumno(int idAlumno, int matricula, string nombre, string apellido, int dni, string domicilioCalle, int? domicilioNumero, string telefono, string email, string usuario, string contrasenia, DateTime? fechaBaja, DateTime? fechaAlta)
         {
+            int error = 0;
             try
             {
-                int error = 0;
                 var parametros = new Dictionary<string, object>
                 {
                     { "@ID_Alumno", idAlumno },
@@ -172,30 +172,65 @@ namespace ProyectoGestionAcademica.Backend
                     { "@Fecha_Baja", fechaBaja ?? (object)DBNull.Value },
                     { "@Fecha_Alta", fechaAlta ?? (object)DBNull.Value }
                 };
+                /*
+                 var parametrosNulos = new Dictionary<string, object>
+                {
+                    { "@ID_Alumno", idAlumno },
+                    { "@Matricula", matricula },
+                    { "@Nombre_Alumno", nombre },
+                    { "@Apellido_Alumno", apellido },
+                    { "@DNI_Alumno", dni },
+                    { "@Domicilio_Calle", null },
+                    { "@Domicilio_Numero", null }, // Verifica si el valor es null
+                    { "@Telefono", null },
+                    { "@Email", email },
+                    { "@Usuario_Alumno", usuario },
+                    { "@Contrasenia_Alumno", contrasenia },
+                    { "@Fecha_Baja", null },
+                    { "@Fecha_Alta", null }
+                };
+                */
                 if (nombre.Length <= 0) { error = -1; }
                 if (Regex.IsMatch(nombre, @"\d")) { error = -2; }
                 if (apellido.Length <= 0) { error = -3; }
                 if (Regex.IsMatch(apellido, @"\d")) { error = -4; }
-                if (nombre.Length <= 0) { error = -5; }
-                if (apellido.Length <= 0) { error = -6; }
-                if (nombre.Length <= 0) { error = -7; }
-                if (apellido.Length <= 0) { error = -8; }
-                var resultado = Instancia_SQL.EjecutarNonQuery("sp_EditarAlumno", parametros);
-                if (resultado > 0)
+                if (matricula <= 0) { error = -5; }
+                if (dni <= 0) { error = -6; }
+                if (email.Length <= 0) 
                 {
-                    MessageBox.Show("Alumno actualizado exitosamente.", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return true;
+                    error = -7;
                 }
-                else
+                else 
                 {
-                    MessageBox.Show("No se encontró el alumno o no se realizaron cambios.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return false;
+                    try 
+                    {
+                        new MailAddress(email);
+                    } 
+                    catch (Exception e) 
+                    { 
+                        error = -8;                    
+                    }
                 }
+                if (usuario.Length <= 0) { error = -9; }
+                if (contrasenia.Length <= 0) { error = -10; }
+                if (error == 0) 
+                {
+                    var resultado = Instancia_SQL.EjecutarNonQuery("sp_EditarAlumno", parametros);
+                    if (resultado > 0)
+                    {  
+                        return resultado;
+                    }
+                    else if (resultado == 0)
+                    {
+                        return resultado;
+                    }              
+                }
+                return error;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al actualizar el alumno: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
+                error = -11;
+                return error;
             }
         }
         #endregion

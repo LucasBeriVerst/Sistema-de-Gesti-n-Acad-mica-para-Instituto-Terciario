@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ProyectoGestionAcademica.Frondend
@@ -51,7 +52,7 @@ namespace ProyectoGestionAcademica.Frondend
                 DataTable resultados = gestorDeDatos.BuscarAlumnosPorCategoria(Form3_DashBoardAlumnos_2_Editar_PanelIsquierdo_Combobox_TipoDeBusqueda.Text, Form3_DashBoardAlumnos_2_Editar_PanelIsquierdo_Textbox_ValorDeBusqueda.Text);
                 if (resultados.Rows.Count == 0)
                 {
-                    MessageBox.Show("No hay datos linkeados...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No hay datos iguales al ingresado en la categoria seleccionada...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -205,7 +206,7 @@ namespace ProyectoGestionAcademica.Frondend
                 ? (int?)null
                 : int.Parse(Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Numero.Text);
 
-            bool respuesta = gestorDeDatos.EditarAlumno(
+            int respuesta = gestorDeDatos.EditarAlumno(
                 int.Parse(Form3_DashBoardAlumnos_2_Editar_PanelIsquierdo_DataGridView.SelectedRows[0].Cells["ID_Alumno"].Value.ToString()),
                 int.Parse(Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Matricula.Text),
                 Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Nombre.Text,
@@ -220,10 +221,50 @@ namespace ProyectoGestionAcademica.Frondend
                 fechaBaja,
                 fechaAlta);
 
-            if (respuesta)
+            switch (respuesta)
             {
-                Form3_DashBoardAlumnos_2_Editar_PanelInferior_Button_Buscar.PerformClick();
-            }
+                case -1:
+                    MessageBox.Show("El campo 'Nombre' no puede guardarse como vacio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+                case -2:
+                    MessageBox.Show("El campo 'Nombre' no puede contener numeros.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+                case -3:
+                    MessageBox.Show("El campo 'Apellido' no puede guardarse como vacio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+                case -4:
+                    MessageBox.Show("El campo 'Apellido' no puede contener numeros.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+                case -5:
+                    MessageBox.Show("El campo 'Matricula' no puede ser menor o igual a 0.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+                case -6:
+                    MessageBox.Show("El campo 'Dni' no puede ser menor o igual a 0.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+                case -7:
+                    MessageBox.Show("El campo 'Email' no puede guardarse como vacio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+                case -8:
+                    MessageBox.Show("El campo 'Email' no contiene el formato correcto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+                case -9:
+                    MessageBox.Show("El campo 'Usuario' no puede guardarse como vacio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+                case -10:
+                    MessageBox.Show("El campo 'Contraseña' no puede guardarse como vacio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+                case -11:
+                    MessageBox.Show("Error desconocido en la carga de alumno.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+                case 0:
+                    MessageBox.Show("El Identificador del alumno no se encuentra guardado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+                default:
+                    MessageBox.Show("La Carga del alumno se realizo con exito.", "Carga exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Form3_DashBoardAlumnos_2_Editar_PanelInferior_Button_Buscar.PerformClick();
+                    break;
+            };
+
         }
 
         private void ConfiguracionDeDateTimePicker()
