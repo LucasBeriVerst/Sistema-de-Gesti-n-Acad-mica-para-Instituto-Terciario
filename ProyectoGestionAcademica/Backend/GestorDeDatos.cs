@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
@@ -150,10 +151,11 @@ namespace ProyectoGestionAcademica.Backend
             };
             return Instancia_SQL.EjecutarQuery("sp_SeleccionarAlumnoAvanzado", parametros);
         }
-        public bool EditarAlumno(int idAlumno, int matricula, string nombre, string apellido, int dni, string domicilioCalle, int domicilioNumero, string telefono, string email, string usuario, string contrasenia, DateTime? fechaBaja, DateTime? fechaAlta)
+        public bool EditarAlumno(int idAlumno, int matricula, string nombre, string apellido, int dni, string domicilioCalle, int? domicilioNumero, string telefono, string email, string usuario, string contrasenia, DateTime? fechaBaja, DateTime? fechaAlta)
         {
             try
             {
+                int error = 0;
                 var parametros = new Dictionary<string, object>
                 {
                     { "@ID_Alumno", idAlumno },
@@ -162,7 +164,7 @@ namespace ProyectoGestionAcademica.Backend
                     { "@Apellido_Alumno", apellido },
                     { "@DNI_Alumno", dni },
                     { "@Domicilio_Calle", domicilioCalle },
-                    { "@Domicilio_Numero", domicilioNumero },
+                    { "@Domicilio_Numero", domicilioNumero.HasValue ? (object)domicilioNumero.Value : DBNull.Value }, // Verifica si el valor es null
                     { "@Telefono", telefono },
                     { "@Email", email },
                     { "@Usuario_Alumno", usuario },
@@ -170,6 +172,14 @@ namespace ProyectoGestionAcademica.Backend
                     { "@Fecha_Baja", fechaBaja ?? (object)DBNull.Value },
                     { "@Fecha_Alta", fechaAlta ?? (object)DBNull.Value }
                 };
+                if (nombre.Length <= 0) { error = -1; }
+                if (Regex.IsMatch(nombre, @"\d")) { error = -2; }
+                if (apellido.Length <= 0) { error = -3; }
+                if (Regex.IsMatch(apellido, @"\d")) { error = -4; }
+                if (nombre.Length <= 0) { error = -5; }
+                if (apellido.Length <= 0) { error = -6; }
+                if (nombre.Length <= 0) { error = -7; }
+                if (apellido.Length <= 0) { error = -8; }
                 var resultado = Instancia_SQL.EjecutarNonQuery("sp_EditarAlumno", parametros);
                 if (resultado > 0)
                 {
@@ -178,7 +188,7 @@ namespace ProyectoGestionAcademica.Backend
                 }
                 else
                 {
-                    MessageBox.Show("No se encontró el alumno o no se realizaron cambios." + resultado, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("No se encontró el alumno o no se realizaron cambios.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
                 }
             }

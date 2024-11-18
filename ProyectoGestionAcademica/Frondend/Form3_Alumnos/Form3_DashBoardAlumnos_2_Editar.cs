@@ -49,19 +49,45 @@ namespace ProyectoGestionAcademica.Frondend
             else
             {
                 DataTable resultados = gestorDeDatos.BuscarAlumnosPorCategoria(Form3_DashBoardAlumnos_2_Editar_PanelIsquierdo_Combobox_TipoDeBusqueda.Text, Form3_DashBoardAlumnos_2_Editar_PanelIsquierdo_Textbox_ValorDeBusqueda.Text);
-                Form3_DashBoardAlumnos_2_Editar_PanelIsquierdo_DataGridView.Rows.Clear();
-                Form3_DashBoardAlumnos_2_Editar_PanelIsquierdo_DataGridView.DataSource = resultados;
-                Form3_DashBoardAlumnos_2_Editar_PanelIsquierdo_DataGridView.Refresh();
                 if (resultados.Rows.Count == 0)
                 {
-                    MessageBox.Show("No se encontró ningún alumno con los criterios de búsqueda.", "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("No hay datos linkeados...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    editable = true;
+                    Form3_DashBoardAlumnos_2_Editar_PanelIsquierdo_DataGridView.DataSource = resultados;
+                    /*if (Form3_DashBoardAlumnos_2_Editar_PanelIsquierdo_DataGridView.Columns.Count > 1) //Esconde id_alumno y Id_Perfil
+                    {
+                        Form3_DashBoardAlumnos_2_Editar_PanelIsquierdo_DataGridView.Columns[0].Visible = false;
+                        Form3_DashBoardAlumnos_2_Editar_PanelIsquierdo_DataGridView.Columns[1].Visible = false;
+                    }*/
+                    if (Form3_DashBoardAlumnos_2_Editar_PanelIsquierdo_DataGridView.Rows.Count > 0) 
+                    {
+                        Form3_DashBoardAlumnos_2_Editar_PanelIsquierdo_DataGridView.Rows[0].Selected = true; //Selecciona la primera fila                    
+                    }
                     HabilitarCampos();
                 }
             }
+
+
+
+
+
+
+
+            /*Form3_DashBoardAlumnos_2_Editar_PanelIsquierdo_DataGridView.Rows.Clear();
+            Form3_DashBoardAlumnos_2_Editar_PanelIsquierdo_DataGridView.DataSource = resultados;
+            Form3_DashBoardAlumnos_2_Editar_PanelIsquierdo_DataGridView.Refresh();
+            if (resultados.Rows.Count == 0)
+            {
+                MessageBox.Show("No se encontró ningún alumno con los criterios de búsqueda.", "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                editable = true;
+                HabilitarCampos();
+            }*/
+
         }
         private void HabilitarCampos()
         {
@@ -95,66 +121,70 @@ namespace ProyectoGestionAcademica.Frondend
         {
             if (editable)
             {
-                DataGridViewRow filaSeleccionada = Form3_DashBoardAlumnos_2_Editar_PanelIsquierdo_DataGridView.SelectedRows[0];
-
-                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Nombre.Enabled = editable;
-                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Nombre.Text = filaSeleccionada.Cells["Nombre_Alumno"].Value?.ToString();
-
-                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Apellidos.Enabled = editable;
-                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Apellidos.Text = filaSeleccionada.Cells["Apellido_Alumno"].Value?.ToString();
-
-                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Dni.Enabled = editable;
-                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Dni.Text = filaSeleccionada.Cells["DNI_Alumno"].Value?.ToString();
-
-                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Calle.Enabled = editable;
-                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Calle.Text = filaSeleccionada.Cells["Domicilio_Calle"].Value?.ToString();
-
-                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Numero.Enabled = editable;
-                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Numero.Text = filaSeleccionada.Cells["Domicilio_Numero"].Value?.ToString();
-
-                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Telefono.Enabled = editable;
-                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Telefono.Text = filaSeleccionada.Cells["Telefono"].Value?.ToString();
-
-                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Email.Enabled = editable;
-                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Email.Text = filaSeleccionada.Cells["Email"].Value?.ToString();
-
-                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Matricula.Enabled = editable;
-                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Matricula.Text = filaSeleccionada.Cells["Matricula"].Value?.ToString();
-
-                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Usuario.Enabled = editable;
-                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Usuario.Text = filaSeleccionada.Cells["Usuario_Alumno"].Value?.ToString();
-
-                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Contraseña.Enabled = editable;
-                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Contraseña.Text = filaSeleccionada.Cells["Contrasenia_Alumno"].Value?.ToString();
-
-
-                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_DateTimePicker_Alta.Enabled = editable;
-                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_DateTimePicker_Alta.ShowCheckBox = true;
-
-                if (DateTime.TryParse(filaSeleccionada.Cells["Fecha_Alta"].Value?.ToString(), out DateTime fechaAlta))
+                try
                 {
-                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_DateTimePicker_Alta.Value = fechaAlta;
-                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_DateTimePicker_Alta.Checked = true;  // Selecciona la fecha
-                }
-                else
-                {
-                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_DateTimePicker_Alta.Checked = false; // No hay fecha seleccionada
-                }
+                    DataGridViewRow filaSeleccionada = Form3_DashBoardAlumnos_2_Editar_PanelIsquierdo_DataGridView.SelectedRows[0];
 
-                // Para la fecha de baja
-                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_DateTimePicker_Baja.Enabled = editable;
-                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_DateTimePicker_Baja.ShowCheckBox = true;
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Nombre.Enabled = editable;
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Nombre.Text = filaSeleccionada.Cells["Nombre_Alumno"].Value?.ToString();
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Nombre.ForeColor = Color.Black;
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Apellidos.Enabled = editable;
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Apellidos.Text = filaSeleccionada.Cells["Apellido_Alumno"].Value?.ToString();
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Apellidos.ForeColor = Color.Black;
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Dni.Enabled = editable;
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Dni.Text = filaSeleccionada.Cells["DNI_Alumno"].Value?.ToString();
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Dni.ForeColor = Color.Black;
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Calle.Enabled = editable;
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Calle.Text = filaSeleccionada.Cells["Domicilio_Calle"].Value?.ToString();
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Calle.ForeColor = Color.Black;
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Numero.Enabled = editable;
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Numero.Text = filaSeleccionada.Cells["Domicilio_Numero"].Value?.ToString();
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Numero.ForeColor = Color.Black;
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Telefono.Enabled = editable;
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Telefono.Text = filaSeleccionada.Cells["Telefono"].Value?.ToString();
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Telefono.ForeColor = Color.Black;
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Email.Enabled = editable;
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Email.Text = filaSeleccionada.Cells["Email"].Value?.ToString();
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Email.ForeColor = Color.Black;
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Matricula.Enabled = editable;
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Matricula.Text = filaSeleccionada.Cells["Matricula"].Value?.ToString();
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Matricula.ForeColor = Color.Black;
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Usuario.Enabled = editable;
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Usuario.Text = filaSeleccionada.Cells["Usuario_Alumno"].Value?.ToString();
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Usuario.ForeColor = Color.Black;
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Contraseña.Enabled = editable;
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Contraseña.Text = filaSeleccionada.Cells["Contrasenia_Alumno"].Value?.ToString();
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Contraseña.ForeColor = Color.Black;
 
-                if (DateTime.TryParse(filaSeleccionada.Cells["Fecha_Baja"].Value?.ToString(), out DateTime fechaBaja))
-                {
-                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_DateTimePicker_Baja.Value = fechaBaja;
-                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_DateTimePicker_Baja.Checked = true; // Selecciona la fecha
-                }
-                else
-                {
-                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_DateTimePicker_Baja.Checked = false; // No hay fecha seleccionada
-                }
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_DateTimePicker_Alta.Enabled = editable;
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_DateTimePicker_Alta.ShowCheckBox = true;
 
+                    if (DateTime.TryParse(filaSeleccionada.Cells["Fecha_Alta"].Value?.ToString(), out DateTime fechaAlta))
+                    {
+                        Form3_DashBoardAlumnos_2_Editar_PanelDerecho_DateTimePicker_Alta.Value = fechaAlta;
+                        Form3_DashBoardAlumnos_2_Editar_PanelDerecho_DateTimePicker_Alta.Checked = true;  // Selecciona la fecha
+                    }
+                    else
+                    {
+                        Form3_DashBoardAlumnos_2_Editar_PanelDerecho_DateTimePicker_Alta.Checked = false; // No hay fecha seleccionada
+                    }
+
+                    // Para la fecha de baja
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_DateTimePicker_Baja.Enabled = editable;
+                    Form3_DashBoardAlumnos_2_Editar_PanelDerecho_DateTimePicker_Baja.ShowCheckBox = true;
+
+                    if (DateTime.TryParse(filaSeleccionada.Cells["Fecha_Baja"].Value?.ToString(), out DateTime fechaBaja))
+                    {
+                        Form3_DashBoardAlumnos_2_Editar_PanelDerecho_DateTimePicker_Baja.Value = fechaBaja;
+                        Form3_DashBoardAlumnos_2_Editar_PanelDerecho_DateTimePicker_Baja.Checked = true; // Selecciona la fecha
+                    }
+                    else
+                    {
+                        Form3_DashBoardAlumnos_2_Editar_PanelDerecho_DateTimePicker_Baja.Checked = false; // No hay fecha seleccionada
+                    }
+                }
+                catch(Exception e) 
+                { }
             }
         }
         private void Form3_DashBoardAlumnos_2_Editar_PanelInferior_Button_Aceptar_Click(object sender, EventArgs e)
@@ -162,25 +192,40 @@ namespace ProyectoGestionAcademica.Frondend
             DateTime? fechaBaja = Form3_DashBoardAlumnos_2_Editar_PanelDerecho_DateTimePicker_Baja.Checked
                 ? (DateTime?)Form3_DashBoardAlumnos_2_Editar_PanelDerecho_DateTimePicker_Baja.Value
                 : null;
-
             DateTime? fechaAlta = Form3_DashBoardAlumnos_2_Editar_PanelDerecho_DateTimePicker_Alta.Checked
                 ? (DateTime?)Form3_DashBoardAlumnos_2_Editar_PanelDerecho_DateTimePicker_Alta.Value
                 : null;
+            string? calle = string.IsNullOrWhiteSpace(Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Calle.Text)
+                ? null
+                : Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Calle.Text;
+            string? telefono = string.IsNullOrWhiteSpace(Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Telefono.Text)
+                ? null
+                : Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Telefono.Text;
+            int? numero = string.IsNullOrWhiteSpace(Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Numero.Text)
+                ? (int?)null
+                : int.Parse(Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Numero.Text);
 
-            gestorDeDatos.EditarAlumno(int.Parse(Form3_DashBoardAlumnos_2_Editar_PanelIsquierdo_DataGridView.SelectedRows[0].Cells[0].Value.ToString()),
+            bool respuesta = gestorDeDatos.EditarAlumno(
+                int.Parse(Form3_DashBoardAlumnos_2_Editar_PanelIsquierdo_DataGridView.SelectedRows[0].Cells["ID_Alumno"].Value.ToString()),
                 int.Parse(Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Matricula.Text),
                 Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Nombre.Text,
                 Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Apellidos.Text,
                 int.Parse(Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Dni.Text),
-                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Calle.Text,
-                int.Parse(Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Numero.Text),
-                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Telefono.Text,
+                calle,
+                numero, 
+                telefono,
                 Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Email.Text,
                 Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Usuario.Text,
-                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Contraseña.Text, 
+                Form3_DashBoardAlumnos_2_Editar_PanelDerecho_TextBox_Contraseña.Text,
                 fechaBaja,
                 fechaAlta);
+
+            if (respuesta)
+            {
+                Form3_DashBoardAlumnos_2_Editar_PanelInferior_Button_Buscar.PerformClick();
+            }
         }
+
         private void ConfiguracionDeDateTimePicker()
         {
             Form3_DashBoardAlumnos_2_Editar_PanelDerecho_DateTimePicker_Alta.CalendarMonthBackground = Color.FromArgb(214, 208, 209);
@@ -200,7 +245,6 @@ namespace ProyectoGestionAcademica.Frondend
         private void Form3_DashBoardAlumnos_2_Editar_PanelIsquierdo_DataGridView_SelectionChanged(object sender, EventArgs e)
         {
             ActualizarTextBoxPorDataGridView();
-
         }
     }
 }
