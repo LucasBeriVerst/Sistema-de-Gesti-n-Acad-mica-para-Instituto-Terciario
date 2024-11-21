@@ -234,6 +234,18 @@ namespace ProyectoGestionAcademica.Backend
             }
         }
         #endregion
+        #region Eliminar
+        public int EliminarAlumno(int id_alumno) 
+        {
+            int resultado;
+            var parametros = new Dictionary<string, object> 
+            {
+                { "@ID_Alumno", id_alumno }
+            };
+            resultado = Instancia_SQL.EjecutarNonQuery("sp_EliminarAlumno", parametros);
+            return resultado;
+        }
+        #endregion
         #endregion
     }
 }
