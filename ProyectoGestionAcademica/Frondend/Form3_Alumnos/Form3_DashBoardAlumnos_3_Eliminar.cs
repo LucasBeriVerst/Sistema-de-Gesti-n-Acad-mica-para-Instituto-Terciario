@@ -29,7 +29,7 @@ namespace ProyectoGestionAcademica.Frondend
 
         private void Form3_DashBoardAlumnos_3_Eliminar_PanelInferior_Button_Cancelar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Seguro que queres cerrar la pagina actual. Se perderan los datos ingresado...", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show("Seguro que queres cerrar la pagina actual. Se perderan los datos ingresados...", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
                 this.Close();

@@ -17,7 +17,7 @@ namespace ProyectoGestionAcademica
             Form1_LogIn_Labell_Intentos.Text = "Intentos disponibles : " + intentetos;
             Form1_LogIn_LinkLabell_InformarUsuario.TabStop = false;
             Form1_LogIn_LinkLabell_InformarContraseña.TabStop = false;
-            Perfiles.Add(1,"Administrador");
+            Perfiles.Add(1, "Administrador");
             Perfiles.Add(2, "Empleado Adminirativo");
             Perfiles.Add(3, "Profesor");
             Perfiles.Add(4, "Alumno");
@@ -27,14 +27,14 @@ namespace ProyectoGestionAcademica
             respuestaDePerfil = Instancia_GestorDeDatos.Form_LogIn_BuscarUsuario(Form1_LogIn_TextBox_Usuario.Text, Form1_LogIn_TextBox_Contraseña.Text);
             if (respuestaDePerfil > 0 && respuestaDePerfil <= 4)
             {
-                Form2_DashboardGeneral Form2 = new Form2_DashboardGeneral(respuestaDePerfil,Form1_LogIn_TextBox_Usuario.Text);
+                Form2_DashboardGeneral Form2 = new Form2_DashboardGeneral(respuestaDePerfil, Form1_LogIn_TextBox_Usuario.Text);
                 MessageBox.Show("Entraste como " + Perfiles[respuestaDePerfil], "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Form2.Show();
                 this.Hide();
             }
             else
             {
-                if (respuestaDePerfil >= 5 && respuestaDePerfil <= 7 ) 
+                if (respuestaDePerfil >= 5 && respuestaDePerfil <= 7)
                 {
                     if (respuestaDePerfil == 5)
                     {
@@ -44,14 +44,14 @@ namespace ProyectoGestionAcademica
                     {
                         errorProvider1.SetError(Form1_LogIn_TextBox_Contraseña, "Procurar que el contraseña no sea mas largo que 35 caracteres");
                     }
-                    else 
+                    else
                     {
                         errorProvider1.SetError(Form1_LogIn_TextBox_Usuario, "Procurar que el usuario no sea mas largo que 8 caracteres");
                         errorProvider1.SetError(Form1_LogIn_TextBox_Contraseña, "Procurar que el contraseña no sea mas largo que 35 caracteres");
                     }
-                } 
-                else 
-                {        
+                }
+                else
+                {
                     intentetos = intentetos - 1;
                     if (intentetos > 1)
                     {
@@ -95,17 +95,18 @@ namespace ProyectoGestionAcademica
         }
         private void Form1_LogIn_TextBox_Contraseña_Enter(object sender, EventArgs e)
         {
+            Form1_LogIn_TextBox_Contraseña.PasswordChar = '*';
             if (Form1_LogIn_TextBox_Contraseña.Text == "CONTRASEÑA")
             {
                 Form1_LogIn_TextBox_Contraseña.Text = string.Empty;
                 Form1_LogIn_TextBox_Contraseña.ForeColor = Color.Black;
             }
-            Form1_LogIn_TextBox_Contraseña.PasswordChar = '*';
         }
         private void Form1_LogIn_TextBox_Contraseña_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(Form1_LogIn_TextBox_Contraseña.Text))
             {
+                Form1_LogIn_TextBox_Contraseña.PasswordChar = '\0';
                 Form1_LogIn_TextBox_Contraseña.UseSystemPasswordChar = false;
                 Form1_LogIn_TextBox_Contraseña.Text = "CONTRASEÑA";
                 Form1_LogIn_TextBox_Contraseña.ForeColor = Color.DimGray;

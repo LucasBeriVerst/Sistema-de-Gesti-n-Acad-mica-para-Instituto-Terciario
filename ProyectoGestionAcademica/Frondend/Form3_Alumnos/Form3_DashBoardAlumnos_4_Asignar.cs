@@ -17,6 +17,7 @@ namespace ProyectoGestionAcademica.Frondend
         {
             InitializeComponent();
             Titulo = titulo;
+            Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_Combobox_TipoDeBusqueda.SelectedIndex = 0;
         }
         public string Titulo { get => titulo; set => titulo = value; }
         private void Form3_DashBoardAlumnos_4_Asignar_Load(object sender, EventArgs e)
@@ -26,7 +27,23 @@ namespace ProyectoGestionAcademica.Frondend
 
         private void Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Cancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult result = MessageBox.Show("Seguro que queres cerrar la pagina actual. Se perderan los datos ingresados...", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_Textbox_ValorDeBusqueda_Enter(object sender, EventArgs e)
+        {
+            if (Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_Textbox_ValorDeBusqueda.Text == "VALOR DE BUSQUEDA") { Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_Textbox_ValorDeBusqueda.Text = string.Empty; }
+            Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_Textbox_ValorDeBusqueda.ForeColor = Color.Black;
+        }
+
+        private void Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_Textbox_ValorDeBusqueda_Leave(object sender, EventArgs e)
+        {
+            if (Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_Textbox_ValorDeBusqueda.Text == string.Empty) { Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_Textbox_ValorDeBusqueda.Text = "VALOR DE BUSQUEDA"; }
+            Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_Textbox_ValorDeBusqueda.ForeColor = Color.DimGray;
         }
     }
 }

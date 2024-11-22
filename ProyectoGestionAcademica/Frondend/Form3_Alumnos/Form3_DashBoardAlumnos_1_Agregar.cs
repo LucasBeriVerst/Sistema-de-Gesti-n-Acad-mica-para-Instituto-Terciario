@@ -32,7 +32,11 @@ namespace ProyectoGestionAcademica.Frondend
 
         private void Form3_DashBoardAlumnos_1_Agregar_PanelInferior_Button_Cancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult result = MessageBox.Show("Seguro que queres cerrar la pagina actual. Se perderan los datos ingresados...", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
         private void Form3_DashBoardAlumnos_1_Agregar_PanelInferior_Button_Agregar_Click(object sender, EventArgs e)
