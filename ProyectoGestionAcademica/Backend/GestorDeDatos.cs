@@ -31,29 +31,56 @@ namespace ProyectoGestionAcademica.Backend
         public DataTable BuscarAlumnosPorCategoria(string valorComboBox, string valorTextBox)
         {
             string parametroNombre;
+            // Tabla vacía para devolver en caso de error
+            DataTable tablaVacia = new DataTable();
+
+            // Validar el valor seleccionado en el ComboBox
             switch (valorComboBox)
             {
                 case "MATRICULA":
                     parametroNombre = "@Matricula";
+                    // Validar que el valor sea un número entero
+                    if (!int.TryParse(valorTextBox, out _))
+                    {
+                        MessageBox.Show("El valor ingresado para MATRICULA debe ser un número entero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return tablaVacia;
+                    }
                     break;
-                case "NOMBRE":
-                    parametroNombre = "@Nombre_Alumno";
-                    break;
-                case "APELLIDO":
-                    parametroNombre = "@Apellido_Alumno";
-                    break;
+
                 case "DNI":
                     parametroNombre = "@DNI_Alumno";
+                    // Validar que el valor sea un número entero
+                    if (!int.TryParse(valorTextBox, out _))
+                    {
+                        MessageBox.Show("El valor ingresado para DNI debe ser un número entero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return tablaVacia;
+                    }
                     break;
+
+                case "NOMBRE":
+                case "APELLIDO":
+                    parametroNombre = valorComboBox == "NOMBRE" ? "@Nombre_Alumno" : "@Apellido_Alumno";
+                    // Validar que el valor no contenga números
+                    if (valorTextBox.Any(char.IsDigit))
+                    {
+                        MessageBox.Show($"El valor ingresado para {valorComboBox} no debe contener números.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return tablaVacia;
+                    }
+                    break;
+
                 default:
                     throw new ArgumentException("El valor del ComboBox no es válido.");
             }
+
+            // Si pasa las validaciones, ejecutar la consulta
             var parametros = new Dictionary<string, object>
-            {
-                { parametroNombre, valorTextBox }
-            };
+    {
+        { parametroNombre, valorTextBox }
+    };
+
             return Instancia_SQL.EjecutarQuery("sp_SeleccionarAlumnoAvanzado", parametros);
         }
+
         #endregion
         #region LogIn: Buscar usuario
         public int Form_LogIn_BuscarUsuario(string Usuario, string Contraseña)
@@ -244,6 +271,56 @@ namespace ProyectoGestionAcademica.Backend
             };
             resultado = Instancia_SQL.EjecutarNonQuery("sp_EliminarAlumno", parametros);
             return resultado;
+        }
+        #endregion
+        #region Asignar
+        public void NombreParaCarrera(ComboBox comboBox) 
+        {
+            try
+            {
+                DataTable carreras = Instancia_SQL.EjecutarQuery("sp_ObtenerNombresCarreras");
+                comboBox.Items.Clear();
+                foreach (DataRow fila in carreras.Rows)
+                {
+                    comboBox.Items.Add(fila["Nombre_Carrera"].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al cargar las carreras: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public void CargarComboBoxAños(ComboBox comboBoxAños, int idCarrera)
+        {
+            try
+            {
+                var parametros = new Dictionary<string, object>
+                {
+                    { "@ID_Carrera", idCarrera }
+                };
+                DataTable años = Instancia_SQL.EjecutarQuery("sp_ObtenerAñosPorCarrera", parametros);
+                comboBoxAños.Items.Clear();
+                foreach (DataRow fila in años.Rows)
+                {
+                    comboBoxAños.Items.Add(fila["Año"].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al cargar los años: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public int ObtenerIDCarreraPorNombre(string nombreCarrera)
+        {
+            // Ejecutar una consulta para obtener el ID de la carrera según el nombre
+            var parametros = new Dictionary<string, object>
+            {
+                { "@Nombre_Carrera", nombreCarrera }
+            };
+
+            object resultado = Instancia_SQL.EjecutarEscalar("sp_ObtenerIDCarreraPorNombre", parametros);
+
+            return Convert.ToInt32(resultado);
         }
         #endregion
         #endregion

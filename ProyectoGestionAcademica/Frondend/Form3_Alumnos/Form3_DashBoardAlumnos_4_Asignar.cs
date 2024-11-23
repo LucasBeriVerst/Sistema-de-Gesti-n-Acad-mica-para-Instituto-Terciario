@@ -73,7 +73,7 @@ namespace ProyectoGestionAcademica.Frondend
         }
         private void HabilitarCampos()
         {
-            if (Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_DataGridView.SelectedRows.Count > 0) 
+            if (Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_DataGridView.SelectedRows.Count > 0)
             {
                 DataGridViewRow filaSeleccionada = Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_DataGridView.SelectedRows[0];
 
@@ -82,18 +82,39 @@ namespace ProyectoGestionAcademica.Frondend
                 Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_TextBox_Dni.Text = filaSeleccionada.Cells["DNI_Alumno"].Value?.ToString();
                 Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_TextBox_Matricula.Text = filaSeleccionada.Cells["Matricula"].Value?.ToString();
                 Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Carreras.Enabled = true;
+                gestorDeDatos.NombreParaCarrera(Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Carreras);
+                Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Carreras.SelectedIndex = 0;
                 Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.Enabled = true;
-                Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.SelectedIndex = 0;
             }
-            else 
+            else
             {
-            
+
             }
         }
 
         private void Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_DataGridView_SelectionChanged(object sender, EventArgs e)
         {
             HabilitarCampos();
+        }
+
+        private void Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Carreras_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                // Obtener el ID de la carrera seleccionada
+                int idCarreraSeleccionada = gestorDeDatos.ObtenerIDCarreraPorNombre(Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Carreras.SelectedItem.ToString());
+                gestorDeDatos.CargarComboBoxAños(Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años, idCarreraSeleccionada);
+                Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al seleccionar la carrera: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Asignar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

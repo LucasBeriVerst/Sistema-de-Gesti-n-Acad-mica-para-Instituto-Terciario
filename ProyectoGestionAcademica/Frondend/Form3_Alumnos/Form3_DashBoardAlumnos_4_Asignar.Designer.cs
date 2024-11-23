@@ -33,9 +33,6 @@
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Cancelar = new Button();
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Asignar = new Button();
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho = new TableLayoutPanel();
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años = new ComboBox();
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Años = new Label();
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Carreras = new Label();
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_TextBox_Matricula = new TextBox();
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Matricula = new Label();
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Dni = new Label();
@@ -44,6 +41,9 @@
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_TextBox_Apellidos = new TextBox();
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_TextBox_Nombre = new TextBox();
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Nombre = new Label();
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Años = new Label();
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Carreras = new Label();
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años = new ComboBox();
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Carreras = new ComboBox();
             Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_TextboxLinea_Vertical = new TextBox();
             Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo = new TableLayoutPanel();
@@ -120,15 +120,13 @@
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Asignar.TabIndex = 3;
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Asignar.Text = "ASIGNAR";
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Asignar.UseVisualStyleBackColor = true;
+            Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Asignar.Click += Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Asignar_Click;
             // 
             // Form3_DashBoardAlumnos_4_Asignar_PanelDerecho
             // 
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho.ColumnCount = 2;
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35.1851845F));
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 64.81481F));
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho.Controls.Add(Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años, 1, 5);
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho.Controls.Add(Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Años, 0, 5);
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho.Controls.Add(Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Carreras, 0, 4);
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho.Controls.Add(Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_TextBox_Matricula, 1, 3);
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho.Controls.Add(Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Matricula, 0, 3);
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho.Controls.Add(Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Dni, 0, 2);
@@ -137,6 +135,9 @@
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho.Controls.Add(Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_TextBox_Apellidos, 1, 1);
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho.Controls.Add(Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_TextBox_Nombre, 1, 0);
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho.Controls.Add(Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Nombre, 0, 0);
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho.Controls.Add(Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Años, 0, 5);
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho.Controls.Add(Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Carreras, 0, 4);
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho.Controls.Add(Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años, 1, 5);
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho.Controls.Add(Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Carreras, 1, 4);
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho.Dock = DockStyle.Right;
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho.Location = new Point(412, 0);
@@ -150,50 +151,6 @@
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho.RowStyles.Add(new RowStyle(SizeType.Percent, 24.3950024F));
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho.Size = new Size(628, 566);
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho.TabIndex = 6;
-            // 
-            // Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años
-            // 
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.Anchor = AnchorStyles.None;
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.BackColor = Color.FromArgb(214, 208, 209);
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.DropDownStyle = ComboBoxStyle.DropDownList;
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.Enabled = false;
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.FlatStyle = FlatStyle.Flat;
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.Font = new Font("Fira Sans UltraLight", 18.5F);
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.ForeColor = Color.DimGray;
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.FormattingEnabled = true;
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.Items.AddRange(new object[] { "1", "2", "3" });
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.Location = new Point(240, 477);
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.Name = "Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años";
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.Size = new Size(368, 38);
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.TabIndex = 46;
-            // 
-            // Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Años
-            // 
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Años.Anchor = AnchorStyles.Right;
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Años.AutoSize = true;
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Años.Font = new Font("Fira Sans", 22F, FontStyle.Bold);
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Años.ForeColor = Color.FromArgb(70, 70, 70);
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Años.Location = new Point(99, 478);
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Años.Margin = new Padding(2, 0, 2, 0);
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Años.Name = "Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Años";
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Años.Size = new Size(119, 36);
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Años.TabIndex = 44;
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Años.Text = ". AÑOS :";
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Años.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Carreras
-            // 
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Carreras.Anchor = AnchorStyles.Right;
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Carreras.AutoSize = true;
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Carreras.Font = new Font("Fira Sans", 22F, FontStyle.Bold);
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Carreras.ForeColor = Color.FromArgb(70, 70, 70);
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Carreras.Location = new Point(32, 339);
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Carreras.Margin = new Padding(2, 0, 2, 0);
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Carreras.Name = "Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Carreras";
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Carreras.Size = new Size(186, 36);
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Carreras.TabIndex = 42;
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Carreras.Text = ". CARRERAS :";
-            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Carreras.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_TextBox_Matricula
             // 
@@ -315,6 +272,49 @@
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Nombre.Text = ". NOMBRE :";
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Nombre.TextAlign = ContentAlignment.MiddleLeft;
             // 
+            // Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Años
+            // 
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Años.Anchor = AnchorStyles.Right;
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Años.AutoSize = true;
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Años.Font = new Font("Fira Sans", 22F, FontStyle.Bold);
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Años.ForeColor = Color.FromArgb(70, 70, 70);
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Años.Location = new Point(99, 478);
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Años.Margin = new Padding(2, 0, 2, 0);
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Años.Name = "Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Años";
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Años.Size = new Size(119, 36);
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Años.TabIndex = 44;
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Años.Text = ". AÑOS :";
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Años.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Carreras
+            // 
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Carreras.Anchor = AnchorStyles.Right;
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Carreras.AutoSize = true;
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Carreras.Font = new Font("Fira Sans", 22F, FontStyle.Bold);
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Carreras.ForeColor = Color.FromArgb(70, 70, 70);
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Carreras.Location = new Point(32, 339);
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Carreras.Margin = new Padding(2, 0, 2, 0);
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Carreras.Name = "Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Carreras";
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Carreras.Size = new Size(186, 36);
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Carreras.TabIndex = 42;
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Carreras.Text = ". CARRERAS :";
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_Labbel_Carreras.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años
+            // 
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.Anchor = AnchorStyles.None;
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.BackColor = Color.FromArgb(214, 208, 209);
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.DropDownStyle = ComboBoxStyle.DropDownList;
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.Enabled = false;
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.FlatStyle = FlatStyle.Flat;
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.Font = new Font("Fira Sans UltraLight", 18.5F);
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.ForeColor = Color.DimGray;
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.FormattingEnabled = true;
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.Location = new Point(240, 477);
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.Name = "Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años";
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.Size = new Size(368, 38);
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.TabIndex = 46;
+            // 
             // Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Carreras
             // 
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Carreras.Anchor = AnchorStyles.None;
@@ -328,6 +328,7 @@
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Carreras.Name = "Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Carreras";
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Carreras.Size = new Size(368, 38);
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Carreras.TabIndex = 45;
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Carreras.SelectedIndexChanged += Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Carreras_SelectedIndexChanged;
             // 
             // Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_TextboxLinea_Vertical
             // 
