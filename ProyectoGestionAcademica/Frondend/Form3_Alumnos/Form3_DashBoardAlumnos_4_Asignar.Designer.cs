@@ -86,6 +86,7 @@
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Buscar.TabIndex = 6;
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Buscar.Text = "BUSCAR";
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Buscar.UseVisualStyleBackColor = true;
+            Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Buscar.Click += Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Buscar_Click;
             // 
             // Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Cancelar
             // 
@@ -154,11 +155,13 @@
             // 
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.Anchor = AnchorStyles.None;
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.BackColor = Color.FromArgb(214, 208, 209);
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.DropDownStyle = ComboBoxStyle.DropDownList;
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.Enabled = false;
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.FlatStyle = FlatStyle.Flat;
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.Font = new Font("Fira Sans UltraLight", 18.5F);
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.ForeColor = Color.DimGray;
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.FormattingEnabled = true;
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.Items.AddRange(new object[] { "1", "2", "3" });
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.Location = new Point(240, 477);
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.Name = "Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años";
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.Size = new Size(368, 38);
@@ -428,6 +431,7 @@
             Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_DataGridView.RowHeadersWidth = 51;
             Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_DataGridView.Size = new Size(393, 345);
             Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_DataGridView.TabIndex = 11;
+            Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_DataGridView.SelectionChanged += Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_DataGridView_SelectionChanged;
             // 
             // Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_Combobox_TipoDeBusqueda
             // 

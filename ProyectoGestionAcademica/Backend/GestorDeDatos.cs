@@ -28,6 +28,32 @@ namespace ProyectoGestionAcademica.Backend
             }
             return true;
         }
+        public DataTable BuscarAlumnosPorCategoria(string valorComboBox, string valorTextBox)
+        {
+            string parametroNombre;
+            switch (valorComboBox)
+            {
+                case "MATRICULA":
+                    parametroNombre = "@Matricula";
+                    break;
+                case "NOMBRE":
+                    parametroNombre = "@Nombre_Alumno";
+                    break;
+                case "APELLIDO":
+                    parametroNombre = "@Apellido_Alumno";
+                    break;
+                case "DNI":
+                    parametroNombre = "@DNI_Alumno";
+                    break;
+                default:
+                    throw new ArgumentException("El valor del ComboBox no es válido.");
+            }
+            var parametros = new Dictionary<string, object>
+            {
+                { parametroNombre, valorTextBox }
+            };
+            return Instancia_SQL.EjecutarQuery("sp_SeleccionarAlumnoAvanzado", parametros);
+        }
         #endregion
         #region LogIn: Buscar usuario
         public int Form_LogIn_BuscarUsuario(string Usuario, string Contraseña)
@@ -125,32 +151,6 @@ namespace ProyectoGestionAcademica.Backend
         }
         #endregion
         #region Editar
-        public DataTable BuscarAlumnosPorCategoria(string valorComboBox, string valorTextBox)
-        {
-            string parametroNombre;
-            switch (valorComboBox)
-            {
-                case "MATRICULA":
-                    parametroNombre = "@Matricula";
-                    break;
-                case "NOMBRE":
-                    parametroNombre = "@Nombre_Alumno";
-                    break;
-                case "APELLIDO":
-                    parametroNombre = "@Apellido_Alumno";
-                    break;
-                case "DNI":
-                    parametroNombre = "@DNI_Alumno";
-                    break;
-                default:
-                    throw new ArgumentException("El valor del ComboBox no es válido.");
-            }
-            var parametros = new Dictionary<string, object>
-            {
-                { parametroNombre, valorTextBox }
-            };
-            return Instancia_SQL.EjecutarQuery("sp_SeleccionarAlumnoAvanzado", parametros);
-        }
         public int EditarAlumno(int idAlumno, int matricula, string nombre, string apellido, int dni, string domicilioCalle, int? domicilioNumero, string telefono, string email, string usuario, string contrasenia, DateTime? fechaBaja, DateTime? fechaAlta)
         {
             int error = 0;

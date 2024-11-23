@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoGestionAcademica.Backend;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ namespace ProyectoGestionAcademica.Frondend
     public partial class Form3_DashBoardAlumnos_4_Asignar : Form, IConfiguracion
     {
         private string titulo = "ALUMNOS: ASIGNAR";
+        private GestorDeDatos gestorDeDatos = new GestorDeDatos();
         public Form3_DashBoardAlumnos_4_Asignar()
         {
             InitializeComponent();
@@ -44,6 +46,54 @@ namespace ProyectoGestionAcademica.Frondend
         {
             if (Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_Textbox_ValorDeBusqueda.Text == string.Empty) { Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_Textbox_ValorDeBusqueda.Text = "VALOR DE BUSQUEDA"; }
             Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_Textbox_ValorDeBusqueda.ForeColor = Color.DimGray;
+        }
+
+        private void Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Buscar_Click(object sender, EventArgs e)
+        {
+            if (Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_Textbox_ValorDeBusqueda.Text == string.Empty || Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_Textbox_ValorDeBusqueda.Text == "VALOR DE BUSQUEDA")
+            {
+                MessageBox.Show("No hay ningun valor ingresado para buscar...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                DataTable resultados = gestorDeDatos.BuscarAlumnosPorCategoria(Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_Combobox_TipoDeBusqueda.Text, Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_Textbox_ValorDeBusqueda.Text);
+                if (resultados.Rows.Count == 0)
+                {
+                    MessageBox.Show("No hay datos iguales al ingresado en la categoria seleccionada...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_DataGridView.DataSource = resultados;
+                    if (Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_DataGridView.Rows.Count > 0)
+                    {
+                        Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_DataGridView.Rows[0].Selected = true;
+                    }
+                }
+            }
+        }
+        private void HabilitarCampos()
+        {
+            if (Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_DataGridView.SelectedRows.Count > 0) 
+            {
+                DataGridViewRow filaSeleccionada = Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_DataGridView.SelectedRows[0];
+
+                Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_TextBox_Nombre.Text = filaSeleccionada.Cells["Nombre_Alumno"].Value?.ToString();
+                Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_TextBox_Apellidos.Text = filaSeleccionada.Cells["Apellido_Alumno"].Value?.ToString();
+                Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_TextBox_Dni.Text = filaSeleccionada.Cells["DNI_Alumno"].Value?.ToString();
+                Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_TextBox_Matricula.Text = filaSeleccionada.Cells["Matricula"].Value?.ToString();
+                Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Carreras.Enabled = true;
+                Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.Enabled = true;
+                Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.SelectedIndex = 0;
+            }
+            else 
+            {
+            
+            }
+        }
+
+        private void Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_DataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            HabilitarCampos();
         }
     }
 }
