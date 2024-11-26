@@ -73,7 +73,7 @@ namespace ProyectoGestionAcademica.Frondend
         }
         private void HabilitarCampos()
         {
-            if (Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_DataGridView.SelectedRows.Count > 0)
+            /*if (Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_DataGridView.SelectedRows.Count > 0)
             {
                 DataGridViewRow filaSeleccionada = Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_DataGridView.SelectedRows[0];
 
@@ -89,7 +89,7 @@ namespace ProyectoGestionAcademica.Frondend
             else
             {
 
-            }
+            }*/
         }
 
         private void Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_DataGridView_SelectionChanged(object sender, EventArgs e)

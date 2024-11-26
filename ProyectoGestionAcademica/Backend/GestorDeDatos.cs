@@ -1,7 +1,9 @@
-﻿using ProyectoGestionAcademica.SQL;
+﻿using ProyectoGestionAcademica.Frondend.Form7_Usuarios;
+using ProyectoGestionAcademica.SQL;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
@@ -74,11 +76,46 @@ namespace ProyectoGestionAcademica.Backend
 
             // Si pasa las validaciones, ejecutar la consulta
             var parametros = new Dictionary<string, object>
-    {
-        { parametroNombre, valorTextBox }
-    };
+            {
+                { parametroNombre, valorTextBox }
+            };
 
             return Instancia_SQL.EjecutarQuery("sp_SeleccionarAlumnoAvanzado", parametros);
+        }
+
+        //Metodo generico para obtener una lista de IDs y Nombres (generalmente para cargar ComboBoxs)
+        //Se usa una lista de pares clave-valor en vez de un diccionario xq el diccionario no es compaible con los ComboBox
+        public List<KeyValuePair<object, string>> ObtenerIDsyNombresGenericos(string nombreTabla, string columnaID, string columnaNombre)
+        {
+            //lista vacia para guardar los perfiles
+            List<KeyValuePair<object, string>> listaIDsNombres = new List<KeyValuePair<object, string>>();
+
+            //Parametros para el Stored Procedure
+            var parametros = new Dictionary<string, object>
+            {
+                { "@NombreTabla", nombreTabla },
+                { "@ColumnaID", columnaID },
+                { "@ColumnaNombre", columnaNombre }
+            };
+
+            try
+            {
+                // Llamar al método EjecutarReader
+                using (SqlDataReader lector = Instancia_SQL.EjecutarReader("sp_ObtenerIDsyNombresGenericos", parametros))
+                {
+                    while (lector.Read())
+                    {
+                        object id = lector[columnaID];
+                        string nombre = lector[columnaNombre].ToString();
+                        listaIDsNombres.Add(new KeyValuePair<object, string>(id, nombre));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return listaIDsNombres;  //Retorna la lista completa de perfiles
         }
 
         #endregion
@@ -322,6 +359,103 @@ namespace ProyectoGestionAcademica.Backend
 
             return Convert.ToInt32(resultado);
         }
+        #endregion
+        #endregion
+
+        #region Usuarios
+        #region Agregar                             //fecha alta y fecha baja
+        public int Form_Usuarios_AgregarUsuario(string perfil, string nombre, string apellido, string dni, string calle, string numero, string telefono, string email, string usuario, string contraseña)
+        {
+            #region Validaciones de Campos
+            int resultado = 0;
+
+            //validacion para el perfil que no sea null o vacio
+            if (string.IsNullOrEmpty(perfil))
+            {
+                resultado = -20;
+            }
+
+            //validacion para nombre para que no agreguen espacios en blanco
+            if (string.IsNullOrWhiteSpace(nombre))
+            {
+                resultado = -21;
+            }
+
+            //validacion para apellido para que no agreguen espacios en blanco
+            if (string.IsNullOrWhiteSpace(apellido))
+            {
+                resultado = -22;
+            }
+
+            //validacion para dni para ver si son digitos
+            if (!dni.All(char.IsDigit))
+            {
+                resultado = -9;
+            }
+
+            //validacion para calle para que no agreguen espacios en blanco
+            if (string.IsNullOrWhiteSpace(calle))
+            {
+                resultado = -23;
+            }
+
+            //validacion para numero para ver si son digitos
+            if (!numero.All(char.IsDigit))
+            {
+                resultado = -24;
+            }
+
+            //validacion para telefono
+            /*if (!telefono.All(char.IsDigit))
+            {
+                resultado = -27;
+            }*/
+
+            //validacion de formato de mail
+            try
+            {
+                new MailAddress(email);
+            }
+            catch (Exception ex)
+            {
+                resultado = -10;
+            }
+
+            //validacion para usuario para que no sea nulo y que no sean espacios en blanco
+            if (string.IsNullOrEmpty(usuario) || string.IsNullOrWhiteSpace(usuario))
+            {
+                resultado = -25;
+            }
+
+            //validacion para contraseña para que no tenga espacios en blanco
+            if (string.IsNullOrWhiteSpace(contraseña))
+            {
+                resultado = -26;
+            }
+            #endregion
+
+            if (resultado == 0)     //FechaBaja y FechaAlta
+            {
+                var parametros = new Dictionary<string, object>
+                {
+                    {"@ID_Perfil", perfil},
+                    {"@Nombre_Empleado", nombre},
+                    {"@Apellido_Empleado", apellido},
+                    {"@DNI_Empleado", int.Parse(dni)},
+                    {"@Domicilio_Calle", calle ?? (object)DBNull.Value},    //si NO es nulo devuelve calle, y si es nulo indica a la bdd que va a ser nulo
+                    {"@Domicilio_Numero", string.IsNullOrEmpty(numero) ? (object)DBNull.Value : int.Parse(numero)}, //si es null o vacio indica a bdd que es null; sino convierte a entero el numero
+                    {"@Telefono", telefono ?? (object)DBNull.Value},
+                    {"@Email", email},
+                    {"@Usuario_Empleado", usuario},
+                    {"@Contrasenia_Empleado", contraseña},
+                    //{"@Fecha_Baja", },
+                    //{"@Fecha_Alta", }
+                };
+                resultado = Instancia_SQL.EjecutarNonQuery("sp_AgregarEmpleado", parametros);
+            }
+            return resultado;   //devuelve el numero de filas afectadas
+        }
+
         #endregion
         #endregion
     }

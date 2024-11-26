@@ -11,8 +11,8 @@ namespace ProyectoGestionAcademica.SQL
 {
     internal class Conexion
     {
-        /* CONEXION LUCAS */ private string cadena = "Data Source=DESKTOP-GO1RSK2\\SQLEXPRESS;Initial Catalog=Proyecto_Algoritmos_BDD;Integrated Security=True;TrustServerCertificate=True;";
-        /* CONEXION LAUTA */ //private string cadena = "Data Source=LAUTA-PC\\SQLEXPRESS;Initial Catalog=Proyecto_Algoritmos_BDD;Integrated Security=True;TrustServerCertificate=True;";
+        /* CONEXION LUCAS */ //private string cadena = "Data Source=DESKTOP-GO1RSK2\\SQLEXPRESS;Initial Catalog=Proyecto_Algoritmos_BDD;Integrated Security=True;TrustServerCertificate=True;";
+        /* CONEXION LAUTA */ private string cadena = "Data Source=LAUTA-PC\\SQLEXPRESS;Initial Catalog=Proyecto_Algoritmos_BDD;Integrated Security=True;TrustServerCertificate=True;";
 
         private SqlConnection conexion; //el objeto para manejar la conexión a la base de datos
 
@@ -44,6 +44,8 @@ namespace ProyectoGestionAcademica.SQL
         {
             return conexion; //retorna el objeto SqlConnection
         }
+
+        //Ideal para ejecutar consultas que no devuelven datos
         public int EjecutarNonQuery(string nombreProcedimiento, Dictionary<string, object> parametros = null)
         {
             int filasAfectadas = 0;
@@ -79,6 +81,7 @@ namespace ProyectoGestionAcademica.SQL
             return filasAfectadas;
         }
 
+        //Util cuando necesitas obtener un único valor de la BDD
         public object EjecutarEscalar(string nombreProcedimiento, Dictionary<string, object> parametros = null)
         {
             object resultado = null;
@@ -104,6 +107,8 @@ namespace ProyectoGestionAcademica.SQL
             }
             return resultado;
         }
+
+        //Utiliza un SqlDataAdapter para llenar un DataTable con los resultados de una consulta
         public DataTable EjecutarQuery(string nombreProcedimiento, Dictionary<string, object> parametros = null)
         {
             DataTable tabla = new DataTable();
@@ -131,6 +136,35 @@ namespace ProyectoGestionAcademica.SQL
                 Cerrar();
             }
             return tabla;
+        }
+
+        //Para ejecutar consultas que devuelvan datos y que puedan ser leídos fila por fila
+        public SqlDataReader EjecutarReader(string nombreProcedimiento, Dictionary<string, object> parametros = null)
+        {
+            try
+            {
+                Abrir();    //Abrir conexion
+
+                SqlCommand comando = new SqlCommand(nombreProcedimiento, conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                //agregar parametros, si existen
+                if (parametros != null)
+                {
+                    foreach (var parametro in parametros)
+                    {
+                        comando.Parameters.AddWithValue(parametro.Key,parametro.Value);
+                    }
+                }
+
+                //Ejecutar el comando y obtener un DataReader
+                return comando.ExecuteReader(CommandBehavior.CloseConnection);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
         }
     }
 }
