@@ -312,7 +312,6 @@ namespace ProyectoGestionAcademica.Backend
         }
         public int ObtenerIDCarreraPorNombre(string nombreCarrera)
         {
-            // Ejecutar una consulta para obtener el ID de la carrera según el nombre
             var parametros = new Dictionary<string, object>
             {
                 { "@Nombre_Carrera", nombreCarrera }
@@ -322,6 +321,47 @@ namespace ProyectoGestionAcademica.Backend
 
             return Convert.ToInt32(resultado);
         }
+        public int ObtenerIDAñoDeCarrera(int IdCarrera, int Año)
+        {
+            var parametros = new Dictionary<string, object>
+            {
+                { "@ID_Carrera", IdCarrera },
+                { "@Año", Año }
+            };
+            object resultado = Instancia_SQL.EjecutarEscalar("ObtenerIDAñoDeCarrera", parametros);
+            if (resultado != null && int.TryParse(resultado.ToString(), out int IdAñoDeCarrera))
+            {
+                return IdAñoDeCarrera;
+            }
+            throw new Exception("No se encontró un ID_AñoDeCarrera para los parámetros proporcionados.");
+        }
+        public DataTable ObtenerMateriasPorCarreraYAño(int IdCarrera, int IdAño)
+        {
+            var parametros = new Dictionary<string, object>
+            {
+                { "@ID_Carrera", IdCarrera },
+                { "@ID_AñoDeCarrera", IdAño }
+            };
+            DataTable dataTable = Instancia_SQL.EjecutarQuery("ObtenerMateriasPorCarreraYAño", parametros);
+            return dataTable;
+        }
+        public int ObtenerIDMateriaPorNombre(string nombreMateria, int idCarrera)
+        {
+            int resultadoNulo = 0;
+            var parametros = new Dictionary<string, object>
+            {
+                { "@Nombre_Materia", nombreMateria },
+                { "@ID_Carrera", idCarrera }
+            };
+            object resultado = Instancia_SQL.EjecutarEscalar("sp_ObtenerIDMateriaPorNombre", parametros);
+
+            if (resultado != null && int.TryParse(resultado.ToString(), out int idMateria))
+            {
+                return idMateria; // Retorna el ID como entero
+            }
+            return resultadoNulo;
+        }
+
         #endregion
         #endregion
     }
