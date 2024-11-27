@@ -172,6 +172,7 @@ namespace ProyectoGestionAcademica.Backend
             return respuesta;
         }
         #endregion
+
         #region Alumnos
         #region Agregar
         public int Form_Alumnos_AgregarAlumno(string nombre, string apellido, string dni, string calle, string numero, string telefono, string email, string matricula) 
@@ -373,7 +374,7 @@ namespace ProyectoGestionAcademica.Backend
             // Validación para perfil (debe ser numérico)
             if (!int.TryParse(perfil, out int idPerfil) || idPerfil <= 0)
             {
-                return -20;  // Retorna error de perfil inválido
+                resultado = -20;  // Retorna error de perfil inválido
             }
 
             //validacion para nombre para que no agreguen espacios en blanco
