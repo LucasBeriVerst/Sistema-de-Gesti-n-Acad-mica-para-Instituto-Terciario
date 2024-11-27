@@ -85,7 +85,7 @@ namespace ProyectoGestionAcademica.Backend
 
         //Metodo generico para obtener una lista de IDs y Nombres (generalmente para cargar ComboBoxs)
         //Se usa una lista de pares clave-valor en vez de un diccionario xq el diccionario no es compaible con los ComboBox
-        public List<KeyValuePair<object, string>> ObtenerIDsyNombresGenericos(string nombreTabla, string columnaID, string columnaNombre)
+        public List<KeyValuePair<object, string>> ObtenerIDsyNombresGenericos(string nombreTabla, string columnaID, string columnaNombre, string filtro = null)
         {
             //lista vacia para guardar los perfiles
             List<KeyValuePair<object, string>> listaIDsNombres = new List<KeyValuePair<object, string>>();
@@ -95,7 +95,8 @@ namespace ProyectoGestionAcademica.Backend
             {
                 { "@NombreTabla", nombreTabla },
                 { "@ColumnaID", columnaID },
-                { "@ColumnaNombre", columnaNombre }
+                { "@ColumnaNombre", columnaNombre },
+                { "@Filtro", filtro }
             };
 
             try
@@ -363,16 +364,16 @@ namespace ProyectoGestionAcademica.Backend
         #endregion
 
         #region Usuarios
-        #region Agregar                             //fecha alta y fecha baja
-        public int Form_Usuarios_AgregarUsuario(string perfil, string nombre, string apellido, string dni, string calle, string numero, string telefono, string email, string usuario, string contraseña)
+        #region Agregar
+        public int Form_Usuarios_AgregarUsuario(string perfil, string nombre, string apellido, string dni, string calle, string numero, string telefono, string email, string usuario, string contraseña, DateTime? fechaAlta, DateTime? fechaBaja)
         {
             #region Validaciones de Campos
             int resultado = 0;
 
-            //validacion para el perfil que no sea null o vacio
-            if (string.IsNullOrEmpty(perfil))
+            // Validación para perfil (debe ser numérico)
+            if (!int.TryParse(perfil, out int idPerfil) || idPerfil <= 0)
             {
-                resultado = -20;
+                return -20;  // Retorna error de perfil inválido
             }
 
             //validacion para nombre para que no agreguen espacios en blanco
@@ -432,13 +433,21 @@ namespace ProyectoGestionAcademica.Backend
             {
                 resultado = -26;
             }
+
+            //Validacion de fecha para que la fecha de baja no sea anterior a la fecha de alta
+                //si fechaAlta tiene valor y fechaBaja tiene valor y fechaBaja es menor a fechaAlta entonces error
+            if (fechaAlta.HasValue && fechaBaja.HasValue && fechaBaja.Value < fechaAlta.Value)
+            {
+                resultado = -27;                                
+            }
+
             #endregion
 
-            if (resultado == 0)     //FechaBaja y FechaAlta
+            if (resultado == 0)
             {
                 var parametros = new Dictionary<string, object>
                 {
-                    {"@ID_Perfil", perfil},
+                    {"@ID_Perfil", idPerfil},   //idPerfil ya es int en esta parte
                     {"@Nombre_Empleado", nombre},
                     {"@Apellido_Empleado", apellido},
                     {"@DNI_Empleado", int.Parse(dni)},
@@ -448,8 +457,8 @@ namespace ProyectoGestionAcademica.Backend
                     {"@Email", email},
                     {"@Usuario_Empleado", usuario},
                     {"@Contrasenia_Empleado", contraseña},
-                    //{"@Fecha_Baja", },
-                    //{"@Fecha_Alta", }
+                    {"@Fecha_Baja", fechaBaja ?? (object)DBNull.Value}, //Para verificar nulos. Sintaxis: variable ?? valorPorDefecto
+                    {"@Fecha_Alta", fechaAlta ?? (object)DBNull.Value}  //Verifica si la variable es null. Si lo es, retorna valorPorDefecto. Sino, retorna el valor de la variable
                 };
                 resultado = Instancia_SQL.EjecutarNonQuery("sp_AgregarEmpleado", parametros);
             }
