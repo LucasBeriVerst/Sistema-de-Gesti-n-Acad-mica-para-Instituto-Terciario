@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace ProyectoGestionAcademica.Backend
@@ -415,7 +417,21 @@ namespace ProyectoGestionAcademica.Backend
 
         #endregion
         #region Informacion
-
+        #endregion
+        #endregion
+        #region Materias
+        #region Agregar
+        public void AgregarMateriaSegunNombre(string nombre_Materia) 
+        {
+            int resultado = 0;
+            var parametros = new Dictionary<string, object>
+            {   
+                { "@Nombre_Materia", nombre_Materia },
+            };
+            resultado = Instancia_SQL.EjecutarNonQuery("sp_AgregarMateria", parametros);
+            if (resultado == 0) { MessageBox.Show($"Ocurrió un error al cargar la materia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            else if (resultado == 1) { MessageBox.Show($"La Materia se ingreso correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+        }
         #endregion
         #endregion
     }
