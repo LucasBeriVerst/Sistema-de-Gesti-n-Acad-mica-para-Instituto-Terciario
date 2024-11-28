@@ -54,6 +54,7 @@
             Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_TextboxLinea_Horizontal = new TextBox();
             Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_DataGridView = new DataGridView();
             Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_Combobox_TipoDeBusqueda = new ComboBox();
+            textBox1 = new TextBox();
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior.SuspendLayout();
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho.SuspendLayout();
             Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo.SuspendLayout();
@@ -63,6 +64,7 @@
             // Form3_DashBoardAlumnos_4_Asignar_PanelInferior
             // 
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior.BackColor = Color.FromArgb(36, 60, 100);
+            Form3_DashBoardAlumnos_4_Asignar_PanelInferior.Controls.Add(textBox1);
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior.Controls.Add(Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Desvincular);
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior.Controls.Add(Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Buscar);
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior.Controls.Add(Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Cancelar);
@@ -75,12 +77,13 @@
             // 
             // Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Desvincular
             // 
+            Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Desvincular.Dock = DockStyle.Right;
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Desvincular.FlatAppearance.BorderSize = 0;
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Desvincular.FlatAppearance.MouseDownBackColor = Color.FromArgb(177, 173, 189);
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Desvincular.FlatStyle = FlatStyle.Popup;
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Desvincular.Font = new Font("Fira Sans", 13F, FontStyle.Bold);
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Desvincular.ForeColor = SystemColors.ScrollBar;
-            Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Desvincular.Location = new Point(607, 0);
+            Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Desvincular.Location = new Point(420, 0);
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Desvincular.Margin = new Padding(2);
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Desvincular.Name = "Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Desvincular";
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Desvincular.Size = new Size(205, 39);
@@ -109,12 +112,13 @@
             // 
             // Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Cancelar
             // 
+            Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Cancelar.Dock = DockStyle.Right;
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Cancelar.FlatAppearance.BorderSize = 0;
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Cancelar.FlatAppearance.MouseDownBackColor = Color.FromArgb(177, 173, 189);
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Cancelar.FlatStyle = FlatStyle.Popup;
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Cancelar.Font = new Font("Fira Sans", 13F, FontStyle.Bold);
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Cancelar.ForeColor = SystemColors.ScrollBar;
-            Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Cancelar.Location = new Point(412, 0);
+            Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Cancelar.Location = new Point(625, 0);
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Cancelar.Margin = new Padding(2);
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Cancelar.Name = "Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Cancelar";
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Cancelar.Size = new Size(191, 39);
@@ -467,6 +471,14 @@
             Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_Combobox_TipoDeBusqueda.Size = new Size(311, 39);
             Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_Combobox_TipoDeBusqueda.TabIndex = 12;
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(270, 10);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(100, 23);
+            textBox1.TabIndex = 8;
+            textBox1.Visible = false;
+            // 
             // Form3_DashBoardAlumnos_4_Asignar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -482,6 +494,7 @@
             Text = "Form3_DashBoardAlumnos_4_Asignar";
             Load += Form3_DashBoardAlumnos_4_Asignar_Load;
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior.ResumeLayout(false);
+            Form3_DashBoardAlumnos_4_Asignar_PanelInferior.PerformLayout();
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho.ResumeLayout(false);
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho.PerformLayout();
             Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo.ResumeLayout(false);
@@ -519,5 +532,6 @@
         private Button Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Desvincular;
         private Label label1;
         private ComboBox Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Materias;
+        private TextBox textBox1;
     }
 }

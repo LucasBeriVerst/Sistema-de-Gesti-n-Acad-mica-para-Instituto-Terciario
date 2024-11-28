@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
@@ -14,6 +15,7 @@ namespace ProyectoGestionAcademica.Backend
     internal class GestorDeDatos
     {
         Conexion Instancia_SQL = new Conexion();
+        private StringWriter consolaWriter;
         #region Generales
         public bool ValidarCamposDeTexto(params string[] parametros)
         {
@@ -347,19 +349,29 @@ namespace ProyectoGestionAcademica.Backend
         }
         public int ObtenerIDMateriaPorNombre(string nombreMateria, int idCarrera)
         {
-            int resultadoNulo = 0;
             var parametros = new Dictionary<string, object>
             {
                 { "@Nombre_Materia", nombreMateria },
                 { "@ID_Carrera", idCarrera }
             };
             object resultado = Instancia_SQL.EjecutarEscalar("sp_ObtenerIDMateriaPorNombre", parametros);
-
-            if (resultado != null && int.TryParse(resultado.ToString(), out int idMateria))
+            consolaWriter = new StringWriter();
+            Console.SetOut(consolaWriter);
+            Console.WriteLine(resultado.ToString());
+            int valor = (int)resultado;
+            //int numeroConvertido = int.TryParse(resultado.ToString());
+            int respuesta = 0;
+            string x = resultado.ToString();
+            if (resultado != null)
             {
-                return idMateria; // Retorna el ID como entero
+                respuesta = Convert.ToInt32(resultado);
+                Debug.WriteLine("Resultado convertido a int: " + respuesta);
             }
-            return resultadoNulo;
+            else
+            {
+                Debug.WriteLine("El resultado es nulo.");
+            }
+            return respuesta;
         }
 
         #endregion
