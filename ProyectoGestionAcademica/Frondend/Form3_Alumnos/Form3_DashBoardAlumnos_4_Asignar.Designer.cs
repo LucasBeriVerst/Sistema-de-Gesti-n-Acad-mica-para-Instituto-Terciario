@@ -54,7 +54,6 @@
             Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_TextboxLinea_Horizontal = new TextBox();
             Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_DataGridView = new DataGridView();
             Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_Combobox_TipoDeBusqueda = new ComboBox();
-            textBox1 = new TextBox();
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior.SuspendLayout();
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho.SuspendLayout();
             Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo.SuspendLayout();
@@ -64,7 +63,6 @@
             // Form3_DashBoardAlumnos_4_Asignar_PanelInferior
             // 
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior.BackColor = Color.FromArgb(36, 60, 100);
-            Form3_DashBoardAlumnos_4_Asignar_PanelInferior.Controls.Add(textBox1);
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior.Controls.Add(Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Desvincular);
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior.Controls.Add(Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Buscar);
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior.Controls.Add(Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Cancelar);
@@ -90,7 +88,6 @@
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Desvincular.TabIndex = 7;
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Desvincular.Text = "DESVINCULAR";
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Desvincular.UseVisualStyleBackColor = true;
-            Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Desvincular.Visible = false;
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Desvincular.Click += Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Desvincular_Click;
             // 
             // Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Buscar
@@ -312,6 +309,7 @@
             // 
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Carreras.Anchor = AnchorStyles.None;
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Carreras.BackColor = Color.FromArgb(214, 208, 209);
+            Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Carreras.DropDownStyle = ComboBoxStyle.DropDownList;
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Carreras.Enabled = false;
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Carreras.FlatStyle = FlatStyle.Flat;
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Carreras.Font = new Font("Fira Sans UltraLight", 18.5F);
@@ -471,14 +469,6 @@
             Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_Combobox_TipoDeBusqueda.Size = new Size(311, 39);
             Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_Combobox_TipoDeBusqueda.TabIndex = 12;
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(270, 10);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 8;
-            textBox1.Visible = false;
-            // 
             // Form3_DashBoardAlumnos_4_Asignar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -494,7 +484,6 @@
             Text = "Form3_DashBoardAlumnos_4_Asignar";
             Load += Form3_DashBoardAlumnos_4_Asignar_Load;
             Form3_DashBoardAlumnos_4_Asignar_PanelInferior.ResumeLayout(false);
-            Form3_DashBoardAlumnos_4_Asignar_PanelInferior.PerformLayout();
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho.ResumeLayout(false);
             Form3_DashBoardAlumnos_4_Asignar_PanelDerecho.PerformLayout();
             Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo.ResumeLayout(false);
@@ -532,6 +521,5 @@
         private Button Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Desvincular;
         private Label label1;
         private ComboBox Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Materias;
-        private TextBox textBox1;
     }
 }

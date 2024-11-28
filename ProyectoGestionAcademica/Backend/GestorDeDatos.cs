@@ -373,6 +373,45 @@ namespace ProyectoGestionAcademica.Backend
             }
             return respuesta;
         }
+        public int AgregarAlumnoEnMateria(int idAlumno, int idMateria)
+        {
+            var parametros = new Dictionary<string, object>
+            {
+                { "@ID_Alumno", idAlumno },
+                { "@ID_Materia", idMateria }
+            };
+
+            try
+            {
+                int filasAfectadas = Instancia_SQL.EjecutarNonQuery("sp_AgregarAlumnoEnMateria", parametros);
+                return filasAfectadas;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -1;
+            }
+        }
+        public int EliminarAlumnoDeMateria(int idAlumno, int idMateria)
+        {
+            var parametros = new Dictionary<string, object>
+            {
+                { "@ID_Alumno", idAlumno },
+                { "@ID_Materia", idMateria }
+            };
+
+            try
+            {
+                int resultado = Instancia_SQL.EjecutarNonQuery("sp_EliminarAlumnoDeMateria", parametros);
+                return resultado;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -1; 
+            }
+        }
+        
 
         #endregion
         #endregion

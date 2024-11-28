@@ -145,6 +145,31 @@ namespace ProyectoGestionAcademica.Frondend
             int idCarreraSeleccionada = gestorDeDatos.ObtenerIDCarreraPorNombre(Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Carreras.SelectedItem.ToString());
             string nombre_Materia = Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Materias.Text;
             int id_Materia = gestorDeDatos.ObtenerIDMateriaPorNombre(nombre_Materia, idCarreraSeleccionada);
+            int respuesta = gestorDeDatos.AgregarAlumnoEnMateria(id_alumno, id_Materia);
+            if (respuesta == 1)
+            {
+                MessageBox.Show("Alumno ingreado a la materia", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            { 
+                MessageBox.Show("El alumno ya se encuentra ingresado en la materia", "Redundancia", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+            }
+        }
+        private void Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Desvincular_Click(object sender, EventArgs e)
+        {
+            int id_alumno = Convert.ToInt32(Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_DataGridView.SelectedRows[0].Cells[0].Value);
+            int idCarreraSeleccionada = gestorDeDatos.ObtenerIDCarreraPorNombre(Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Carreras.SelectedItem.ToString());
+            string nombre_Materia = Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Materias.Text;
+            int id_Materia = gestorDeDatos.ObtenerIDMateriaPorNombre(nombre_Materia, idCarreraSeleccionada);
+            int respuesta = gestorDeDatos.EliminarAlumnoDeMateria(id_alumno, id_Materia);
+            if (respuesta == 1)
+            {
+                MessageBox.Show("Alumno desvinculado de la materia", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("El alumno no se encuentra ingresado en la materia", "Redundancia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
@@ -153,9 +178,5 @@ namespace ProyectoGestionAcademica.Frondend
 
         }
 
-        private void Form3_DashBoardAlumnos_4_Asignar_PanelInferior_Button_Desvincular_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
