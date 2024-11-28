@@ -35,6 +35,7 @@ namespace ProyectoGestionAcademica.Frondend
             NombreUsuario = NomUsuarioAceptado;
             EstablecerPerfil();
             Configuracion();
+            timer1.Start();
             this.Refresh();
         }
         private void EstablecerPerfil()
@@ -406,6 +407,12 @@ namespace ProyectoGestionAcademica.Frondend
                     break;
             }
             #endregion
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime horaActual = DateTime.Now;
+            Form2_DashboardGeneral_TextBox_Hora.Text = horaActual.ToString("HH:mm:ss");
         }
     }
 }

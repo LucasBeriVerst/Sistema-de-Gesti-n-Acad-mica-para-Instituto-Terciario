@@ -76,9 +76,9 @@ namespace ProyectoGestionAcademica.Backend
 
             // Si pasa las validaciones, ejecutar la consulta
             var parametros = new Dictionary<string, object>
-    {
-        { parametroNombre, valorTextBox }
-    };
+            {
+                { parametroNombre, valorTextBox }
+            };
 
             return Instancia_SQL.EjecutarQuery("sp_SeleccionarAlumnoAvanzado", parametros);
         }
@@ -411,7 +411,10 @@ namespace ProyectoGestionAcademica.Backend
                 return -1; 
             }
         }
-        
+
+
+        #endregion
+        #region Informacion
 
         #endregion
         #endregion
