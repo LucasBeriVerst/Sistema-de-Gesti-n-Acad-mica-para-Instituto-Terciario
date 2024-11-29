@@ -87,6 +87,7 @@
             Form7_DashBoardUsuarios_1_Agregar_PanelInferior_Button_Cancelar.TabIndex = 0;
             Form7_DashBoardUsuarios_1_Agregar_PanelInferior_Button_Cancelar.Text = "CANCELAR";
             Form7_DashBoardUsuarios_1_Agregar_PanelInferior_Button_Cancelar.UseVisualStyleBackColor = true;
+            Form7_DashBoardUsuarios_1_Agregar_PanelInferior_Button_Cancelar.Click += Form7_DashBoardUsuarios_1_Agregar_PanelInferior_Button_Cancelar_Click;
             // 
             // Form7_DashBoardUsuarios_1_Agregar_PanelInferior_Button_Agregar
             // 
@@ -101,6 +102,7 @@
             Form7_DashBoardUsuarios_1_Agregar_PanelInferior_Button_Agregar.TabIndex = 3;
             Form7_DashBoardUsuarios_1_Agregar_PanelInferior_Button_Agregar.Text = "AGREGAR";
             Form7_DashBoardUsuarios_1_Agregar_PanelInferior_Button_Agregar.UseVisualStyleBackColor = true;
+            Form7_DashBoardUsuarios_1_Agregar_PanelInferior_Button_Agregar.Click += Form7_DashBoardUsuarios_1_Agregar_PanelInferior_Button_Agregar_Click;
             // 
             // Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorIzquierdo
             // 
@@ -334,6 +336,7 @@
             // 
             Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaBaja.Anchor = AnchorStyles.None;
             Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaBaja.CalendarMonthBackground = Color.FromArgb(214, 208, 209);
+            Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaBaja.Checked = false;
             Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaBaja.Font = new Font("Microsoft Sans Serif", 22F);
             Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaBaja.Format = DateTimePickerFormat.Short;
             Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaBaja.Location = new Point(106, 694);
@@ -366,6 +369,8 @@
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Nombre.Size = new Size(473, 49);
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Nombre.TabIndex = 1;
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Nombre.Text = "NOMBRE";
+            Form7_DashBoardUsuarios_1_Agregar_TextBox_Nombre.Enter += Form7_DashBoardUsuarios_1_Agregar_TextBox_Nombre_Enter;
+            Form7_DashBoardUsuarios_1_Agregar_TextBox_Nombre.Leave += Form7_DashBoardUsuarios_1_Agregar_TextBox_Nombre_Leave;
             // 
             // Form7_DashBoardUsuarios_1_Agregar_TextBox_Apellido
             // 
@@ -379,6 +384,8 @@
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Apellido.Size = new Size(473, 49);
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Apellido.TabIndex = 2;
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Apellido.Text = "APELLIDO";
+            Form7_DashBoardUsuarios_1_Agregar_TextBox_Apellido.Enter += Form7_DashBoardUsuarios_1_Agregar_TextBox_Apellido_Enter;
+            Form7_DashBoardUsuarios_1_Agregar_TextBox_Apellido.Leave += Form7_DashBoardUsuarios_1_Agregar_TextBox_Apellido_Leave;
             // 
             // Form7_DashBoardUsuarios_1_Agregar_TextBox_Dni
             // 
@@ -392,6 +399,8 @@
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Dni.Size = new Size(473, 49);
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Dni.TabIndex = 3;
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Dni.Text = "DNI";
+            Form7_DashBoardUsuarios_1_Agregar_TextBox_Dni.Enter += Form7_DashBoardUsuarios_1_Agregar_TextBox_Dni_Enter;
+            Form7_DashBoardUsuarios_1_Agregar_TextBox_Dni.Leave += Form7_DashBoardUsuarios_1_Agregar_TextBox_Dni_Leave;
             // 
             // Form7_DashBoardUsuarios_1_Agregar_TextBox_Calle
             // 
@@ -405,6 +414,8 @@
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Calle.Size = new Size(473, 49);
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Calle.TabIndex = 4;
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Calle.Text = "DOMICILIO (CALLE)";
+            Form7_DashBoardUsuarios_1_Agregar_TextBox_Calle.Enter += Form7_DashBoardUsuarios_1_Agregar_TextBox_Calle_Enter;
+            Form7_DashBoardUsuarios_1_Agregar_TextBox_Calle.Leave += Form7_DashBoardUsuarios_1_Agregar_TextBox_Calle_Leave;
             // 
             // Form7_DashBoardUsuarios_1_Agregar_TextBox_Numero
             // 
@@ -418,6 +429,8 @@
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Numero.Size = new Size(473, 49);
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Numero.TabIndex = 5;
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Numero.Text = "DOMICILIO (NUMERO)";
+            Form7_DashBoardUsuarios_1_Agregar_TextBox_Numero.Enter += Form7_DashBoardUsuarios_1_Agregar_TextBox_Numero_Enter;
+            Form7_DashBoardUsuarios_1_Agregar_TextBox_Numero.Leave += Form7_DashBoardUsuarios_1_Agregar_TextBox_Numero_Leave;
             // 
             // Form7_DashBoardUsuarios_1_Agregar_TextBox_Telefono
             // 
@@ -431,6 +444,8 @@
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Telefono.Size = new Size(473, 49);
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Telefono.TabIndex = 6;
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Telefono.Text = "TELEFONO";
+            Form7_DashBoardUsuarios_1_Agregar_TextBox_Telefono.Enter += Form7_DashBoardUsuarios_1_Agregar_TextBox_Telefono_Enter;
+            Form7_DashBoardUsuarios_1_Agregar_TextBox_Telefono.Leave += Form7_DashBoardUsuarios_1_Agregar_TextBox_Telefono_Leave;
             // 
             // Form7_DashBoardUsuarios_1_Agregar_TextBox_Email
             // 
@@ -444,6 +459,8 @@
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Email.Size = new Size(473, 49);
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Email.TabIndex = 7;
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Email.Text = "EMAIL";
+            Form7_DashBoardUsuarios_1_Agregar_TextBox_Email.Enter += Form7_DashBoardUsuarios_1_Agregar_TextBox_Email_Enter;
+            Form7_DashBoardUsuarios_1_Agregar_TextBox_Email.Leave += Form7_DashBoardUsuarios_1_Agregar_TextBox_Email_Leave;
             // 
             // Form7_DashBoardUsuarios_1_Agregar_TextBox_Usuario
             // 
@@ -457,6 +474,8 @@
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Usuario.Size = new Size(473, 49);
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Usuario.TabIndex = 8;
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Usuario.Text = "USUARIO";
+            Form7_DashBoardUsuarios_1_Agregar_TextBox_Usuario.Enter += Form7_DashBoardUsuarios_1_Agregar_TextBox_Usuario_Enter;
+            Form7_DashBoardUsuarios_1_Agregar_TextBox_Usuario.Leave += Form7_DashBoardUsuarios_1_Agregar_TextBox_Usuario_Leave;
             // 
             // Form7_DashBoardUsuarios_1_Agregar_TextBox_Contraseña
             // 
@@ -470,20 +489,21 @@
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Contraseña.Size = new Size(473, 49);
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Contraseña.TabIndex = 9;
             Form7_DashBoardUsuarios_1_Agregar_TextBox_Contraseña.Text = "CONTRASEÑA";
+            Form7_DashBoardUsuarios_1_Agregar_TextBox_Contraseña.Enter += Form7_DashBoardUsuarios_1_Agregar_TextBox_Contraseña_Enter;
+            Form7_DashBoardUsuarios_1_Agregar_TextBox_Contraseña.Leave += Form7_DashBoardUsuarios_1_Agregar_TextBox_Contraseña_Leave;
             // 
             // Form7_DashBoardUsuarios_1_Agregar_ComboBox_Perfil
             // 
             Form7_DashBoardUsuarios_1_Agregar_ComboBox_Perfil.Anchor = AnchorStyles.None;
             Form7_DashBoardUsuarios_1_Agregar_ComboBox_Perfil.BackColor = Color.FromArgb(214, 208, 209);
+            Form7_DashBoardUsuarios_1_Agregar_ComboBox_Perfil.DropDownStyle = ComboBoxStyle.DropDownList;
             Form7_DashBoardUsuarios_1_Agregar_ComboBox_Perfil.Font = new Font("Microsoft Sans Serif", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Form7_DashBoardUsuarios_1_Agregar_ComboBox_Perfil.ForeColor = Color.DimGray;
             Form7_DashBoardUsuarios_1_Agregar_ComboBox_Perfil.FormattingEnabled = true;
-            Form7_DashBoardUsuarios_1_Agregar_ComboBox_Perfil.Items.AddRange(new object[] { "Administrador", "Docente", "Personal Administrativo" });
             Form7_DashBoardUsuarios_1_Agregar_ComboBox_Perfil.Location = new Point(106, 6);
             Form7_DashBoardUsuarios_1_Agregar_ComboBox_Perfil.Name = "Form7_DashBoardUsuarios_1_Agregar_ComboBox_Perfil";
             Form7_DashBoardUsuarios_1_Agregar_ComboBox_Perfil.Size = new Size(473, 50);
             Form7_DashBoardUsuarios_1_Agregar_ComboBox_Perfil.TabIndex = 12;
-            Form7_DashBoardUsuarios_1_Agregar_ComboBox_Perfil.Text = "Seleccione uno...";
             // 
             // Form7_DashBoardUsuarios_1_Agregar
             // 

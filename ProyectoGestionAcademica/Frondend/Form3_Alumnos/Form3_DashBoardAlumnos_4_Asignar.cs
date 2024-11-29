@@ -70,7 +70,7 @@ namespace ProyectoGestionAcademica.Frondend
         }
         private void HabilitarCampos()
         {
-            if (Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_DataGridView.SelectedRows.Count > 0)
+            (Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_DataGridView.SelectedRows.Count > 0)
             {
                 DialogResult result = MessageBox.Show("¿Seguro que quieres utilizar el alumno elegido?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
@@ -81,12 +81,14 @@ namespace ProyectoGestionAcademica.Frondend
                     Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_TextBox_Apellidos.Text = filaSeleccionada.Cells["Apellido_Alumno"].Value?.ToString();
                     Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_TextBox_Dni.Text = filaSeleccionada.Cells["DNI_Alumno"].Value?.ToString();
 
+
                     Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Carreras.Enabled = true;
                     gestorDeDatos.NombreParaCarrera(Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Carreras);
                     Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Carreras.SelectedIndex = 0;
                     Form3_DashBoardAlumnos_4_Asignar_PanelDerecho_ComboBox_Años.Enabled = true;
                 }
             }
+
         }
 
 
