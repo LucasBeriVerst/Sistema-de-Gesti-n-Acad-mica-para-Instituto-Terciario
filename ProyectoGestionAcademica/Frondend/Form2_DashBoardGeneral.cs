@@ -35,6 +35,7 @@ namespace ProyectoGestionAcademica.Frondend
             NombreUsuario = NomUsuarioAceptado;
             EstablecerPerfil();
             Configuracion();
+            timer1.Start();
             this.Refresh();
         }
         private void EstablecerPerfil()
@@ -94,7 +95,7 @@ namespace ProyectoGestionAcademica.Frondend
         }
         private void Form2_DashboardGeneral_Button_Alumnos_Informacion_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Form3_DashBoardAlumnos_5_Informacion>();
+            //AbrirFormulario<Form3_DashBoardAlumnos_5_Informacion>();
         }
         #endregion
         #region Carreras
@@ -138,7 +139,7 @@ namespace ProyectoGestionAcademica.Frondend
         }
         private void Form2_DashboardGeneral_Button_Carreras_Informacion_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Form4_DashBoardCarreras_5_Informacion>();
+           // AbrirFormulario<Form4_DashBoardCarreras_5_Informacion>();
         }
         #endregion
         #region Materias
@@ -182,7 +183,7 @@ namespace ProyectoGestionAcademica.Frondend
         }
         private void Form2_DashboardGeneral_Button_Materias_Informacion_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Form5_DashBoardMaterias_5_Informacion>();
+           // AbrirFormulario<Form5_DashBoardMaterias_5_Informacion>();
         }
         #endregion
         #region Examenes
@@ -222,11 +223,11 @@ namespace ProyectoGestionAcademica.Frondend
         }
         private void Form2_DashboardGeneral_Button_Examenes_Asignar_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Form6_DashBoardExamenes_4_Asignar>();
+            //AbrirFormulario<Form6_DashBoardExamenes_4_Asignar>();
         }
         private void Form2_DashboardGeneral_Button_Examenes_Informacion_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Form6_DashBoardExamenes_5_Informacion>();
+            // AbrirFormulario<Form6_DashBoardExamenes_5_Informacion>();
         }
         #endregion
         #region Usuarios
@@ -276,7 +277,15 @@ namespace ProyectoGestionAcademica.Frondend
         #region Perfil
         private void Form2_DashboardGeneral_Button_Perfil_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Form8_DashBoardPerfilUsuaerio>();
+            //AbrirFormulario<Form8_DashBoardPerfilUsuaerio>();
+
+            Form8_DashBoardPerfilUsuaerio form8 = new Form8_DashBoardPerfilUsuaerio();
+
+            // Asignar los valores de Id_perfil y NombreUsuario al nuevo formulario
+            form8.IdPerfil = Id_perfil;
+            form8.NombreUsuario = NombreUsuario;
+            AbrirFormulario8(form8);
+
         }
         #endregion
         //Metodo generico para regular que formulario se muestra y si debe crearse o no
@@ -307,6 +316,33 @@ namespace ProyectoGestionAcademica.Frondend
                 Formularios.BringToFront();//Si el formulatrio existe lo trae al frente
                 Form2_DashboardGeneral_Labell_Titulo.Text = ((IConfiguracion)Formularios).Titulo; //Toma el valor de titulo del formulario que utiliza la interface y lo ingresa en la propiedad del formulario general
                 Form2_DashboardGeneral_Labell_Titulo.Location = new Point((1056 - Form2_DashboardGeneral_Labell_Titulo.Size.Width) / 2, Form2_DashboardGeneral_Labell_Titulo.Location.Y);//Centra el componente basado en el nuevo tamaño de texto.
+            }
+        }
+        private void AbrirFormulario8(Form8_DashBoardPerfilUsuaerio form8)
+        {
+            // Verifica si el formulario ya está abierto en el panel
+            Form formularioExistente = Form2_DashboardGeneral_Panel_Derecho_Principal.Controls.OfType<Form8_DashBoardPerfilUsuaerio>().FirstOrDefault();
+
+            // Si no está abierto, agregarlo
+            if (formularioExistente == null)
+            {
+                form8.TopLevel = false;
+                form8.Dock = DockStyle.Fill;
+                form8.FormBorderStyle = FormBorderStyle.None;
+                Form2_DashboardGeneral_Panel_Derecho_Principal.Controls.Add(form8);
+                Form2_DashboardGeneral_Panel_Derecho_Principal.Tag = form8;
+                Form2_DashboardGeneral_Labell_Titulo.Text = form8.Titulo;
+                form8.FormClosed += (s, e) => CierreDeFormulario();
+                form8.BackColor = Color.FromArgb(177, 173, 189);
+                form8.Show();
+                form8.BringToFront();
+            }
+            else
+            {
+                // Si ya está abierto, traerlo al frente
+                formularioExistente.BringToFront();
+                Form2_DashboardGeneral_Labell_Titulo.Text = form8.Titulo;
+                Form2_DashboardGeneral_Labell_Titulo.Location = new Point((1056 - Form2_DashboardGeneral_Labell_Titulo.Size.Width) / 2, Form2_DashboardGeneral_Labell_Titulo.Location.Y);
             }
         }
         private void CierreDeFormulario()
@@ -406,6 +442,12 @@ namespace ProyectoGestionAcademica.Frondend
                     break;
             }
             #endregion
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime horaActual = DateTime.Now;
+            Form2_DashboardGeneral_TextBox_Hora.Text = horaActual.ToString("HH:mm:ss");
         }
     }
 }

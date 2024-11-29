@@ -11,8 +11,8 @@ namespace ProyectoGestionAcademica.SQL
 {
     internal class Conexion
     {
-        /* CONEXION LUCAS */ //private string cadena = "Data Source=DESKTOP-GO1RSK2\\SQLEXPRESS;Initial Catalog=Proyecto_Algoritmos_BDD;Integrated Security=True;TrustServerCertificate=True;";
-        /* CONEXION LAUTA */ private string cadena = "Data Source=LAUTA-PC\\SQLEXPRESS;Initial Catalog=Proyecto_Algoritmos_BDD;Integrated Security=True;TrustServerCertificate=True;";
+        /* CONEXION LUCAS */ private string cadena = "Data Source=DESKTOP-GO1RSK2\\SQLEXPRESS;Initial Catalog=Proyecto_Algoritmos_BDD;Integrated Security=True;TrustServerCertificate=True;";
+        /* CONEXION LAUTA */ //private string cadena = "Data Source=LAUTA-PC\\SQLEXPRESS;Initial Catalog=Proyecto_Algoritmos_BDD;Integrated Security=True;TrustServerCertificate=True;";
 
         private SqlConnection conexion; //el objeto para manejar la conexión a la base de datos
 
@@ -96,19 +96,30 @@ namespace ProyectoGestionAcademica.SQL
                         foreach (var parametro in parametros)
                         {
                             comando.Parameters.AddWithValue(parametro.Key, parametro.Value);
+                            Debug.WriteLine($"Parametro: {parametro.Key} = {parametro.Value}");
                         }
                     }
                     resultado = comando.ExecuteScalar();
+                    Debug.WriteLine($"Resultado de ExecuteScalar: {resultado}");
                 }
             }
             finally
             {
                 Cerrar();
             }
-            return resultado;
+
+            if (resultado != null)
+            {
+                return resultado;
+            }
+            else
+            {
+                Debug.WriteLine("No se obtuvo resultado.");
+                return null;
+            }
         }
 
-        //Utiliza un SqlDataAdapter para llenar un DataTable con los resultados de una consulta
+
         public DataTable EjecutarQuery(string nombreProcedimiento, Dictionary<string, object> parametros = null)
         {
             DataTable tabla = new DataTable();

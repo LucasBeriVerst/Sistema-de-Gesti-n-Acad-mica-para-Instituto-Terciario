@@ -63,6 +63,16 @@ namespace ProyectoGestionAcademica.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _258262069_10157227332717609_3994735098332264389_n {
+            get {
+                object obj = ResourceManager.GetObject("258262069_10157227332717609_3994735098332264389_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Captura_de_pantalla_2024_10_13_223049 {
             get {
                 object obj = ResourceManager.GetObject("Captura de pantalla 2024-10-13 223049", resourceCulture);

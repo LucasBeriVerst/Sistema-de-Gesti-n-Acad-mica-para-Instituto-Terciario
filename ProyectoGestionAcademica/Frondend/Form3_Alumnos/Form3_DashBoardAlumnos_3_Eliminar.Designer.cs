@@ -222,6 +222,8 @@
             // 
             Form3_DashBoardAlumnos_3_Eliminar_PanelDerecho_DataGridView.AllowUserToAddRows = false;
             Form3_DashBoardAlumnos_3_Eliminar_PanelDerecho_DataGridView.AllowUserToDeleteRows = false;
+            Form3_DashBoardAlumnos_3_Eliminar_PanelDerecho_DataGridView.AllowUserToResizeColumns = false;
+            Form3_DashBoardAlumnos_3_Eliminar_PanelDerecho_DataGridView.AllowUserToResizeRows = false;
             Form3_DashBoardAlumnos_3_Eliminar_PanelDerecho_DataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             Form3_DashBoardAlumnos_3_Eliminar_PanelDerecho_DataGridView.Dock = DockStyle.Fill;
             Form3_DashBoardAlumnos_3_Eliminar_PanelDerecho_DataGridView.Location = new Point(0, 0);
