@@ -65,7 +65,7 @@ namespace ProyectoGestionAcademica.Frondend.Form4_Carreras
         {
             int idCarrera = gestorDeDatos.ObtenerIDCarreraPorNombre(Form4_DashBoardCarreras_3_Eliminar_ComboBox_SeleccionarCarrera.SelectedItem.ToString());
             int resultado = gestorDeDatos.EliminarCarrera(idCarrera);
-            if (resultado > 0)
+            if (resultado > 0 )
             {
                 DialogResult result = MessageBox.Show("Seguro que queres eliminar la carrera. No se puede deshacer.", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
