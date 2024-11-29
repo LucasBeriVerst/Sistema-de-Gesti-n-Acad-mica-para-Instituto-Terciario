@@ -298,7 +298,13 @@ namespace ProyectoGestionAcademica.Frondend.Form7_Usuarios
 
         private void Form7_DashBoardUsuarios_4_Asignar_PanelInferior_Button_Asignar_Click(object sender, EventArgs e)
         {
-            //s
+            int ID_Empleado = (int).SelectedValue;
+            int ID_Carrera = (int)Form7_DashBoardUsuarios_4_Asignar_PanelDerecho_ComboBox_Carrera.SelectedValue;
+            int ID_AñoDeCarrera = (int)Form7_DashBoardUsuarios_4_Asignar_PanelDerecho_ComboBox_Año.SelectedValue;
+            int ID_Materia = (int)Form7_DashBoardUsuarios_4_Asignar_PanelDerecho_ComboBox_Materia.SelectedValue;
+
+
+            int respuesta = GestorDeDatos.AsignarProfesorAMateria(ID_Empleado, ID_Carrera, ID_AñoDeCarrera, ID_Materia);
         }
     }
 }

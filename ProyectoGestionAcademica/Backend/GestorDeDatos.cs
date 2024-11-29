@@ -675,7 +675,29 @@ namespace ProyectoGestionAcademica.Backend
 
         #endregion
         #region Asignar
+        public int AsignarProfesorAMateria(int idProfesor, int idCarrera, int idAño, int idMateria)
+        {
+            int resultado;
 
+            var parametros = new Dictionary<string, object>
+            {
+                { "@ID_Empleado", idProfesor },
+                { "@ID_Carrera", idCarrera },
+                { "@ID_AñoDeCarrera", idAño },
+                { "@ID_Materia", idMateria }
+            };
+
+            try
+            {
+                resultado = Instancia_SQL.EjecutarNonQuery("sp_AsignarDocenteAMateria", parametros);
+                return resultado;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -1;
+            }   
+        }
 
         #endregion
         #endregion
