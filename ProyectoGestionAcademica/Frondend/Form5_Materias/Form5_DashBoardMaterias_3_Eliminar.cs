@@ -24,6 +24,7 @@ namespace ProyectoGestionAcademica.Frondend.Form5_Materias
         private void Form5_DashBoardMaterias_3_Eliminar_Load(object sender, EventArgs e)
         {
             Form5_DashBoardMaterias_3_Eliminar_PanelIsquierdo_DataGridView.DataSource = gestorDeDatos.ObtenerMaterias();
+            Form5_DashBoardMaterias_3_Eliminar_PanelIsquierdo_DataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             if (Form5_DashBoardMaterias_3_Eliminar_PanelIsquierdo_DataGridView.Rows.Count > 0)
             {
                 Form5_DashBoardMaterias_3_Eliminar_PanelIsquierdo_DataGridView.Rows[0].Selected = true;

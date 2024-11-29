@@ -109,6 +109,8 @@
             // 
             Form5_DashBoardMaterias_2_Editar_PanelIsquierdo_DataGridView.AllowUserToAddRows = false;
             Form5_DashBoardMaterias_2_Editar_PanelIsquierdo_DataGridView.AllowUserToDeleteRows = false;
+            Form5_DashBoardMaterias_2_Editar_PanelIsquierdo_DataGridView.AllowUserToResizeColumns = false;
+            Form5_DashBoardMaterias_2_Editar_PanelIsquierdo_DataGridView.AllowUserToResizeRows = false;
             Form5_DashBoardMaterias_2_Editar_PanelIsquierdo_DataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             Form5_DashBoardMaterias_2_Editar_PanelIsquierdo_DataGridView.Dock = DockStyle.Fill;
             Form5_DashBoardMaterias_2_Editar_PanelIsquierdo_DataGridView.Location = new Point(3, 3);

@@ -481,6 +481,8 @@ namespace ProyectoGestionAcademica.Backend
                 return null; 
             }
         }
+        #endregion
+        #region Eliminar
         public void EliminarMateria(int idMateria)
         {
             var parametros = new Dictionary<string, object>
@@ -509,6 +511,83 @@ namespace ProyectoGestionAcademica.Backend
             }
         }
         #endregion
-        #endregion
+        #region
+        public int AsignarMateriaACarrera(int idMateria, int idCarrera, int idAñoDeCarrera)
+        {
+            var parametros = new Dictionary<string, object>
+            {
+                { "@ID_Materia", idMateria },
+                { "@ID_Carrera", idCarrera },
+                { "@ID_AñoDeCarrera", idAñoDeCarrera }
+            };
+
+            try
+            {
+                // Ejecutar el procedimiento almacenado
+                object resultado = Instancia_SQL.EjecutarNonQuery("sp_AgregarMateriaACarrera", parametros);
+
+                // Convertir el resultado a entero y devolverlo
+                return Convert.ToInt32(resultado);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Error SQL: {ex.Message}", "Error SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -99; // Código de error para excepciones SQL
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error general: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -100; // Código de error para excepciones generales
+            }
+        }
+        public void EliminarMateriaDeCarrera(int idMateria, int idCarrera, int idAñoDeCarrera)
+        {
+            var parametros = new Dictionary<string, object>
+            {
+                { "@ID_Materia", idMateria },
+                { "@ID_Carrera", idCarrera },
+                { "@ID_AñoDeCarrera", idAñoDeCarrera }
+            };
+
+            try
+            {
+                // Ejecutar el procedimiento almacenado y obtener el valor de retorno
+                int codigoRetorno = Convert.ToInt32(Instancia_SQL.EjecutarNonQuery("sp_EliminarMateriaDeCarrera", parametros));
+
+                if (codigoRetorno == 1)
+                {
+                    // Éxito, la materia fue desvinculada correctamente
+                    MessageBox.Show("La materia ha sido desvinculada correctamente de la carrera y el año especificado.",
+                                    "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (codigoRetorno == 0)
+                {
+                    // La relación no existe
+                    MessageBox.Show("La materia no está asignada a esta carrera y año.",
+                                    "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    // Error inesperado
+                    MessageBox.Show("Ocurrió un error al intentar desvincular la materia.",
+                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                // Manejo de errores SQL
+                MessageBox.Show($"Error SQL: {sqlEx.Message}", "Error SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores generales
+                MessageBox.Show($"Error general: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
+
+    #endregion
+    #endregion
 }
+
