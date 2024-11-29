@@ -737,7 +737,7 @@ namespace ProyectoGestionAcademica.Backend
                     return tablaVacia; // Se retorna una tabla vacía en caso de error.
                 }
             }
-
+            
             //validacion para Matricula para ver si son digitos
             if (valorMatricula != null)
             {
