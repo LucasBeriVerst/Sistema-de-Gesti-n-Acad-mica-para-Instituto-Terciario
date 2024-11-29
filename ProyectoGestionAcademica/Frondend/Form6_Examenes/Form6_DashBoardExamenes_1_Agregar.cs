@@ -14,7 +14,7 @@ namespace ProyectoGestionAcademica.Frondend.Form6_Examenes
     public partial class Form6_DashBoardExamenes_1_Agregar : Form, IConfiguracion
     {
         private GestorDeDatos GestorDeDatos = new GestorDeDatos();
-        private string titulo = "MATERIAS: AGREGAR";
+        private string titulo = "EXAMENES: AGREGAR";
         bool editable = false;
         public Form6_DashBoardExamenes_1_Agregar()
         {

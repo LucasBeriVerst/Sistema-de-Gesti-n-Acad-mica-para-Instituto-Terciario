@@ -70,7 +70,7 @@ namespace ProyectoGestionAcademica.Frondend
         }
         private void HabilitarCampos()
         {
-            (Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_DataGridView.SelectedRows.Count > 0)
+            if(Form3_DashBoardAlumnos_4_Asignar_PanelIsquierdo_DataGridView.SelectedRows.Count > 0)
             {
                 DialogResult result = MessageBox.Show("¿Seguro que quieres utilizar el alumno elegido?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 

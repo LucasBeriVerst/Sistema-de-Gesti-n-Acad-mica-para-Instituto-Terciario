@@ -386,7 +386,7 @@ namespace ProyectoGestionAcademica.Frondend
                     Form2_DashboardGeneral_Button_Examenes_Agregar.Visible = true;
                     Form2_DashboardGeneral_Button_Examenes_Editar.Visible = true;
                     Form2_DashboardGeneral_Button_Examenes_Eliminar.Visible = true;
-                    Form2_DashboardGeneral_Button_Examenes_Asignar.Visible = true;
+                    Form2_DashboardGeneral_Button_Examenes_Asignar.Visible = false;
                     Form2_DashboardGeneral_Button_Examenes_Informacion.Visible = true;
                     //-----------------------------------------------------------------------------
                     Form2_DashboardGeneral_Button_Usuarios.Visible = true;
@@ -422,7 +422,7 @@ namespace ProyectoGestionAcademica.Frondend
                     Form2_DashboardGeneral_Button_Examenes_Agregar.Visible = true;
                     Form2_DashboardGeneral_Button_Examenes_Editar.Visible = true;
                     Form2_DashboardGeneral_Button_Examenes_Eliminar.Visible = true;
-                    Form2_DashboardGeneral_Button_Examenes_Asignar.Visible = true;
+                    Form2_DashboardGeneral_Button_Examenes_Asignar.Visible = false;
                     Form2_DashboardGeneral_Button_Examenes_Informacion.Visible = true;
                     //-----------------------------------------------------------------------------
                     Form2_DashboardGeneral_Button_Usuarios.Visible = true;

@@ -1210,7 +1210,7 @@ namespace ProyectoGestionAcademica.Backend
 
         #region Examenes
         #region Metodos Genericos Para Examenes
-        public DataTable BuscarAlumnosPorNombreApellidoDNIMatricula(string? valorMatricula, string? valorNombre, string? valorApellido, string? valorDNI)
+        public DataTable BuscarAlumnosPorNombreApellidoDNIMatricula( string? valorNombre, string? valorApellido, string? valorDNI, string? valorMatricula)
         {
             DataTable tablaVacia = new DataTable();
             

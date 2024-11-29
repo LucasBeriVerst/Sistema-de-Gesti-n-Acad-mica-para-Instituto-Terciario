@@ -78,9 +78,10 @@
             Form7_DashBoardUsuarios_2_Editar_PanelInferior.Controls.Add(Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Cancelar);
             Form7_DashBoardUsuarios_2_Editar_PanelInferior.Controls.Add(Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Editar);
             Form7_DashBoardUsuarios_2_Editar_PanelInferior.Dock = DockStyle.Bottom;
-            Form7_DashBoardUsuarios_2_Editar_PanelInferior.Location = new Point(0, 755);
+            Form7_DashBoardUsuarios_2_Editar_PanelInferior.Location = new Point(0, 566);
+            Form7_DashBoardUsuarios_2_Editar_PanelInferior.Margin = new Padding(3, 2, 3, 2);
             Form7_DashBoardUsuarios_2_Editar_PanelInferior.Name = "Form7_DashBoardUsuarios_2_Editar_PanelInferior";
-            Form7_DashBoardUsuarios_2_Editar_PanelInferior.Size = new Size(1189, 52);
+            Form7_DashBoardUsuarios_2_Editar_PanelInferior.Size = new Size(1040, 39);
             Form7_DashBoardUsuarios_2_Editar_PanelInferior.TabIndex = 1;
             // 
             // Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Buscar
@@ -90,8 +91,9 @@
             Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Buscar.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Buscar.ForeColor = SystemColors.ScrollBar;
             Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Buscar.Location = new Point(0, 0);
+            Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Buscar.Margin = new Padding(3, 2, 3, 2);
             Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Buscar.Name = "Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Buscar";
-            Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Buscar.Size = new Size(256, 52);
+            Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Buscar.Size = new Size(224, 39);
             Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Buscar.TabIndex = 2;
             Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Buscar.Text = "BUSCAR";
             Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Buscar.UseVisualStyleBackColor = true;
@@ -103,9 +105,10 @@
             Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Cancelar.FlatStyle = FlatStyle.Popup;
             Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Cancelar.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Cancelar.ForeColor = SystemColors.ScrollBar;
-            Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Cancelar.Location = new Point(677, 0);
+            Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Cancelar.Location = new Point(592, 0);
+            Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Cancelar.Margin = new Padding(3, 2, 3, 2);
             Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Cancelar.Name = "Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Cancelar";
-            Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Cancelar.Size = new Size(256, 52);
+            Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Cancelar.Size = new Size(224, 39);
             Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Cancelar.TabIndex = 1;
             Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Cancelar.Text = "CANCELAR";
             Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Cancelar.UseVisualStyleBackColor = true;
@@ -117,9 +120,10 @@
             Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Editar.FlatStyle = FlatStyle.Popup;
             Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Editar.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Editar.ForeColor = SystemColors.ScrollBar;
-            Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Editar.Location = new Point(933, 0);
+            Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Editar.Location = new Point(816, 0);
+            Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Editar.Margin = new Padding(3, 2, 3, 2);
             Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Editar.Name = "Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Editar";
-            Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Editar.Size = new Size(256, 52);
+            Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Editar.Size = new Size(224, 39);
             Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Editar.TabIndex = 0;
             Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Editar.Text = "EDITAR";
             Form7_DashBoardUsuarios_2_Editar_PanelInferior_Button_Editar.UseVisualStyleBackColor = true;
@@ -155,7 +159,8 @@
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho.Controls.Add(Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Calle, 1, 4);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho.Controls.Add(Form7_DashBoardUsuarios_2_Editar_PanelDerecho_ComboBox_Perfil, 1, 3);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho.Dock = DockStyle.Right;
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho.Location = new Point(391, 0);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho.Location = new Point(342, 0);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho.Margin = new Padding(3, 2, 3, 2);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho.Name = "Form7_DashBoardUsuarios_2_Editar_PanelDerecho";
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho.RowCount = 12;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho.RowStyles.Add(new RowStyle(SizeType.Percent, 8.333333F));
@@ -170,7 +175,7 @@
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho.RowStyles.Add(new RowStyle(SizeType.Percent, 8.333333F));
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho.RowStyles.Add(new RowStyle(SizeType.Percent, 8.333333F));
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho.RowStyles.Add(new RowStyle(SizeType.Percent, 8.333333F));
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho.Size = new Size(798, 755);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho.Size = new Size(698, 566);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho.TabIndex = 2;
             // 
             // Form7_DashBoardUsuarios_2_Editar_PanelDerecho_DataTimePicker_FechaBaja
@@ -181,10 +186,11 @@
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_DataTimePicker_FechaBaja.Enabled = false;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_DataTimePicker_FechaBaja.Font = new Font("Microsoft Sans Serif", 18F);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_DataTimePicker_FechaBaja.Format = DateTimePickerFormat.Short;
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_DataTimePicker_FechaBaja.Location = new Point(414, 698);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_DataTimePicker_FechaBaja.Location = new Point(361, 524);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_DataTimePicker_FechaBaja.Margin = new Padding(3, 2, 3, 2);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_DataTimePicker_FechaBaja.Name = "Form7_DashBoardUsuarios_2_Editar_PanelDerecho_DataTimePicker_FechaBaja";
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_DataTimePicker_FechaBaja.ShowCheckBox = true;
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_DataTimePicker_FechaBaja.Size = new Size(360, 41);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_DataTimePicker_FechaBaja.Size = new Size(316, 35);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_DataTimePicker_FechaBaja.TabIndex = 64;
             // 
             // Form7_DashBoardUsuarios_2_Editar_PanelDerecho_DataTimePicker_FechaAlta
@@ -194,10 +200,11 @@
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_DataTimePicker_FechaAlta.Enabled = false;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_DataTimePicker_FechaAlta.Font = new Font("Microsoft Sans Serif", 18F);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_DataTimePicker_FechaAlta.Format = DateTimePickerFormat.Short;
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_DataTimePicker_FechaAlta.Location = new Point(414, 630);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_DataTimePicker_FechaAlta.Location = new Point(361, 476);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_DataTimePicker_FechaAlta.Margin = new Padding(3, 2, 3, 2);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_DataTimePicker_FechaAlta.Name = "Form7_DashBoardUsuarios_2_Editar_PanelDerecho_DataTimePicker_FechaAlta";
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_DataTimePicker_FechaAlta.ShowCheckBox = true;
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_DataTimePicker_FechaAlta.Size = new Size(360, 41);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_DataTimePicker_FechaAlta.Size = new Size(316, 35);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_DataTimePicker_FechaAlta.TabIndex = 63;
             // 
             // Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Label_Perfil
@@ -206,9 +213,9 @@
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Label_Perfil.AutoSize = true;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Label_Perfil.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Label_Perfil.ForeColor = Color.FromArgb(70, 70, 70);
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Label_Perfil.Location = new Point(92, 199);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Label_Perfil.Location = new Point(98, 150);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Label_Perfil.Name = "Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Label_Perfil";
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Label_Perfil.Size = new Size(295, 36);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Label_Perfil.Size = new Size(240, 29);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Label_Perfil.TabIndex = 61;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Label_Perfil.Text = ". TIPO DE PERFIL :";
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Label_Perfil.TextAlign = ContentAlignment.MiddleLeft;
@@ -219,10 +226,10 @@
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Nombre.AutoSize = true;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Nombre.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Nombre.ForeColor = Color.FromArgb(70, 70, 70);
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Nombre.Location = new Point(200, 13);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Nombre.Location = new Point(186, 9);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Nombre.Margin = new Padding(2, 0, 2, 0);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Nombre.Name = "Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Nombre";
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Nombre.Size = new Size(188, 36);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Nombre.Size = new Size(153, 29);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Nombre.TabIndex = 38;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Nombre.Text = ". NOMBRE :";
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Nombre.TextAlign = ContentAlignment.MiddleLeft;
@@ -233,10 +240,10 @@
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Apellido.AutoSize = true;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Apellido.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Apellido.ForeColor = Color.FromArgb(70, 70, 70);
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Apellido.Location = new Point(183, 75);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Apellido.Location = new Point(175, 56);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Apellido.Margin = new Padding(2, 0, 2, 0);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Apellido.Name = "Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Apellido";
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Apellido.Size = new Size(205, 36);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Apellido.Size = new Size(164, 29);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Apellido.TabIndex = 39;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Apellido.Text = ". APELLIDO :";
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Apellido.TextAlign = ContentAlignment.MiddleLeft;
@@ -247,10 +254,10 @@
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Dni.AutoSize = true;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Dni.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Dni.ForeColor = Color.FromArgb(70, 70, 70);
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Dni.Location = new Point(283, 137);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Dni.Location = new Point(254, 103);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Dni.Margin = new Padding(2, 0, 2, 0);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Dni.Name = "Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Dni";
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Dni.Size = new Size(105, 36);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Dni.Size = new Size(85, 29);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Dni.TabIndex = 40;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Dni.Text = ". DNI :";
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Dni.TextAlign = ContentAlignment.MiddleLeft;
@@ -263,11 +270,11 @@
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Nombre.Enabled = false;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Nombre.Font = new Font("Microsoft Sans Serif", 18F);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Nombre.ForeColor = Color.DimGray;
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Nombre.Location = new Point(414, 11);
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Nombre.Margin = new Padding(2, 3, 2, 3);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Nombre.Location = new Point(362, 8);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Nombre.Margin = new Padding(2, 2, 2, 2);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Nombre.Multiline = true;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Nombre.Name = "Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Nombre";
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Nombre.Size = new Size(360, 40);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Nombre.Size = new Size(315, 30);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Nombre.TabIndex = 50;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Nombre.Text = "NOMBRE";
             // 
@@ -279,11 +286,11 @@
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Apellido.Enabled = false;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Apellido.Font = new Font("Microsoft Sans Serif", 18F);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Apellido.ForeColor = Color.DimGray;
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Apellido.Location = new Point(414, 73);
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Apellido.Margin = new Padding(2, 3, 2, 3);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Apellido.Location = new Point(362, 55);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Apellido.Margin = new Padding(2, 2, 2, 2);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Apellido.Multiline = true;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Apellido.Name = "Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Apellido";
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Apellido.Size = new Size(360, 40);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Apellido.Size = new Size(315, 30);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Apellido.TabIndex = 51;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Apellido.Text = "APELLIDO";
             // 
@@ -295,11 +302,11 @@
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Dni.Enabled = false;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Dni.Font = new Font("Microsoft Sans Serif", 18F);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Dni.ForeColor = Color.DimGray;
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Dni.Location = new Point(414, 135);
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Dni.Margin = new Padding(2, 3, 2, 3);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Dni.Location = new Point(362, 102);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Dni.Margin = new Padding(2, 2, 2, 2);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Dni.Multiline = true;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Dni.Name = "Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Dni";
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Dni.Size = new Size(360, 40);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Dni.Size = new Size(315, 30);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Dni.TabIndex = 52;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Dni.Text = "DNI";
             // 
@@ -309,10 +316,10 @@
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_FechaBaja.AutoSize = true;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_FechaBaja.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_FechaBaja.ForeColor = Color.FromArgb(70, 70, 70);
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_FechaBaja.Location = new Point(141, 700);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_FechaBaja.Location = new Point(144, 527);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_FechaBaja.Margin = new Padding(2, 0, 2, 0);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_FechaBaja.Name = "Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_FechaBaja";
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_FechaBaja.Size = new Size(247, 36);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_FechaBaja.Size = new Size(195, 29);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_FechaBaja.TabIndex = 48;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_FechaBaja.Text = ". FECHA BAJA :";
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_FechaBaja.TextAlign = ContentAlignment.MiddleLeft;
@@ -323,10 +330,10 @@
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_FechaAlta.AutoSize = true;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_FechaAlta.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_FechaAlta.ForeColor = Color.FromArgb(70, 70, 70);
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_FechaAlta.Location = new Point(141, 633);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_FechaAlta.Location = new Point(143, 479);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_FechaAlta.Margin = new Padding(2, 0, 2, 0);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_FechaAlta.Name = "Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_FechaAlta";
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_FechaAlta.Size = new Size(247, 36);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_FechaAlta.Size = new Size(196, 29);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_FechaAlta.TabIndex = 47;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_FechaAlta.Text = ". FECHA ALTA :";
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_FechaAlta.TextAlign = ContentAlignment.MiddleLeft;
@@ -337,10 +344,10 @@
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Contraseña.AutoSize = true;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Contraseña.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Contraseña.ForeColor = Color.FromArgb(70, 70, 70);
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Contraseña.Location = new Point(118, 571);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Contraseña.Location = new Point(121, 432);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Contraseña.Margin = new Padding(2, 0, 2, 0);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Contraseña.Name = "Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Contraseña";
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Contraseña.Size = new Size(270, 36);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Contraseña.Size = new Size(218, 29);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Contraseña.TabIndex = 46;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Contraseña.Text = ". CONTRASEÑA :";
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Contraseña.TextAlign = ContentAlignment.MiddleLeft;
@@ -353,11 +360,11 @@
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Contraseña.Enabled = false;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Contraseña.Font = new Font("Microsoft Sans Serif", 18F);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Contraseña.ForeColor = Color.DimGray;
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Contraseña.Location = new Point(414, 569);
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Contraseña.Margin = new Padding(2, 3, 2, 3);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Contraseña.Location = new Point(362, 431);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Contraseña.Margin = new Padding(2, 2, 2, 2);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Contraseña.Multiline = true;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Contraseña.Name = "Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Contraseña";
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Contraseña.Size = new Size(360, 40);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Contraseña.Size = new Size(315, 30);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Contraseña.TabIndex = 58;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Contraseña.Text = "CONTRASEÑA";
             // 
@@ -367,10 +374,10 @@
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Usuario.AutoSize = true;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Usuario.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Usuario.ForeColor = Color.FromArgb(70, 70, 70);
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Usuario.Location = new Point(193, 509);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Usuario.Location = new Point(184, 385);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Usuario.Margin = new Padding(2, 0, 2, 0);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Usuario.Name = "Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Usuario";
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Usuario.Size = new Size(195, 36);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Usuario.Size = new Size(155, 29);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Usuario.TabIndex = 45;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Usuario.Text = ". USUARIO :";
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Usuario.TextAlign = ContentAlignment.MiddleLeft;
@@ -383,11 +390,11 @@
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Usuario.Enabled = false;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Usuario.Font = new Font("Microsoft Sans Serif", 18F);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Usuario.ForeColor = Color.DimGray;
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Usuario.Location = new Point(414, 507);
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Usuario.Margin = new Padding(2, 3, 2, 3);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Usuario.Location = new Point(362, 384);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Usuario.Margin = new Padding(2, 2, 2, 2);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Usuario.Multiline = true;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Usuario.Name = "Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Usuario";
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Usuario.Size = new Size(360, 40);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Usuario.Size = new Size(315, 30);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Usuario.TabIndex = 57;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Usuario.Text = "USUARIO";
             // 
@@ -397,10 +404,10 @@
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Email.AutoSize = true;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Email.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Email.ForeColor = Color.FromArgb(70, 70, 70);
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Email.Location = new Point(241, 447);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Email.Location = new Point(223, 338);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Email.Margin = new Padding(2, 0, 2, 0);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Email.Name = "Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Email";
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Email.Size = new Size(147, 36);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Email.Size = new Size(116, 29);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Email.TabIndex = 44;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Email.Text = ". EMAIL :";
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Email.TextAlign = ContentAlignment.MiddleLeft;
@@ -413,11 +420,11 @@
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Email.Enabled = false;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Email.Font = new Font("Microsoft Sans Serif", 18F);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Email.ForeColor = Color.DimGray;
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Email.Location = new Point(414, 445);
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Email.Margin = new Padding(2, 3, 2, 3);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Email.Location = new Point(362, 337);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Email.Margin = new Padding(2, 2, 2, 2);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Email.Multiline = true;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Email.Name = "Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Email";
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Email.Size = new Size(360, 40);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Email.Size = new Size(315, 30);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Email.TabIndex = 56;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Email.Text = "EMAIL";
             // 
@@ -427,10 +434,10 @@
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Telefono.AutoSize = true;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Telefono.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Telefono.ForeColor = Color.FromArgb(70, 70, 70);
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Telefono.Location = new Point(170, 385);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Telefono.Location = new Point(158, 291);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Telefono.Margin = new Padding(2, 0, 2, 0);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Telefono.Name = "Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Telefono";
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Telefono.Size = new Size(218, 36);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Telefono.Size = new Size(181, 29);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Telefono.TabIndex = 43;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Telefono.Text = ". TELEFONO :";
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Telefono.TextAlign = ContentAlignment.MiddleLeft;
@@ -443,11 +450,11 @@
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Telefono.Enabled = false;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Telefono.Font = new Font("Microsoft Sans Serif", 18F);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Telefono.ForeColor = Color.DimGray;
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Telefono.Location = new Point(414, 383);
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Telefono.Margin = new Padding(2, 3, 2, 3);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Telefono.Location = new Point(362, 290);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Telefono.Margin = new Padding(2, 2, 2, 2);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Telefono.Multiline = true;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Telefono.Name = "Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Telefono";
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Telefono.Size = new Size(360, 40);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Telefono.Size = new Size(315, 30);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Telefono.TabIndex = 55;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Telefono.Text = "TELEFONO";
             // 
@@ -457,10 +464,10 @@
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Numero.AutoSize = true;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Numero.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Numero.ForeColor = Color.FromArgb(70, 70, 70);
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Numero.Location = new Point(6, 323);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Numero.Location = new Point(28, 244);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Numero.Margin = new Padding(2, 0, 2, 0);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Numero.Name = "Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Numero";
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Numero.Size = new Size(382, 36);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Numero.Size = new Size(311, 29);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Numero.TabIndex = 49;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Numero.Text = ". DOMICILIO (NUMERO) :";
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Numero.TextAlign = ContentAlignment.MiddleLeft;
@@ -473,11 +480,11 @@
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Numero.Enabled = false;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Numero.Font = new Font("Microsoft Sans Serif", 18F);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Numero.ForeColor = Color.DimGray;
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Numero.Location = new Point(414, 321);
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Numero.Margin = new Padding(2, 3, 2, 3);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Numero.Location = new Point(362, 243);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Numero.Margin = new Padding(2, 2, 2, 2);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Numero.Multiline = true;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Numero.Name = "Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Numero";
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Numero.Size = new Size(360, 40);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Numero.Size = new Size(315, 30);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Numero.TabIndex = 54;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Numero.Text = "DOMICILIO (NUMERO)";
             // 
@@ -487,10 +494,10 @@
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Calle.AutoSize = true;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Calle.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Calle.ForeColor = Color.FromArgb(70, 70, 70);
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Calle.Location = new Point(44, 261);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Calle.Location = new Point(62, 197);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Calle.Margin = new Padding(2, 0, 2, 0);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Calle.Name = "Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Calle";
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Calle.Size = new Size(344, 36);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Calle.Size = new Size(277, 29);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Calle.TabIndex = 41;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Calle.Text = ". DOMICILIO (CALLE) :";
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_Labbel_Calle.TextAlign = ContentAlignment.MiddleLeft;
@@ -503,11 +510,11 @@
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Calle.Enabled = false;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Calle.Font = new Font("Microsoft Sans Serif", 18F);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Calle.ForeColor = Color.DimGray;
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Calle.Location = new Point(414, 259);
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Calle.Margin = new Padding(2, 3, 2, 3);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Calle.Location = new Point(362, 196);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Calle.Margin = new Padding(2, 2, 2, 2);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Calle.Multiline = true;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Calle.Name = "Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Calle";
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Calle.Size = new Size(360, 40);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Calle.Size = new Size(315, 30);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Calle.TabIndex = 53;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_TextBox_Calle.Text = "DOMICILIO (CALLE)";
             // 
@@ -520,9 +527,10 @@
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_ComboBox_Perfil.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_ComboBox_Perfil.ForeColor = Color.DimGray;
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_ComboBox_Perfil.FormattingEnabled = true;
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_ComboBox_Perfil.Location = new Point(414, 195);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_ComboBox_Perfil.Location = new Point(361, 146);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_ComboBox_Perfil.Margin = new Padding(3, 2, 3, 2);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_ComboBox_Perfil.Name = "Form7_DashBoardUsuarios_2_Editar_PanelDerecho_ComboBox_Perfil";
-            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_ComboBox_Perfil.Size = new Size(360, 44);
+            Form7_DashBoardUsuarios_2_Editar_PanelDerecho_ComboBox_Perfil.Size = new Size(316, 37);
             Form7_DashBoardUsuarios_2_Editar_PanelDerecho_ComboBox_Perfil.TabIndex = 62;
             // 
             // Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo
@@ -537,15 +545,16 @@
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo.Controls.Add(Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_TextboxLinea_Horizontal, 0, 4);
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo.Dock = DockStyle.Left;
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo.Location = new Point(0, 0);
+            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo.Margin = new Padding(3, 2, 3, 2);
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo.Name = "Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo";
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo.RowCount = 6;
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo.RowStyles.Add(new RowStyle(SizeType.Percent, 10.47131F));
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo.RowStyles.Add(new RowStyle(SizeType.Percent, 8.380716F));
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo.RowStyles.Add(new RowStyle(SizeType.Percent, 8.380716F));
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo.RowStyles.Add(new RowStyle(SizeType.Percent, 8.380716F));
-            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo.RowStyles.Add(new RowStyle(SizeType.Absolute, 13F));
+            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo.RowStyles.Add(new RowStyle(SizeType.Absolute, 10F));
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo.RowStyles.Add(new RowStyle(SizeType.Percent, 64.38654F));
-            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo.Size = new Size(385, 755);
+            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo.Size = new Size(337, 566);
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo.TabIndex = 3;
             // 
             // Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarApellido
@@ -555,11 +564,11 @@
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarApellido.BorderStyle = BorderStyle.None;
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarApellido.Font = new Font("Microsoft Sans Serif", 18F);
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarApellido.ForeColor = Color.DimGray;
-            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarApellido.Location = new Point(52, 150);
-            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarApellido.Margin = new Padding(2, 3, 2, 3);
+            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarApellido.Location = new Point(46, 112);
+            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarApellido.Margin = new Padding(2, 2, 2, 2);
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarApellido.Multiline = true;
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarApellido.Name = "Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarApellido";
-            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarApellido.Size = new Size(280, 40);
+            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarApellido.Size = new Size(245, 30);
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarApellido.TabIndex = 13;
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarApellido.Text = "Buscar por Apellido:";
             // 
@@ -570,11 +579,11 @@
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarNombre.BorderStyle = BorderStyle.None;
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarNombre.Font = new Font("Microsoft Sans Serif", 18F);
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarNombre.ForeColor = Color.DimGray;
-            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarNombre.Location = new Point(52, 88);
-            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarNombre.Margin = new Padding(2, 3, 2, 3);
+            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarNombre.Location = new Point(46, 66);
+            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarNombre.Margin = new Padding(2, 2, 2, 2);
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarNombre.Multiline = true;
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarNombre.Name = "Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarNombre";
-            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarNombre.Size = new Size(280, 40);
+            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarNombre.Size = new Size(245, 30);
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarNombre.TabIndex = 12;
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarNombre.Text = "Buscar por Nombre:";
             // 
@@ -585,11 +594,11 @@
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarDni.BorderStyle = BorderStyle.None;
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarDni.Font = new Font("Microsoft Sans Serif", 18F);
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarDni.ForeColor = Color.DimGray;
-            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarDni.Location = new Point(52, 212);
-            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarDni.Margin = new Padding(2, 3, 2, 3);
+            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarDni.Location = new Point(46, 158);
+            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarDni.Margin = new Padding(2, 2, 2, 2);
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarDni.Multiline = true;
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarDni.Name = "Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarDni";
-            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarDni.Size = new Size(280, 40);
+            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarDni.Size = new Size(245, 30);
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarDni.TabIndex = 6;
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Textbox_BuscarDni.Text = "Buscar por DNI:";
             // 
@@ -599,10 +608,10 @@
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Label_Buscar.AutoSize = true;
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Label_Buscar.Font = new Font("Microsoft Sans Serif", 20F, FontStyle.Bold);
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Label_Buscar.ForeColor = Color.FromArgb(70, 70, 70);
-            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Label_Buscar.Location = new Point(22, 19);
+            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Label_Buscar.Location = new Point(31, 13);
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Label_Buscar.Margin = new Padding(2, 0, 2, 0);
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Label_Buscar.Name = "Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Label_Buscar";
-            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Label_Buscar.Size = new Size(341, 39);
+            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Label_Buscar.Size = new Size(274, 31);
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Label_Buscar.TabIndex = 4;
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Label_Buscar.Text = "BUSCAR USUARIO";
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_Label_Buscar.TextAlign = ContentAlignment.MiddleLeft;
@@ -612,10 +621,11 @@
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_DataGridView_Usuarios.BackgroundColor = Color.FromArgb(177, 173, 189);
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_DataGridView_Usuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_DataGridView_Usuarios.Dock = DockStyle.Fill;
-            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_DataGridView_Usuarios.Location = new Point(3, 279);
+            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_DataGridView_Usuarios.Location = new Point(3, 208);
+            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_DataGridView_Usuarios.Margin = new Padding(3, 2, 3, 2);
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_DataGridView_Usuarios.Name = "Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_DataGridView_Usuarios";
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_DataGridView_Usuarios.RowHeadersWidth = 51;
-            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_DataGridView_Usuarios.Size = new Size(379, 473);
+            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_DataGridView_Usuarios.Size = new Size(331, 356);
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_DataGridView_Usuarios.TabIndex = 14;
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_DataGridView_Usuarios.SelectionChanged += Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_DataGridView_Usuarios_SelectionChanged;
             // 
@@ -624,11 +634,10 @@
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_TextboxLinea_Horizontal.Anchor = AnchorStyles.None;
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_TextboxLinea_Horizontal.BackColor = SystemColors.ScrollBar;
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_TextboxLinea_Horizontal.BorderStyle = BorderStyle.None;
-            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_TextboxLinea_Horizontal.Location = new Point(3, 269);
-            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_TextboxLinea_Horizontal.Margin = new Padding(3, 4, 3, 4);
+            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_TextboxLinea_Horizontal.Location = new Point(3, 200);
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_TextboxLinea_Horizontal.Multiline = true;
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_TextboxLinea_Horizontal.Name = "Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_TextboxLinea_Horizontal";
-            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_TextboxLinea_Horizontal.Size = new Size(379, 1);
+            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_TextboxLinea_Horizontal.Size = new Size(331, 1);
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_TextboxLinea_Horizontal.TabIndex = 11;
             // 
             // Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_TextboxLinea_Vertical
@@ -636,25 +645,23 @@
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_TextboxLinea_Vertical.Anchor = AnchorStyles.None;
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_TextboxLinea_Vertical.BackColor = SystemColors.ScrollBar;
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_TextboxLinea_Vertical.BorderStyle = BorderStyle.None;
-            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_TextboxLinea_Vertical.Location = new Point(388, 0);
-            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_TextboxLinea_Vertical.Margin = new Padding(3, 4, 3, 4);
+            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_TextboxLinea_Vertical.Location = new Point(340, 0);
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_TextboxLinea_Vertical.Multiline = true;
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_TextboxLinea_Vertical.Name = "Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_TextboxLinea_Vertical";
-            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_TextboxLinea_Vertical.Size = new Size(1, 755);
+            Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_TextboxLinea_Vertical.Size = new Size(1, 566);
             Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_TextboxLinea_Vertical.TabIndex = 13;
             // 
             // Form7_DashBoardUsuarios_2_Editar
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(177, 173, 189);
-            ClientSize = new Size(1189, 807);
+            ClientSize = new Size(1040, 605);
             Controls.Add(Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo_TextboxLinea_Vertical);
             Controls.Add(Form7_DashBoardUsuarios_2_Editar_PanelIzquierdo);
             Controls.Add(Form7_DashBoardUsuarios_2_Editar_PanelDerecho);
             Controls.Add(Form7_DashBoardUsuarios_2_Editar_PanelInferior);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Form7_DashBoardUsuarios_2_Editar";
             Text = "Form7_DashBoardUsuarios_2_Editar";
             Load += Form7_DashBoardUsuarios_2_Editar_Load;

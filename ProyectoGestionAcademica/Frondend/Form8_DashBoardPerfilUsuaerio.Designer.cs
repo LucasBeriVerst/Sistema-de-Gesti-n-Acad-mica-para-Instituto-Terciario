@@ -36,6 +36,7 @@
             Form8_DashBoardPerfilUsuaerio_PanelIsquierdo_TextboxLinea_Vertical = new TextBox();
             Form8_DashBoardPerfilUsuaerio_Label_Identidad = new Label();
             Form8_DashBoardPerfilUsuaerio_Label_Usuario = new Label();
+            label1 = new Label();
             Form8_DashBoardPerfilUsuaerio_PanelInferior.SuspendLayout();
             SuspendLayout();
             // 
@@ -91,7 +92,7 @@
             Form8_DashBoardPerfilUsuaerio_TextBox_Contraseña.BorderStyle = BorderStyle.None;
             Form8_DashBoardPerfilUsuaerio_TextBox_Contraseña.Font = new Font("Fira Sans UltraLight", 22F);
             Form8_DashBoardPerfilUsuaerio_TextBox_Contraseña.ForeColor = Color.DimGray;
-            Form8_DashBoardPerfilUsuaerio_TextBox_Contraseña.Location = new Point(592, 133);
+            Form8_DashBoardPerfilUsuaerio_TextBox_Contraseña.Location = new Point(592, 242);
             Form8_DashBoardPerfilUsuaerio_TextBox_Contraseña.Margin = new Padding(2);
             Form8_DashBoardPerfilUsuaerio_TextBox_Contraseña.Multiline = true;
             Form8_DashBoardPerfilUsuaerio_TextBox_Contraseña.Name = "Form8_DashBoardPerfilUsuaerio_TextBox_Contraseña";
@@ -148,12 +149,23 @@
             Form8_DashBoardPerfilUsuaerio_Label_Usuario.TabIndex = 9;
             Form8_DashBoardPerfilUsuaerio_Label_Usuario.Text = "USUARIO: ";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Fira Sans UltraLight", 22F);
+            label1.Location = new Point(592, 133);
+            label1.Name = "label1";
+            label1.Size = new Size(379, 36);
+            label1.TabIndex = 10;
+            label1.Text = "CAMBIO DE CONTRASEÑA: ";
+            // 
             // Form8_DashBoardPerfilUsuaerio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(177, 173, 189);
             ClientSize = new Size(1040, 605);
+            Controls.Add(label1);
             Controls.Add(Form8_DashBoardPerfilUsuaerio_Label_Usuario);
             Controls.Add(Form8_DashBoardPerfilUsuaerio_Label_Identidad);
             Controls.Add(Form8_DashBoardPerfilUsuaerio_PanelIsquierdo_TextboxLinea_Vertical);
@@ -179,5 +191,6 @@
         private TextBox Form8_DashBoardPerfilUsuaerio_PanelIsquierdo_TextboxLinea_Vertical;
         private Label Form8_DashBoardPerfilUsuaerio_Label_Identidad;
         private Label Form8_DashBoardPerfilUsuaerio_Label_Usuario;
+        private Label label1;
     }
 }
