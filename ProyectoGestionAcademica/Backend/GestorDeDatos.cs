@@ -701,5 +701,65 @@ namespace ProyectoGestionAcademica.Backend
 
         #endregion
         #endregion
+
+        #region Examenes
+        #region Metodos Genericos Para Examenes
+        public DataTable BuscarAlumnosPorNombreApellidoDNIMatricula(string? valorMatricula, string? valorNombre, string? valorApellido, string? valorDNI)
+        {
+            DataTable tablaVacia = new DataTable();
+            
+            //validacions para nombre
+            if (valorNombre != null)
+            {
+                if (valorNombre.Length < 1 || valorNombre.Length > 30 || !valorNombre.All(char.IsLetter))
+                {
+                    MessageBox.Show("El nombre debe tener entre 1 y 30 letras y no puede contener números ni caracteres especiales.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return tablaVacia; // Se retorna una tabla vacía en caso de error.
+                }
+            }
+            
+            //validacions para apellido
+            if (valorApellido != null)
+            {
+                if (valorApellido.Length < 1 || valorApellido.Length > 30 || !valorApellido.All(char.IsLetter))
+                {
+                    MessageBox.Show("El apellido debe tener entre 1 y 30 letras y no puede contener números ni caracteres especiales.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return tablaVacia; // Se retorna una tabla vacía en caso de error.
+                }
+            }
+
+            //validacion para dni para ver si son digitos
+            if (valorDNI != null)
+            {
+                if (!valorDNI.All(char.IsDigit) || valorDNI.Length < 7 || valorDNI.Length > 10)
+                {
+                    MessageBox.Show("El DNI debe contener entre 7 y 10 dígitos y solo Numeros Enteros.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return tablaVacia; // Se retorna una tabla vacía en caso de error.
+                }
+            }
+
+            //validacion para Matricula para ver si son digitos
+            if (valorMatricula != null)
+            {
+                if (!valorMatricula.All(char.IsDigit))
+                {
+                    MessageBox.Show("La Matricula debe contener solo Numeros Enteros.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return tablaVacia; // Se retorna una tabla vacía en caso de error.
+                }
+            }
+            
+            //Si pasa todas las validaciones se ejecuta la consulta
+            var parametros = new Dictionary<string, object>
+            {
+                {"@Matricula", string.IsNullOrWhiteSpace(valorMatricula) ? (object)DBNull.Value : Convert.ToInt32(valorMatricula)},
+                {"@Nombre_Alumno", valorNombre ?? (object)DBNull.Value},      //Para verificar nulos. Sintaxis: variable ?? valorPorDefecto
+                {"@Apellido_Alumno", valorApellido ?? (object)DBNull.Value},  //Verifica si la variable es null. Si lo es, retorna valorPorDefecto. Sino, retorna el valor de la variable
+                {"@DNI_Alumno",  string.IsNullOrWhiteSpace(valorDNI) ? (object)DBNull.Value : Convert.ToInt32(valorDNI)}, //si es null o vacio indica a bdd que es null; sino convierte a entero el numero}
+            };
+
+            return Instancia_SQL.EjecutarQuery("sp_SeleccionarAlumnoAvanzado", parametros);
+        }
+        #endregion
+        #endregion
     }
 }
