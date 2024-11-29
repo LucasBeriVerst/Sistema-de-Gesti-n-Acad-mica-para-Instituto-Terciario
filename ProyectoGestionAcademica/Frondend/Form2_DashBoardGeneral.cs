@@ -95,7 +95,7 @@ namespace ProyectoGestionAcademica.Frondend
         }
         private void Form2_DashboardGeneral_Button_Alumnos_Informacion_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Form3_DashBoardAlumnos_5_Informacion>();
+            //AbrirFormulario<Form3_DashBoardAlumnos_5_Informacion>();
         }
         #endregion
         #region Carreras
@@ -139,7 +139,7 @@ namespace ProyectoGestionAcademica.Frondend
         }
         private void Form2_DashboardGeneral_Button_Carreras_Informacion_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Form4_DashBoardCarreras_5_Informacion>();
+           // AbrirFormulario<Form4_DashBoardCarreras_5_Informacion>();
         }
         #endregion
         #region Materias
@@ -183,7 +183,7 @@ namespace ProyectoGestionAcademica.Frondend
         }
         private void Form2_DashboardGeneral_Button_Materias_Informacion_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Form5_DashBoardMaterias_5_Informacion>();
+           // AbrirFormulario<Form5_DashBoardMaterias_5_Informacion>();
         }
         #endregion
         #region Examenes
@@ -223,11 +223,11 @@ namespace ProyectoGestionAcademica.Frondend
         }
         private void Form2_DashboardGeneral_Button_Examenes_Asignar_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Form6_DashBoardExamenes_4_Asignar>();
+            //AbrirFormulario<Form6_DashBoardExamenes_4_Asignar>();
         }
         private void Form2_DashboardGeneral_Button_Examenes_Informacion_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Form6_DashBoardExamenes_5_Informacion>();
+            // AbrirFormulario<Form6_DashBoardExamenes_5_Informacion>();
         }
         #endregion
         #region Usuarios

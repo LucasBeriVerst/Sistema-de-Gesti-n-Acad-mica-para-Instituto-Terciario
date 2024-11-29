@@ -62,8 +62,8 @@ namespace ProyectoGestionAcademica.Frondend
 
         private void Form3_DashBoardAlumnos_3_Eliminar_PanelIsquierdo_Textbox_Valor_Enter(object sender, EventArgs e)
         {
-            if (Form3_DashBoardAlumnos_3_Eliminar_PanelIsquierdo_Textbox_Valor.Text == "VALOR A BUSCAR:") { Form3_DashBoardAlumnos_3_Eliminar_PanelIsquierdo_Textbox_Valor.Text = string.Empty; }
-            Form3_DashBoardAlumnos_3_Eliminar_PanelIsquierdo_Textbox_Valor.ForeColor = Color.Black;
+            if (Form3_DashBoardAlumnos_3_Eliminar_PanelIsquierdo_Textbox_Valor.Text == string.Empty) { Form3_DashBoardAlumnos_3_Eliminar_PanelIsquierdo_Textbox_Valor.Text = "VALOR A BUSCAR:"; }
+            Form3_DashBoardAlumnos_3_Eliminar_PanelIsquierdo_Textbox_Valor.ForeColor = Color.DimGray;
         }
 
         private void Form3_DashBoardAlumnos_3_Eliminar_PanelIsquierdo_Textbox_Valor_Leave(object sender, EventArgs e)

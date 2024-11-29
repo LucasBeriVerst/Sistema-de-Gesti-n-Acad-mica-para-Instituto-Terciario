@@ -420,6 +420,72 @@ namespace ProyectoGestionAcademica.Backend
         #region Informacion
         #endregion
         #endregion
+        #region Carreras
+        public void AgregarCarrera(string nombreCarrera, string resolucion, string programa)
+        {
+            // Crear el diccionario de parámetros
+            var parametros = new Dictionary<string, object>
+            {
+                { "@Nombre_Carrera", nombreCarrera },
+                { "@Resolucion", resolucion },
+                { "@Programa", programa }
+            };
+
+            try
+            {
+                // Ejecutar el procedimiento almacenado
+                int filasAfectadas = Instancia_SQL.EjecutarNonQuery("sp_AgregarCarrera", parametros);
+
+                // Validar el resultado
+                if (filasAfectadas > 0)
+                {
+                    MessageBox.Show("Carrera agregada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo agregar la carrera. Verifique los datos ingresados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Error al ejecutar el procedimiento almacenado: {ex.Message}", "Error SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error inesperado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public DataTable ObtenerCarreraPorNombre(string nombreCarrera)
+        {
+            var parametros = new Dictionary<string, object>
+            {
+                { "@Nombre_Carrera", nombreCarrera }
+            };
+            return Instancia_SQL.EjecutarQuery("sp_ObtenerCarreraPorNombre", parametros);
+        }
+        public int EditarCarrera(int idCarrera, string nombreCarrera, string resolucion, string programa)
+        {
+            var parametros = new Dictionary<string, object>
+            {
+                { "@ID_Carrera", idCarrera },
+                { "@Nombre_Carrera", nombreCarrera },
+                { "@Resolucion", resolucion },
+                { "@Programa", programa }
+            };
+
+            return Instancia_SQL.EjecutarNonQuery("sp_EditarCarrera", parametros);
+        }
+        public int EliminarCarrera(int idCarrera)
+        {
+            var parametros = new Dictionary<string, object>
+            {
+                { "@ID_Carrera", idCarrera }
+            };
+
+            return Instancia_SQL.EjecutarNonQuery("sp_EliminarCarrera", parametros);
+        }
+
+        #endregion
         #region Materias
         #region Agregar
         public void AgregarMateriaSegunNombre(string nombre_Materia) 
