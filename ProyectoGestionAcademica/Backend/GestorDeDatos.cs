@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
@@ -431,6 +432,54 @@ namespace ProyectoGestionAcademica.Backend
             resultado = Instancia_SQL.EjecutarNonQuery("sp_AgregarMateria", parametros);
             if (resultado == 0) { MessageBox.Show($"Ocurrió un error al cargar la materia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             else if (resultado == 1) { MessageBox.Show($"La Materia se ingreso correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+        }
+        #endregion
+        #region Editar
+        public void EditarMateria(int idMateria, string nombreMateria)
+        {
+            var parametros = new Dictionary<string, object>
+            {
+                { "@ID_Materia", idMateria },
+                { "@Nombre_Materia", nombreMateria }
+            };
+            try
+            {
+                int filasAfectadas = Instancia_SQL.EjecutarNonQuery("sp_EditarMateria", parametros);
+                if (filasAfectadas > 0)
+                {
+                    MessageBox.Show("La materia se ha actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró la materia o no se realizaron cambios.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                } 
+            }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show($"Error SQL: {sqlEx.Message}", "Error SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error general: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public DataTable ObtenerMaterias()
+        {
+            try
+            {
+                DataTable tablaMaterias = Instancia_SQL.EjecutarQuery("sp_SeleccionarMateriasAvanzado", null);
+                return tablaMaterias;
+            }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show($"Error SQL: {sqlEx.Message}", "Error SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null; 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error general: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null; 
+            }
         }
         #endregion
         #endregion
