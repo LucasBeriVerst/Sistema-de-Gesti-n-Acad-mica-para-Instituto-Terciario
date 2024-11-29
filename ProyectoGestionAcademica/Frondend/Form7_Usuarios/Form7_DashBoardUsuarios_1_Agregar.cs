@@ -17,16 +17,16 @@ namespace ProyectoGestionAcademica.Frondend.Form7_Usuarios
         private string titulo = "USUARIOS: AGREGAR";
         public Form7_DashBoardUsuarios_1_Agregar()
         {
-            InitializeComponent();
+            InitializeComponent();            
             Titulo = titulo;
         }
         public string Titulo { get => titulo; set => titulo = value; }
 
         private void Form7_DashBoardUsuarios_1_Agregar_Load(object sender, EventArgs e)
         {
-            //Le pasamos los datos al metodo (en este caso le pasamos tambien el filtro 'WHERE' para filtrar que                         //Aca seria WHERE Nombre_Perfil != 'Alumno'
-            //datos mostrar en el ComboBox). Aunque esto es opcional y puede queadr NULL.                                                //Pero el WHERE ya esta incluido en el Stored 
-            CargarComboBoxConIDsNombresGenericos(Form7_DashBoardUsuarios_1_Agregar_ComboBox_Perfil, "Perfiles", "ID_Perfil", "Nombre_Perfil", "Nombre_Perfil != 'Alumno'");
+            //le pasamos los datos al metodo (en este caso le pasamos tambien el filtro 'where' para filtrar que                         //aca seria where nombre_perfil != 'alumno'
+            //datos mostrar en el combobox). aunque esto es opcional y puede queadr null.                                                //Pero el WHERE ya esta incluido en el Stored 
+            CargarComboBoxConIDsNombresGenericos(Form7_DashBoardUsuarios_1_Agregar_ComboBox_Perfil, "Perfiles", "ID_Perfil", "Nombre_Perfil", "WHERE Nombre_Perfil != 'Alumno'");
         }
 
         private void Form7_DashBoardUsuarios_1_Agregar_PanelInferior_Button_Cancelar_Click(object sender, EventArgs e)
@@ -39,9 +39,8 @@ namespace ProyectoGestionAcademica.Frondend.Form7_Usuarios
         }
 
         private void Form7_DashBoardUsuarios_1_Agregar_PanelInferior_Button_Agregar_Click(object sender, EventArgs e)
-        {
-            //ProbarYRestablecerCamposConPlaceholders();
-            ProbarYRestablecerCampos();
+        {            
+            //ProbarYRestablecerCampos();
             
             if (GestorDeDatos.ValidarCamposDeTexto(Form7_DashBoardUsuarios_1_Agregar_ComboBox_Perfil.SelectedValue.ToString(), Form7_DashBoardUsuarios_1_Agregar_TextBox_Nombre.Text, Form7_DashBoardUsuarios_1_Agregar_TextBox_Apellido.Text, Form7_DashBoardUsuarios_1_Agregar_TextBox_Dni.Text, Form7_DashBoardUsuarios_1_Agregar_TextBox_Calle.Text, Form7_DashBoardUsuarios_1_Agregar_TextBox_Numero.Text, Form7_DashBoardUsuarios_1_Agregar_TextBox_Telefono.Text, Form7_DashBoardUsuarios_1_Agregar_TextBox_Email.Text, Form7_DashBoardUsuarios_1_Agregar_TextBox_Usuario.Text, Form7_DashBoardUsuarios_1_Agregar_TextBox_Contraseña.Text))
             {
@@ -53,7 +52,20 @@ namespace ProyectoGestionAcademica.Frondend.Form7_Usuarios
                     ? (DateTime?)Form7_DashBoardUsuarios_1_Agregar_PanelSuperiorDerecho_DataTimePicker_FechaBaja.Value
                     : null;
 
-                int error = GestorDeDatos.Form_Usuarios_AgregarUsuario(Form7_DashBoardUsuarios_1_Agregar_ComboBox_Perfil.SelectedValue.ToString(), Form7_DashBoardUsuarios_1_Agregar_TextBox_Nombre.Text, Form7_DashBoardUsuarios_1_Agregar_TextBox_Apellido.Text, Form7_DashBoardUsuarios_1_Agregar_TextBox_Dni.Text, Form7_DashBoardUsuarios_1_Agregar_TextBox_Calle.Text, Form7_DashBoardUsuarios_1_Agregar_TextBox_Numero.Text, Form7_DashBoardUsuarios_1_Agregar_TextBox_Telefono.Text, Form7_DashBoardUsuarios_1_Agregar_TextBox_Email.Text, Form7_DashBoardUsuarios_1_Agregar_TextBox_Usuario.Text, Form7_DashBoardUsuarios_1_Agregar_TextBox_Contraseña.Text, fechaAlta, fechaBaja);
+                int error = GestorDeDatos.Form_Usuarios_AgregarUsuario(
+                    Form7_DashBoardUsuarios_1_Agregar_ComboBox_Perfil.SelectedValue.ToString(),
+                    Form7_DashBoardUsuarios_1_Agregar_TextBox_Nombre.Text,
+                    Form7_DashBoardUsuarios_1_Agregar_TextBox_Apellido.Text,
+                    Form7_DashBoardUsuarios_1_Agregar_TextBox_Dni.Text,
+                    Form7_DashBoardUsuarios_1_Agregar_TextBox_Calle.Text,
+                    Form7_DashBoardUsuarios_1_Agregar_TextBox_Numero.Text,
+                    Form7_DashBoardUsuarios_1_Agregar_TextBox_Telefono.Text,
+                    Form7_DashBoardUsuarios_1_Agregar_TextBox_Email.Text,
+                    Form7_DashBoardUsuarios_1_Agregar_TextBox_Usuario.Text,
+                    Form7_DashBoardUsuarios_1_Agregar_TextBox_Contraseña.Text,
+                    fechaAlta,
+                    fechaBaja
+                    );
 
                 switch (error)
                 {
@@ -61,16 +73,16 @@ namespace ProyectoGestionAcademica.Frondend.Form7_Usuarios
                         MessageBox.Show("Por favor seleccione un 'Tipo de Perfil' del campo desplegable.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                     case -21:
-                        MessageBox.Show("Por favor complete el campo 'Nombre' correctamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Por favor complete el campo 'Nombre' correctamente. No puede contener números ni caracteres especiales.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         break;
                     case -22:
-                        MessageBox.Show("Por favor complete el campo 'Apellido' correctamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Por favor complete el campo 'Apellido' correctamente. No puede contener números ni caracteres especiales.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         break;
                     case -9:
                         MessageBox.Show("El campo 'DNI' solo puede contener numeros.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         break;
                     case -23:
-                        MessageBox.Show("Por favor complete el campo 'Domicilio (Calle)' correctamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Por favor complete el campo 'Domicilio (Calle)' correctamente. No puede contener números ni caracteres especiales.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         break;
                     case -24:
                         MessageBox.Show("El campo 'Domicilio (Numero)' solo puede contener numeros.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -87,6 +99,9 @@ namespace ProyectoGestionAcademica.Frondend.Form7_Usuarios
                     case -27:
                         MessageBox.Show("La Fecha de Baja no puede ser Anterior a la Fecha de Alta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         break;
+                    case -28:
+                        MessageBox.Show("Por favor complete el campo 'Telefono' correctamente. No ingrese letras.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
 
                     // Case:1 seria correcto, xq al ejecutar la query devuelve el numero de filas afectadas. Y al ser una insercion
                     // la fila afectada/ingresada seria siempre 1 en este caso. Lo que se traduce a una insercion exitosa
@@ -102,30 +117,14 @@ namespace ProyectoGestionAcademica.Frondend.Form7_Usuarios
             else
             {
                 MessageBox.Show("Faltan completar campos de texto para agregar un nuevo Usuario... Haga un chequeo de los datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            //ProbarYRestablecerCamposConPlaceholders();
-            ProbarYRestablecerCampos();
+            }            
+            //ProbarYRestablecerCampos();
         }
 
-        //a los placeholders se les pasa el texto de los textbox y directamente los alterna cuando el usuario hace
-        //click o sale del textbox [codigo mas legible y facil de escribir que ProbarYRestablecerCampos()]
-        private void ProbarYRestablecerCamposConPlaceholders()  //AL PARECER NO FUNCIONA (los hice abajo a mano)
-        {
-            Form7_DashBoardUsuarios_1_Agregar_TextBox_Nombre.PlaceholderText = "NOMBRE";
-            Form7_DashBoardUsuarios_1_Agregar_TextBox_Apellido.PlaceholderText = "APELLIDO";
-            Form7_DashBoardUsuarios_1_Agregar_TextBox_Dni.PlaceholderText = "DNI";
-            Form7_DashBoardUsuarios_1_Agregar_TextBox_Calle.PlaceholderText = "DOMICILIO (CALLE)";
-            Form7_DashBoardUsuarios_1_Agregar_TextBox_Numero.PlaceholderText = "DOMICILIO (NUMERO)";
-            Form7_DashBoardUsuarios_1_Agregar_TextBox_Telefono.PlaceholderText = "TELEFONO";
-            Form7_DashBoardUsuarios_1_Agregar_TextBox_Email.PlaceholderText = "EMAIL";
-            Form7_DashBoardUsuarios_1_Agregar_TextBox_Usuario.PlaceholderText = "USUARIO";
-            Form7_DashBoardUsuarios_1_Agregar_TextBox_Contraseña.PlaceholderText = "CONTRASEÑA";
-        }
-
-        private void ProbarYRestablecerCampos()
+        private void ProbarYRestablecerCampos()     // NO se usa porque el codigo de abajo hace lo mismo
         {
             #region Restablecer campos
-
+            
             if (Form7_DashBoardUsuarios_1_Agregar_ComboBox_Perfil.SelectedItem?.ToString() == "Administrador")
             {
                 Form7_DashBoardUsuarios_1_Agregar_ComboBox_Perfil.SelectedItem = string.Empty;
@@ -222,7 +221,7 @@ namespace ProyectoGestionAcademica.Frondend.Form7_Usuarios
             #endregion
         }
 
-        #region Texto en los TextBox
+        #region Texto en los TextBox      
         private void Form7_DashBoardUsuarios_1_Agregar_TextBox_Nombre_Enter(object sender, EventArgs e)
         {
             if (Form7_DashBoardUsuarios_1_Agregar_TextBox_Nombre.Text == "NOMBRE")
@@ -374,7 +373,7 @@ namespace ProyectoGestionAcademica.Frondend.Form7_Usuarios
                 Form7_DashBoardUsuarios_1_Agregar_TextBox_Contraseña.Text = "CONTRASEÑA";
                 Form7_DashBoardUsuarios_1_Agregar_TextBox_Contraseña.ForeColor = Color.DimGray;
             }
-        }
+        }    
         #endregion
 
         //Recibe como parametros: El ComboBox a cargar, el nombre de la tabla, la columna ID y la columna Nombre de donde va
@@ -383,10 +382,16 @@ namespace ProyectoGestionAcademica.Frondend.Form7_Usuarios
         {
             var listaIDsNombres = GestorDeDatos.ObtenerIDsyNombresGenericos(nombreTabla, columnaID, columnaNombre, filtro);
 
+            // Agregar el texto a mostrar al principio de la lista
+            listaIDsNombres.Insert(0, new KeyValuePair<object, string>(0, "Seleccione uno..."));
+
             ComboBoxGenerico.DisplayMember = "Value";  //Especifica qué propiedad del objeto de la lista se muestra en el ComboBox
             ComboBoxGenerico.ValueMember = "Key";      //qué propiedad está asociada al valor seleccionado. Aquí es Key, el ID.
+
             ComboBoxGenerico.DataSource = null;     //Limpia el ComboBox antes de asignar la fuente de datos
             ComboBoxGenerico.DataSource = listaIDsNombres;    //Asigna la lista de datos al ComboBox
+
+            ComboBoxGenerico.SelectedIndex = 0; // Selecciona el primer elemento (Texto 'Seleccione uno...')
         }
     }
 }
