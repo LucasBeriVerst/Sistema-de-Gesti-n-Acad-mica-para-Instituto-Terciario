@@ -585,9 +585,187 @@ namespace ProyectoGestionAcademica.Backend
             }
         }
 
+        #endregion
+        #endregion
+        #region Perfil
+        public string ObtenerNombreApellidoPorUsuario(string usuario)
+        {
+            string nombreCompleto = string.Empty;
+            var parametros = new Dictionary<string, object>
+            {
+                { "@Usuario_Alumno", usuario }
+            };
+
+            try
+            {
+                // Ejecutar el procedimiento almacenado y obtener el resultado
+                var resultado = Instancia_SQL.EjecutarQuery("sp_ObtenerNombreApellidoPorUsuario", parametros);
+
+                if (resultado.Rows.Count > 0)
+                {
+                    // Si se encuentra el usuario, concatenar el nombre y apellido
+                    string nombre = resultado.Rows[0]["Nombre_Alumno"].ToString();
+                    string apellido = resultado.Rows[0]["Apellido_Alumno"].ToString();
+                    nombreCompleto = $"{nombre} {apellido}";
+                }
+                else
+                {
+                    // Si no se encuentra el usuario
+                    nombreCompleto = "Usuario no encontrado.";
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores
+                MessageBox.Show($"Error al obtener los datos del alumno: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return nombreCompleto;
+        }
+        public string ObtenerNombreApellidoPorUsuarioEmpleado(string usuario)
+        {
+            string nombreCompleto = string.Empty;
+            var parametros = new Dictionary<string, object>
+            {
+                { "@Usuario_Empleado", usuario }
+            };
+
+            try
+            {
+                // Ejecutar el procedimiento almacenado y obtener el resultado en un DataTable
+                DataTable resultado = Instancia_SQL.EjecutarQuery("sp_ObtenerNombreApellidoPorUsuarioEmpleado", parametros);
+
+                if (resultado.Rows.Count > 0)
+                {
+                    string nombre = resultado.Rows[0]["Nombre_Empleado"].ToString();
+                    string apellido = resultado.Rows[0]["Apellido_Empleado"].ToString();
+                    nombreCompleto = $"{nombre} {apellido}";
+                }
+                else
+                {
+                    nombreCompleto = "Empleado no encontrado.";
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores
+                MessageBox.Show($"Error al obtener los datos del empleado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return nombreCompleto;
+        }
+        public string ObtenerContraseniaPorUsuarioAlumno(string usuarioAlumno)
+        {
+            var parametros = new Dictionary<string, object>
+            {
+                { "@Usuario_Alumno", usuarioAlumno }
+            };
+
+            try
+            {
+                // Ejecutar el procedimiento almacenado y obtener el resultado
+                DataTable resultado = Instancia_SQL.EjecutarQuery("sp_ObtenerContraseniaPorUsuarioAlumno", parametros);
+
+                // Verificar si se encontraron registros
+                if (resultado.Rows.Count > 0)
+                {
+                    string contrasenia = resultado.Rows[0]["Contrasenia_Alumno"].ToString();
+                    return contrasenia; // Retorna la contraseña
+                }
+                else
+                {
+                    // Si no se encuentra el usuario, devuelve un valor vacío o nulo
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores
+                Console.WriteLine($"Error al obtener la contraseña: {ex.Message}");
+                return null;
+            }
+        }
+        public bool CambiarContraseniaAlumno(string usuarioAlumno, string nuevaContrasenia)
+        {
+            var parametros = new Dictionary<string, object>
+            {
+                { "@Usuario_Alumno", usuarioAlumno },
+                { "@Nueva_Contrasenia", nuevaContrasenia }
+            };
+
+            try
+            {
+                // Ejecutar el procedimiento almacenado y obtener el valor de retorno
+                int resultado = Convert.ToInt32(Instancia_SQL.EjecutarEscalar("sp_CambiarContraseniaAlumno", parametros));
+
+                // Si el resultado es 1, la contraseña fue cambiada con éxito
+                return resultado == 1;
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores
+                Console.WriteLine($"Error al cambiar la contraseña: {ex.Message}");
+                return false;
+            }
+        }
+        public string ObtenerContraseniaPorUsuarioEmpleado(string usuarioEmpleado)
+        {
+            // Diccionario con los parámetros a pasar al procedimiento almacenado
+            var parametros = new Dictionary<string, object>
+            {
+                { "@Usuario_Empleado", usuarioEmpleado }
+            };
+
+            try
+            {
+                // Ejecutar el procedimiento almacenado y obtener el resultado (la contraseña)
+                object resultado = Instancia_SQL.EjecutarEscalar("sp_ObtenerContraseniaPorUsuarioEmpleado", parametros);
+
+                // Si el resultado no es null, devolver la contraseña como un string
+                if (resultado != null)
+                {
+                    return resultado.ToString();
+                }
+                else
+                {
+                    return null; // Si no se encontró la contraseña, devolver null
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores
+                Console.WriteLine($"Error al obtener la contraseña: {ex.Message}");
+                return null;
+            }
+        }
+        public int CambiarContraseniaEmpleado(string usuarioEmpleado, string nuevaContrasenia)
+        {
+            // Diccionario con los parámetros a pasar al procedimiento almacenado
+            var parametros = new Dictionary<string, object>
+            {
+                { "@Usuario_Empleado", usuarioEmpleado },
+                { "@Nueva_Contrasenia_Empleado", nuevaContrasenia }
+            };
+
+            try
+            {
+                // Ejecutar el procedimiento almacenado y obtener el resultado (1 o 0)
+                int resultado = Instancia_SQL.EjecutarNonQuery("sp_CambiarContraseniaEmpleado", parametros);
+
+                // Retornar el resultado (1 si fue exitoso, 0 si no se encontró el usuario)
+                return resultado;
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores
+                Console.WriteLine($"Error al cambiar la contraseña: {ex.Message}");
+                return 0;
+            }
+        }
+
+
+        #endregion
     }
 
-    #endregion
-    #endregion
 }
 
