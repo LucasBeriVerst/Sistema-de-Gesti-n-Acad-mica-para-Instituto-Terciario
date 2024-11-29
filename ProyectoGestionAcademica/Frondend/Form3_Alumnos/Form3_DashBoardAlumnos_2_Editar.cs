@@ -184,7 +184,7 @@ namespace ProyectoGestionAcademica.Frondend
                         Form3_DashBoardAlumnos_2_Editar_PanelDerecho_DateTimePicker_Baja.Checked = false; // No hay fecha seleccionada
                     }
                 }
-                catch(Exception e) 
+                catch(Exception ex) 
                 { }
             }
         }

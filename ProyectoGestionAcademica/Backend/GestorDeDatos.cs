@@ -1,4 +1,5 @@
-﻿using ProyectoGestionAcademica.SQL;
+﻿using ProyectoGestionAcademica.Frondend.Form7_Usuarios;
+using ProyectoGestionAcademica.SQL;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -26,13 +27,14 @@ namespace ProyectoGestionAcademica.Backend
 
             foreach (string parametro in listaParametros)
             {
-                if (string.IsNullOrEmpty(parametro))
+                if (string.IsNullOrEmpty(parametro) || string.IsNullOrWhiteSpace(parametro))
                 {
                     return false;
                 }
             }
             return true;
         }
+
         public DataTable BuscarAlumnosPorCategoria(string valorComboBox, string valorTextBox)
         {
             string parametroNombre;
@@ -84,6 +86,54 @@ namespace ProyectoGestionAcademica.Backend
             };
 
             return Instancia_SQL.EjecutarQuery("sp_SeleccionarAlumnoAvanzado", parametros);
+        }
+
+        //Metodo generico para obtener una lista de IDs y Nombres (generalmente para cargar ComboBoxs)
+        //Se usa una lista de pares clave-valor en vez de un diccionario xq el diccionario no es compaible con los ComboBox
+        public List<KeyValuePair<object, string>> ObtenerIDsyNombresGenericos(string nombreTabla, string columnaID, string columnaNombre, string filtro = null)
+        {
+            //lista vacia para guardar los perfiles
+            List<KeyValuePair<object, string>> listaIDsNombres = new List<KeyValuePair<object, string>>();
+
+            //Parametros para el Stored Procedure
+            var parametros = new Dictionary<string, object>
+            {
+                { "@NombreTabla", nombreTabla },
+                { "@ColumnaID", columnaID },
+                { "@ColumnaNombre", columnaNombre },
+                { "@Filtro", filtro }
+            };
+
+            try
+            {
+                
+                string nombreProcedimiento;
+
+                if (!string.IsNullOrEmpty(filtro) && filtro.Contains("INNER JOIN"))  // Verifica si es una consulta con JOIN
+                {
+                    nombreProcedimiento = "sp_ObtenerIDsyNombresGenericosVERSION2";
+                }
+                else
+                {
+                    nombreProcedimiento = "sp_ObtenerIDsyNombresGenericos";
+                }
+
+                // Llamar al método EjecutarReader
+                using (SqlDataReader lector = Instancia_SQL.EjecutarReader(nombreProcedimiento, parametros))
+                {
+                    while (lector.Read())
+                    {
+                        object id = lector[columnaID];
+                        string nombre = lector[columnaNombre].ToString();
+                        listaIDsNombres.Add(new KeyValuePair<object, string>(id, nombre));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return listaIDsNombres;  //Retorna la lista completa de perfiles
         }
 
         #endregion
@@ -139,6 +189,7 @@ namespace ProyectoGestionAcademica.Backend
             return respuesta;
         }
         #endregion
+
         #region Alumnos
         #region Agregar
         public int Form_Alumnos_AgregarAlumno(string nombre, string apellido, string dni, string calle, string numero, string telefono, string email, string matricula) 
@@ -831,7 +882,306 @@ namespace ProyectoGestionAcademica.Backend
 
 
         #endregion
+
+        #region Usuarios
+        #region Metodos Genericos Para Usuarios
+
+        //Arma los parametros y se los pasa al Store BuscarUsuario, para cargar el DataGridView
+        public DataTable BuscarUsuariosPorNombreApellidoDNI(string? valorNombre, string? valorApellido, string? valorDNI)
+        {
+            DataTable tablaVacia = new DataTable();
+
+            //validacions para nombre
+            if (valorNombre != null)
+            {
+                if (valorNombre.Length < 1 || valorNombre.Length > 30 || !valorNombre.All(char.IsLetter))
+                {
+                    MessageBox.Show("El nombre debe tener entre 1 y 30 letras y no puede contener números ni caracteres especiales.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return tablaVacia; // Se retorna una tabla vacía en caso de error.
+                }
+            }
+
+            //validacions para apellido
+            if (valorApellido != null)
+            {
+                if (valorApellido.Length < 1 || valorApellido.Length > 30 || !valorApellido.All(char.IsLetter))
+                {
+                    MessageBox.Show("El apellido debe tener entre 1 y 30 letras y no puede contener números ni caracteres especiales.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return tablaVacia; // Se retorna una tabla vacía en caso de error.
+                }
+            }
+
+            //validacion para dni para ver si son digitos
+            if (valorDNI != null)
+            {
+                if (!valorDNI.All(char.IsDigit) || valorDNI.Length < 7 || valorDNI.Length > 10)
+                {
+                    MessageBox.Show("El DNI debe contener entre 7 y 10 dígitos y solo Numeros Enteros.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return tablaVacia; // Se retorna una tabla vacía en caso de error.
+                }
+            }
+
+            //Si pasa todas las validaciones se ejecuta la consulta
+            var parametros = new Dictionary<string, object>
+            {
+                {"@Nombre_Empleado", valorNombre ?? (object)DBNull.Value},      //Para verificar nulos. Sintaxis: variable ?? valorPorDefecto
+                {"@Apellido_Empleado", valorApellido ?? (object)DBNull.Value},  //Verifica si la variable es null. Si lo es, retorna valorPorDefecto. Sino, retorna el valor de la variable
+                {"@DNI_Empleado",  string.IsNullOrWhiteSpace(valorDNI) ? (object)DBNull.Value : Convert.ToInt32(valorDNI)}, //si es null o vacio indica a bdd que es null; sino convierte a entero el numero}
+            };
+
+            return Instancia_SQL.EjecutarQuery("sp_SeleccionarEmpleadoAvanzado", parametros);
+        }
+
+        #endregion
+        #region Agregar
+
+        public int Form_Usuarios_AgregarUsuario(string perfil, string nombre, string apellido, string dni, string calle, string numero, string telefono, string email, string usuario, string contraseña, DateTime? fechaAlta, DateTime? fechaBaja)
+        {
+            #region Validaciones de Campos
+            
+            int resultado = 0;
+
+            // Validación para perfil (debe ser numérico)
+            if (!int.TryParse(perfil, out int idPerfil) || idPerfil <= 0)
+            {
+                resultado = -20;  // Retorna error de perfil inválido
+            }
+
+            //validacion para nombre para que no agreguen espacios en blanco
+            if (string.IsNullOrWhiteSpace(nombre) || !nombre.All(char.IsLetter) || nombre == "NOMBRE")
+            {
+                resultado = -21;
+            }
+
+            //validacion para apellido para que no agreguen espacios en blanco
+            if (string.IsNullOrWhiteSpace(apellido) || !apellido.All(char.IsLetter) || apellido == "APELLIDO")
+            {
+                resultado = -22;
+            }
+
+            //validacion para dni para ver si son digitos
+            if (!dni.All(char.IsDigit))
+            {
+                resultado = -9;
+            }
+
+            //validacion para calle para que no agreguen espacios en blanco
+            if (calle == "DOMICILIO (CALLE)")
+            {
+                calle = null;
+            }
+            else if (string.IsNullOrWhiteSpace(calle) || !calle.All(char.IsLetter))
+            {
+                resultado = -23;
+            }          
+
+            //validacion para numero para ver si son digitos
+            if (numero == "DOMICILIO (NUMERO)")
+            {
+                numero = null;
+            }
+            else if (!numero.All(char.IsDigit))
+            {
+                resultado = -24;
+            }
+
+            //validacion para telefono
+            if (telefono == "TELEFONO")
+            {
+                telefono = null;
+            }
+            else if (telefono.All(char.IsLetter))
+            {
+                resultado = -28;
+            }
+
+            //validacion de formato de mail
+            try
+            {
+                new MailAddress(email);
+            }
+            catch (Exception ex)
+            {
+                resultado = -10;
+            }
+
+            //validacion para usuario para que no sea nulo y que no sean espacios en blanco
+            if (string.IsNullOrEmpty(usuario) || string.IsNullOrWhiteSpace(usuario) || usuario == "USUARIO")
+            {
+                resultado = -25;
+            }
+
+            //validacion para contraseña para que no tenga espacios en blanco
+            if (string.IsNullOrWhiteSpace(contraseña) || contraseña == "CONTRASEÑA")
+            {
+                resultado = -26;
+            }
+
+            //Validacion de fecha para que la fecha de baja no sea anterior a la fecha de alta
+                //si fechaAlta tiene valor y fechaBaja tiene valor y fechaBaja es menor a fechaAlta entonces error
+            if (fechaAlta.HasValue && fechaBaja.HasValue && fechaBaja.Value < fechaAlta.Value)
+            {
+                resultado = -27;                                
+            }
+            #endregion
+
+            if (resultado == 0)
+            {
+                var parametros = new Dictionary<string, object>
+                {
+                    {"@ID_Perfil", idPerfil},   //idPerfil ya es int en esta parte
+                    {"@Nombre_Empleado", nombre},
+                    {"@Apellido_Empleado", apellido},
+                    {"@DNI_Empleado", int.Parse(dni)},
+                    {"@Domicilio_Calle", calle ?? (object)DBNull.Value},    //si NO es nulo devuelve calle, y si es nulo indica a la bdd que va a ser nulo
+                    {"@Domicilio_Numero", string.IsNullOrEmpty(numero) ? (object)DBNull.Value : int.Parse(numero)}, //si es null o vacio indica a bdd que es null; sino convierte a entero el numero
+                    {"@Telefono", telefono ?? (object)DBNull.Value},
+                    {"@Email", email},
+                    {"@Usuario_Empleado", usuario},
+                    {"@Contrasenia_Empleado", contraseña},
+                    {"@Fecha_Baja", fechaBaja ?? (object)DBNull.Value}, //Para verificar nulos. Sintaxis: variable ?? valorPorDefecto
+                    {"@Fecha_Alta", fechaAlta ?? (object)DBNull.Value}  //Verifica si la variable es null. Si lo es, retorna valorPorDefecto. Sino, retorna el valor de la variable
+                };
+                resultado = Instancia_SQL.EjecutarNonQuery("sp_AgregarEmpleado", parametros);
+            }
+            return resultado;   //devuelve el numero de filas afectadas
+        }
+
+        #endregion
+        #region Editar
+        public int EditarUsuario(int id, string nombre, string apellido, string dni, string perfil, string calle, string numero, string telefono, string email, string usuario, string contraseña, DateTime? fechaAlta, DateTime? fechaBaja)
+        {
+            #region Validaciones de Campos
+
+            int resultado = 0;
+
+            // Validación para perfil (debe ser numérico)
+            if (!int.TryParse(perfil, out int idPerfil) || idPerfil <= 0)
+            {
+                resultado = -20;  // Retorna error de perfil inválido
+            }
+
+            //validacion para nombre para que no agreguen espacios en blanco
+            if (string.IsNullOrWhiteSpace(nombre) || !nombre.All(char.IsLetter) || nombre == "NOMBRE")
+            {
+                resultado = -21;
+            }
+
+            //validacion para apellido para que no agreguen espacios en blanco
+            if (string.IsNullOrWhiteSpace(apellido) || !apellido.All(char.IsLetter) || apellido == "APELLIDO")
+            {
+                resultado = -22;
+            }
+
+            //validacion para dni para ver si son digitos
+            if (!dni.All(char.IsDigit))
+            {
+                resultado = -9;
+            }
+
+            //validacion para calle para que no agreguen espacios en blanco
+            if (calle == "DOMICILIO (CALLE)")
+            {
+                calle = null;
+            }
+            else if (string.IsNullOrWhiteSpace(calle) || !calle.All(char.IsLetter))
+            {
+                resultado = -23;
+            }
+
+            //validacion para numero para ver si son digitos
+            if (numero == "DOMICILIO (NUMERO)")
+            {
+                numero = null;
+            }
+            else if (!numero.All(char.IsDigit))
+            {
+                resultado = -24;
+            }
+
+            //validacion para telefono
+            if (telefono == "TELEFONO")
+            {
+                telefono = null;
+            }
+            else if (telefono.All(char.IsLetter))
+            {
+                resultado = -28;
+            }
+
+            //validacion de formato de mail
+            try
+            {
+                new MailAddress(email);
+            }
+            catch (Exception ex)
+            {
+                resultado = -10;
+            }
+
+            //validacion para usuario para que no sea nulo y que no sean espacios en blanco
+            if (string.IsNullOrEmpty(usuario) || string.IsNullOrWhiteSpace(usuario) || usuario == "USUARIO")
+            {
+                resultado = -25;
+            }
+
+            //validacion para contraseña para que no tenga espacios en blanco
+            if (string.IsNullOrWhiteSpace(contraseña) || contraseña == "CONTRASEÑA")
+            {
+                resultado = -26;
+            }
+
+            //Validacion de fecha para que la fecha de baja no sea anterior a la fecha de alta
+            //si fechaAlta tiene valor y fechaBaja tiene valor y fechaBaja es menor a fechaAlta entonces error
+            if (fechaAlta.HasValue && fechaBaja.HasValue && fechaBaja.Value < fechaAlta.Value)
+            {
+                resultado = -27;
+            }
+            #endregion
+
+            if (resultado == 0)
+            {
+                var parametros = new Dictionary<string, object>
+                {
+                    {"@ID_Empleado", id}, // Se agrega el ID del empleado
+                    {"@ID_Perfil", idPerfil},   //idPerfil ya es int en esta parte
+                    {"@Nombre_Empleado", nombre},
+                    {"@Apellido_Empleado", apellido},
+                    {"@DNI_Empleado", int.Parse(dni)},
+                    {"@Domicilio_Calle", calle ?? (object)DBNull.Value},    //si NO es nulo devuelve calle, y si es nulo indica a la bdd que va a ser nulo
+                    {"@Domicilio_Numero", string.IsNullOrEmpty(numero) ? (object)DBNull.Value : int.Parse(numero)}, //si es null o vacio indica a bdd que es null; sino convierte a entero el numero
+                    {"@Telefono", telefono ?? (object)DBNull.Value},
+                    {"@Email", email},
+                    {"@Usuario_Empleado", usuario},
+                    {"@Contrasenia_Empleado", contraseña},
+                    {"@Fecha_Baja", fechaBaja ?? (object)DBNull.Value}, //Para verificar nulos. Sintaxis: variable ?? valorPorDefecto
+                    {"@Fecha_Alta", fechaAlta ?? (object)DBNull.Value}  //Verifica si la variable es null. Si lo es, retorna valorPorDefecto. Sino, retorna el valor de la variable
+                };
+                resultado = Instancia_SQL.EjecutarNonQuery("sp_EditarEmpleado", parametros);
+            }
+            return resultado;   //devuelve el numero de filas afectadas
+        }
+
+        #endregion
+        #region Eliminar
+        public int EliminarUsuario(int id)
+        {
+            int resultado;
+
+            var parametros = new Dictionary<string, object>
+            {
+                { "@ID_Empleado", id }
+            };
+            resultado = Instancia_SQL.EjecutarNonQuery("sp_EliminarEmpleado", parametros);
+
+            return resultado;
+        }
+
+        #endregion
+        #region Asignar
+
+
+        #endregion
+        #endregion
     }
-
 }
-
