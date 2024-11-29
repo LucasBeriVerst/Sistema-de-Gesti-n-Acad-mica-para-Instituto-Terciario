@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
@@ -18,6 +19,7 @@ namespace ProyectoGestionAcademica.Backend
     internal class GestorDeDatos
     {
         Conexion Instancia_SQL = new Conexion();
+        private StringWriter consolaWriter;
         #region Generales
         public bool ValidarCamposDeTexto(params string[] parametros)
         {
@@ -366,7 +368,6 @@ namespace ProyectoGestionAcademica.Backend
         }
         public int ObtenerIDCarreraPorNombre(string nombreCarrera)
         {
-            // Ejecutar una consulta para obtener el ID de la carrera según el nombre
             var parametros = new Dictionary<string, object>
             {
                 { "@Nombre_Carrera", nombreCarrera }
@@ -376,7 +377,444 @@ namespace ProyectoGestionAcademica.Backend
 
             return Convert.ToInt32(resultado);
         }
+        public int ObtenerIDAñoDeCarrera(int IdCarrera, int Año)
+        {
+            var parametros = new Dictionary<string, object>
+            {
+                { "@ID_Carrera", IdCarrera },
+                { "@Año", Año }
+            };
+            object resultado = Instancia_SQL.EjecutarEscalar("ObtenerIDAñoDeCarrera", parametros);
+            if (resultado != null && int.TryParse(resultado.ToString(), out int IdAñoDeCarrera))
+            {
+                return IdAñoDeCarrera;
+            }
+            throw new Exception("No se encontró un ID_AñoDeCarrera para los parámetros proporcionados.");
+        }
+        public DataTable ObtenerMateriasPorCarreraYAño(int IdCarrera, int IdAño)
+        {
+            var parametros = new Dictionary<string, object>
+            {
+                { "@ID_Carrera", IdCarrera },
+                { "@ID_AñoDeCarrera", IdAño }
+            };
+            DataTable dataTable = Instancia_SQL.EjecutarQuery("ObtenerMateriasPorCarreraYAño", parametros);
+            return dataTable;
+        }
+        public int ObtenerIDMateriaPorNombre(string nombreMateria, int idCarrera)
+        {
+            var parametros = new Dictionary<string, object>
+            {
+                { "@Nombre_Materia", nombreMateria },
+                { "@ID_Carrera", idCarrera }
+            };
+            object resultado = Instancia_SQL.EjecutarEscalar("sp_ObtenerIDMateriaPorNombre", parametros);
+            consolaWriter = new StringWriter();
+            Console.SetOut(consolaWriter);
+            Console.WriteLine(resultado.ToString());
+            int valor = (int)resultado;
+            //int numeroConvertido = int.TryParse(resultado.ToString());
+            int respuesta = 0;
+            string x = resultado.ToString();
+            if (resultado != null)
+            {
+                respuesta = Convert.ToInt32(resultado);
+                Debug.WriteLine("Resultado convertido a int: " + respuesta);
+            }
+            else
+            {
+                Debug.WriteLine("El resultado es nulo.");
+            }
+            return respuesta;
+        }
+        public int AgregarAlumnoEnMateria(int idAlumno, int idMateria)
+        {
+            var parametros = new Dictionary<string, object>
+            {
+                { "@ID_Alumno", idAlumno },
+                { "@ID_Materia", idMateria }
+            };
+
+            try
+            {
+                int filasAfectadas = Instancia_SQL.EjecutarNonQuery("sp_AgregarAlumnoEnMateria", parametros);
+                return filasAfectadas;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -1;
+            }
+        }
+        public int EliminarAlumnoDeMateria(int idAlumno, int idMateria)
+        {
+            var parametros = new Dictionary<string, object>
+            {
+                { "@ID_Alumno", idAlumno },
+                { "@ID_Materia", idMateria }
+            };
+
+            try
+            {
+                int resultado = Instancia_SQL.EjecutarNonQuery("sp_EliminarAlumnoDeMateria", parametros);
+                return resultado;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -1; 
+            }
+        }
+
+
         #endregion
+        #region Informacion
+        #endregion
+        #endregion
+        #region Materias
+        #region Agregar
+        public void AgregarMateriaSegunNombre(string nombre_Materia) 
+        {
+            int resultado = 0;
+            var parametros = new Dictionary<string, object>
+            {   
+                { "@Nombre_Materia", nombre_Materia },
+            };
+            resultado = Instancia_SQL.EjecutarNonQuery("sp_AgregarMateria", parametros);
+            if (resultado == 0) { MessageBox.Show($"Ocurrió un error al cargar la materia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            else if (resultado == 1) { MessageBox.Show($"La Materia se ingreso correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+        }
+        #endregion
+        #region Editar
+        public void EditarMateria(int idMateria, string nombreMateria)
+        {
+            var parametros = new Dictionary<string, object>
+            {
+                { "@ID_Materia", idMateria },
+                { "@Nombre_Materia", nombreMateria }
+            };
+            try
+            {
+                int filasAfectadas = Instancia_SQL.EjecutarNonQuery("sp_EditarMateria", parametros);
+                if (filasAfectadas > 0)
+                {
+                    MessageBox.Show("La materia se ha actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró la materia o no se realizaron cambios.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                } 
+            }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show($"Error SQL: {sqlEx.Message}", "Error SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error general: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public DataTable ObtenerMaterias()
+        {
+            try
+            {
+                DataTable tablaMaterias = Instancia_SQL.EjecutarQuery("sp_SeleccionarMateriasAvanzado", null);
+                return tablaMaterias;
+            }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show($"Error SQL: {sqlEx.Message}", "Error SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null; 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error general: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null; 
+            }
+        }
+        #endregion
+        #region Eliminar
+        public void EliminarMateria(int idMateria)
+        {
+            var parametros = new Dictionary<string, object>
+            {
+                { "@ID_Materia", idMateria }
+            };
+            try
+            {
+                int filasAfectadas = Instancia_SQL.EjecutarNonQuery("sp_EliminarMateria", parametros);
+                if (filasAfectadas > 0)
+                {
+                    MessageBox.Show("La materia ha sido eliminada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró la materia o no se pudo eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show($"Error SQL: {sqlEx.Message}", "Error SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error general: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        #endregion
+        #region
+        public int AsignarMateriaACarrera(int idMateria, int idCarrera, int idAñoDeCarrera)
+        {
+            var parametros = new Dictionary<string, object>
+            {
+                { "@ID_Materia", idMateria },
+                { "@ID_Carrera", idCarrera },
+                { "@ID_AñoDeCarrera", idAñoDeCarrera }
+            };
+
+            try
+            {
+                // Ejecutar el procedimiento almacenado
+                object resultado = Instancia_SQL.EjecutarNonQuery("sp_AgregarMateriaACarrera", parametros);
+
+                // Convertir el resultado a entero y devolverlo
+                return Convert.ToInt32(resultado);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Error SQL: {ex.Message}", "Error SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -99; // Código de error para excepciones SQL
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error general: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -100; // Código de error para excepciones generales
+            }
+        }
+        public void EliminarMateriaDeCarrera(int idMateria, int idCarrera, int idAñoDeCarrera)
+        {
+            var parametros = new Dictionary<string, object>
+            {
+                { "@ID_Materia", idMateria },
+                { "@ID_Carrera", idCarrera },
+                { "@ID_AñoDeCarrera", idAñoDeCarrera }
+            };
+
+            try
+            {
+                // Ejecutar el procedimiento almacenado y obtener el valor de retorno
+                int codigoRetorno = Convert.ToInt32(Instancia_SQL.EjecutarNonQuery("sp_EliminarMateriaDeCarrera", parametros));
+
+                if (codigoRetorno == 1)
+                {
+                    // Éxito, la materia fue desvinculada correctamente
+                    MessageBox.Show("La materia ha sido desvinculada correctamente de la carrera y el año especificado.",
+                                    "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (codigoRetorno == 0)
+                {
+                    // La relación no existe
+                    MessageBox.Show("La materia no está asignada a esta carrera y año.",
+                                    "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    // Error inesperado
+                    MessageBox.Show("Ocurrió un error al intentar desvincular la materia.",
+                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                // Manejo de errores SQL
+                MessageBox.Show($"Error SQL: {sqlEx.Message}", "Error SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores generales
+                MessageBox.Show($"Error general: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        #endregion
+        #endregion
+        #region Perfil
+        public string ObtenerNombreApellidoPorUsuario(string usuario)
+        {
+            string nombreCompleto = string.Empty;
+            var parametros = new Dictionary<string, object>
+            {
+                { "@Usuario_Alumno", usuario }
+            };
+
+            try
+            {
+                // Ejecutar el procedimiento almacenado y obtener el resultado
+                var resultado = Instancia_SQL.EjecutarQuery("sp_ObtenerNombreApellidoPorUsuario", parametros);
+
+                if (resultado.Rows.Count > 0)
+                {
+                    // Si se encuentra el usuario, concatenar el nombre y apellido
+                    string nombre = resultado.Rows[0]["Nombre_Alumno"].ToString();
+                    string apellido = resultado.Rows[0]["Apellido_Alumno"].ToString();
+                    nombreCompleto = $"{nombre} {apellido}";
+                }
+                else
+                {
+                    // Si no se encuentra el usuario
+                    nombreCompleto = "Usuario no encontrado.";
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores
+                MessageBox.Show($"Error al obtener los datos del alumno: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return nombreCompleto;
+        }
+        public string ObtenerNombreApellidoPorUsuarioEmpleado(string usuario)
+        {
+            string nombreCompleto = string.Empty;
+            var parametros = new Dictionary<string, object>
+            {
+                { "@Usuario_Empleado", usuario }
+            };
+
+            try
+            {
+                // Ejecutar el procedimiento almacenado y obtener el resultado en un DataTable
+                DataTable resultado = Instancia_SQL.EjecutarQuery("sp_ObtenerNombreApellidoPorUsuarioEmpleado", parametros);
+
+                if (resultado.Rows.Count > 0)
+                {
+                    string nombre = resultado.Rows[0]["Nombre_Empleado"].ToString();
+                    string apellido = resultado.Rows[0]["Apellido_Empleado"].ToString();
+                    nombreCompleto = $"{nombre} {apellido}";
+                }
+                else
+                {
+                    nombreCompleto = "Empleado no encontrado.";
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores
+                MessageBox.Show($"Error al obtener los datos del empleado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return nombreCompleto;
+        }
+        public string ObtenerContraseniaPorUsuarioAlumno(string usuarioAlumno)
+        {
+            var parametros = new Dictionary<string, object>
+            {
+                { "@Usuario_Alumno", usuarioAlumno }
+            };
+
+            try
+            {
+                // Ejecutar el procedimiento almacenado y obtener el resultado
+                DataTable resultado = Instancia_SQL.EjecutarQuery("sp_ObtenerContraseniaPorUsuarioAlumno", parametros);
+
+                // Verificar si se encontraron registros
+                if (resultado.Rows.Count > 0)
+                {
+                    string contrasenia = resultado.Rows[0]["Contrasenia_Alumno"].ToString();
+                    return contrasenia; // Retorna la contraseña
+                }
+                else
+                {
+                    // Si no se encuentra el usuario, devuelve un valor vacío o nulo
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores
+                Console.WriteLine($"Error al obtener la contraseña: {ex.Message}");
+                return null;
+            }
+        }
+        public bool CambiarContraseniaAlumno(string usuarioAlumno, string nuevaContrasenia)
+        {
+            var parametros = new Dictionary<string, object>
+            {
+                { "@Usuario_Alumno", usuarioAlumno },
+                { "@Nueva_Contrasenia", nuevaContrasenia }
+            };
+
+            try
+            {
+                // Ejecutar el procedimiento almacenado y obtener el valor de retorno
+                int resultado = Convert.ToInt32(Instancia_SQL.EjecutarEscalar("sp_CambiarContraseniaAlumno", parametros));
+
+                // Si el resultado es 1, la contraseña fue cambiada con éxito
+                return resultado == 1;
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores
+                Console.WriteLine($"Error al cambiar la contraseña: {ex.Message}");
+                return false;
+            }
+        }
+        public string ObtenerContraseniaPorUsuarioEmpleado(string usuarioEmpleado)
+        {
+            // Diccionario con los parámetros a pasar al procedimiento almacenado
+            var parametros = new Dictionary<string, object>
+            {
+                { "@Usuario_Empleado", usuarioEmpleado }
+            };
+
+            try
+            {
+                // Ejecutar el procedimiento almacenado y obtener el resultado (la contraseña)
+                object resultado = Instancia_SQL.EjecutarEscalar("sp_ObtenerContraseniaPorUsuarioEmpleado", parametros);
+
+                // Si el resultado no es null, devolver la contraseña como un string
+                if (resultado != null)
+                {
+                    return resultado.ToString();
+                }
+                else
+                {
+                    return null; // Si no se encontró la contraseña, devolver null
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores
+                Console.WriteLine($"Error al obtener la contraseña: {ex.Message}");
+                return null;
+            }
+        }
+        public int CambiarContraseniaEmpleado(string usuarioEmpleado, string nuevaContrasenia)
+        {
+            // Diccionario con los parámetros a pasar al procedimiento almacenado
+            var parametros = new Dictionary<string, object>
+            {
+                { "@Usuario_Empleado", usuarioEmpleado },
+                { "@Nueva_Contrasenia_Empleado", nuevaContrasenia }
+            };
+
+            try
+            {
+                // Ejecutar el procedimiento almacenado y obtener el resultado (1 o 0)
+                int resultado = Instancia_SQL.EjecutarNonQuery("sp_CambiarContraseniaEmpleado", parametros);
+
+                // Retornar el resultado (1 si fue exitoso, 0 si no se encontró el usuario)
+                return resultado;
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores
+                Console.WriteLine($"Error al cambiar la contraseña: {ex.Message}");
+                return 0;
+            }
+        }
+
+
         #endregion
 
         #region Usuarios

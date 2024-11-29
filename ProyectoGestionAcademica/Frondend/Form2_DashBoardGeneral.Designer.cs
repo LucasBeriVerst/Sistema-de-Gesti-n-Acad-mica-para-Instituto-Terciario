@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             Form2_DashboardGeneral_Panel_Isquierdo = new Panel();
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuUsuarios = new Panel();
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuUsuariosDerecho = new Panel();
@@ -77,11 +78,15 @@
             Form2_DashboardGeneral_PictureBox_Hilet = new PictureBox();
             Form2_DashboardGeneral_Panel_Derecho = new Panel();
             Form2_DashboardGeneral_Panel_Derecho_Principal = new Panel();
+            Form2_DashboardGeneral_Labell_hora = new Label();
+            Form2_DashboardGeneral_TextBox_Hora = new TextBox();
+            Form2_DashboardGeneral_PictureBox = new PictureBox();
             Form2_DashboardGeneral_Panel_Derecho_Titulo = new Panel();
             Form2_DashboardGeneral_LinkLabell_CerrarApp = new LinkLabel();
             Form2_DashboardGeneral_LinkLabell_MinimizarApp = new LinkLabel();
             Form2_DashboardGeneral_RichTextBox_SubrayadoTitulo = new RichTextBox();
             Form2_DashboardGeneral_Labell_Titulo = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
             Form2_DashboardGeneral_Panel_Isquierdo.SuspendLayout();
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuUsuarios.SuspendLayout();
             Form2_DashboardGeneral_Panel_Isquierdo_SubMenuUsuariosDerecho.SuspendLayout();
@@ -99,6 +104,8 @@
             Form2_DashboardGeneral_Panel_Isquierdo_Imagen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Form2_DashboardGeneral_PictureBox_Hilet).BeginInit();
             Form2_DashboardGeneral_Panel_Derecho.SuspendLayout();
+            Form2_DashboardGeneral_Panel_Derecho_Principal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)Form2_DashboardGeneral_PictureBox).BeginInit();
             Form2_DashboardGeneral_Panel_Derecho_Titulo.SuspendLayout();
             SuspendLayout();
             // 
@@ -908,12 +915,47 @@
             // 
             // Form2_DashboardGeneral_Panel_Derecho_Principal
             // 
+            Form2_DashboardGeneral_Panel_Derecho_Principal.Controls.Add(Form2_DashboardGeneral_Labell_hora);
+            Form2_DashboardGeneral_Panel_Derecho_Principal.Controls.Add(Form2_DashboardGeneral_TextBox_Hora);
+            Form2_DashboardGeneral_Panel_Derecho_Principal.Controls.Add(Form2_DashboardGeneral_PictureBox);
             Form2_DashboardGeneral_Panel_Derecho_Principal.Dock = DockStyle.Fill;
             Form2_DashboardGeneral_Panel_Derecho_Principal.Location = new Point(0, 76);
             Form2_DashboardGeneral_Panel_Derecho_Principal.Margin = new Padding(2);
             Form2_DashboardGeneral_Panel_Derecho_Principal.Name = "Form2_DashboardGeneral_Panel_Derecho_Principal";
             Form2_DashboardGeneral_Panel_Derecho_Principal.Size = new Size(1056, 644);
             Form2_DashboardGeneral_Panel_Derecho_Principal.TabIndex = 1;
+            // 
+            // Form2_DashboardGeneral_Labell_hora
+            // 
+            Form2_DashboardGeneral_Labell_hora.AutoSize = true;
+            Form2_DashboardGeneral_Labell_hora.Font = new Font("Fira Sans", 23.9999962F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Form2_DashboardGeneral_Labell_hora.ForeColor = Color.DimGray;
+            Form2_DashboardGeneral_Labell_hora.Location = new Point(15, 597);
+            Form2_DashboardGeneral_Labell_hora.Name = "Form2_DashboardGeneral_Labell_hora";
+            Form2_DashboardGeneral_Labell_hora.Size = new Size(229, 38);
+            Form2_DashboardGeneral_Labell_hora.TabIndex = 2;
+            Form2_DashboardGeneral_Labell_hora.Text = "HORA ACTUAL: ";
+            // 
+            // Form2_DashboardGeneral_TextBox_Hora
+            // 
+            Form2_DashboardGeneral_TextBox_Hora.BackColor = Color.FromArgb(177, 173, 189);
+            Form2_DashboardGeneral_TextBox_Hora.BorderStyle = BorderStyle.None;
+            Form2_DashboardGeneral_TextBox_Hora.Enabled = false;
+            Form2_DashboardGeneral_TextBox_Hora.Font = new Font("Fira Sans", 23.9999962F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            Form2_DashboardGeneral_TextBox_Hora.Location = new Point(865, 593);
+            Form2_DashboardGeneral_TextBox_Hora.Name = "Form2_DashboardGeneral_TextBox_Hora";
+            Form2_DashboardGeneral_TextBox_Hora.Size = new Size(175, 39);
+            Form2_DashboardGeneral_TextBox_Hora.TabIndex = 1;
+            // 
+            // Form2_DashboardGeneral_PictureBox
+            // 
+            Form2_DashboardGeneral_PictureBox.Image = Properties.Resources._258262069_10157227332717609_3994735098332264389_n;
+            Form2_DashboardGeneral_PictureBox.Location = new Point(15, 16);
+            Form2_DashboardGeneral_PictureBox.Name = "Form2_DashboardGeneral_PictureBox";
+            Form2_DashboardGeneral_PictureBox.Size = new Size(1025, 535);
+            Form2_DashboardGeneral_PictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            Form2_DashboardGeneral_PictureBox.TabIndex = 0;
+            Form2_DashboardGeneral_PictureBox.TabStop = false;
             // 
             // Form2_DashboardGeneral_Panel_Derecho_Titulo
             // 
@@ -979,6 +1021,11 @@
             Form2_DashboardGeneral_Labell_Titulo.TabIndex = 0;
             Form2_DashboardGeneral_Labell_Titulo.Text = "MENU PRINCIPAL";
             // 
+            // timer1
+            // 
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
+            // 
             // Form2_DashboardGeneral
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1008,6 +1055,9 @@
             Form2_DashboardGeneral_Panel_Isquierdo_Imagen.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)Form2_DashboardGeneral_PictureBox_Hilet).EndInit();
             Form2_DashboardGeneral_Panel_Derecho.ResumeLayout(false);
+            Form2_DashboardGeneral_Panel_Derecho_Principal.ResumeLayout(false);
+            Form2_DashboardGeneral_Panel_Derecho_Principal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)Form2_DashboardGeneral_PictureBox).EndInit();
             Form2_DashboardGeneral_Panel_Derecho_Titulo.ResumeLayout(false);
             Form2_DashboardGeneral_Panel_Derecho_Titulo.PerformLayout();
             ResumeLayout(false);
@@ -1069,5 +1119,9 @@
         private Button Form2_DashboardGeneral_Button_Materias_Informacion;
         private Button Form2_DashboardGeneral_Button_Carreras_Informacion;
         private Button Form2_DashboardGeneral_Button_Alumnos_Informacion;
+        private PictureBox Form2_DashboardGeneral_PictureBox;
+        private TextBox Form2_DashboardGeneral_TextBox_Hora;
+        private Label Form2_DashboardGeneral_Labell_hora;
+        private System.Windows.Forms.Timer timer1;
     }
 }
