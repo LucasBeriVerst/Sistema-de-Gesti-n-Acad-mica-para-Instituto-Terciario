@@ -734,7 +734,7 @@ namespace ProyectoGestionAcademica.Backend
                 if (!valorDNI.All(char.IsDigit) || valorDNI.Length < 7 || valorDNI.Length > 10)
                 {
                     MessageBox.Show("El DNI debe contener entre 7 y 10 dígitos y solo Numeros Enteros.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return tablaVacia; // Se retorna una tabla vacía en caso de error.
+                    return tablaVacia; // Se retorna una tabla vacía en caso de error..
                 }
             }
 
