@@ -68,6 +68,7 @@
             Form5_DashBoardMaterias_2_Editar_PanelInferior_Button_Cancelar.TabIndex = 4;
             Form5_DashBoardMaterias_2_Editar_PanelInferior_Button_Cancelar.Text = "CANCELAR";
             Form5_DashBoardMaterias_2_Editar_PanelInferior_Button_Cancelar.UseVisualStyleBackColor = true;
+            Form5_DashBoardMaterias_2_Editar_PanelInferior_Button_Cancelar.Click += Form5_DashBoardMaterias_2_Editar_PanelInferior_Button_Cancelar_Click;
             // 
             // Form5_DashBoardMaterias_2_Editar_PanelInferior_Button_Aceptar
             // 

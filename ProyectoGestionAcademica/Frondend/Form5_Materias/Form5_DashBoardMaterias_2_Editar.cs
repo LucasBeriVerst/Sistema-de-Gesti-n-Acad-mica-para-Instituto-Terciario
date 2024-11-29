@@ -51,12 +51,21 @@ namespace ProyectoGestionAcademica.Frondend.Form5_Materias
             {
                 int idMateria = Convert.ToInt32(Form5_DashBoardMaterias_2_Editar_PanelIsquierdo_DataGridView.SelectedRows[0].Cells[0].Value?.ToString());
                 gestorDeDatos.EditarMateria(idMateria, nombreNuevoMateria);
-                Form5_DashBoardMaterias_2_Editar_PanelIsquierdo_DataGridView.DataSource = null; 
+                Form5_DashBoardMaterias_2_Editar_PanelIsquierdo_DataGridView.DataSource = null;
                 Form5_DashBoardMaterias_2_Editar_PanelIsquierdo_DataGridView.DataSource = gestorDeDatos.ObtenerMaterias();
             }
             else
             {
                 MessageBox.Show("No hay cambios realizados.", "Redundancia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void Form5_DashBoardMaterias_2_Editar_PanelInferior_Button_Cancelar_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Seguro que queres cerrar la pagina actual. Se perderan los datos ingresados...", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
             }
         }
     }

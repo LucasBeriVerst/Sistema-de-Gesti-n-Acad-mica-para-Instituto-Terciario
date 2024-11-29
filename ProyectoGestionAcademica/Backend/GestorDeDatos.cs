@@ -481,6 +481,33 @@ namespace ProyectoGestionAcademica.Backend
                 return null; 
             }
         }
+        public void EliminarMateria(int idMateria)
+        {
+            var parametros = new Dictionary<string, object>
+            {
+                { "@ID_Materia", idMateria }
+            };
+            try
+            {
+                int filasAfectadas = Instancia_SQL.EjecutarNonQuery("sp_EliminarMateria", parametros);
+                if (filasAfectadas > 0)
+                {
+                    MessageBox.Show("La materia ha sido eliminada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró la materia o no se pudo eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show($"Error SQL: {sqlEx.Message}", "Error SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error general: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         #endregion
         #endregion
     }
