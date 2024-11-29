@@ -13,7 +13,7 @@ namespace ProyectoGestionAcademica.Frondend
 {
     public partial class Form3_DashBoardAlumnos_4_Asignar : Form, IConfiguracion
     {
-        private string titulo = "ALUMNOS: ASIGNAR";
+        private string titulo = "ALUMNOS: ASIGNAR" ;
         private GestorDeDatos gestorDeDatos = new GestorDeDatos();
         public Form3_DashBoardAlumnos_4_Asignar()
         {
